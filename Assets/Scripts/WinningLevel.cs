@@ -37,6 +37,11 @@ public class WinningLevel : MonoBehaviour
         Time.timeScale = 0.25f;
         yield return new WaitForSeconds(1f);
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        int currentSceneID = SceneManager.GetActiveScene().buildIndex;
+       
+            
+            SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : 0);  
+        
+        
     }
 }
