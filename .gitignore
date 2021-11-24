@@ -38,3 +38,5 @@ sysinfo.txt
 misc.xml
 *.log
 Logs\*
+*.log
+*.dwlt
