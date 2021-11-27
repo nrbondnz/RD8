@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Key : MonoBehaviour
 { 
-    [SerializeField] KeyActionTrigger keyActionTrigger;    
+    [SerializeField] KeyActionController keyActionController;    
     [SerializeField] private float keyRotationSpeed = 3;
 
   
@@ -14,7 +15,7 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            keyActionTrigger.carryOutAction();
+            keyActionController.CarryOutAction();
             gameObject.SetActive(false);
         }
     }
@@ -26,10 +27,10 @@ public class Key : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (keyActionTrigger != null)
+        if (keyActionController != null)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawRay(transform.position, keyActionTrigger.transform.position - transform.position);
+            Gizmos.DrawRay(transform.position, keyActionController.transform.position - transform.position);
         }
         else
         {
