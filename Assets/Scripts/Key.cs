@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 { 
-    [SerializeField] Door door;    
+    [SerializeField] KeyActionTrigger keyActionTrigger;    
     [SerializeField] private float keyRotationSpeed = 3;
 
   
@@ -14,7 +14,7 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            door.unlockDoor();
+            keyActionTrigger.carryOutAction();
             gameObject.SetActive(false);
         }
     }
@@ -26,10 +26,10 @@ public class Key : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (door != null)
+        if (keyActionTrigger != null)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawRay(transform.position, door.transform.position - transform.position);
+            Gizmos.DrawRay(transform.position, keyActionTrigger.transform.position - transform.position);
         }
         else
         {
