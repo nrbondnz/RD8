@@ -39,8 +39,8 @@ public class WinningLevel : MonoBehaviour
         Time.timeScale = 1f;
         int currentSceneID = SceneManager.GetActiveScene().buildIndex;
        
-            
-            SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : 0);  
+            // TODO work out index max and rotate around scenes
+            SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
         
         
     }
