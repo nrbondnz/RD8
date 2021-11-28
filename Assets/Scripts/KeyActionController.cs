@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,14 +22,7 @@ using UnityEngine;
         // Start is called before the first frame update
         void Start()
         {
-            if (_keyActionEnum == IKeyAction.KeyAction.Reveal)
-            {
-                _keyActionInst = this.AddComponent<RevealKeyAction>();
-            }
-            else
-            {
-                _keyActionInst = this.AddComponent<OpenKeyAction>();
-            }
+            KeyActionFactory.setKeyAction(this, _keyActionEnum);
         }
 
         // Update is called once per frame
