@@ -7,6 +7,7 @@ namespace DefaultNamespace
         public static void setKeyAction(KeyActionController keyActionController,
             IKeyAction.KeyAction keyAction)
         {
+            IKeyAction _keyActionInst;
             if (keyAction == IKeyAction.KeyAction.Reveal)
             {
                 keyActionController.gameObject.AddComponent<RevealKeyAction>();
@@ -23,6 +24,8 @@ namespace DefaultNamespace
             {
                 throw new NotImplementedException("Non implemented IKeyAction used in factory");
             }
+
+            //return _keyActionInst;
         }
     }
 }

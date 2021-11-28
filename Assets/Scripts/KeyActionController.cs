@@ -10,7 +10,7 @@ using UnityEngine;
         [SerializeField] private bool isActionStarted = false;
         [SerializeField] private bool isReveal = false;
         [SerializeField] private IKeyAction.KeyAction _keyActionEnum;
-        private IKeyAction _keyActionInst;
+        //private IKeyAction _keyActionInst;
     
 
         public void CarryOutAction()
@@ -29,7 +29,7 @@ using UnityEngine;
         void Update()
         {
         
-            actionTime = _keyActionInst.DoKeyAction(isActionStarted, 
+            actionTime = this.gameObject.GetComponent<IKeyAction>().DoKeyAction(isActionStarted, 
                 actionTime,
                 this,
                 actionSpeed);
