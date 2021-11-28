@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6658922603475131860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.99, z: -0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 23.672783, y: 14.7412, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4b905f60df09c8245b6e0d5af2e04c7f, type: 2}
+  - {fileID: 2100000, guid: 663834164c6a04740aaa1b778249ce7e, type: 2}
+  - {fileID: 2100000, guid: 793155748cb2a4e6f947747cfdde875a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d7e2a405ece4490b027de5f6096e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockingSpeed: 2
-  unlockingTime: 3
-  isDoorUnlocked: 0
+  actionSpeed: 2
+  actionTime: 3
+  isActionStarted: 0
+  isReveal: 0
+  _keyActionEnum: 2

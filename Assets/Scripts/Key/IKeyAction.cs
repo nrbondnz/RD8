@@ -1,11 +1,20 @@
+namespace key
+{
+
 
     public interface IKeyAction
     {
-        public enum KeyAction {Open, Reveal, WalkThrough}
-    
+        public enum KeyActionEnum
+        {
+            Open,
+            Reveal,
+            WalkThrough
+        }
+
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             KeyActionController actorObject,
             float actionSpeed);
     }
 
+}

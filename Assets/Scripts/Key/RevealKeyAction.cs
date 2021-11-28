@@ -1,9 +1,10 @@
 using UnityEngine;
 
-
+namespace key
+{
     public class RevealKeyAction : MonoBehaviour, IKeyAction
     {
-    
+
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             KeyActionController actorObject,
@@ -16,3 +17,4 @@ using UnityEngine;
         }
     }
 
+}

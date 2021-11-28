@@ -1,39 +1,41 @@
-using DefaultNamespace;
+
 using Unity.VisualScripting;
 using UnityEngine;
 
-
+namespace key
+{
     public class KeyActionController : MonoBehaviour
     {
-        [SerializeField] private float actionSpeed = 2; 
+        [SerializeField] private float actionSpeed = 2;
         [SerializeField] private float actionTime = 3;
         [SerializeField] private bool isActionStarted = false;
         [SerializeField] private bool isReveal = false;
-        [SerializeField] private IKeyAction.KeyAction _keyActionEnum;
+
+        [SerializeField] private IKeyAction.KeyActionEnum keyActionEnumEnum;
         //private IKeyAction _keyActionInst;
-    
+
 
         public void CarryOutAction()
         {
             this.isActionStarted = true;
-        
+
         }
-    
+
         // Start is called before the first frame update
         void Start()
         {
-            KeyActionFactory.setKeyAction(this, _keyActionEnum);
+            KeyActionFactory.setKeyAction(this, keyActionEnumEnum);
         }
 
         // Update is called once per frame
         void Update()
         {
-        
-            actionTime = this.gameObject.GetComponent<IKeyAction>().DoKeyAction(isActionStarted, 
+
+            actionTime = this.gameObject.GetComponent<IKeyAction>().DoKeyAction(isActionStarted,
                 actionTime,
                 this,
                 actionSpeed);
-            
+
             /*if (isActionStarted  && (! isReveal ))
         {
             actionTime -= Time.deltaTime;
@@ -53,4 +55,4 @@ using UnityEngine;
         }*/
         }
     }
-
+}

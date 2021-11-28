@@ -1,9 +1,10 @@
 using UnityEngine;
 
-
+namespace key
+{
     public class OpenKeyAction : MonoBehaviour, IKeyAction
     {
-    
+
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             KeyActionController actorObject,
@@ -16,6 +17,8 @@ using UnityEngine;
             {
                 actorObject.gameObject.SetActive(false);
             }
+
             return actionTime;
         }
     }
+}

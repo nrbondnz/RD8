@@ -1,22 +1,22 @@
 using System;
 
-namespace DefaultNamespace
+namespace key
 {
     public static class KeyActionFactory
     {
         public static void setKeyAction(KeyActionController keyActionController,
-            IKeyAction.KeyAction keyAction)
+            IKeyAction.KeyActionEnum keyActionEnum)
         {
             IKeyAction _keyActionInst;
-            if (keyAction == IKeyAction.KeyAction.Reveal)
+            if (keyActionEnum == IKeyAction.KeyActionEnum.Reveal)
             {
                 keyActionController.gameObject.AddComponent<RevealKeyAction>();
             }
-            else if ( keyAction == IKeyAction.KeyAction.Open)
+            else if ( keyActionEnum == IKeyAction.KeyActionEnum.Open)
             {
                 keyActionController.gameObject.AddComponent<OpenKeyAction>();
             }
-            else if ( keyAction == IKeyAction.KeyAction.WalkThrough)
+            else if ( keyActionEnum == IKeyAction.KeyActionEnum.WalkThrough)
             {
                 keyActionController.gameObject.AddComponent<WalkthroughKeyAction>();
             }
