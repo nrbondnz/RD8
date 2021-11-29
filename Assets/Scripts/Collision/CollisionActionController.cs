@@ -2,19 +2,21 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace GameObjectCollision
+namespace Collision
 {
-    public class GameObjectCollisionActionController : MonoBehaviour
+    public class CollisionActionController : MonoBehaviour
     {
 
-        [SerializeField] private IGameObjectCollisionAction.GameObjectCollisionActionEnum _actionEnum;
+        [SerializeField] private ICollisionAction.CollisionActionEnum _collisionAction;
+
+        [SerializeField] private ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
         //private IKeyAction _keyActionInst;
         
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                this.gameObject.GetComponent<IGameObjectCollisionAction>().DoGameObjectCollisionAction(this);
+                this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, _effectStrengh);
             }
         }
 
@@ -22,7 +24,7 @@ namespace GameObjectCollision
         void Start()
         {
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
-            GameObjectCollisionActionFactory.setGameObjectCollisionAction(this,_actionEnum);
+            GOCollisionActionFactory.setGameObjectCollisionAction(this, _collisionAction);
         }
 
         // Update is called once per frame

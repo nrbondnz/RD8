@@ -7,7 +7,7 @@ namespace key
         public static void setKeyAction(KeyActionController keyActionController,
             IKeyAction.KeyActionEnum keyActionEnum)
         {
-            IKeyAction _keyActionInst;
+            
             if (keyActionEnum == IKeyAction.KeyActionEnum.Reveal)
             {
                 keyActionController.gameObject.AddComponent<RevealKeyAction>();
