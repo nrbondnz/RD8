@@ -5,43 +5,62 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinningLevel : MonoBehaviour
+namespace DefaultNamespace
 {
-    [SerializeField] private Material winningMaterial;
 
-    [SerializeField] private GameObject winningUI;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public class WinningLevel : MonoBehaviour
     {
-        
-    }
+        private GameManager _gameManager;
+        [SerializeField] private Material winningMaterial;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        [SerializeField] private GameObject winningUI;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            StartCoroutine(WinningRoutine());
+            _gameManager = GameManager.Instance;
         }
-    }
 
-    IEnumerator WinningRoutine()
-    {
-        GetComponent<MeshRenderer>().material = winningMaterial;
-        winningUI.SetActive(true);
-        Time.timeScale = 0.25f;
-        yield return new WaitForSeconds(1f);
-        Time.timeScale = 1f;
-        int currentSceneID = SceneManager.GetActiveScene().buildIndex;
-       
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                StartCoroutine(WinningRoutine());
+            }
+        }
+
+        IEnumerator WinningRoutine()
+        {
+            GetComponent<MeshRenderer>().material = winningMaterial;
+            winningUI.SetActive(true);
+            Time.timeScale = 0.25f;
+            yield return new WaitForSeconds(1f);
+            Time.timeScale = 1f;
+            //int currentSceneID = SceneManager.GetActiveScene().buildIndex;
+
             // TODO work out index max and rotate around scenes
-            SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
-        
-        
+            //SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
+            GameState gameState = _gameManager.State;
+            if (gameState == GameState.FirstScene)
+            {
+                _gameManager.UpdateGameState(GameState.SecondScene);
+            }
+            else if (gameState == GameState.SecondScene)
+            {
+                _gameManager.UpdateGameState(GameState.ThirdScene);
+            }
+            else if (gameState == GameState.ThirdScene)
+            {
+                _gameManager.UpdateGameState(GameState.Winner);
+            }
+
+        }
     }
 }

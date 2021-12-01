@@ -1,52 +1,73 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
-public class GameManager : MonoBehaviour
+namespace DefaultNamespace
 {
-    public static GameManager Instance;
-    public GameState State;
-
-    public static event Action<GameState> OnGameStateChanged;
-    private void Awake()
+    public class GameManager : Singleton<GameManager>
     {
-        GameManager.Instance = this;
-    }
+        private static GameManager _instance;
 
-    private void Start()
-    {
-        UpdateGameState(GameState.SayHiToMum);
-    }
+       
 
-    public void UpdateGameState(GameState newState)
-    {
-        State = newState;
-        switch (newState)
+        
+
+
+
+
+        public GameState State;
+
+        public static event Action<GameState> OnGameStateChanged;
+
+        private void Start()
         {
-            case GameState.SayHiToMum:
-                break;
-            case GameState.FirstScene:
-                break;
-            case GameState.SecondScene:
-                break;
-            case GameState.ThirdScene:
-                break;
-            case GameState.Winner:
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            State = GameState.SayHiToMum;
+            SceneManager.LoadScene("Menu");
         }
-        OnGameStateChanged?.Invoke(newState);
-    }
-    
-}
 
-public enum GameState
-{
-    SayHiToMum,
-    FirstScene,
-    SecondScene,
-    ThirdScene,
-    Winner
+
+        public void UpdateGameState(GameState newState)
+        {
+            State = newState;
+            Debug.Log("GameManager: new state : " + State);
+            switch (newState)
+            {
+                case GameState.Boot:
+                    break;
+                case GameState.SayHiToMum:
+                    SceneManager.LoadScene("Menu");
+                    break;
+                case GameState.FirstScene:
+                    SceneManager.LoadScene(0);
+                    break;
+                case GameState.SecondScene:
+                    SceneManager.LoadScene(1);
+                    break;
+                case GameState.ThirdScene:
+                    SceneManager.LoadScene(2);
+                    break;
+                case GameState.Winner:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            }
+
+            OnGameStateChanged?.Invoke(newState);
+        }
+
+    }
+
+    public enum GameState
+    {
+        Boot,
+        SayHiToMum,
+        FirstScene,
+        SecondScene,
+        ThirdScene,
+        Winner
+    }
 }
