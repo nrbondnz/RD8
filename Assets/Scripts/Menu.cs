@@ -42,13 +42,34 @@ namespace DefaultNamespace
             {
                 StartGame();
             }
-
+            if (GUI.Button(new Rect(10, 80, 80, 30), "Level 2"))
+            {
+                LevelTwo();
+            }
+            if (GUI.Button(new Rect(10, 120, 80, 30), "Level 3"))
+            {
+                LevelThree();
+            }
             if (GUI.Button(new Rect(10, 160, 80, 30), "Quit"))
             {
                 Quit();
             }
 
             GUI.EndGroup();
+        }
+
+        private void LevelThree()
+        {
+            Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
+            GameManager.Instance.UpdateGameState(GameState.ThirdScene);
+            Debug.Log("Menu: New Game state : " + GameState.ThirdScene);
+        }
+
+        private void LevelTwo()
+        {
+            Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
+            GameManager.Instance.UpdateGameState(GameState.SecondScene);
+            Debug.Log("Menu: New Game state : " + GameState.SecondScene);
         }
 
 
@@ -66,6 +87,7 @@ namespace DefaultNamespace
         {
             Debug.Log("Quit!");
             Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }
