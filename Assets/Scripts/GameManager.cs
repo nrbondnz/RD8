@@ -11,14 +11,7 @@ namespace DefaultNamespace
     public class GameManager : Singleton<GameManager>
     {
         private static GameManager _instance;
-
-       
-
-        
-
-
-
-
+        private GameplayManager _GameplayManager = new GameplayManager();
         public GameState State;
 
         public static event Action<GameState> OnGameStateChanged;
@@ -26,7 +19,8 @@ namespace DefaultNamespace
         private void Start()
         {
             State = GameState.SayHiToMum;
-            SceneManager.LoadScene("Menu");
+            //SceneManager.LoadScene("Menu");
+            UpdateGameState(GameState.SayHiToMum);
         }
 
 
@@ -36,10 +30,11 @@ namespace DefaultNamespace
             Debug.Log("GameManager: new state : " + State);
             switch (newState)
             {
-                case GameState.Boot:
+                case GameState.Loser:
                     break;
                 case GameState.SayHiToMum:
                     SceneManager.LoadScene("Menu");
+                    _GameplayManager.InitGame(GameLevel.Easy);
                     break;
                 case GameState.FirstScene:
                     SceneManager.LoadScene(0);
@@ -63,11 +58,11 @@ namespace DefaultNamespace
 
     public enum GameState
     {
-        Boot,
         SayHiToMum,
         FirstScene,
         SecondScene,
         ThirdScene,
-        Winner
+        Winner,
+        Loser
     }
 }

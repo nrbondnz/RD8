@@ -32,7 +32,11 @@ namespace DefaultNamespace
             }
             else if (state == GameState.Winner)
             {
+                // TODO change to gui with results
                 _gameManager.UpdateGameState(GameState.SayHiToMum);
+            } else if (state == GameState.Loser)
+            {
+                // TODO add loser GUI with results, could be same GUI as winner
             }
         }
 

@@ -272,7 +272,7 @@ MonoBehaviour:
   actionTime: 3
   isActionStarted: 0
   isReveal: 1
-  keyActionEnumEnum: 0
+  keyActionEnumEnum: 1
 --- !u!1 &135773919
 GameObject:
   m_ObjectHideFlags: 0
