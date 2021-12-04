@@ -11,7 +11,7 @@ namespace DefaultNamespace
 
     public class WinningLevel : MonoBehaviour
     {
-        private GameManager _gameManager;
+        //private GameManager _gameManager;
         [SerializeField] private Material winningMaterial;
 
         [SerializeField] private GameObject winningUI;
@@ -19,7 +19,7 @@ namespace DefaultNamespace
         // Start is called before the first frame update
         void Start()
         {
-            _gameManager = GameManager.Instance;
+            
         }
 
         // Update is called once per frame
@@ -47,18 +47,18 @@ namespace DefaultNamespace
 
             // TODO work out index max and rotate around scenes
             //SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
-            GameState gameState = _gameManager.State;
+            GameState gameState = GameManager.Instance.State;
             if (gameState == GameState.FirstScene)
             {
-                _gameManager.UpdateGameState(GameState.SecondScene);
+                GameManager.Instance.UpdateGameState(GameState.SecondScene);
             }
             else if (gameState == GameState.SecondScene)
             {
-                _gameManager.UpdateGameState(GameState.ThirdScene);
+                GameManager.Instance.UpdateGameState(GameState.ThirdScene);
             }
             else if (gameState == GameState.ThirdScene)
             {
-                _gameManager.UpdateGameState(GameState.Winner);
+                GameManager.Instance.UpdateGameState(GameState.Winner);
             }
 
         }

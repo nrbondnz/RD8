@@ -1,62 +1,69 @@
+using System;
 using UnityEngine;
 using UnityEngine.WSA;
 
 namespace DefaultNamespace
 {
-    public class GameplayManager : Singleton<GameplayManager>
+
+    public class GameplayManager : MBSingleton<GameplayManager>
     {
-        private int _lives;
-        private GameLevel _gameLevel;
-        private float _timeRemaining;
+        public GamePlay _gamePlay;
+
+        
+        public static Action<GamePlay> OnGamePlayChanged;
 
         public void InitGame(GameLevel pGameLevel)
         {
-            _gameLevel = pGameLevel;
-            if (_gameLevel == GameLevel.Easy)
+            _gamePlay = new GamePlay();
+            _gamePlay._gameLevel = pGameLevel;
+            if (_gamePlay._gameLevel == GameLevel.Easy)
             {
-                _lives = 15;
-                _timeRemaining = 1000f;
-            } else if (_gameLevel == GameLevel.Hard)
+                _gamePlay._lives = 15;
+                _gamePlay._timeRemaining = 1000f;
+            } else if (_gamePlay._gameLevel == GameLevel.Hard)
             {
-                _lives = 3;
-                _timeRemaining = 200f;
+                _gamePlay._lives = 3;
+                _gamePlay._timeRemaining = 200f;
             }
             else
             {
-                _lives = 1;
-                _timeRemaining = 100f;
+                _gamePlay._lives = 1;
+                _gamePlay._timeRemaining = 100f;
             }
-        }
+        OnGamePlayChanged?.Invoke(_gamePlay);
+    }
         
         public int RemoveLife()
         {
-            _lives -= 1;
-            return _lives;
+            _gamePlay.removeLife();
+            OnGamePlayChanged?.Invoke(_gamePlay);
+            return _gamePlay._lives;
         }
         
         public int GetLives()
         {
-            return _lives;
+            return _gamePlay._lives;
         }
 
         public bool AnyLivesLeft()
         {
-            return _lives > 0;
+            return _gamePlay._lives == 0;
         }
 
         public void UpdateTimeRemaining()
         {
-            _timeRemaining -= Time.deltaTime;
+            _gamePlay._timeRemaining -= Time.deltaTime;
+            OnGamePlayChanged?.Invoke(_gamePlay);
         }
 
         public bool AnyTimeLeft()
         {
-            return _timeRemaining > 0;
+            return _gamePlay._timeRemaining > 0;
         }
 
         public GameLevel GetGameLevel()
         {
-            return this._gameLevel;
+            return _gamePlay._gameLevel;
         }
         
     }

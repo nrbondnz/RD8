@@ -8,10 +8,10 @@ using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
-    public class GameManager : Singleton<GameManager>
+    public class GameManager : MBSingleton<GameManager>
     {
         private static GameManager _instance;
-        private GameplayManager _GameplayManager = new GameplayManager();
+        //private GameplayManager _GameplayManager = GameplayManager.Instance;
         public GameState State;
 
         public static event Action<GameState> OnGameStateChanged;
@@ -21,6 +21,7 @@ namespace DefaultNamespace
             State = GameState.SayHiToMum;
             //SceneManager.LoadScene("Menu");
             UpdateGameState(GameState.SayHiToMum);
+            GameplayManager.Instance.InitGame(GameLevel.Easy);
         }
 
 
@@ -28,13 +29,13 @@ namespace DefaultNamespace
         {
             State = newState;
             Debug.Log("GameManager: new state : " + State);
+            
             switch (newState)
             {
-                case GameState.Loser:
-                    break;
+                
                 case GameState.SayHiToMum:
                     SceneManager.LoadScene("Menu");
-                    _GameplayManager.InitGame(GameLevel.Easy);
+                    
                     break;
                 case GameState.FirstScene:
                     SceneManager.LoadScene(0);
@@ -46,6 +47,10 @@ namespace DefaultNamespace
                     SceneManager.LoadScene(2);
                     break;
                 case GameState.Winner:
+                    SceneManager.LoadScene("WinLoseMenu");
+                    break;
+                case GameState.Loser:
+                    SceneManager.LoadScene("WinLoseMenu");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(newState), newState, null);

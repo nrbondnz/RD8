@@ -8,7 +8,7 @@ namespace DefaultNamespace
 {
 
 
-    public class MenuManager : Singleton<MenuManager>
+    public class MenuManager : MBSingleton<MenuManager>
     {
         // Start is called before the first frame update
         private GameManager _gameManager;

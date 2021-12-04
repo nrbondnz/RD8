@@ -6,7 +6,7 @@ namespace DefaultNamespace
 {
 
 
-    public class Menu : Singleton<Menu>
+    public class Menu : MBSingleton<Menu>
     {
         GameManager gameManager;
 
@@ -38,17 +38,17 @@ namespace DefaultNamespace
             //menu layout
             GUI.BeginGroup(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 100, 800));
             GUI.Box(new Rect(0, 0, 100, 200), "Menu");
-            if (GUI.Button(new Rect(10, 40, 80, 30), "Start"))
+            if (GUI.Button(new Rect(10, 40, 80, 30), "Easy"))
             {
-                StartGame();
+                StartGame(GameLevel.Easy);
             }
-            if (GUI.Button(new Rect(10, 80, 80, 30), "Level 2"))
+            if (GUI.Button(new Rect(10, 80, 80, 30), "Hard"))
             {
-                LevelTwo();
+                StartGame(GameLevel.Hard);
             }
-            if (GUI.Button(new Rect(10, 120, 80, 30), "Level 3"))
+            if (GUI.Button(new Rect(10, 120, 80, 30), "Impossible"))
             {
-                LevelThree();
+                StartGame(GameLevel.Impossible);
             }
             if (GUI.Button(new Rect(10, 160, 80, 30), "Quit"))
             {
@@ -58,7 +58,7 @@ namespace DefaultNamespace
             GUI.EndGroup();
         }
 
-        private void LevelThree()
+        /*private void LevelThree()
         {
             Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
             GameManager.Instance.UpdateGameState(GameState.ThirdScene);
@@ -70,15 +70,16 @@ namespace DefaultNamespace
             Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
             GameManager.Instance.UpdateGameState(GameState.SecondScene);
             Debug.Log("Menu: New Game state : " + GameState.SecondScene);
-        }
+        }*/
 
 
-        public void StartGame()
+        public void StartGame(GameLevel pGameLevel)
         {
             //start game scene
             //GameManager gameManager = GameManager.getInstance();
             Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
             GameManager.Instance.UpdateGameState(GameState.FirstScene);
+            GameplayManager.Instance.InitGame(pGameLevel);
             Debug.Log("Menu: New Game state : " + GameState.FirstScene);
         }
 
