@@ -21,7 +21,7 @@ namespace DefaultNamespace
             State = GameState.SayHiToMum;
             //SceneManager.LoadScene("Menu");
             UpdateGameState(GameState.SayHiToMum);
-            GameplayManager.Instance.InitGame(GameLevel.Easy);
+            GamePlayManager.Instance.InitGame(GameLevel.Easy);
         }
 
 

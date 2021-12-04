@@ -13,7 +13,7 @@ namespace DefaultNamespace
     {
         //private GameManager _gameManager;
         [SerializeField] private Material winningMaterial;
-
+        [SerializeField] private bool instantWin = false;
         [SerializeField] private GameObject winningUI;
 
         // Start is called before the first frame update
@@ -21,11 +21,17 @@ namespace DefaultNamespace
         {
             
         }
+        
+        
 
         // Update is called once per frame
         void Update()
         {
-
+            if (instantWin)
+            {
+                instantWin = false;
+                StartCoroutine(WinningRoutine());
+            }
         }
 
         private void OnTriggerEnter(Collider other)

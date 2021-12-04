@@ -646,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: winningUI

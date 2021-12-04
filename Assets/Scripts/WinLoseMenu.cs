@@ -11,7 +11,7 @@ namespace DefaultNamespace
         
         public void OnGUI()
         {
-            GamePlay gamePlay = GameplayManager.Instance._gamePlay;
+            GamePlay gamePlay = GamePlayManager.Instance._gamePlay;
             //menu layout
             GUI.BeginGroup(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 120, 900));
             if (gamePlay._lives > 0)
@@ -52,7 +52,7 @@ namespace DefaultNamespace
             //GameManager gameManager = GameManager.getInstance();
             Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
             GameManager.Instance.UpdateGameState(GameState.FirstScene);
-            GameplayManager.Instance.InitGame(pGameLevel);
+            GamePlayManager.Instance.InitGame(pGameLevel);
             Debug.Log("Menu: New Game state : " + GameState.FirstScene);
         }
 

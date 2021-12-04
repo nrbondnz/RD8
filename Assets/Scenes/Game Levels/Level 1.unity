@@ -978,6 +978,10 @@ PrefabInstance:
       propertyPath: winningUI
       value: 
       objectReference: {fileID: 1843773449}
+    - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: instantWin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_RootOrder
       value: 1

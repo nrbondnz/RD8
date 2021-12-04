@@ -6,34 +6,8 @@ namespace DefaultNamespace
 {
 
 
-    public class Menu : MBSingleton<Menu>
-    {
-        GameManager gameManager;
-
-
-       
-
-        private void Start()
-        {
-            //gameManager = GameManager.Instance;
-            gameManager = GameManager.Instance;
-            GameManager.OnGameStateChanged += OnGameStateChanged;
-            
-            
-        }
-
-        private void OnDestroy()
-        {
-            GameManager.OnGameStateChanged -= OnGameStateChanged;
-        }
-
-        public void OnGameStateChanged(GameState gameState)
-        {
-            Debug.Log("Menu: OnStateChange! : " + gameState);
-        }
-
-
-        public void OnGUI()
+    public class Menu : MonoBehaviour{
+    public void OnGUI()
         {
             //menu layout
             GUI.BeginGroup(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 100, 800));
@@ -57,30 +31,14 @@ namespace DefaultNamespace
 
             GUI.EndGroup();
         }
-
-        /*private void LevelThree()
-        {
-            Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
-            GameManager.Instance.UpdateGameState(GameState.ThirdScene);
-            Debug.Log("Menu: New Game state : " + GameState.ThirdScene);
-        }
-
-        private void LevelTwo()
-        {
-            Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
-            GameManager.Instance.UpdateGameState(GameState.SecondScene);
-            Debug.Log("Menu: New Game state : " + GameState.SecondScene);
-        }*/
-
-
+    
         public void StartGame(GameLevel pGameLevel)
         {
             //start game scene
             //GameManager gameManager = GameManager.getInstance();
             Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
             GameManager.Instance.UpdateGameState(GameState.FirstScene);
-            GameplayManager.Instance.InitGame(pGameLevel);
-            Debug.Log("Menu: New Game state : " + GameState.FirstScene);
+            GamePlayManager.Instance.InitGame(pGameLevel);
         }
 
 

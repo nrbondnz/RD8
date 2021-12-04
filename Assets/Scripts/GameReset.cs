@@ -10,10 +10,10 @@ public class GameReset : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.CompareTag("Player"))
         {
-            if (GameplayManager.Instance.GetLives() == 1 )
+            if (GamePlayManager.Instance.GetLives() == 1 )
             {
                 // just about to go to zero
-                GameplayManager.Instance.RemoveLife();
+                GamePlayManager.Instance.RemoveLife();
                 SceneManager.LoadScene("WinLoseMenu");
             }
             else
@@ -27,6 +27,6 @@ public class GameReset : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
-        GameplayManager.Instance.RemoveLife();
+        GamePlayManager.Instance.RemoveLife();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.WSA;
 namespace DefaultNamespace
 {
 
-    public class GameplayManager : MBSingleton<GameplayManager>
+    public class GamePlayManager : MBSingleton<GamePlayManager>
     {
         public GamePlay _gamePlay;
 
