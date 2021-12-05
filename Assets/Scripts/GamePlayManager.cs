@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.WSA;
 
 namespace DefaultNamespace
@@ -54,6 +55,10 @@ namespace DefaultNamespace
         {
             _gamePlay._timeRemaining -= Time.deltaTime;
             OnGamePlayChanged?.Invoke(_gamePlay);
+            if (!AnyTimeLeft())
+            {
+                SceneManager.LoadScene("WinLoseMenu");
+            }
         }
 
         public bool AnyTimeLeft()

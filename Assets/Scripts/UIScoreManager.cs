@@ -8,7 +8,7 @@ namespace DefaultNamespace
     public class UIScoreManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI scoreText;
-        private GamePlay _gamePlay;
+        //private GamePlay _gamePlay;
         private GamePlayManager _gameplayManager = GamePlayManager.Instance;
 
         void Start()
@@ -22,11 +22,22 @@ namespace DefaultNamespace
             GamePlayManager.OnGamePlayChanged -= updateGameScore;
         }
 
+        private void Update()
+        {
+            //updateGameScore(GamePlayManager.Instance._gamePlay);
+        }
+
 
         private void updateGameScore(GamePlay pGamePlay)
         {
-            _gamePlay = pGamePlay;
-            scoreText.text = "Lives : " + _gamePlay._lives;
+            scoreText.text = "Lives : " + pGamePlay._lives + " Time: " + convertToMinsAndSecs(pGamePlay._timeRemaining);
+        }
+
+        private String convertToMinsAndSecs(float timeIn)
+        {
+            int mins = (int)(timeIn / 60.0);
+            int secs = (int)(timeIn - (mins * 60));
+            return mins + ":" + secs;
         }
     }
 }

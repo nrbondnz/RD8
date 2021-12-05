@@ -21,7 +21,7 @@ namespace DefaultNamespace
             State = GameState.SayHiToMum;
             //SceneManager.LoadScene("Menu");
             UpdateGameState(GameState.SayHiToMum);
-            GamePlayManager.Instance.InitGame(GameLevel.Easy);
+            //GamePlayManager.Instance.InitGame(GameLevel.Easy);
         }
 
 
@@ -34,23 +34,23 @@ namespace DefaultNamespace
             {
                 
                 case GameState.SayHiToMum:
-                    SceneManager.LoadScene("Menu");
+                    SceneManager.LoadSceneAsync("Menu");
                     
                     break;
                 case GameState.FirstScene:
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadSceneAsync(0);
                     break;
                 case GameState.SecondScene:
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadSceneAsync(1);
                     break;
                 case GameState.ThirdScene:
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadSceneAsync(2);
                     break;
                 case GameState.Winner:
-                    SceneManager.LoadScene("WinLoseMenu");
+                    SceneManager.LoadSceneAsync("WinLoseMenu");
                     break;
                 case GameState.Loser:
-                    SceneManager.LoadScene("WinLoseMenu");
+                    SceneManager.LoadSceneAsync("WinLoseMenu");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(newState), newState, null);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GamePlayManager.Instance.UpdateTimeRemaining();
         // d -> 1.0f, a -> -1.0f
         hozInput = Input.GetAxis("Horizontal");
         vertInput = Input.GetAxis("Vertical");

@@ -11,7 +11,7 @@ namespace DefaultNamespace
     public class MenuManager : MBSingleton<MenuManager>
     {
         // Start is called before the first frame update
-        private GameManager _gameManager;
+        //private GameManager _gameManager;
 
     
         
@@ -19,8 +19,8 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            _gameManager = GameManager.Instance;
-            GameManager.OnGameStateChanged += OnGameStateChanged;
+            //_gameManager = GameManager.Instance;
+            //GameManager.OnGameStateChanged += OnGameStateChanged;
         }
 
         private void OnGameStateChanged(GameState state)
@@ -33,13 +33,13 @@ namespace DefaultNamespace
             else if (state == GameState.Winner)
             {
                 // TODO change to gui with results
-                _gameManager.UpdateGameState(GameState.SayHiToMum);
+                //_gameManager.UpdateGameState(GameState.SayHiToMum);
             } else if (state == GameState.Loser)
             {
                 // TODO add loser GUI with results, could be same GUI as winner
             }
         }
 
-        private void OnDestroy() => GameManager.OnGameStateChanged -= OnGameStateChanged;
+        //private void OnDestroy() => GameManager.OnGameStateChanged -= OnGameStateChanged;
     }
 }

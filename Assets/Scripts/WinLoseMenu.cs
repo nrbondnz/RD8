@@ -14,13 +14,17 @@ namespace DefaultNamespace
             GamePlay gamePlay = GamePlayManager.Instance._gamePlay;
             //menu layout
             GUI.BeginGroup(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 120, 900));
-            if (gamePlay._lives > 0)
+            if ((gamePlay._lives > 0) && (gamePlay._timeRemaining > 0.0))
             {
                 GUI.Box(new Rect(0, 0, 100, 300), "Winner");
             }
+            else if (gamePlay._lives == 0)
+            {
+                GUI.Box(new Rect(0, 0, 100, 300), "Out of Lives");
+            }
             else
             {
-                GUI.Box(new Rect(0, 0, 100, 300), "Lost");
+                GUI.Box(new Rect(0, 0, 100, 300), "Out of Time");
             }
             GUI.Box(new Rect(10, 40, 80, 30), "Play again?");
             if (GUI.Button(new Rect(10, 80, 80, 30), "Easy"))
