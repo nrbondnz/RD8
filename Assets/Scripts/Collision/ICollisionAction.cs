@@ -5,8 +5,8 @@ namespace Collision
     {
         public enum CollisionActionEnum
         {
-            Bounce,
-            SpeedChange
+            Bounce = 1,
+            SpeedChange = 100
         }
 
         public enum CollisionEffectStrengthEnum

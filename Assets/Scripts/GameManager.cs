@@ -18,7 +18,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            State = GameState.SayHiToMum;
+            //State = GameState.SayHiToMum;
             //SceneManager.LoadScene("Menu");
             UpdateGameState(GameState.SayHiToMum);
             //GamePlayManager.Instance.InitGame(GameLevel.Easy);
@@ -35,7 +35,6 @@ namespace DefaultNamespace
                 
                 case GameState.SayHiToMum:
                     SceneManager.LoadSceneAsync("Menu");
-                    
                     break;
                 case GameState.FirstScene:
                     SceneManager.LoadSceneAsync(0);
