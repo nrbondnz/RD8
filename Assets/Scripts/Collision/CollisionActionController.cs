@@ -20,11 +20,19 @@ namespace Collision
             }
         }
 
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                this.gameObject.GetComponent<ICollisionAction>().DoCollisionAreaExitAction(this, _effectStrengh);
+            }
+        }
+
         // Start is called before the first frame update
         void Start()
         {
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
-            GOCollisionActionFactory.setGameObjectCollisionAction(this, _collisionAction);
+            GOCollisionActionFactory.SetGameObjectCollisionAction(this, _collisionAction);
             setColorBasedOnCollisionTypeAndStrenth();
         }
 
@@ -40,14 +48,25 @@ namespace Collision
             if (_collisionAction == ICollisionAction.CollisionActionEnum.Bounce)
             {
 
-                gameObject.GetComponent<MeshRenderer>().material.color = new Color((float)0.34, 1 * (((float) (int) _effectStrengh) / (float) 15.0), (float)0.319);
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(
+                    (float)0.9 - ((((float) (int) _effectStrengh) / (float) 15.0) * (float)0.5), 
+                    (float)1.0, 
+                    (float)0.25);
             }
-            else
+            else if ( _collisionAction == ICollisionAction.CollisionActionEnum.SpeedChange)
             {
                 Color col = new Color((float) 1.0, (float) 1.0 - (((float) (int) _effectStrengh) / (float) 15.0),
                     (float) 0.255);
                 gameObject.GetComponent<MeshRenderer>().material.color = col;
                 Debug.Log("Color: r : " + col.r + " g : " + col.g + " b " + col.b);
+            } else if (_collisionAction == ICollisionAction.CollisionActionEnum.Death)
+            {
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color((float)0.1, (float)0.1, (float)0.1);
+            } else if (_collisionAction == ICollisionAction.CollisionActionEnum.Attract)
+            {
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color((float) 0.021,
+                    (float) 0.65 - ((((float) (int) _effectStrengh) / (float) 15.0) * (float) 0.55),
+                    (float) 0.75);
             }
         }
 

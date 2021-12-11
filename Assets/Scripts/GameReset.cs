@@ -5,21 +5,29 @@ using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameReset : MonoBehaviour
+public class GameReset : MBSingleton<GameReset>
 {
-    private void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Player"))
+    private void OnTriggerEnter(Collider other)
+    {
+        Terrain childTerrainObj = gameObject.GetComponentInChildren<Terrain>();
+        if (other.CompareTag("Player") && ( childTerrainObj != null) && 
+            (childTerrainObj.CompareTag("OutOfBounds")))
         {
-            if (GamePlayManager.Instance.GetLives() == 1 )
-            {
-                // just about to go to zero
-                GamePlayManager.Instance.RemoveLife();
-                SceneManager.LoadScene("WinLoseMenu");
-            }
-            else
-            {
-                ResetScene();
-            }
+            ResetAction();
+        }
+    }
+
+    public void ResetAction()
+    {
+        if (GamePlayManager.Instance.GetLives() == 1 )
+        {
+            // just about to go to zero
+            GamePlayManager.Instance.RemoveLife();
+            SceneManager.LoadScene("WinLoseMenu");
+        }
+        else
+        {
+            ResetScene();
         }
     }
 

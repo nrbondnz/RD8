@@ -23,5 +23,13 @@ namespace Collision
                           (int)ICollisionAction.CollisionEffectStrengthEnum.Normal),
                 ForceMode.Impulse);
         }
+
+        public void DoCollisionAreaExitAction(CollisionActionController controller,
+            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
+        {
+            // No action for this Collision
+        }
     }
+    
+    
 }

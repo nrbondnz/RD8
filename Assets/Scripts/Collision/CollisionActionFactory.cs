@@ -4,7 +4,7 @@ namespace Collision
 {
     public static class GOCollisionActionFactory
     {
-        public static void setGameObjectCollisionAction(CollisionActionController controller,
+        public static void SetGameObjectCollisionAction(CollisionActionController controller,
             ICollisionAction.CollisionActionEnum collisionActionEnum)
         {
             if ( collisionActionEnum == ICollisionAction.CollisionActionEnum.Bounce)
@@ -14,7 +14,14 @@ namespace Collision
             else if ( collisionActionEnum == ICollisionAction.CollisionActionEnum.SpeedChange)
             {
                 controller.gameObject.AddComponent<SpeedChangeCollisionAction>();
-            } else 
+            } else if (collisionActionEnum == ICollisionAction.CollisionActionEnum.Death)
+            {
+                controller.gameObject.AddComponent<DeathCollisionAction>();
+            } else if (collisionActionEnum == ICollisionAction.CollisionActionEnum.Attract)
+            {
+                controller.gameObject.AddComponent<AttrctCollisionAction>();
+            } 
+            else 
             {
                 throw new NotImplementedException("Non implemented IKeyAction used in factory");
             }

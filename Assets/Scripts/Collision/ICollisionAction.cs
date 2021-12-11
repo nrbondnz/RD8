@@ -6,7 +6,9 @@ namespace Collision
         public enum CollisionActionEnum
         {
             Bounce = 1,
-            SpeedChange = 100
+            SpeedChange = 100,
+            Death = 1000,
+            Attract = 10000
         }
 
         public enum CollisionEffectStrengthEnum
@@ -21,6 +23,9 @@ namespace Collision
         }
 
         public void DoCollisionAction(CollisionActionController controller,
+            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum);
+        
+        public void DoCollisionAreaExitAction(CollisionActionController controller,
             ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum);
     }
 }
