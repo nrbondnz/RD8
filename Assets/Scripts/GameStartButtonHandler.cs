@@ -1,0 +1,59 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using DefaultNamespace;
+using TMPro;
+
+public class GameStartButtonHandler : MonoBehaviour
+{
+    [SerializeField] private TextMeshProUGUI headingForGameStart;
+    GamePlay gamePlay = GamePlayManager.Instance._gamePlay;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        if ((!gamePlay._started))
+        {
+            headingForGameStart.text = "Want to play";
+        } 
+        else if ((gamePlay._lives > 0) && (gamePlay._timeRemaining > 0.0))
+        {
+            headingForGameStart.text = "Winner - Play again?";
+        }
+        else if (gamePlay._lives == 0)
+        {
+            headingForGameStart.text = "Out of lives - Play again?";
+        }
+        else
+        {
+            headingForGameStart.text = "Out of Time - Play again?";
+        }
+    }
+
+
+    public void EasyPressed()
+    {
+        StartGame(GameLevel.Easy);
+    }
+    
+    public void HardPressed()
+    {
+        StartGame(GameLevel.Hard);
+    }
+    
+    public void ImpossiblePressed()
+    {
+        StartGame(GameLevel.Impossible);
+    }
+    
+    public void StartGame(GameLevel pGameLevel)
+    {
+        //start game scene
+        //GameManager gameManager = GameManager.getInstance();
+        Debug.Log("Menu: GameManager.Instance : " + GameManager.Instance);
+        GameManager.Instance.UpdateGameState(GameState.FirstScene);
+        GamePlayManager.Instance.InitGame(pGameLevel);
+        Debug.Log("Menu: New Game state : " + GameState.FirstScene);
+    }
+}

@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.WSA;
 
 namespace DefaultNamespace
 {
@@ -12,6 +11,11 @@ namespace DefaultNamespace
 
         
         public static Action<GamePlay> OnGamePlayChanged;
+
+        public void Start()
+        {
+            _gamePlay._started = false;
+        }
 
         public void InitGame(GameLevel pGameLevel)
         {
