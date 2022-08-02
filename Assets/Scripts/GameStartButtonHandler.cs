@@ -13,21 +13,27 @@ public class GameStartButtonHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if ((!gamePlay._started))
+        /*if ((!gamePlay._started))
         {
+            gamePlay._started = true;
             headingForGameStart.text = "Want to play";
         } 
-        else if ((gamePlay._lives > 0) && (gamePlay._timeRemaining > 0.0))
+        else */ 
+        if ((gamePlay._lives > 0) && (gamePlay._timeRemaining > 0.0))
         {
             headingForGameStart.text = "Winner - Play again?";
         }
-        else if (gamePlay._lives == 0)
+        else if ((gamePlay._lives == 0) && (gamePlay._timeRemaining > 0.0))
         {
             headingForGameStart.text = "Out of lives - Play again?";
         }
-        else
+        else if ((gamePlay._lives > 0) && (gamePlay._timeRemaining <= 0.0))
         {
             headingForGameStart.text = "Out of Time - Play again?";
+        }
+        else
+        {
+            headingForGameStart.text = "Want to Play?";
         }
     }
 

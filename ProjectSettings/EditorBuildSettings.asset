@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Levels/Boot Dont Display.unity
     guid: 3b9fe69f7be9c405a972be37c19a3485
-  - enabled: 1
-    path: Assets/Scenes/Game Levels/Menu.unity
-    guid: c8ea76997493d453e8fbc0fb5ad2c732
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Game Levels/WinLoseMenu.unity
     guid: 1a192a2498b214257812906602b96bf4

@@ -20,7 +20,7 @@ namespace DefaultNamespace
         {
             //State = GameState.SayHiToMum;
             //SceneManager.LoadScene("Menu");
-            UpdateGameState(GameState.SayHiToMum);
+            //UpdateGameState(GameState.Winner);
             //GamePlayManager.Instance.InitGame(GameLevel.Easy);
         }
 
