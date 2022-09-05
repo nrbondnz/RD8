@@ -15,7 +15,7 @@ namespace DefaultNamespace
         public GameState State;
         [Header("Sounds")] public AudioClip[] bounceSounds;
 
-        private AudioSource _audioSource;
+        [SerializeField] private AudioSource _audioSource;
 
         public void PlayCollisionSound()
         {
