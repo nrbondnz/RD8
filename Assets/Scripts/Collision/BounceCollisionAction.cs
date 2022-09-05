@@ -1,9 +1,11 @@
+using DefaultNamespace;
 using UnityEngine;
 
 namespace Collision
 {
     public class BounceCollisionAction : MonoBehaviour, ICollisionAction
     {
+
         public void DoCollisionAction(CollisionActionController controller,
             ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
@@ -22,6 +24,7 @@ namespace Collision
                 .AddForce(directionToPushBack * 12 * ((int)collisionEffectStrengthEnum / 
                           (int)ICollisionAction.CollisionEffectStrengthEnum.Normal),
                 ForceMode.Impulse);
+
         }
 
         public void DoCollisionAreaExitAction(CollisionActionController controller,

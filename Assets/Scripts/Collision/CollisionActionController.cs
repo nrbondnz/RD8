@@ -1,4 +1,5 @@
 using System;
+using DefaultNamespace;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace Collision
         [SerializeField] private ICollisionAction.CollisionActionEnum _collisionAction;
 
         [SerializeField] private ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
+        [SerializeField] private GameManager gameManager;
+
         //private IKeyAction _keyActionInst;
         
         private void OnTriggerEnter(Collider other)
@@ -17,6 +20,7 @@ namespace Collision
             if (other.CompareTag("Player"))
             {
                 this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, _effectStrengh);
+                gameManager.PlayCollisionSound();
             }
         }
 

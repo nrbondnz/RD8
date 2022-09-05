@@ -13,6 +13,16 @@ namespace DefaultNamespace
         private static GameManager _instance;
         //private GameplayManager _GameplayManager = GameplayManager.Instance;
         public GameState State;
+        [Header("Sounds")] public AudioClip[] bounceSounds;
+
+        private AudioSource _audioSource;
+
+        public void PlayCollisionSound()
+        {
+            AudioClip collisionSound = bounceSounds[0];
+            _audioSource.PlayOneShot(collisionSound);
+        }
+        
 
         public static event Action<GameState> OnGameStateChanged;
 
