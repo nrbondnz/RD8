@@ -11,16 +11,18 @@ namespace Collision
         [SerializeField] private ICollisionAction.CollisionActionEnum _collisionAction;
 
         [SerializeField] private ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
-        [SerializeField] private GameManager gameManager;
+        [SerializeField] private SoundManager soundManager;
 
         //private IKeyAction _keyActionInst;
+        
+        
         
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, _effectStrengh);
-                gameManager.PlayCollisionSound();
+                soundManager.PlayCollisionSound(this);
             }
         }
 
@@ -38,6 +40,7 @@ namespace Collision
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
             GOCollisionActionFactory.SetGameObjectCollisionAction(this, _collisionAction);
             setColorBasedOnCollisionTypeAndStrenth();
+            //soundManager = GetComponent<SoundManager>();
         }
 
         // Update is called once per frame
