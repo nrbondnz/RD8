@@ -32,7 +32,8 @@ namespace DefaultNamespace
 
         public void PlayCollisionSound(CollisionActionController collisionActionController)
         {
-            AudioClip collisionSound = collisionAudioClip[0];
+            AudioClip collisionSound = collisionAudioClip[collisionActionController.GetCollisionActionID()];
+            //AudioClip collisionSound = collisionAudioClip[0];
             _audioSource.PlayOneShot(collisionSound);
         }
 
