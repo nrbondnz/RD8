@@ -8,13 +8,23 @@ namespace Collision
     public class CollisionActionController : MonoBehaviour
     {
 
-        [SerializeField] private ICollisionAction.CollisionActionEnum _collisionAction;
+        [SerializeField] protected ICollisionAction.CollisionActionEnum _collisionAction;
 
-        [SerializeField] private ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
+        [SerializeField] protected ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
         [SerializeField] private SoundManager soundManager;
 
         //private IKeyAction _keyActionInst;
+        public ICollisionAction.CollisionActionEnum GetCollisionActionEnum()
+        {
+            return _collisionAction;
+        }
 
+        public ICollisionAction.CollisionEffectStrengthEnum GetCollisionEffectStrengthEnum()
+        {
+            return _effectStrengh;
+        }
+
+        
         public int GetCollisionActionID()
         {
             return (int)_collisionAction;

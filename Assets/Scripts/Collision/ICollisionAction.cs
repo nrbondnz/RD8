@@ -22,6 +22,7 @@ namespace Collision
             Lowest = 1
         }
 
+        
         public void DoCollisionAction(CollisionActionController controller,
             ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum);
         
