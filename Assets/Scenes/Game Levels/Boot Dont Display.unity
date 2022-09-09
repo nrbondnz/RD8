@@ -491,8 +491,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d3b0902e8a4caab43f213534b409c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 1198054993}
-  bounceAudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
+  audioSource: {fileID: 1198054993}
+  bounce_Full_AudioClip: {fileID: 8300000, guid: 1560c505efcbba647bcb9b8ae2c9b355, type: 3}
+  bounce_Strong_AudioClip: {fileID: 8300000, guid: 61cacfc5d8bc6834e94c75f640cbc025, type: 3}
+  bounce_MedStrong_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
+  bounce_Normal_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
+  bounce_Half_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
+  bounce_Low_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
+  bounce_Lowest_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
   deathAudioClip: {fileID: 8300000, guid: b7911716b62393b4c872aab756447959, type: 3}
   attractAudioClip: {fileID: 8300000, guid: 38455923b08a0044cadf17b1dfb1d499, type: 3}
   speedChangeAudioClip: {fileID: 8300000, guid: 4b35c532460db6847b4075cb333b6697, type: 3}
