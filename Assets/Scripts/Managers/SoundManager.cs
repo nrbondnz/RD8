@@ -50,7 +50,9 @@ namespace DefaultNamespace
             bounceClips[ICollisionAction.CollisionEffectStrengthEnum.Low] = bounce_Low_AudioClip;
             bounceClips[ICollisionAction.CollisionEffectStrengthEnum.Lowest] = bounce_Lowest_AudioClip;
             collisionSounds[ICollisionAction.CollisionActionEnum.Bounce] = bounceClips;
-                ;
+
+            AudioClip[] collAudioArrayList = Resources.LoadAll<AudioClip>("Sounds/");
+            Debug.Log(collAudioArrayList);
         }
 
         public void PlayCollisionSound(CollisionActionController collisionActionController)
