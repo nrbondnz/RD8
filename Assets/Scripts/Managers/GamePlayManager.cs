@@ -11,6 +11,10 @@ namespace DefaultNamespace
 
         private static GamePlayManager _instance;
 
+        public GamePlay GetGamePlay()
+        {
+            return _gamePlay;
+        }
         private void Awake()
         {
             if (_instance != null)
@@ -20,7 +24,11 @@ namespace DefaultNamespace
                 return;
             }
             Debug.Log("GamePlayManager Awake");
-            _instance = this as GamePlayManager;
+            _instance = this;
+            _gamePlay._lives = 0;
+            _gamePlay._started = false;
+            _gamePlay._gameLevel = GameLevel.Easy;
+            _gamePlay._timeRemaining = (float) 0.0;
             DontDestroyOnLoad(gameObject);
         }
 

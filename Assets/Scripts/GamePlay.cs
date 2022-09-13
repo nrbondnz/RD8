@@ -2,6 +2,14 @@ namespace DefaultNamespace
 {
     public struct GamePlay
     {
+        public GamePlay(bool started, int lives, GameLevel gameLevel, float timeRemaining)
+        {
+            _started = started;
+            _lives = lives;
+            _gameLevel = gameLevel;
+            _timeRemaining = timeRemaining;
+        }
+
         public bool _started
         {
             get;

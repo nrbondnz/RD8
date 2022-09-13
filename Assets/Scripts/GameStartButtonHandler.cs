@@ -8,7 +8,7 @@ using TMPro;
 public class GameStartButtonHandler : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI headingForGameStart;
-    GamePlay gamePlay = GamePlayManager.GetInstance()._gamePlay;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -19,15 +19,15 @@ public class GameStartButtonHandler : MonoBehaviour
             headingForGameStart.text = "Want to play";
         } 
         else */ 
-        if ((gamePlay._lives > 0) && (gamePlay._timeRemaining > 0.0))
+        if ((GamePlayManager.GetInstance().GetGamePlay()._lives > 0) && (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining > 0.0))
         {
             headingForGameStart.text = "Winner - Play again?";
         }
-        else if ((gamePlay._lives == 0) && (gamePlay._timeRemaining > 0.0))
+        else if ((GamePlayManager.GetInstance().GetGamePlay()._lives == 0) && (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining > 0.0))
         {
             headingForGameStart.text = "Out of lives - Play again?";
         }
-        else if ((gamePlay._lives > 0) && (gamePlay._timeRemaining <= 0.0))
+        else if ((GamePlayManager.GetInstance().GetGamePlay()._lives > 0) && (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining <= 0.0))
         {
             headingForGameStart.text = "Out of Time - Play again?";
         }
