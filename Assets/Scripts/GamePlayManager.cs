@@ -5,11 +5,30 @@ using UnityEngine.SceneManagement;
 namespace DefaultNamespace
 {
 
-    public class GamePlayManager : MBSingleton<GamePlayManager>
+    public class GamePlayManager : MonoBehaviour
     {
         public GamePlay _gamePlay;
 
-        
+        private static GamePlayManager _instance;
+
+        private void Awake()
+        {
+            if (_instance != null)
+            {
+                Debug.Log("GamePlayManager Trying second Awake");
+                Destroy(gameObject);
+                return;
+            }
+            Debug.Log("GamePlayManager Awake");
+            _instance = this as GamePlayManager;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public static GamePlayManager GetInstance()
+        {
+            return _instance;
+        }
+
         public static Action<GamePlay> OnGamePlayChanged;
 
         public void Start()

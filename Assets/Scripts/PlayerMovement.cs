@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GamePlayManager.Instance.UpdateTimeRemaining();
+        GamePlayManager.GetInstance().UpdateTimeRemaining();
         // d -> 1.0f, a -> -1.0f
         hozInput = Input.GetAxis("Horizontal");
         vertInput = Input.GetAxis("Vertical");

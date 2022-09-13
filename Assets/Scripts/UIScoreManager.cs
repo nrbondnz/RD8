@@ -9,12 +9,12 @@ namespace DefaultNamespace
     {
         [SerializeField] private TextMeshProUGUI scoreText;
         //private GamePlay _gamePlay;
-        private GamePlayManager _gameplayManager = GamePlayManager.Instance;
+        private GamePlayManager _gameplayManager = GamePlayManager.GetInstance();
 
         void Start()
         {
             GamePlayManager.OnGamePlayChanged += updateGameScore;
-            updateGameScore(GamePlayManager.Instance._gamePlay);
+            updateGameScore(GamePlayManager.GetInstance()._gamePlay);
         }
 
         private void OnDestroy()

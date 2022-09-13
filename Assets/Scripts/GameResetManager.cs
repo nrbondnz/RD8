@@ -5,8 +5,29 @@ using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameReset : MBSingleton<GameReset>
+public class GameResetManager : MonoBehaviour
 {
+    private static GameResetManager _instance;
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Debug.Log("GameReset Trying second Awake");
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log("GameReset Awake");
+        _instance = this as GameResetManager;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public static GameResetManager GetInstance()
+    {
+        return _instance;
+    }
+
+    
     private void OnTriggerEnter(Collider other)
     {
         Terrain childTerrainObj = gameObject.GetComponentInChildren<Terrain>();
@@ -19,10 +40,10 @@ public class GameReset : MBSingleton<GameReset>
 
     public void ResetAction()
     {
-        if (GamePlayManager.Instance.GetLives() == 1 )
+        if (GamePlayManager.GetInstance().GetLives() == 1 )
         {
             // just about to go to zero
-            GamePlayManager.Instance.RemoveLife();
+            GamePlayManager.GetInstance().RemoveLife();
             SceneManager.LoadScene("WinLoseMenu");
         }
         else
@@ -35,6 +56,6 @@ public class GameReset : MBSingleton<GameReset>
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
-        GamePlayManager.Instance.RemoveLife();
+        GamePlayManager.GetInstance().RemoveLife();
     }
 }

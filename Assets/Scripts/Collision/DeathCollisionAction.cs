@@ -7,7 +7,7 @@ namespace Collision
         public void DoCollisionAction(CollisionActionController controller,
             ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
-            gameObject.GetComponent<GameReset>().ResetAction();
+            gameObject.GetComponent<GameResetManager>().ResetAction();
             //Debug.Log("Player : " + GameObject.FindGameObjectWithTag("Player").transform.position);
             //Debug.Log("GameReset : " + transform.position);
             

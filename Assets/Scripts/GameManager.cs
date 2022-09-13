@@ -8,12 +8,33 @@ using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
-    public class GameManager : MBSingleton<GameManager>
+    public class GameManager : MonoBehaviour
     {
-        private static GameManager _instance;
+        
         //private GameplayManager _GameplayManager = GameplayManager.Instance;
         public GameState State;
 
+        private static GameManager _instance;
+
+        private void Awake()
+        {
+            if (_instance != null)
+            {
+                Debug.Log("GameManager Trying second Awake");
+                Destroy(gameObject);
+                return;
+            }
+            Debug.Log("GamePlayManager Awake");
+            _instance = this as GameManager;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public static GameManager GetInstance()
+        {
+            return _instance;
+        }
+
+        
         public static event Action<GameState> OnGameStateChanged;
 
         private void Start()
@@ -22,6 +43,7 @@ namespace DefaultNamespace
             //SceneManager.LoadScene("Menu");
             //UpdateGameState(GameState.Winner);
             //GamePlayManager.Instance.InitGame(GameLevel.Easy);
+            SceneManager.LoadSceneAsync("Scenes/Game Levels/WinLoseMenu");
         }
 
 
