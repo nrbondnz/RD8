@@ -5,10 +5,10 @@ namespace Collision
     {
         public enum CollisionActionEnum
         {
-            Bounce = 1,
-            SpeedChange = 100,
-            Death = 1000,
-            Attract = 10000
+            Bounce = 0,
+            SpeedChange = 1,
+            Death = 2,
+            Attract = 3
         }
 
         public enum CollisionEffectStrengthEnum
@@ -22,6 +22,7 @@ namespace Collision
             Lowest = 1
         }
 
+        
         public void DoCollisionAction(CollisionActionController controller,
             ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum);
         

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43454543, g: 0.4816221, b: 0.5625423, a: 1}
+  m_IndirectSpecularColor: {r: 0.43707988, g: 0.4847886, b: 0.5650531, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -282,15 +282,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7245597034087092900, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092901, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092906, guid: 280811635e266436dac47e779f43dd4e, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245597034087092906, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245597034087092906, guid: 280811635e266436dac47e779f43dd4e, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092906, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_Constraints
@@ -298,7 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092907, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_Radius
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_RootOrder
@@ -318,31 +326,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.75101
+      value: 27.35
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.76
+      value: 6.71
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.57061
+      value: 65.82
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8419148
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.53961056
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -354,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092910, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 65.314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -700,6 +708,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: speed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: jumpForce
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090299, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1056,8 +1072,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.81737274, g: 0.8584906, b: 0.7248576, a: 1}
+  m_Intensity: 0.93
   m_Range: 4.4406095
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
