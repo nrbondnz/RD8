@@ -33,7 +33,7 @@ namespace DefaultNamespace
         private AudioClip[] _collisionAudioClip;
         private Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip> bounceClips;
 
-        private void Awake()
+        private void Start()
         {
             _collisionAudioClip = new AudioClip[4];
             //_collisionAudioClip[0] = bounceAudioClip;
