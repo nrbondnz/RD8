@@ -5,9 +5,28 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class SoundManager : MBSingleton<SoundManager>
+    public class SoundManager : MonoBehaviour
     {
         private static SoundManager _instance;
+
+        private void Awake()
+        {
+            if (_instance != null)
+            {
+                Debug.Log("SoundManager Trying second Awake");
+                Destroy(gameObject);
+                return;
+            }
+            Debug.Log("SoundManager Awake");
+            _instance = this as SoundManager;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public static SoundManager GetInstance()
+        {
+            return _instance;
+        }
+
         [Header("Sounds")]
         [SerializeField] private AudioSource audioSource;
         [Header("Collision Sounds")] 
