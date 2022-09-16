@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private float hozInput, vertInput;
     [SerializeField] private float speed = 10;
-    [SerializeField] private float jumpForce = 18;
+    [SerializeField] private float jumpForce = 13;
     private bool _isJumpButtonPressed;
     private bool _isGrounded;
     [SerializeField] private float platformPower = 2.5f;
