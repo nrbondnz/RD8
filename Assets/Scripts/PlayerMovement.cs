@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private float hozInput, vertInput;
     [SerializeField] private float speed = 10;
-    [SerializeField] private float jumpForce = 15;
-    private bool isJumpButtonPressed;
-    private bool isGrounded;
-
+    [SerializeField] private float jumpForce = 18;
+    private bool _isJumpButtonPressed;
+    private bool _isGrounded;
+    [SerializeField] private float platformPower = 2.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,25 +29,25 @@ public class PlayerMovement : MonoBehaviour
 
         if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
         {
-            hozInput = Input.acceleration.x;
+            hozInput = Input.acceleration.x * platformPower;
         }
         if ((Input.acceleration.y > 0.1) || (Input.acceleration.y < -0.1))
         {
-            vertInput = Input.acceleration.y;
+            vertInput = Input.acceleration.y * platformPower;
         }
 
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)
             {
-                isJumpButtonPressed = true;
+                _isJumpButtonPressed = true;
             }
         }
         
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isJumpButtonPressed = true;
+            _isJumpButtonPressed = true;
         }
 
     }
@@ -67,19 +67,19 @@ public class PlayerMovement : MonoBehaviour
         //plus a small value to make sure our ray is barley longer than the player's radius
         if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
         {
-            isGrounded = true;
+            _isGrounded = true;
         }
         else
         {
-            isGrounded = false;
+            _isGrounded = false;
         }
 
-        if (isJumpButtonPressed && isGrounded)
+        if (_isJumpButtonPressed && _isGrounded)
         {
             //if true, then add a force in the up direction of our player in the form of an impulse
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             //then reset the jump variable so we don't fly to the moon :).
-            isJumpButtonPressed = false;
+            _isJumpButtonPressed = false;
         }
     }
 }

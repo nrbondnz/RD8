@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44185925, g: 0.4908014, b: 0.5707602, a: 1}
+  m_IndirectSpecularColor: {r: 0.4393021, g: 0.48762637, b: 0.56821406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -744,16 +744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 221106221}
-  bounce_Full_AudioClip: {fileID: 8300000, guid: 1560c505efcbba647bcb9b8ae2c9b355, type: 3}
-  bounce_Strong_AudioClip: {fileID: 8300000, guid: 61cacfc5d8bc6834e94c75f640cbc025, type: 3}
-  bounce_MedStrong_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
-  bounce_Normal_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
-  bounce_Half_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
-  bounce_Low_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
-  bounce_Lowest_AudioClip: {fileID: 8300000, guid: 7ea1ecb57e63da4449f24a954d5e8629, type: 3}
-  deathAudioClip: {fileID: 8300000, guid: b7911716b62393b4c872aab756447959, type: 3}
-  attractAudioClip: {fileID: 8300000, guid: 38455923b08a0044cadf17b1dfb1d499, type: 3}
-  speedChangeAudioClip: {fileID: 8300000, guid: 4b35c532460db6847b4075cb333b6697, type: 3}
 --- !u!4 &221106223
 Transform:
   m_ObjectHideFlags: 0
@@ -3156,7 +3146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: jumpForce
-      value: 8
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: accelerationMulitplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090299, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_RootOrder
