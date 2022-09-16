@@ -8,8 +8,13 @@ namespace DefaultNamespace
     public class SoundManager : MonoBehaviour
     {
         private static SoundManager _instance;
-        [Header("Sounds")]
-        [SerializeField] private AudioSource audioSource;
+        [Header("Sounds")] [SerializeField] private AudioSource audioSource;
+
+        private static Dictionary<ICollisionAction.CollisionActionEnum,
+            Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>> collisionSounds =
+            new Dictionary<ICollisionAction.CollisionActionEnum,
+                Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>>();
+
         private void Awake()
         {
             if (_instance != null)
@@ -18,28 +23,15 @@ namespace DefaultNamespace
                 Destroy(gameObject);
                 return;
             }
+
             Debug.Log("SoundManager Awake");
             _instance = this as SoundManager;
             DontDestroyOnLoad(gameObject);
+            setupResources();
         }
 
-        public static SoundManager GetInstance()
+        private static void setupResources()
         {
-            return _instance;
-        }
-
-        private Dictionary<ICollisionAction.CollisionActionEnum,
-            Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>> collisionSounds =
-            new Dictionary<ICollisionAction.CollisionActionEnum,
-                Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>>();
-        
-
-        private AudioClip[] _collisionAudioClip;
-        private Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip> bounceClips;
-
-        private void Start()
-        {
-
             AudioClip[] collAudioArrayList = Resources.LoadAll<AudioClip>("Sounds/Collision");
             Debug.Log(collAudioArrayList);
             Dictionary<ICollisionAction.CollisionActionEnum, AudioClip> defaultClips =
@@ -58,9 +50,10 @@ namespace DefaultNamespace
                     defaultClips[actionEnum] = audioClip;
                 }
             }
-            
+
             // setup collisionSounds
-            foreach (ICollisionAction.CollisionActionEnum actionVals in Enum.GetValues((typeof(ICollisionAction.CollisionActionEnum))))
+            foreach (ICollisionAction.CollisionActionEnum actionVals in Enum.GetValues(
+                         (typeof(ICollisionAction.CollisionActionEnum))))
             {
                 collisionSounds[actionVals] = new Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>();
             }
@@ -86,7 +79,6 @@ namespace DefaultNamespace
                     {
                         collisionSoundsActionGroup[effectStrengthEnum] = audioClip;
                     }
-
                 }
             }
 
@@ -105,12 +97,17 @@ namespace DefaultNamespace
                     }
                 }
             }
+        }
 
+        public static SoundManager GetInstance()
+        {
+            return _instance;
         }
 
         public void PlayCollisionSound(CollisionActionController collisionActionController)
         {
-            Dictionary<ICollisionAction.CollisionEffectStrengthEnum,AudioClip> actionGroup = this.collisionSounds[collisionActionController.GetCollisionActionEnum()];
+            Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip> actionGroup =
+                collisionSounds[collisionActionController.GetCollisionActionEnum()];
             AudioClip collisionSound = actionGroup[collisionActionController.GetCollisionEffectStrengthEnum()];
             audioSource.PlayOneShot(collisionSound);
         }

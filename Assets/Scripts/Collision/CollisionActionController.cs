@@ -11,7 +11,7 @@ namespace Collision
         [SerializeField] protected ICollisionAction.CollisionActionEnum _collisionAction;
 
         [SerializeField] protected ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
-        [SerializeField] private SoundManager soundManager;
+        
 
         //private IKeyAction _keyActionInst;
         public ICollisionAction.CollisionActionEnum GetCollisionActionEnum()
@@ -35,7 +35,7 @@ namespace Collision
             if (other.CompareTag("Player"))
             {
                 this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, _effectStrengh);
-                soundManager.PlayCollisionSound(this);
+                SoundManager.GetInstance().PlayCollisionSound(this);
             }
         }
 
