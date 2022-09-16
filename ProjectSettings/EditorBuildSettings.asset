@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Game Management/Boot Dont Display.unity
+    guid: 3b9fe69f7be9c405a972be37c19a3485
+  - enabled: 1
     path: Assets/Scenes/Game Levels/Level 1.unity
     guid: ef846ea7023c46c43a543061e1558e44
   - enabled: 1
@@ -15,12 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Levels/Level 3.unity
     guid: 2681c55b67e554377b14b4b4fb48c4e6
   - enabled: 1
-    path: Assets/Scenes/Game Levels/Boot Dont Display.unity
-    guid: 3b9fe69f7be9c405a972be37c19a3485
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Game Levels/WinLoseMenu.unity
+    path: Assets/Scenes/Game Management/WinLoseMenu.unity
     guid: 1a192a2498b214257812906602b96bf4
   m_configObjects: {}

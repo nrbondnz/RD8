@@ -45,7 +45,7 @@ namespace DefaultNamespace
             //SceneManager.LoadScene("Menu");
             //UpdateGameState(GameState.Winner);
             //GamePlayManager.Instance.InitGame(GameLevel.Easy);
-            SceneManager.LoadSceneAsync("Scenes/Game Levels/WinLoseMenu");
+            SceneManager.LoadSceneAsync("WinLoseMenu");
         }
 
 
@@ -58,16 +58,16 @@ namespace DefaultNamespace
             {
                 
                 case GameState.SayHiToMum:
-                    SceneManager.LoadSceneAsync("Menu");
+                    //SceneManager.LoadSceneAsync("Menu");
                     break;
                 case GameState.FirstScene:
-                    SceneManager.LoadSceneAsync(0);
+                    SceneManager.LoadSceneAsync("Level 1");
                     break;
                 case GameState.SecondScene:
-                    SceneManager.LoadSceneAsync(1);
+                    SceneManager.LoadSceneAsync("Level 2");
                     break;
                 case GameState.ThirdScene:
-                    SceneManager.LoadSceneAsync(2);
+                    SceneManager.LoadSceneAsync("Level 3");
                     break;
                 case GameState.Winner:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
