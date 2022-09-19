@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,11 +20,25 @@ public class Projection : MonoBehaviour {
         _simulationScene = SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         _physicsScene = _simulationScene.GetPhysicsScene();
 
-        foreach (Transform obj in _obstaclesParent) {
+        AddGameObjects(_simulationScene, _obstaclesParent);
+    }
+
+    private void AddGameObjects(Scene mySimScene, Transform _obstaclesPar )
+    {
+        foreach (Transform obj in _obstaclesPar)
+        {
             var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
-            ghostObj.GetComponent<Renderer>().enabled = false;
-            SceneManager.MoveGameObjectToScene(ghostObj, _simulationScene);
-            if (!ghostObj.isStatic) _spawnedObjects.Add(obj, ghostObj.transform);
+            try
+            {
+                ghostObj.GetComponent<Renderer>().enabled = false;
+                SceneManager.MoveGameObjectToScene(ghostObj, mySimScene);
+                if (!ghostObj.isStatic) _spawnedObjects.Add(obj, ghostObj.transform);
+            }
+            catch (Exception e)
+            {
+                // assume its a parent
+                AddGameObjects(mySimScene, obj);
+            }
         }
     }
 
