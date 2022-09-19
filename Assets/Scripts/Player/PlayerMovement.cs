@@ -13,6 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private bool _isJumpButtonPressed;
     private bool _isGrounded;
     [SerializeField] private float platformPower = 2.5f;
+    [SerializeField] private SimBall _simBall;
+
+    
+    
+    private bool _isGhost;
+
+    public void Init(Vector3 velocity, bool isGhost) {
+        _isGhost = isGhost;
+        rb.AddForce(velocity, ForceMode.Impulse);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -54,11 +64,12 @@ public class PlayerMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
+        
         Vector3 playerMovement = new Vector3(hozInput, 0, vertInput);
         // playerMovement = playermovement* speed;
         playerMovement *= speed;
         rb.AddForce(playerMovement, ForceMode.Acceleration);
-
+        Projection.GetInstance().SimulateTrajectory(_simBall,rb.position,rb.velocity);
 
         //create a new ray, it's center is the player position, it's direction is Vector3.Down
         Ray ray = new Ray(transform.position, Vector3.down);

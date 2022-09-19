@@ -11,7 +11,25 @@ public class Projection : MonoBehaviour {
     private Scene _simulationScene;
     private PhysicsScene _physicsScene;
     private readonly Dictionary<Transform, Transform> _spawnedObjects = new Dictionary<Transform, Transform>();
+    private static Projection _instance;
 
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Debug.Log("Projection Trying second Awake");
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log("Projection Awake");
+        _instance = this as Projection;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public static Projection GetInstance()
+    {
+        return _instance;
+    }
     private void Start() {
         CreatePhysicsScene();
     }
@@ -28,6 +46,7 @@ public class Projection : MonoBehaviour {
         foreach (Transform obj in _obstaclesPar)
         {
             var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
+            Debug.Log("gameObject : " + ghostObj);
             try
             {
                 ghostObj.GetComponent<Renderer>().enabled = false;
@@ -36,10 +55,12 @@ public class Projection : MonoBehaviour {
             }
             catch (Exception e)
             {
+                
                 // assume its a parent
                 AddGameObjects(mySimScene, obj);
             }
         }
+        Debug.Log("Finish sim setup");
     }
 
     private void Update() {
@@ -49,11 +70,16 @@ public class Projection : MonoBehaviour {
         }
     }
 
-    public void SimulateTrajectory(Ball ballPrefab, Vector3 pos, Vector3 velocity) {
-        var ghostObj = Instantiate(ballPrefab, pos, Quaternion.identity);
+    public void SimulateTrajectory(SimBall ballPrefab, Vector3 pos, Vector3 velocity)
+    {
+        var posTemp = pos;
+        posTemp.x = 1000.0f;
+        posTemp.y = 1000.0f;
+        posTemp.z = 1000.0f;
+        var ghostObj = Instantiate(ballPrefab, posTemp, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
-
-        ghostObj.Init(velocity, true);
+        ghostObj.gameObject.GetComponent<Rigidbody>().position = pos;
+        ghostObj.Init(velocity);
 
         _line.positionCount = _maxPhysicsFrameIterations;
 

@@ -7,12 +7,12 @@ namespace TragectoryOfObject
 
         private void Update() {
             HandleControls();
-            _projection.SimulateTrajectory(_ballPrefab, _ballSpawn.position, _ballSpawn.forward * _force);
+            _projection.SimulateTrajectory(null, _ballSpawn.position, _ballSpawn.forward * _force);
         }
 
         #region Handle Controls
 
-        [SerializeField] private Ball _ballPrefab;
+        [SerializeField] private SimBall simBallPrefab;
         [SerializeField] private float _force = 20;
         [SerializeField] private Transform _ballSpawn;
         [SerializeField] private Transform _barrelPivot;
@@ -42,9 +42,9 @@ namespace TragectoryOfObject
             }
 
             if (Input.GetKeyDown(KeyCode.Space)) {
-                var spawned = Instantiate(_ballPrefab, _ballSpawn.position, _ballSpawn.rotation);
+                var spawned = Instantiate(simBallPrefab, _ballSpawn.position, _ballSpawn.rotation);
 
-                spawned.Init(_ballSpawn.forward * _force, false);
+                spawned.Init(_ballSpawn.forward * _force);
                 _launchParticles.Play();
                 _source.PlayOneShot(_clip);
             }
