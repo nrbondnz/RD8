@@ -72,11 +72,7 @@ public class PlayerMovement : MonoBehaviour
         // playerMovement = playermovement* speed;
         playerMovement *= speed;
         rb.AddForce(playerMovement, ForceMode.Acceleration);
-        if (!_isGrounded)
-        {
-            _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
-        }
-
+        
         //create a new ray, it's center is the player position, it's direction is Vector3.Down
         Ray ray = new Ray(transform.position, Vector3.down);
         //Physics.Raycast will return true if the ray hits a collider
@@ -89,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _isGrounded = false;
+            _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
         }
 
         if (_isJumpButtonPressed && _isGrounded)
