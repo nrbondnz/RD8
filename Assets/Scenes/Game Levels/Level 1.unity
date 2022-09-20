@@ -419,6 +419,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 17206817}
     m_Modifications:
+    - target: {fileID: 709914457234232721, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 709914457410400750, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 709914458356581470, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 709914458525331722, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
       propertyPath: m_Name
       value: PlayGround
@@ -742,7 +754,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 2
+    textureMode: 3
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -1303,7 +1315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb5b5a238d05cd41adfac4dfc37efdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 2095091384}
 --- !u!54 &2095091384
 Rigidbody:
   m_ObjectHideFlags: 0

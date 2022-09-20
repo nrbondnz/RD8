@@ -62,7 +62,7 @@ public class Projection : MonoBehaviour {
         SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
         ghostObj.gameObject.GetComponent<Rigidbody>().position = pos;
         ghostObj.Init(velocity);
-
+        _line.enabled = true;
         _line.positionCount = _maxPhysicsFrameIterations;
 
         for (var i = 0; i < _maxPhysicsFrameIterations; i++) {
@@ -71,5 +71,10 @@ public class Projection : MonoBehaviour {
         }
 
         Destroy(ghostObj.gameObject);
+    }
+
+    public void removeTrajectoryLine()
+    {
+        _line.enabled = false;
     }
 }

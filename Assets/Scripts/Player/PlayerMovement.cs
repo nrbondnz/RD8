@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
         {
             _isGrounded = true;
+            _projection.removeTrajectoryLine();
         }
         else
         {

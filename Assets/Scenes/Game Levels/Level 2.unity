@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43824267, g: 0.48627102, b: 0.5665467, a: 1}
+  m_IndirectSpecularColor: {r: 0.4357154, g: 0.48309743, b: 0.5640182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -661,6 +661,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 249147406}
     m_Modifications:
+    - target: {fileID: 709914457234232721, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 709914457410400750, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 709914458356581470, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 709914458525331722, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
       propertyPath: m_Name
       value: PlayGround
