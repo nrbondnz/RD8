@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGrounded;
     [SerializeField] private float platformPower = 2.5f;
     [SerializeField] private SimBall _simBall;
+    [SerializeField] private Projection _projection;
 
     
     
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -69,7 +72,10 @@ public class PlayerMovement : MonoBehaviour
         // playerMovement = playermovement* speed;
         playerMovement *= speed;
         rb.AddForce(playerMovement, ForceMode.Acceleration);
-        Projection.GetInstance().SimulateTrajectory(_simBall,rb.position,rb.velocity);
+        if (!_isGrounded)
+        {
+            _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
+        }
 
         //create a new ray, it's center is the player position, it's direction is Vector3.Down
         Ray ray = new Ray(transform.position, Vector3.down);
