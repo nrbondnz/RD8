@@ -37,7 +37,8 @@ namespace DefaultNamespace
         {
             int mins = (int)(timeIn / 60.0);
             int secs = (int)(timeIn - (mins * 60));
-            return mins + ":" + secs;
+            String secString = secs < 10 ? "0" + secs : secs.ToString();
+            return mins + ":" + secString;
         }
     }
 }
