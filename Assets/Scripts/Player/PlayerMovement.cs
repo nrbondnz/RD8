@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         //Physics.Raycast will return true if the ray hits a collider
         //send the ray and check if it did hit anything, the ray length is going to be half of our scale(player's radius),
         //plus a small value to make sure our ray is barley longer than the player's radius
+        
         if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
         {
             _isGrounded = true;
@@ -87,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
         {
             _isGrounded = false;
             _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
+            RaycastHit hit;
+
         }
 
         if (_isJumpButtonPressed && _isGrounded)
