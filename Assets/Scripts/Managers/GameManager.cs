@@ -64,9 +64,12 @@ namespace DefaultNamespace
                     SceneManager.LoadSceneAsync("Level 1");
                     break;
                 case GameState.SecondScene:
-                    SceneManager.LoadSceneAsync("Level 2");
+                    SceneManager.LoadSceneAsync("Level 4");
                     break;
                 case GameState.ThirdScene:
+                    SceneManager.LoadSceneAsync("Level 2");
+                    break;
+                case GameState.ForthScene:
                     SceneManager.LoadSceneAsync("Level 3");
                     break;
                 case GameState.Winner:
@@ -90,6 +93,7 @@ namespace DefaultNamespace
         FirstScene,
         SecondScene,
         ThirdScene,
+        ForthScene,
         Winner,
         Loser
     }

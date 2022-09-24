@@ -61,8 +61,11 @@ namespace DefaultNamespace
             else if (gameState == GameState.SecondScene)
             {
                 GameManager.GetInstance().UpdateGameState(GameState.ThirdScene);
+            } else if (gameState == GameState.ThirdScene)
+            {
+                GameManager.GetInstance().UpdateGameState(GameState.ForthScene);
             }
-            else if (gameState == GameState.ThirdScene)
+            else if (gameState == GameState.ForthScene)
             {
                 GameManager.GetInstance().UpdateGameState(GameState.Winner);
             }
