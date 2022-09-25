@@ -54,21 +54,19 @@ namespace DefaultNamespace
             // TODO work out index max and rotate around scenes
             //SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
             GameState gameState = GameManager.GetInstance().State;
-            if (gameState == GameState.FirstScene)
+            if (gameState.GamePhases == GamePhases.GamePlaying)
             {
-                GameManager.GetInstance().UpdateGameState(GameState.SecondScene);
+                if (gameState.SceneNum < gameState.LastLevel)
+                {
+                    gameState.SceneNum++;
+                    GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying, gameState.SceneNum);
+                }
+                else
+                {
+                    GameManager.GetInstance().UpdateGameState(GamePhases.Winner, gameState.SceneNum);
+                }
             }
-            else if (gameState == GameState.SecondScene)
-            {
-                GameManager.GetInstance().UpdateGameState(GameState.ThirdScene);
-            } else if (gameState == GameState.ThirdScene)
-            {
-                GameManager.GetInstance().UpdateGameState(GameState.ForthScene);
-            }
-            else if (gameState == GameState.ForthScene)
-            {
-                GameManager.GetInstance().UpdateGameState(GameState.Winner);
-            }
+           
 
         }
     }

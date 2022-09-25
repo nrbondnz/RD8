@@ -58,8 +58,8 @@ public class GameStartButtonHandler : MonoBehaviour
         //start game scene
         //GameManager gameManager = GameManager.getInstance();
         Debug.Log("Menu: GameManager.Instance : " + GameManager.GetInstance());
-        GameManager.GetInstance().UpdateGameState(GameState.FirstScene);
+        GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,1);
         GamePlayManager.GetInstance().InitGame(pGameLevel);
-        Debug.Log("Menu: New Game state : " + GameState.FirstScene);
+        Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + 1);
     }
 }

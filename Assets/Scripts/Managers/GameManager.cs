@@ -12,7 +12,7 @@ namespace DefaultNamespace
     {
         
         //private GameplayManager _GameplayManager = GameplayManager.Instance;
-        public GameState State;
+        public GameState State = new GameState();
        
         
 
@@ -49,52 +49,36 @@ namespace DefaultNamespace
         }
 
 
-        public void UpdateGameState(GameState newState)
+        public void UpdateGameState(GamePhases newPhase, int newLevel)
         {
-            State = newState;
+            State.GamePhases = newPhase;
+            State.SceneNum = newLevel;
             Debug.Log("GameManager: new state : " + State);
             
-            switch (newState)
+            switch (State.GamePhases)
             {
                 
-                case GameState.SayHiToMum:
+                case GamePhases.SayHiToMum:
                     //SceneManager.LoadSceneAsync("Menu");
                     break;
-                case GameState.FirstScene:
-                    SceneManager.LoadSceneAsync("Level 1");
+                case GamePhases.GamePlaying:
+                    //State.SceneNum++;
+                    SceneManager.LoadSceneAsync("Level " + State.SceneNum);
                     break;
-                case GameState.SecondScene:
-                    SceneManager.LoadSceneAsync("Level 4");
-                    break;
-                case GameState.ThirdScene:
-                    SceneManager.LoadSceneAsync("Level 2");
-                    break;
-                case GameState.ForthScene:
-                    SceneManager.LoadSceneAsync("Level 3");
-                    break;
-                case GameState.Winner:
+                case GamePhases.Winner:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
                     break;
-                case GameState.Loser:
+                case GamePhases.Loser:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+                    throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
 
-            OnGameStateChanged?.Invoke(newState);
+            OnGameStateChanged?.Invoke(State);
         }
 
     }
 
-    public enum GameState
-    {
-        SayHiToMum,
-        FirstScene,
-        SecondScene,
-        ThirdScene,
-        ForthScene,
-        Winner,
-        Loser
-    }
+ 
 }
