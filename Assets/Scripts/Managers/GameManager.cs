@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
+using String = System.String;
 
 namespace DefaultNamespace
 {
@@ -12,7 +14,7 @@ namespace DefaultNamespace
     {
         
         //private GameplayManager _GameplayManager = GameplayManager.Instance;
-        public GameState State = new GameState();
+        
        
         
 
@@ -28,6 +30,7 @@ namespace DefaultNamespace
             }
             Debug.Log("GamePlayManager Awake");
             _instance = this as GameManager;
+
             DontDestroyOnLoad(gameObject);
         }
 
@@ -46,16 +49,18 @@ namespace DefaultNamespace
             //UpdateGameState(GameState.Winner);
             //GamePlayManager.Instance.InitGame(GameLevel.Easy);
             SceneManager.LoadSceneAsync("WinLoseMenu");
+            GameState.GetInstance().ResetGameState();
+
         }
 
 
         public void UpdateGameState(GamePhases newPhase, int newLevel)
         {
-            State.GamePhases = newPhase;
-            State.SceneNum = newLevel;
-            Debug.Log("GameManager: new state : " + State);
+            GameState.GetInstance().GamePhases = newPhase;
+            GameState.GetInstance().SceneNum = newLevel;
+            Debug.Log("GameManager: new state : " + GameState.GetInstance());
             
-            switch (State.GamePhases)
+            switch (GameState.GetInstance().GamePhases)
             {
                 
                 case GamePhases.SayHiToMum:
@@ -63,7 +68,7 @@ namespace DefaultNamespace
                     break;
                 case GamePhases.GamePlaying:
                     //State.SceneNum++;
-                    SceneManager.LoadSceneAsync("Level " + State.SceneNum);
+                    SceneManager.LoadSceneAsync("Level " + GameState.GetInstance().SceneNum);
                     break;
                 case GamePhases.Winner:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
@@ -75,7 +80,7 @@ namespace DefaultNamespace
                     throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
 
-            OnGameStateChanged?.Invoke(State);
+            OnGameStateChanged?.Invoke(GameState.GetInstance());
         }
 
     }

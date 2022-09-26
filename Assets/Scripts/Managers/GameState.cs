@@ -1,3 +1,6 @@
+using System;
+using UnityEditor;
+using UnityEngine;
 using UnityEngine.PlayerLoop;
 
 namespace DefaultNamespace
@@ -10,29 +13,55 @@ namespace DefaultNamespace
         Loser
     }
     
-    public class GameState
+    public class GameState : MonoBehaviour
     {
     
         private GamePhases _gamePhases = GamePhases.SayHiToMum;
         private int sceneNum = 0;
         private int lastLevel = 0;
+        private static GameState _instance;
       
+        private void Awake()
+        {
+            if (_instance != null)
+            {
+                Debug.Log("SoundManager Trying second Awake");
+                Destroy(gameObject);
+                return;
+            }
 
+            Debug.Log("GameState Awake");
+            _instance = this as GameState;
+            DontDestroyOnLoad(gameObject);
+            SetupLastLevel();
+        }
+
+        public static GameState GetInstance()
+        {
+            return _instance;
+        }
+
+        public void ResetGameState()
+        {
+            this.sceneNum = 0;
+            this.GamePhases = GamePhases.SayHiToMum;
+        }
+
+        private void SetupLastLevel()
+        {
+            lastLevel = 4;
+        }
+        
         public GameState()
         {
             _gamePhases = GamePhases.SayHiToMum;
             sceneNum = 0;
-            Init();
-        }
-
-        private void Init()
-        {
-            lastLevel = 4;
         }
 
         public int LastLevel
         {
             get => lastLevel;
+            set => lastLevel = value;
         }
 
         public GamePhases GamePhases
