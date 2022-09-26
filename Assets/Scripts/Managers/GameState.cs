@@ -50,6 +50,8 @@ namespace DefaultNamespace
         private void SetupLastLevel()
         {
             lastLevel = 4;
+            AssetDatabase assetDatabase = new AssetDatabase();
+            
         }
         
         public GameState()
