@@ -497,42 +497,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11978152063475216, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11978152063475216, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 652107f36a28e44479c0b827dee5852a, type: 2}
-    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: _simBall
       value: 
       objectReference: {fileID: 2095091383}
     - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: jumpForce
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: projection
-      value: 
-      objectReference: {fileID: 902701014}
-    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: _projection
       value: 
       objectReference: {fileID: 902701014}
-    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: _lineRenderer
-      value: 
-      objectReference: {fileID: 1431048900}
-    - target: {fileID: 8860765929989090296, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: accelerationMulitplier
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090299, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -577,14 +549,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8860765929989090300, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 6e779360154a9d941843b32b5af1d46b, type: 2}
-    - target: {fileID: 8860765929989090301, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 652107f36a28e44479c0b827dee5852a, type: 2}
     - target: {fileID: 8860765929989090302, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1056,11 +1020,6 @@ CanvasRenderer:
 --- !u!1 &1431048899 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8860765929989090302, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-  m_PrefabInstance: {fileID: 839042921}
-  m_PrefabAsset: {fileID: 0}
---- !u!120 &1431048900 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 11978152063475216, guid: 47003c699e89c4ba28540179204b963b, type: 3}
   m_PrefabInstance: {fileID: 839042921}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1701731732

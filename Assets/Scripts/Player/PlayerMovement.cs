@@ -96,14 +96,17 @@ public class PlayerMovement : MonoBehaviour
             _lineRenderer.SetPosition(0, rb.position);
             if (Physics.Raycast(ray, out hitInfo, 20.0f))
             {
-                _lineRenderer.material.color = Color.green;
+                _lineRenderer.startColor = Color.green;
+                _lineRenderer.endColor = Color.cyan;
                 _lineRenderer.SetPosition(1, hitInfo.point);
             }
             else
             {
-                _lineRenderer.material.color = Color.red;
-                Vector3 down = transform.TransformDirection(Vector3.down) * 10;
-                _lineRenderer.SetPosition(1,down);
+                _lineRenderer.startColor = Color.red;
+                _lineRenderer.endColor = Color.black;
+                Vector3 pos = transform.position;
+                pos.y = pos.y - 15.0f;
+                _lineRenderer.SetPosition(1,pos);
             }
             
 
