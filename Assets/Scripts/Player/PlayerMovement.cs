@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float platformPower = 2.5f;
     [SerializeField] private SimBall _simBall;
     [SerializeField] private Projection _projection;
+    [SerializeField] private LineRenderer _lineRenderer;
 
     
     
@@ -83,12 +84,32 @@ public class PlayerMovement : MonoBehaviour
         {
             _isGrounded = true;
             _projection.removeTrajectoryLine();
+            _lineRenderer.enabled = false;
         }
         else
         {
             _isGrounded = false;
             _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
-            RaycastHit hit;
+            //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
+            RaycastHit hitInfo;
+            _lineRenderer.enabled = true;
+            _lineRenderer.SetPosition(0, rb.position);
+            if (Physics.Raycast(ray, out hitInfo, 20.0f))
+            {
+                _lineRenderer.material.color = Color.green;
+                _lineRenderer.SetPosition(1, hitInfo.point);
+            }
+            else
+            {
+                _lineRenderer.material.color = Color.red;
+                Vector3 down = transform.TransformDirection(Vector3.down) * 10;
+                _lineRenderer.SetPosition(1,down);
+            }
+            
+
+          
+            
+            
 
         }
 
