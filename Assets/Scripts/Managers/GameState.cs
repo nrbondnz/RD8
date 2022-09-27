@@ -58,7 +58,7 @@ namespace DefaultNamespace
                 }
             }
 
-            lastLevel = files.Length;
+            //lastLevel = files.Length;
         }
         
         public GameState()
