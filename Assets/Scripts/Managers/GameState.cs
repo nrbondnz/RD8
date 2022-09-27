@@ -49,9 +49,16 @@ namespace DefaultNamespace
 
         private void SetupLastLevel()
         {
-            lastLevel = 4;
-            AssetDatabase assetDatabase = new AssetDatabase();
-            
+            string [] files = System.IO.Directory.GetFiles("Assets/Scenes/Game Levels/");
+            foreach (var aFile in files)
+            {
+                if (aFile.EndsWith(".unity"))
+                {
+                    lastLevel++;
+                }
+            }
+
+            lastLevel = files.Length;
         }
         
         public GameState()
