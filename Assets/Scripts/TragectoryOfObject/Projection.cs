@@ -7,6 +7,7 @@ public class Projection : MonoBehaviour {
     [SerializeField] private LineRenderer _line;
     [SerializeField] private int _maxPhysicsFrameIterations = 100;
     [SerializeField] private Transform _obstaclesParent;
+    private bool _projectionEnabled = false;
 
     private Scene _simulationScene;
     private PhysicsScene _physicsScene;
@@ -16,7 +17,9 @@ public class Projection : MonoBehaviour {
         CreatePhysicsScene();
     }
 
-    private void CreatePhysicsScene() {
+    private void CreatePhysicsScene()
+    {
+        if (_obstaclesParent == null) return;
         _simulationScene = SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         _physicsScene = _simulationScene.GetPhysicsScene();
 
@@ -45,7 +48,9 @@ public class Projection : MonoBehaviour {
         Debug.Log("Finish sim setup");
     }
 
-    private void Update() {
+    private void Update()
+    {
+        if (!_projectionEnabled) return;
         foreach (var item in _spawnedObjects) {
             item.Value.position = item.Key.position;
             item.Value.rotation = item.Key.rotation;
@@ -54,6 +59,7 @@ public class Projection : MonoBehaviour {
 
     public void SimulateTrajectory(SimBall ballPrefab, Vector3 pos, Vector3 velocity)
     {
+        if (!_projectionEnabled || ballPrefab == null) return;
         var posTemp = pos;
         posTemp.x = 1000.0f;
         posTemp.y = 1000.0f;
