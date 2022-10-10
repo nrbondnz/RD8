@@ -8,7 +8,7 @@ using TMPro;
 public class GameStartButtonHandler : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI headingForGameStart;
-    
+    [SerializeField] private int startLevel = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -52,14 +52,14 @@ public class GameStartButtonHandler : MonoBehaviour
     {
         StartGame(GameLevel.Impossible);
     }
-    
+
     public void StartGame(GameLevel pGameLevel)
     {
         //start game scene
         //GameManager gameManager = GameManager.getInstance();
         Debug.Log("Menu: GameManager.Instance : " + GameManager.GetInstance());
-        GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,1);
+        GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,this.startLevel);
         GamePlayManager.GetInstance().InitGame(pGameLevel);
-        Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + 1);
+        Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + GameState.GetInstance().SceneNum);
     }
 }
