@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SimBall _simBall;
     [SerializeField] private Projection _projection;
     [SerializeField] private LineRenderer _lineRenderer;
-    private CameraFollow _cameraFollow;
+    private GameObject _MainCamera;
 
     
     
@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        _cameraFollow = GetComponent<CameraFollow>();
+        _MainCamera = GameObject.FindWithTag("MainCamera");
+        Debug.Log("_cameraFollow set to : " + _MainCamera);
     }
 
     // Update is called once per frame
@@ -70,10 +71,16 @@ public class PlayerMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Vector3 playerDirection = _cameraFollow.NormalizedTargetVelocity;
-        Vector3 playerMovement = new Vector3(hozInput, 0, vertInput);
+        Vector3 forward = _MainCamera.transform.forward;
+        Vector3 right = _MainCamera.transform.right;
+        forward.y = 0.0f;
+        right.y = 0.0f;
+        forward = forward.normalized;
+        right = right.normalized;
+        Vector3 forwardRelativeVerticalInput = forward * (vertInput * speed);
+        Vector3 rightRelativeHorizontalInput = right * (hozInput * speed);
         // playerMovement = playermovement* speed;
-        playerMovement *= speed;
+        Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
         rb.AddForce(playerMovement, ForceMode.Acceleration);
         
         //create a new ray, it's center is the player position, it's direction is Vector3.Down
@@ -110,12 +117,6 @@ public class PlayerMovement : MonoBehaviour
                 pos.y = pos.y - 15.0f;
                 _lineRenderer.SetPosition(1,pos);
             }
-            
-
-          
-            
-            
-
         }
 
         if (_isJumpButtonPressed && _isGrounded)
