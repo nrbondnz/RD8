@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SimBall _simBall;
     [SerializeField] private Projection _projection;
     [SerializeField] private LineRenderer _lineRenderer;
+    private CameraFollow _cameraFollow;
 
     
     
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        _cameraFollow = GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GamePlayManager.GetInstance().UpdateTimeRemaining();
         // d -> 1.0f, a -> -1.0f
+        // TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y
         hozInput = Input.GetAxis("Horizontal");
         vertInput = Input.GetAxis("Vertical");
 
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        
+        Vector3 playerDirection = _cameraFollow.NormalizedTargetVelocity;
         Vector3 playerMovement = new Vector3(hozInput, 0, vertInput);
         // playerMovement = playermovement* speed;
         playerMovement *= speed;

@@ -11,10 +11,17 @@ using UnityEngine;
         [SerializeField] private float uppedBound = 25.0f;
         [SerializeField] private float smoothTime = 0.3f;
         private Vector3 cameraVelocity = Vector3.zero;
-        
+        private float xPlusZDistance;
+        private Vector3 normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
+
+        public Vector3 NormalizedTargetVelocity => normalizedTargetVelocity;
+
         private void Start()
         {
             cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
+            Vector3 tempOffset = offset;
+            tempOffset.y = 0;
+            xPlusZDistance = tempOffset.magnitude;
             //offset = transform.position - cameraTarget.position;
         }
 
@@ -41,6 +48,15 @@ using UnityEngine;
 
         private void LateUpdate()
         {
+            Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
+            if (targetRigidBody.velocity.magnitude > 1.0)
+            {
+                normalizedTargetVelocity = targetRigidBody.velocity.normalized;
+            }
+            // now update the offset
+            offset.x = -(normalizedTargetVelocity.x * xPlusZDistance);
+            offset.z = -(normalizedTargetVelocity.z * xPlusZDistance);
+            
             Vector3 offsetWithY = offset;
             offsetWithY.y += yOffset;
             Vector3 targetPosition = cameraTarget.position + offsetWithY;
