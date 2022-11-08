@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         // TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y
         hozInput = Input.GetAxis("Horizontal");
         vertInput = Input.GetAxis("Vertical");
+        Debug.Log("Hoz : " + hozInput + ", Vert : " + vertInput);
 
         if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
         {
@@ -61,11 +62,11 @@ public class PlayerMovement : MonoBehaviour
          
         }
         
-        if ((!_goingForwards))
+        if ((!_goingForwards) && (vertInput == 1))
         {
             _goingForwards = true;
             onGoingForwards(true);
-        } else if ( _goingForwards )
+        } else if (( _goingForwards ) && (vertInput == -1))
         {
             _goingForwards = false;
             onGoingForwards(false);

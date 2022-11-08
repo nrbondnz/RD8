@@ -7,8 +7,8 @@ using UnityEngine;
         private Transform cameraTarget;
         [SerializeField] private Vector3 offset;
         private float yOffset = 0.0f;
-        [SerializeField] private float lowerBound = -5.0f;
-        [SerializeField] private float uppedBound = 25.0f;
+        [SerializeField] private float lowerBound = 5.0f;
+        [SerializeField] private float uppedBound = 15.0f;
         [SerializeField] private float smoothTime = 0.3f;
         private Vector3 cameraVelocity = Vector3.zero;
         private float xPlusZDistance;
@@ -58,7 +58,7 @@ using UnityEngine;
         private void LateUpdate()
         {
             Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
-            if ( (targetRigidBody.velocity.magnitude > 2.0) && ( ! _goingForwards ))
+            if ( (targetRigidBody.velocity.magnitude > 1.0) && ( _goingForwards ))
             {
                 normalizedTargetVelocity = targetRigidBody.velocity.normalized;
             }
