@@ -1,4 +1,5 @@
 using System;
+using DefaultNamespace;
 using UnityEngine;
 
 
@@ -13,14 +14,14 @@ using UnityEngine;
         private Vector3 cameraVelocity = Vector3.zero;
         private float xPlusZDistance;
         private Vector3 normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
-
+        private Player _player = new Player();
         public Vector3 NormalizedTargetVelocity => normalizedTargetVelocity;
 
         private void Start()
         {
             
             cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
-            PlayerMovement.onGoingForwards += setGoingForwards;
+            Actions.onGoingForwards += updatePlayer;
             Vector3 tempOffset = offset;
             tempOffset.y = 0;
             xPlusZDistance = tempOffset.magnitude;
@@ -48,17 +49,17 @@ using UnityEngine;
             }
         }
 
-        private bool _goingForwards = false;
-        public void setGoingForwards(bool goingForwards)
+        
+        public void updatePlayer(Player pPlayer)
         {
-            _goingForwards = goingForwards;
-            Debug.Log("Going forwards : " + _goingForwards);
+            _player = pPlayer;
+            Debug.Log("Player : " + pPlayer);
         }
 
         private void LateUpdate()
         {
             Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
-            if ( (targetRigidBody.velocity.magnitude > 2.0) && ( ! _goingForwards ))
+            if ( (targetRigidBody.velocity.magnitude > 2.0) && ( ! _player.GoingForwards ))
             {
                 normalizedTargetVelocity = targetRigidBody.velocity.normalized;
             }

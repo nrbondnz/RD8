@@ -12,17 +12,16 @@ public class PlayerMovement : MonoBehaviour
     private float hozInput, vertInput;
     [SerializeField] private float speed = 10;
     [SerializeField] private float jumpForce = 13;
-    private bool _isJumpButtonPressed;
-    private bool _isGrounded;
     [SerializeField] private float platformPower = 2.5f;
     [SerializeField] private SimBall _simBall;
     [SerializeField] private Projection _projection;
     [SerializeField] private LineRenderer _lineRenderer;
     private GameObject _MainCamera;
-    private bool _goingForwards = true;
-    public static Action<bool> onGoingForwards;
+    
+    
     
     private bool _isGhost;
+    private readonly Player _player = new Player();
 
     public void Init(Vector3 velocity, bool isGhost) {
         _isGhost = isGhost;
@@ -36,12 +35,7 @@ public class PlayerMovement : MonoBehaviour
         _MainCamera = GameObject.FindWithTag("MainCamera");
         Debug.Log("_cameraFollow set to : " + _MainCamera);
     }
-
-    public void GoingBackwards(bool pBackwards)
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -61,28 +55,28 @@ public class PlayerMovement : MonoBehaviour
          
         }
         
-        if ((!_goingForwards))
+        if ((!_player.GoingForwards))
         {
-            _goingForwards = true;
-            onGoingForwards(true);
-        } else if ( _goingForwards )
+            _player.GoingForwards = true;
+            Actions.onGoingForwards(_player);
+        } else if (_player.GoingForwards )
         {
-            _goingForwards = false;
-            onGoingForwards(false);
+            _player.GoingForwards = false;
+            Actions.onGoingForwards(_player);
         }
 
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)
             {
-                _isJumpButtonPressed = true;
+                _player.IsJumpButtonPressed = true;
             }
         }
         
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _isJumpButtonPressed = true;
+            _player.IsJumpButtonPressed = true;
         }
 
     }
@@ -109,13 +103,13 @@ public class PlayerMovement : MonoBehaviour
         
         if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
         {
-            _isGrounded = true;
+            _player.IsGrounded = true;
             _projection.removeTrajectoryLine();
             _lineRenderer.enabled = false;
         }
         else
         {
-            _isGrounded = false;
+            _player.IsGrounded = false;
             _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
             //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
             RaycastHit hitInfo;
@@ -137,12 +131,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (_isJumpButtonPressed && _isGrounded)
+        if (_player.IsJumpButtonPressed && _player.IsGrounded)
         {
             //if true, then add a force in the up direction of our player in the form of an impulse
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             //then reset the jump variable so we don't fly to the moon :).
-            _isJumpButtonPressed = false;
+            _player.IsJumpButtonPressed = false;
         }
     }
 }
