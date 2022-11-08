@@ -49,7 +49,7 @@ using UnityEngine;
         private void LateUpdate()
         {
             Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
-            if (targetRigidBody.velocity.magnitude > 1.0)
+            if (targetRigidBody.velocity.magnitude > 2.0)
             {
                 normalizedTargetVelocity = targetRigidBody.velocity.normalized;
             }

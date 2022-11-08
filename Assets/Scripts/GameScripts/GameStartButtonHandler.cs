@@ -4,15 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using DefaultNamespace;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameStartButtonHandler : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI headingForGameStart;
+
+    [SerializeField] private Button easyButton;
+    [SerializeField] private Button hardButton;
+    [SerializeField] private Button impossibleButton;
     [SerializeField] private int startLevel = 1;
     
     // Start is called before the first frame update
     void Start()
     {
+        easyButton.onClick.AddListener(EasyPressed);
+        hardButton.onClick.AddListener(HardPressed);
+        impossibleButton.onClick.AddListener(ImpossiblePressed);
+        
         /*if ((!gamePlay._started))
         {
             gamePlay._started = true;
