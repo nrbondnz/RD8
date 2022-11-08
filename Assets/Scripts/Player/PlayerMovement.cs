@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
@@ -18,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Projection _projection;
     [SerializeField] private LineRenderer _lineRenderer;
     private GameObject _MainCamera;
-
-    
+    private bool _goingForwards = true;
+    public static Action<bool> onGoingForwards;
     
     private bool _isGhost;
 
@@ -30,9 +31,15 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //onGoingForwards += GoingBackwards;
         rb = GetComponent<Rigidbody>();
         _MainCamera = GameObject.FindWithTag("MainCamera");
         Debug.Log("_cameraFollow set to : " + _MainCamera);
+    }
+
+    public void GoingBackwards(bool pBackwards)
+    {
+        
     }
 
     // Update is called once per frame
@@ -51,6 +58,17 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.acceleration.y > 0.1) || (Input.acceleration.y < -0.1))
         {
             vertInput = Input.acceleration.y * platformPower;
+         
+        }
+        
+        if ((!_goingForwards))
+        {
+            _goingForwards = true;
+            onGoingForwards(true);
+        } else if ( _goingForwards )
+        {
+            _goingForwards = false;
+            onGoingForwards(false);
         }
 
         foreach (Touch touch in Input.touches)

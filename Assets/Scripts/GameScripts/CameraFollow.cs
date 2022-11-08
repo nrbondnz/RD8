@@ -18,7 +18,9 @@ using UnityEngine;
 
         private void Start()
         {
+            
             cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
+            PlayerMovement.onGoingForwards += setGoingForwards;
             Vector3 tempOffset = offset;
             tempOffset.y = 0;
             xPlusZDistance = tempOffset.magnitude;
@@ -46,10 +48,17 @@ using UnityEngine;
             }
         }
 
+        private bool _goingForwards = false;
+        public void setGoingForwards(bool goingForwards)
+        {
+            _goingForwards = goingForwards;
+            Debug.Log("Going forwards : " + _goingForwards);
+        }
+
         private void LateUpdate()
         {
             Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
-            if (targetRigidBody.velocity.magnitude > 2.0)
+            if ( (targetRigidBody.velocity.magnitude > 2.0) && ( ! _goingForwards ))
             {
                 normalizedTargetVelocity = targetRigidBody.velocity.normalized;
             }
