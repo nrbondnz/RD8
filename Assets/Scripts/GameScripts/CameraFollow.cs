@@ -48,19 +48,20 @@ using UnityEngine;
             }
         }
 
-        private bool _goingForwards = false;
+        private bool _refreshPosition = false;
         public void setGoingForwards(bool goingForwards)
         {
-            _goingForwards = goingForwards;
-            Debug.Log("Going forwards : " + _goingForwards);
+            _refreshPosition = goingForwards;
+            Debug.Log("Going forwards : " + _refreshPosition);
         }
 
         private void LateUpdate()
         {
             Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
-            if ( (targetRigidBody.velocity.magnitude > 1.0) && ( _goingForwards ))
+            if ( _refreshPosition )
             {
                 normalizedTargetVelocity = targetRigidBody.velocity.normalized;
+                _refreshPosition = false;
             }
             // now update the offset
             offset.x = -(normalizedTargetVelocity.x * xPlusZDistance);

@@ -65,14 +65,18 @@ public class PlayerMovement : MonoBehaviour
          
         }
         
-        if ((!_goingForwards) && (vertInput == 1) && (rb.velocity.magnitude > 2.0f))
+        if ((!_goingForwards) && (vertInput == 1) && ( rb.velocity.magnitude > 6.0f ))
         {
+            Debug.Log("going forward true, magnitude : " + rb.velocity.magnitude);
             _goingForwards = true;
             onGoingForwards(true);
         } else if (( _goingForwards ) && (vertInput == -1))
         {
             _goingForwards = false;
             onGoingForwards(false);
+        } else if ((_goingForwards) && rb.velocity.magnitude > 5.0f)
+        {
+            onGoingForwards(true);
         }
 
         foreach (Touch touch in Input.touches)
