@@ -31,15 +31,16 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //onGoingForwards += GoingBackwards;
+        onGoingForwards += GoingForwards;
         rb = GetComponent<Rigidbody>();
         _MainCamera = GameObject.FindWithTag("MainCamera");
         Debug.Log("_cameraFollow set to : " + _MainCamera);
     }
 
-    public void GoingBackwards(bool pBackwards)
+    public void GoingForwards(bool pGoingForwards)
     {
-        
+        Debug.Log("Log GoingForwards : " + pGoingForwards);
+        Debug.unityLogger.Log("UnityLog goingForwards : " + pGoingForwards);
     }
 
     // Update is called once per frame
@@ -47,10 +48,12 @@ public class PlayerMovement : MonoBehaviour
     {
         GamePlayManager.GetInstance().UpdateTimeRemaining();
         // d -> 1.0f, a -> -1.0f
-        // TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y
         hozInput = Input.GetAxis("Horizontal");
         vertInput = Input.GetAxis("Vertical");
-        Debug.Log("Hoz : " + hozInput + ", Vert : " + vertInput);
+        if ((hozInput > 0) || (vertInput > 0))
+        {
+            Debug.Log("Hoz : " + hozInput + ", Vert : " + vertInput);
+        }
 
         if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
         {
@@ -62,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
          
         }
         
-        if ((!_goingForwards) && (vertInput == 1))
+        if ((!_goingForwards) && (vertInput == 1) && (rb.velocity.magnitude > 2.0f))
         {
             _goingForwards = true;
             onGoingForwards(true);
