@@ -40,7 +40,7 @@ namespace DefaultNamespace
         }
 
         
-        public static event Action<GameState> OnGameStateChanged;
+        
 
         private void Start()
         {
@@ -80,9 +80,8 @@ namespace DefaultNamespace
                     throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
 
-            OnGameStateChanged?.Invoke(GameState.GetInstance());
+            Actions.OnGameStateChanged(GameState.GetInstance());
         }
-
     }
 
  

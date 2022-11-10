@@ -6,25 +6,25 @@ using UnityEngine;
     public class CameraFollow : MonoBehaviour
     {
         private Transform cameraTarget;
-        [SerializeField] private Vector3 offset;
-        private float yOffset = 0.0f;
+        [SerializeField] private Vector3 _offset;
+        private float _yOffset = 0.0f;
         [SerializeField] private float lowerBound = -5.0f;
         [SerializeField] private float uppedBound = 25.0f;
         [SerializeField] private float smoothTime = 0.3f;
-        private Vector3 cameraVelocity = Vector3.zero;
-        private float xPlusZDistance;
-        private Vector3 normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
+        private Vector3 _cameraVelocity = Vector3.zero;
+        private float _xPlusZDistance;
+        private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
         private Player _player = new Player();
-        public Vector3 NormalizedTargetVelocity => normalizedTargetVelocity;
+        public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
         private void Start()
         {
             
             cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
-            Actions.onGoingForwards += updatePlayer;
-            Vector3 tempOffset = offset;
+            Actions.onPlayerChanged += UpdatePlayer;
+            Vector3 tempOffset = _offset;
             tempOffset.y = 0;
-            xPlusZDistance = tempOffset.magnitude;
+            _xPlusZDistance = tempOffset.magnitude;
             //offset = transform.position - cameraTarget.position;
         }
 
@@ -32,25 +32,25 @@ using UnityEngine;
         {
             if (Input.GetKeyUp(KeyCode.RightApple))
             {
-                if (yOffset < uppedBound)
+                if (_yOffset < uppedBound)
                 {
-                    yOffset++;
-                    Debug.Log("yOffseet: " + yOffset);
+                    _yOffset++;
+                    Debug.Log("yOffseet: " + _yOffset);
                 }
             }
 
             if (Input.GetKeyUp(KeyCode.LeftApple))
             {
-                if (yOffset > lowerBound)
+                if (_yOffset > lowerBound)
                 {
-                    yOffset--;
-                    Debug.Log("yOffseet: " + yOffset);
+                    _yOffset--;
+                    Debug.Log("yOffseet: " + _yOffset);
                 }
             }
         }
 
         
-        public void updatePlayer(Player pPlayer)
+        public void UpdatePlayer(Player pPlayer)
         {
             _player = pPlayer;
             Debug.Log("Player : " + pPlayer);
@@ -61,17 +61,17 @@ using UnityEngine;
             Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
             if ( (targetRigidBody.velocity.magnitude > 2.0) && ( ! _player.GoingForwards ))
             {
-                normalizedTargetVelocity = targetRigidBody.velocity.normalized;
+                _normalizedTargetVelocity = targetRigidBody.velocity.normalized;
             }
             // now update the offset
-            offset.x = -(normalizedTargetVelocity.x * xPlusZDistance);
-            offset.z = -(normalizedTargetVelocity.z * xPlusZDistance);
+            _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
+            _offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
             
-            Vector3 offsetWithY = offset;
-            offsetWithY.y += yOffset;
+            Vector3 offsetWithY = _offset;
+            offsetWithY.y += _yOffset;
             Vector3 targetPosition = cameraTarget.position + offsetWithY;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
-                ref cameraVelocity, smoothTime);
+                ref _cameraVelocity, smoothTime);
             transform.LookAt(cameraTarget);
         }
     }

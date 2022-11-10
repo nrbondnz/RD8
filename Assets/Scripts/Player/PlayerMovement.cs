@@ -5,11 +5,10 @@ using DefaultNamespace;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public partial class PlayerMovement : MonoBehaviour
 {
 
     private Rigidbody rb;
-    private float hozInput, vertInput;
     [SerializeField] private float speed = 10;
     [SerializeField] private float jumpForce = 13;
     [SerializeField] private float platformPower = 2.5f;
@@ -21,12 +20,8 @@ public class PlayerMovement : MonoBehaviour
     
     
     private bool _isGhost;
-    private readonly Player _player = new Player();
-
-    public void Init(Vector3 velocity, bool isGhost) {
-        _isGhost = isGhost;
-        rb.AddForce(velocity, ForceMode.Impulse);
-    }
+    private readonly Player _player = new();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -42,27 +37,27 @@ public class PlayerMovement : MonoBehaviour
         GamePlayManager.GetInstance().UpdateTimeRemaining();
         // d -> 1.0f, a -> -1.0f
         // TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y
-        hozInput = Input.GetAxis("Horizontal");
-        vertInput = Input.GetAxis("Vertical");
+        _player.HozInput = Input.GetAxis("Horizontal");
+        _player.VertInput = Input.GetAxis("Vertical");
 
         if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
         {
-            hozInput = Input.acceleration.x * platformPower;
+            _player.HozInput = Input.acceleration.x * platformPower;
         }
         if ((Input.acceleration.y > 0.1) || (Input.acceleration.y < -0.1))
         {
-            vertInput = Input.acceleration.y * platformPower;
+            _player.VertInput = Input.acceleration.y * platformPower;
          
         }
         
         if ((!_player.GoingForwards))
         {
             _player.GoingForwards = true;
-            Actions.onGoingForwards(_player);
+            Actions.onPlayerChanged(_player);
         } else if (_player.GoingForwards )
         {
             _player.GoingForwards = false;
-            Actions.onGoingForwards(_player);
+            Actions.onPlayerChanged(_player);
         }
 
         foreach (Touch touch in Input.touches)
@@ -89,9 +84,9 @@ public class PlayerMovement : MonoBehaviour
         right.y = 0.0f;
         forward = forward.normalized;
         right = right.normalized;
-        Vector3 forwardRelativeVerticalInput = forward * (vertInput * speed);
-        Vector3 rightRelativeHorizontalInput = right * (hozInput * speed);
-        // playerMovement = playermovement* speed;
+        Vector3 forwardRelativeVerticalInput = forward * (_player.VertInput * speed);
+        Vector3 rightRelativeHorizontalInput = right * (_player.HozInput * speed);
+        //
         Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
         rb.AddForce(playerMovement, ForceMode.Acceleration);
         
@@ -100,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         //Physics.Raycast will return true if the ray hits a collider
         //send the ray and check if it did hit anything, the ray length is going to be half of our scale(player's radius),
         //plus a small value to make sure our ray is barley longer than the player's radius
-        
+
         if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
         {
             _player.IsGrounded = true;
@@ -112,10 +107,9 @@ public class PlayerMovement : MonoBehaviour
             _player.IsGrounded = false;
             _projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);
             //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
-            RaycastHit hitInfo;
             _lineRenderer.enabled = true;
             _lineRenderer.SetPosition(0, rb.position);
-            if (Physics.Raycast(ray, out hitInfo, 20.0f))
+            if (Physics.Raycast(ray, out var hitInfo, 20.0f))
             {
                 _lineRenderer.startColor = Color.green;
                 _lineRenderer.endColor = Color.cyan;

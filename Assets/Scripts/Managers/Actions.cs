@@ -4,6 +4,7 @@ namespace DefaultNamespace
 {
     public static class Actions
     {
-        public static Action<Player> onGoingForwards;
+        public static Action<Player> onPlayerChanged;
+        public static Action<GameState> OnGameStateChanged;
     }
 }
