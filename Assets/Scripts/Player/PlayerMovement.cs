@@ -50,11 +50,12 @@ public partial class PlayerMovement : MonoBehaviour
          
         }
         
-        if ((!_player.GoingForwards))
+        if ((!_player.GoingForwards) && (_player.VertInput == 1) && ( rb.velocity.magnitude > 6.0f ))
         {
             _player.GoingForwards = true;
             Actions.onPlayerChanged(_player);
-        } else if (_player.GoingForwards )
+        } else if ((_player.GoingForwards ) && (_player.VertInput == -1))
+
         {
             _player.GoingForwards = false;
             Actions.onPlayerChanged(_player);

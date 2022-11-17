@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Key.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Key.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+<span class="s0">using </span><span class="s1">System.Collections;</span>
+<span class="s0">using </span><span class="s1">System.Collections.Generic;</span>
+<span class="s0">using </span><span class="s1">UnityEngine;</span>
+
+<span class="s0">namespace </span><span class="s1">key</span>
+<span class="s1">{</span>
+    <span class="s0">public class </span><span class="s1">Key : MonoBehaviour</span>
+    <span class="s1">{</span>
+        <span class="s1">[SerializeField] KeyActionController keyActionController;</span>
+        <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">keyRotationSpeed = </span><span class="s2">3</span><span class="s1">;</span>
+
+
+
+        <span class="s0">private void </span><span class="s1">OnTriggerEnter(Collider other)</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">(other.CompareTag(</span><span class="s3">&quot;Player&quot;</span><span class="s1">))</span>
+            <span class="s1">{</span>
+                <span class="s1">keyActionController.CarryOutAction();</span>
+                <span class="s1">gameObject.SetActive(</span><span class="s0">false</span><span class="s1">);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s0">private void </span><span class="s1">Update()</span>
+        <span class="s1">{</span>
+            <span class="s1">transform.Rotate(Vector3.up * Time.deltaTime * keyRotationSpeed);</span>
+        <span class="s1">}</span>
+
+        <span class="s0">private void </span><span class="s1">OnDrawGizmos()</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">(keyActionController != </span><span class="s0">null</span><span class="s1">)</span>
+            <span class="s1">{</span>
+                <span class="s1">Gizmos.color = Color.green;</span>
+                <span class="s1">Gizmos.DrawRay(transform.position, keyActionController.transform.position - transform.position);</span>
+            <span class="s1">}</span>
+            <span class="s0">else</span>
+            <span class="s1">{</span>
+                <span class="s1">Gizmos.color = Color.red;</span>
+                <span class="s1">Gizmos.DrawSphere(transform.position + Vector3.up * </span><span class="s2">2</span><span class="s1">, </span><span class="s2">0.5f</span><span class="s1">);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

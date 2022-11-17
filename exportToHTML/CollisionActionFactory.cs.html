@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>CollisionActionFactory.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CollisionActionFactory.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+
+<span class="s0">namespace </span><span class="s1">Collision</span>
+<span class="s1">{</span>
+    <span class="s0">public static class </span><span class="s1">GOCollisionActionFactory</span>
+    <span class="s1">{</span>
+        <span class="s0">public static void </span><span class="s1">SetGameObjectCollisionAction(CollisionActionController controller,</span>
+            <span class="s1">ICollisionAction.CollisionActionEnum collisionActionEnum)</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">( collisionActionEnum == ICollisionAction.CollisionActionEnum.Bounce)</span>
+            <span class="s1">{</span>
+                <span class="s1">controller.gameObject.AddComponent&lt;BounceCollisionAction&gt;();</span>
+            <span class="s1">}</span>
+            <span class="s0">else if </span><span class="s1">( collisionActionEnum == ICollisionAction.CollisionActionEnum.SpeedChange)</span>
+            <span class="s1">{</span>
+                <span class="s1">controller.gameObject.AddComponent&lt;SpeedChangeCollisionAction&gt;();</span>
+            <span class="s1">} </span><span class="s0">else if </span><span class="s1">(collisionActionEnum == ICollisionAction.CollisionActionEnum.Death)</span>
+            <span class="s1">{</span>
+                <span class="s1">controller.gameObject.AddComponent&lt;DeathCollisionAction&gt;();</span>
+            <span class="s1">} </span><span class="s0">else if </span><span class="s1">(collisionActionEnum == ICollisionAction.CollisionActionEnum.Attract)</span>
+            <span class="s1">{</span>
+                <span class="s1">controller.gameObject.AddComponent&lt;AttrctCollisionAction&gt;();</span>
+            <span class="s1">} </span>
+            <span class="s0">else </span>
+            <span class="s1">{</span>
+                <span class="s0">throw new </span><span class="s1">NotImplementedException(</span><span class="s2">&quot;Non implemented IKeyAction used in factory&quot;</span><span class="s1">);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

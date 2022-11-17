@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>GameStartButtonHandler.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #8c8c8c; font-style: italic;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GameStartButtonHandler.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+<span class="s0">using </span><span class="s1">System.Collections;</span>
+<span class="s0">using </span><span class="s1">System.Collections.Generic;</span>
+<span class="s0">using </span><span class="s1">UnityEngine;</span>
+<span class="s0">using </span><span class="s1">DefaultNamespace;</span>
+<span class="s0">using </span><span class="s1">TMPro;</span>
+<span class="s0">using </span><span class="s1">UnityEngine.UI;</span>
+
+<span class="s0">public class </span><span class="s1">GameStartButtonHandler : MonoBehaviour</span>
+<span class="s1">{</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">TextMeshProUGUI headingForGameStart;</span>
+
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">Button easyButton;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">Button hardButton;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">Button impossibleButton;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private int </span><span class="s1">startLevel = </span><span class="s2">1</span><span class="s1">;</span>
+    
+    <span class="s3">// Start is called before the first frame update</span>
+    <span class="s0">void </span><span class="s1">Start()</span>
+    <span class="s1">{</span>
+        <span class="s1">easyButton.onClick.AddListener(EasyPressed);</span>
+        <span class="s1">hardButton.onClick.AddListener(HardPressed);</span>
+        <span class="s1">impossibleButton.onClick.AddListener(ImpossiblePressed);</span>
+        
+        <span class="s3">/*if ((!gamePlay._started)) 
+        { 
+            gamePlay._started = true; 
+            headingForGameStart.text = &quot;Want to play&quot;; 
+        }  
+        else */ </span>
+        <span class="s0">if </span><span class="s1">((GamePlayManager.GetInstance().GetGamePlay()._lives &gt; </span><span class="s2">0</span><span class="s1">) &amp;&amp; (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining &gt; </span><span class="s2">0.0</span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">headingForGameStart.text = </span><span class="s4">&quot;Winner - Play again?&quot;</span><span class="s1">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else if </span><span class="s1">((GamePlayManager.GetInstance().GetGamePlay()._lives == </span><span class="s2">0</span><span class="s1">) &amp;&amp; (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining &gt; </span><span class="s2">0.0</span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">headingForGameStart.text = </span><span class="s4">&quot;Out of lives - Play again?&quot;</span><span class="s1">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else if </span><span class="s1">((GamePlayManager.GetInstance().GetGamePlay()._lives &gt; </span><span class="s2">0</span><span class="s1">) &amp;&amp; (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining &lt;= </span><span class="s2">0.0</span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">headingForGameStart.text = </span><span class="s4">&quot;Out of Time - Play again?&quot;</span><span class="s1">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else</span>
+        <span class="s1">{</span>
+            <span class="s1">headingForGameStart.text = </span><span class="s4">&quot;Want to Play?&quot;</span><span class="s1">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public void </span><span class="s1">EasyPressed()</span>
+    <span class="s1">{</span>
+        <span class="s1">StartGame(GameLevel.Easy);</span>
+    <span class="s1">}</span>
+    
+    <span class="s0">public void </span><span class="s1">HardPressed()</span>
+    <span class="s1">{</span>
+        <span class="s1">StartGame(GameLevel.Hard);</span>
+    <span class="s1">}</span>
+    
+    <span class="s0">public void </span><span class="s1">ImpossiblePressed()</span>
+    <span class="s1">{</span>
+        <span class="s1">StartGame(GameLevel.Impossible);</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">StartGame(GameLevel pGameLevel)</span>
+    <span class="s1">{</span>
+        <span class="s3">//start game scene</span>
+        <span class="s3">//GameManager gameManager = GameManager.getInstance();</span>
+        <span class="s1">Debug.Log(</span><span class="s4">&quot;Menu: GameManager.Instance : &quot; </span><span class="s1">+ GameManager.GetInstance());</span>
+        <span class="s1">GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,</span><span class="s0">this</span><span class="s1">.startLevel);</span>
+        <span class="s1">GamePlayManager.GetInstance().InitGame(pGameLevel);</span>
+        <span class="s1">Debug.Log(</span><span class="s4">&quot;Menu: New Game state : &quot; </span><span class="s1">+ GamePhases.GamePlaying + </span><span class="s4">&quot; &quot; </span><span class="s1">+ GameState.GetInstance().SceneNum);</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

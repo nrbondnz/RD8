@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>KeyActionController.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #080808;}
+.s1 { color: #0033b3;}
+.s2 { color: #1750eb;}
+.s3 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+KeyActionController.cs</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">using </span><span class="s0">Unity.VisualScripting;</span>
+<span class="s1">using </span><span class="s0">UnityEngine;</span>
+
+<span class="s1">namespace </span><span class="s0">key</span>
+<span class="s0">{</span>
+    <span class="s1">public class </span><span class="s0">KeyActionController : MonoBehaviour</span>
+    <span class="s0">{</span>
+        <span class="s0">[SerializeField] </span><span class="s1">private float </span><span class="s0">actionSpeed = </span><span class="s2">2</span><span class="s0">;</span>
+        <span class="s0">[SerializeField] </span><span class="s1">private float </span><span class="s0">actionTime = </span><span class="s2">3</span><span class="s0">;</span>
+        <span class="s0">[SerializeField] </span><span class="s1">private bool </span><span class="s0">isActionStarted = </span><span class="s1">false</span><span class="s0">;</span>
+        <span class="s0">[SerializeField] </span><span class="s1">private bool </span><span class="s0">isReveal = </span><span class="s1">false</span><span class="s0">;</span>
+
+        <span class="s0">[SerializeField] </span><span class="s1">private </span><span class="s0">IKeyAction.KeyActionEnum keyActionEnumEnum;</span>
+        <span class="s3">//private IKeyAction _keyActionInst;</span>
+
+
+        <span class="s1">public void </span><span class="s0">CarryOutAction()</span>
+        <span class="s0">{</span>
+            <span class="s1">this</span><span class="s0">.isActionStarted = </span><span class="s1">true</span><span class="s0">;</span>
+
+        <span class="s0">}</span>
+
+        <span class="s3">// Start is called before the first frame update</span>
+        <span class="s1">void </span><span class="s0">Start()</span>
+        <span class="s0">{</span>
+            <span class="s0">KeyActionFactory.setKeyAction(</span><span class="s1">this</span><span class="s0">, keyActionEnumEnum);</span>
+        <span class="s0">}</span>
+
+        <span class="s3">// Update is called once per frame</span>
+        <span class="s1">void </span><span class="s0">Update()</span>
+        <span class="s0">{</span>
+
+            <span class="s0">actionTime = </span><span class="s1">this</span><span class="s0">.gameObject.GetComponent&lt;IKeyAction&gt;().DoKeyAction(isActionStarted,</span>
+                <span class="s0">actionTime,</span>
+                <span class="s1">this</span><span class="s0">,</span>
+                <span class="s0">actionSpeed);</span>
+
+            <span class="s3">/*if (isActionStarted  &amp;&amp; (! isReveal )) 
+        { 
+            actionTime -= Time.deltaTime; 
+            transform.Translate(Vector3.down * Time.deltaTime * this.actionSpeed); 
+            if (this.actionTime &lt; 0) 
+            { 
+                gameObject.SetActive(false); 
+            } 
+        } else if (isReveal &amp;&amp; isActionStarted) 
+        { 
+            if (actionTime &gt; 0) 
+            { 
+                actionTime -= Time.deltaTime; 
+                transform.Translate(Vector3.up * Time.deltaTime * this.actionSpeed); 
+            } 
+ 
+        }*/</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>

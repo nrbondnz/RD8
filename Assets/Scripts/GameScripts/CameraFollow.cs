@@ -15,13 +15,28 @@ using UnityEngine;
         private float _xPlusZDistance;
         private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
         private Player _player = new Player();
+        private Rigidbody targetRigidBody;
         public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
+
+        public void OnEnable()
+        {
+            /*
+             * This sets up s subscription to the state of the Player entity as it changes
+             */
+            Actions.onPlayerChanged += UpdatePlayer;
+        }
+
+        public void OnDisable()
+        {
+            Actions.onPlayerChanged -= UpdatePlayer;
+        }
 
         private void Start()
         {
             
             cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
-            Actions.onPlayerChanged += UpdatePlayer;
+            targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
+            //Actions.onPlayerChanged += UpdatePlayer;
             Vector3 tempOffset = _offset;
             tempOffset.y = 0;
             _xPlusZDistance = tempOffset.magnitude;
@@ -58,14 +73,16 @@ using UnityEngine;
 
         private void LateUpdate()
         {
-            Rigidbody targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
-            if ( (targetRigidBody.velocity.magnitude > 2.0) && ( ! _player.GoingForwards ))
-            {
+            
+            //if ( (targetRigidBody.velocity.magnitude > 15.0) && ( ! _player.GoingForwards ))
+            if ( ( targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards ))
+                       {
                 _normalizedTargetVelocity = targetRigidBody.velocity.normalized;
+                // now update the offset
+                _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
+                _offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
             }
-            // now update the offset
-            _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
-            _offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
+            
             
             Vector3 offsetWithY = _offset;
             offsetWithY.y += _yOffset;

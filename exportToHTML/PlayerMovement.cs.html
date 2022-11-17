@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>PlayerMovement.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #8c8c8c; font-style: italic;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PlayerMovement.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+<span class="s0">using </span><span class="s1">System.Collections;</span>
+<span class="s0">using </span><span class="s1">System.Collections.Generic;</span>
+<span class="s0">using </span><span class="s1">DefaultNamespace;</span>
+<span class="s0">using </span><span class="s1">Unity.VisualScripting;</span>
+<span class="s0">using </span><span class="s1">UnityEngine;</span>
+
+<span class="s0">public </span><span class="s1">partial </span><span class="s0">class </span><span class="s1">PlayerMovement : MonoBehaviour</span>
+<span class="s1">{</span>
+
+    <span class="s0">private </span><span class="s1">Rigidbody rb;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">speed = </span><span class="s2">10</span><span class="s1">;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">jumpForce = </span><span class="s2">13</span><span class="s1">;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">platformPower = </span><span class="s2">2.5f</span><span class="s1">;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">SimBall _simBall;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">Projection _projection;</span>
+    <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">LineRenderer _lineRenderer;</span>
+    <span class="s0">private </span><span class="s1">GameObject _MainCamera;</span>
+    
+    
+    
+    <span class="s0">private bool </span><span class="s1">_isGhost;</span>
+    <span class="s0">private readonly </span><span class="s1">Player _player = </span><span class="s0">new</span><span class="s1">();</span>
+    
+    <span class="s3">// Start is called before the first frame update</span>
+    <span class="s0">void </span><span class="s1">Start()</span>
+    <span class="s1">{</span>
+        <span class="s3">//onGoingForwards += GoingBackwards;</span>
+        <span class="s1">rb = GetComponent&lt;Rigidbody&gt;();</span>
+        <span class="s1">_MainCamera = GameObject.FindWithTag(</span><span class="s4">&quot;MainCamera&quot;</span><span class="s1">);</span>
+        <span class="s1">Debug.Log(</span><span class="s4">&quot;_cameraFollow set to : &quot; </span><span class="s1">+ _MainCamera);</span>
+    <span class="s1">}</span>
+    
+    <span class="s3">// Update is called once per frame</span>
+    <span class="s0">void </span><span class="s1">Update()</span>
+    <span class="s1">{</span>
+        <span class="s1">GamePlayManager.GetInstance().UpdateTimeRemaining();</span>
+        <span class="s3">// d -&gt; 1.0f, a -&gt; -1.0f</span>
+        <span class="s3">// TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y</span>
+        <span class="s1">_player.HozInput = Input.GetAxis(</span><span class="s4">&quot;Horizontal&quot;</span><span class="s1">);</span>
+        <span class="s1">_player.VertInput = Input.GetAxis(</span><span class="s4">&quot;Vertical&quot;</span><span class="s1">);</span>
+
+        <span class="s0">if </span><span class="s1">((Input.acceleration.x &gt; </span><span class="s2">0.1</span><span class="s1">) || (Input.acceleration.x &lt; -</span><span class="s2">0.1</span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">_player.HozInput = Input.acceleration.x * platformPower;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">((Input.acceleration.y &gt; </span><span class="s2">0.1</span><span class="s1">) || (Input.acceleration.y &lt; -</span><span class="s2">0.1</span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">_player.VertInput = Input.acceleration.y * platformPower;</span>
+         
+        <span class="s1">}</span>
+        
+        <span class="s0">if </span><span class="s1">((!_player.GoingForwards) &amp;&amp; (_player.VertInput == </span><span class="s2">1</span><span class="s1">) &amp;&amp; ( rb.velocity.magnitude &gt; </span><span class="s2">6.0f </span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">_player.GoingForwards = </span><span class="s0">true</span><span class="s1">;</span>
+            <span class="s1">Actions.onPlayerChanged(_player);</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">((_player.GoingForwards ) &amp;&amp; (_player.VertInput == -</span><span class="s2">1</span><span class="s1">))</span>
+
+        <span class="s1">{</span>
+            <span class="s1">_player.GoingForwards = </span><span class="s0">false</span><span class="s1">;</span>
+            <span class="s1">Actions.onPlayerChanged(_player);</span>
+        <span class="s1">}</span>
+
+        <span class="s0">foreach </span><span class="s1">(Touch touch </span><span class="s0">in </span><span class="s1">Input.touches)</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">(touch.phase == TouchPhase.Began)</span>
+            <span class="s1">{</span>
+                <span class="s1">_player.IsJumpButtonPressed = </span><span class="s0">true</span><span class="s1">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        
+        
+        <span class="s0">if </span><span class="s1">(Input.GetKeyDown(KeyCode.Space))</span>
+        <span class="s1">{</span>
+            <span class="s1">_player.IsJumpButtonPressed = </span><span class="s0">true</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+    
+    <span class="s0">private void </span><span class="s1">FixedUpdate()</span>
+    <span class="s1">{</span>
+        <span class="s1">Vector3 forward = _MainCamera.transform.forward;</span>
+        <span class="s1">Vector3 right = _MainCamera.transform.right;</span>
+        <span class="s1">forward.y = </span><span class="s2">0.0f</span><span class="s1">;</span>
+        <span class="s1">right.y = </span><span class="s2">0.0f</span><span class="s1">;</span>
+        <span class="s1">forward = forward.normalized;</span>
+        <span class="s1">right = right.normalized;</span>
+        <span class="s1">Vector3 forwardRelativeVerticalInput = forward * (_player.VertInput * speed);</span>
+        <span class="s1">Vector3 rightRelativeHorizontalInput = right * (_player.HozInput * speed);</span>
+        <span class="s3">//</span>
+        <span class="s1">Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;</span>
+        <span class="s1">rb.AddForce(playerMovement, ForceMode.Acceleration);</span>
+        
+        <span class="s3">//create a new ray, it's center is the player position, it's direction is Vector3.Down</span>
+        <span class="s1">Ray ray = </span><span class="s0">new </span><span class="s1">Ray(transform.position, Vector3.down);</span>
+        <span class="s3">//Physics.Raycast will return true if the ray hits a collider</span>
+        <span class="s3">//send the ray and check if it did hit anything, the ray length is going to be half of our scale(player's radius),</span>
+        <span class="s3">//plus a small value to make sure our ray is barley longer than the player's radius</span>
+
+        <span class="s0">if </span><span class="s1">(Physics.Raycast(ray, transform.localScale.x / </span><span class="s2">2f </span><span class="s1">+ </span><span class="s2">0.01f</span><span class="s1">))</span>
+        <span class="s1">{</span>
+            <span class="s1">_player.IsGrounded = </span><span class="s0">true</span><span class="s1">;</span>
+            <span class="s1">_projection.removeTrajectoryLine();</span>
+            <span class="s1">_lineRenderer.enabled = </span><span class="s0">false</span><span class="s1">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else</span>
+        <span class="s1">{</span>
+            <span class="s1">_player.IsGrounded = </span><span class="s0">false</span><span class="s1">;</span>
+            <span class="s1">_projection.SimulateTrajectory(_simBall, rb.position, rb.velocity);</span>
+            <span class="s3">//Vector3 down = rb.TransformDirection(Vector3.down) * 10;</span>
+            <span class="s1">_lineRenderer.enabled = </span><span class="s0">true</span><span class="s1">;</span>
+            <span class="s1">_lineRenderer.SetPosition(</span><span class="s2">0</span><span class="s1">, rb.position);</span>
+            <span class="s0">if </span><span class="s1">(Physics.Raycast(ray, </span><span class="s0">out </span><span class="s1">var hitInfo, </span><span class="s2">20.0f</span><span class="s1">))</span>
+            <span class="s1">{</span>
+                <span class="s1">_lineRenderer.startColor = Color.green;</span>
+                <span class="s1">_lineRenderer.endColor = Color.cyan;</span>
+                <span class="s1">_lineRenderer.SetPosition(</span><span class="s2">1</span><span class="s1">, hitInfo.point);</span>
+            <span class="s1">}</span>
+            <span class="s0">else</span>
+            <span class="s1">{</span>
+                <span class="s1">_lineRenderer.startColor = Color.red;</span>
+                <span class="s1">_lineRenderer.endColor = Color.black;</span>
+                <span class="s1">Vector3 pos = transform.position;</span>
+                <span class="s1">pos.y = pos.y - </span><span class="s2">15.0f</span><span class="s1">;</span>
+                <span class="s1">_lineRenderer.SetPosition(</span><span class="s2">1</span><span class="s1">,pos);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s0">if </span><span class="s1">(_player.IsJumpButtonPressed &amp;&amp; _player.IsGrounded)</span>
+        <span class="s1">{</span>
+            <span class="s3">//if true, then add a force in the up direction of our player in the form of an impulse</span>
+            <span class="s1">rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);</span>
+            <span class="s3">//then reset the jump variable so we don't fly to the moon :).</span>
+            <span class="s1">_player.IsJumpButtonPressed = </span><span class="s0">false</span><span class="s1">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

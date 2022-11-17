@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>AttractCollisionAction.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+.s3 { color: #1750eb;}
+.s4 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+AttractCollisionAction.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+<span class="s0">using </span><span class="s1">Unity.VisualScripting;</span>
+<span class="s0">using </span><span class="s1">UnityEngine;</span>
+<span class="s0">using </span><span class="s1">UnityEngine.UIElements;</span>
+
+<span class="s0">namespace </span><span class="s1">Collision</span>
+<span class="s1">{</span>
+    <span class="s0">public class </span><span class="s1">AttrctCollisionAction : MonoBehaviour, ICollisionAction</span>
+    <span class="s1">{</span>
+        <span class="s0">private bool </span><span class="s1">_collisionActive = </span><span class="s0">false</span><span class="s1">;</span>
+        <span class="s0">private </span><span class="s1">ICollisionAction.CollisionEffectStrengthEnum _collisionEffectStrengthEnum;</span>
+        
+        <span class="s0">public void </span><span class="s1">DoCollisionAction(CollisionActionController controller,</span>
+            <span class="s1">ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)</span>
+        <span class="s1">{</span>
+            <span class="s1">_collisionActive = </span><span class="s0">true</span><span class="s1">;</span>
+            <span class="s1">_collisionEffectStrengthEnum = collisionEffectStrengthEnum;</span>
+
+        <span class="s1">}</span>
+
+        <span class="s0">private void </span><span class="s1">FixedUpdate()</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">(_collisionActive)</span>
+            <span class="s1">{</span>
+                <span class="s1">Vector3 positionOfPlayer =</span>
+                    <span class="s1">GameObject.FindGameObjectWithTag(</span><span class="s2">&quot;Player&quot;</span><span class="s1">).transform.position;</span>
+                <span class="s1">Vector3 positionOfCollider = transform.position;</span>
+                <span class="s1">Vector3 normalisedVectorToObject = -((positionOfPlayer - positionOfCollider).normalized);</span>
+                <span class="s1">GameObject.FindGameObjectWithTag(</span><span class="s2">&quot;Player&quot;</span><span class="s1">).transform.position +=</span>
+                    <span class="s1">normalisedVectorToObject * Time.deltaTime * (</span><span class="s0">float</span><span class="s1">)(((</span><span class="s0">float</span><span class="s1">)(</span><span class="s0">int</span><span class="s1">) _collisionEffectStrengthEnum)/ </span><span class="s3">2.0</span><span class="s1">);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+    
+
+        <span class="s0">public void </span><span class="s1">DoCollisionAreaExitAction(CollisionActionController controller,</span>
+            <span class="s1">ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)</span>
+        <span class="s1">{</span>
+            <span class="s1">_collisionActive = </span><span class="s0">false</span><span class="s1">;</span>
+            <span class="s4">// No action for this Collision</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>GamePlay.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GamePlay.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">namespace </span><span class="s1">DefaultNamespace</span>
+<span class="s1">{</span>
+    <span class="s0">public struct </span><span class="s1">GamePlay</span>
+    <span class="s1">{</span>
+        <span class="s0">public </span><span class="s1">GamePlay(</span><span class="s0">bool </span><span class="s1">started, </span><span class="s0">int </span><span class="s1">lives, GameLevel gameLevel, </span><span class="s0">float </span><span class="s1">timeRemaining)</span>
+        <span class="s1">{</span>
+            <span class="s1">_started = started;</span>
+            <span class="s1">_lives = lives;</span>
+            <span class="s1">_gameLevel = gameLevel;</span>
+            <span class="s1">_timeRemaining = timeRemaining;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">public bool </span><span class="s1">_started</span>
+        <span class="s1">{</span>
+            <span class="s1">get;</span>
+            <span class="s1">set;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">public int </span><span class="s1">_lives { get; set; }</span>
+        <span class="s0">public </span><span class="s1">GameLevel _gameLevel { get; set; }</span>
+        <span class="s0">public float </span><span class="s1">_timeRemaining { get; set; }</span>
+
+       
+
+        <span class="s0">public int </span><span class="s1">removeLife()</span>
+        <span class="s1">{</span>
+            <span class="s0">return </span><span class="s1">_lives--;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

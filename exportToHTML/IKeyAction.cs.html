@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>IKeyAction.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+IKeyAction.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">namespace </span><span class="s1">key</span>
+<span class="s1">{</span>
+
+
+    <span class="s0">public interface </span><span class="s1">IKeyAction</span>
+    <span class="s1">{</span>
+        <span class="s0">public enum </span><span class="s1">KeyActionEnum</span>
+        <span class="s1">{</span>
+            <span class="s1">Open,</span>
+            <span class="s1">Reveal,</span>
+            <span class="s1">WalkThrough</span>
+        <span class="s1">}</span>
+
+        <span class="s0">public float </span><span class="s1">DoKeyAction(</span><span class="s0">bool </span><span class="s1">isActionStarted,</span>
+            <span class="s0">float </span><span class="s1">actionTime,</span>
+            <span class="s1">KeyActionController actorObject,</span>
+            <span class="s0">float </span><span class="s1">actionSpeed);</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span></pre>
+</body>
+</html>

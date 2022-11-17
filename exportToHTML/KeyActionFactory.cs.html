@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>KeyActionFactory.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+.s3 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+KeyActionFactory.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+
+<span class="s0">namespace </span><span class="s1">key</span>
+<span class="s1">{</span>
+    <span class="s0">public static class </span><span class="s1">KeyActionFactory</span>
+    <span class="s1">{</span>
+        <span class="s0">public static void </span><span class="s1">setKeyAction(KeyActionController keyActionController,</span>
+            <span class="s1">IKeyAction.KeyActionEnum keyActionEnum)</span>
+        <span class="s1">{</span>
+            
+            <span class="s0">if </span><span class="s1">(keyActionEnum == IKeyAction.KeyActionEnum.Reveal)</span>
+            <span class="s1">{</span>
+                <span class="s1">keyActionController.gameObject.AddComponent&lt;RevealKeyAction&gt;();</span>
+            <span class="s1">}</span>
+            <span class="s0">else if </span><span class="s1">( keyActionEnum == IKeyAction.KeyActionEnum.Open)</span>
+            <span class="s1">{</span>
+                <span class="s1">keyActionController.gameObject.AddComponent&lt;OpenKeyAction&gt;();</span>
+            <span class="s1">}</span>
+            <span class="s0">else if </span><span class="s1">( keyActionEnum == IKeyAction.KeyActionEnum.WalkThrough)</span>
+            <span class="s1">{</span>
+                <span class="s1">keyActionController.gameObject.AddComponent&lt;WalkthroughKeyAction&gt;();</span>
+            <span class="s1">}</span>
+            <span class="s0">else</span>
+            <span class="s1">{</span>
+                <span class="s0">throw new </span><span class="s1">NotImplementedException(</span><span class="s2">&quot;Non implemented IKeyAction used in factory&quot;</span><span class="s1">);</span>
+            <span class="s1">}</span>
+
+            <span class="s3">//return _keyActionInst;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

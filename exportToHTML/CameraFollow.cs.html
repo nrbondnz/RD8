@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>CameraFollow.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #067d17;}
+.s4 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CameraFollow.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System;</span>
+<span class="s0">using </span><span class="s1">DefaultNamespace;</span>
+<span class="s0">using </span><span class="s1">UnityEngine;</span>
+
+
+    <span class="s0">public class </span><span class="s1">CameraFollow : MonoBehaviour</span>
+    <span class="s1">{</span>
+        <span class="s0">private </span><span class="s1">Transform cameraTarget;</span>
+        <span class="s1">[SerializeField] </span><span class="s0">private </span><span class="s1">Vector3 _offset;</span>
+        <span class="s0">private float </span><span class="s1">_yOffset = </span><span class="s2">0.0f</span><span class="s1">;</span>
+        <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">lowerBound = -</span><span class="s2">5.0f</span><span class="s1">;</span>
+        <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">uppedBound = </span><span class="s2">25.0f</span><span class="s1">;</span>
+        <span class="s1">[SerializeField] </span><span class="s0">private float </span><span class="s1">smoothTime = </span><span class="s2">0.3f</span><span class="s1">;</span>
+        <span class="s0">private </span><span class="s1">Vector3 _cameraVelocity = Vector3.zero;</span>
+        <span class="s0">private float </span><span class="s1">_xPlusZDistance;</span>
+        <span class="s0">private </span><span class="s1">Vector3 _normalizedTargetVelocity = </span><span class="s0">new </span><span class="s1">Vector3(</span><span class="s2">0.5f</span><span class="s1">, </span><span class="s2">0.0f</span><span class="s1">, </span><span class="s2">0.5f</span><span class="s1">);</span>
+        <span class="s0">private </span><span class="s1">Player _player = </span><span class="s0">new </span><span class="s1">Player();</span>
+        <span class="s0">public </span><span class="s1">Vector3 NormalizedTargetVelocity =&gt; _normalizedTargetVelocity;</span>
+
+        <span class="s0">private void </span><span class="s1">Start()</span>
+        <span class="s1">{</span>
+            
+            <span class="s1">cameraTarget = GameObject.FindGameObjectWithTag(</span><span class="s3">&quot;Player&quot;</span><span class="s1">).transform;</span>
+            <span class="s1">Actions.onPlayerChanged += UpdatePlayer;</span>
+            <span class="s1">Vector3 tempOffset = _offset;</span>
+            <span class="s1">tempOffset.y = </span><span class="s2">0</span><span class="s1">;</span>
+            <span class="s1">_xPlusZDistance = tempOffset.magnitude;</span>
+            <span class="s4">//offset = transform.position - cameraTarget.position;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">private void </span><span class="s1">Update()</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">(Input.GetKeyUp(KeyCode.RightApple))</span>
+            <span class="s1">{</span>
+                <span class="s0">if </span><span class="s1">(_yOffset &lt; uppedBound)</span>
+                <span class="s1">{</span>
+                    <span class="s1">_yOffset++;</span>
+                    <span class="s1">Debug.Log(</span><span class="s3">&quot;yOffseet: &quot; </span><span class="s1">+ _yOffset);</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+
+            <span class="s0">if </span><span class="s1">(Input.GetKeyUp(KeyCode.LeftApple))</span>
+            <span class="s1">{</span>
+                <span class="s0">if </span><span class="s1">(_yOffset &gt; lowerBound)</span>
+                <span class="s1">{</span>
+                    <span class="s1">_yOffset--;</span>
+                    <span class="s1">Debug.Log(</span><span class="s3">&quot;yOffseet: &quot; </span><span class="s1">+ _yOffset);</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        
+        <span class="s0">public void </span><span class="s1">UpdatePlayer(Player pPlayer)</span>
+        <span class="s1">{</span>
+            <span class="s1">_player = pPlayer;</span>
+            <span class="s1">Debug.Log(</span><span class="s3">&quot;Player : &quot; </span><span class="s1">+ pPlayer);</span>
+        <span class="s1">}</span>
+
+        <span class="s0">private void </span><span class="s1">LateUpdate()</span>
+        <span class="s1">{</span>
+            <span class="s1">Rigidbody targetRigidBody = cameraTarget.GetComponent&lt;Rigidbody&gt;();</span>
+            <span class="s4">//if ( (targetRigidBody.velocity.magnitude &gt; 15.0) &amp;&amp; ( ! _player.GoingForwards ))</span>
+            <span class="s0">if </span><span class="s1">( ( targetRigidBody.velocity.magnitude &gt; </span><span class="s2">8.0 </span><span class="s1">) &amp;&amp; (  _player.GoingForwards ))</span>
+                       <span class="s1">{</span>
+                <span class="s1">_normalizedTargetVelocity = targetRigidBody.velocity.normalized;</span>
+                <span class="s4">// now update the offset</span>
+                <span class="s1">_offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);</span>
+                <span class="s1">_offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);</span>
+            <span class="s1">}</span>
+            
+            
+            <span class="s1">Vector3 offsetWithY = _offset;</span>
+            <span class="s1">offsetWithY.y += _yOffset;</span>
+            <span class="s1">Vector3 targetPosition = cameraTarget.position + offsetWithY;</span>
+            <span class="s1">transform.position = Vector3.SmoothDamp(transform.position, targetPosition,</span>
+                <span class="s0">ref </span><span class="s1">_cameraVelocity, smoothTime);</span>
+            <span class="s1">transform.LookAt(cameraTarget);</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+</pre>
+</body>
+</html>

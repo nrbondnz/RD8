@@ -13,13 +13,13 @@ namespace DefaultNamespace
 
         void Start()
         {
-            GamePlayManager.OnGamePlayChanged += updateGameScore;
+            Actions.OnGamePlayChanged += updateGameScore;
             updateGameScore(GamePlayManager.GetInstance()._gamePlay);
         }
 
         private void OnDestroy()
         {
-            GamePlayManager.OnGamePlayChanged -= updateGameScore;
+            Actions.OnGamePlayChanged -= updateGameScore;
         }
 
         private void Update()

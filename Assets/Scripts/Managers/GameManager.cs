@@ -80,7 +80,7 @@ namespace DefaultNamespace
                     throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
 
-            Actions.OnGameStateChanged(GameState.GetInstance());
+            //Actions.OnGamePlayChanged?.Invoke(GameState.GetInstance());
         }
     }
 

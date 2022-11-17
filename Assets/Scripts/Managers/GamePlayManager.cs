@@ -37,7 +37,7 @@ namespace DefaultNamespace
             return _instance;
         }
 
-        public static Action<GamePlay> OnGamePlayChanged;
+        //public static Action<GamePlay> OnGamePlayChanged;
 
         public void Start()
         {
@@ -62,13 +62,13 @@ namespace DefaultNamespace
                 _gamePlay._lives = 1;
                 _gamePlay._timeRemaining = 100f;
             }
-        OnGamePlayChanged?.Invoke(_gamePlay);
+        Actions.OnGamePlayChanged?.Invoke(_gamePlay);
     }
         
         public int RemoveLife()
         {
             _gamePlay.removeLife();
-            OnGamePlayChanged?.Invoke(_gamePlay);
+            Actions.OnGamePlayChanged?.Invoke(_gamePlay);
             return _gamePlay._lives;
         }
         
@@ -85,7 +85,7 @@ namespace DefaultNamespace
         public void UpdateTimeRemaining()
         {
             _gamePlay._timeRemaining -= Time.deltaTime;
-            OnGamePlayChanged?.Invoke(_gamePlay);
+            Actions.OnGamePlayChanged?.Invoke(_gamePlay);
             if (!AnyTimeLeft())
             {
                 SceneManager.LoadScene("WinLoseMenu");
