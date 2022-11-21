@@ -24,11 +24,17 @@ using UnityEngine;
              * This sets up s subscription to the state of the Player entity as it changes
              */
             Actions.onPlayerChanged += UpdatePlayer;
+            Actions.OnWaypointUpdate += UpdateCurrentWaypoint;
         }
 
         public void OnDisable()
         {
             Actions.onPlayerChanged -= UpdatePlayer;
+        }
+
+        public void UpdateCurrentWaypoint(GameObject gameObject)
+        {
+            // todo
         }
 
         private void Start()
