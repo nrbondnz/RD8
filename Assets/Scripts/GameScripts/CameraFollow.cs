@@ -85,8 +85,10 @@ using UnityEngine;
             if (this.currentWaypoint != null)
             {
                 // todo - direction from target to waypoint, normalized
-            } else if ( ( targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards ))
-                       {
+                _normalizedTargetVelocity = (this.currentWaypoint.transform.position - targetRigidBody.position).normalized;
+                _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
+                _offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
+            } else if ( ( targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards )) {
                 _normalizedTargetVelocity = targetRigidBody.velocity.normalized;
                 // now update the offset
                 _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
