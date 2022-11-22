@@ -16,6 +16,7 @@ using UnityEngine;
         private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
         private Player _player = new Player();
         private Rigidbody targetRigidBody;
+        private GameObject currentWaypoint;
         public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
         public void OnEnable()
@@ -32,9 +33,9 @@ using UnityEngine;
             Actions.onPlayerChanged -= UpdatePlayer;
         }
 
-        public void UpdateCurrentWaypoint(GameObject gameObject)
+        public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
         {
-            // todo
+            this.currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
         }
 
         private void Start()

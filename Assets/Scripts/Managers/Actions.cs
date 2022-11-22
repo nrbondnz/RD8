@@ -8,6 +8,6 @@ namespace DefaultNamespace
     {
         public static Action<Player> onPlayerChanged;
         public static Action<GamePlay> OnGamePlayChanged;
-        public static Action<GameObject> OnWaypointUpdate;
+        public static Action<WaypointManager> OnWaypointUpdate;
     }
 }

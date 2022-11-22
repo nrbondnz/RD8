@@ -9,14 +9,16 @@ namespace key
     {
         [SerializeField] KeyActionController keyActionController;
         [SerializeField] private float keyRotationSpeed = 3;
+        [SerializeField] WaypointManager _waypointManager;
 
-
+      
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 keyActionController.CarryOutAction();
+                _waypointManager?.NextWaypoint();
                 gameObject.SetActive(false);
             }
         }
