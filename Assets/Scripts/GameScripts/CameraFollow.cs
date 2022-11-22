@@ -80,13 +80,13 @@ using UnityEngine;
 
         private void LateUpdate()
         {
-            
+             
             //if ( (targetRigidBody.velocity.magnitude > 15.0) && ( ! _player.GoingForwards ))
             if (this.currentWaypoint != null)
             {
                 // todo - direction from target to waypoint, normalized
             } else if ( ( targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards ))
-                       {
+            {
                 _normalizedTargetVelocity = targetRigidBody.velocity.normalized;
                 // now update the offset
                 _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
