@@ -376,10 +376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb3da62ba16479285cce6fbf9c06c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.15, y: 9.24, z: -19.68}
-  lowerBound: -5
+  _offset: {x: -5, y: 5, z: -5}
+  lowerBound: 5
   uppedBound: 25
-  smoothTime: 0.3
+  smoothTime: 2
 --- !u!1 &17206816
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +489,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 709914458525331723, guid: 52321601756fc44d58b46f1a5ab5a2ef, type: 3}
   m_PrefabInstance: {fileID: 106077383}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &481002142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481002144}
+  - component: {fileID: 481002143}
+  m_Layer: 0
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &481002143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481002142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217146b3235ec47018f53f0417ad48b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waypoints:
+  - {fileID: 1998894539}
+--- !u!4 &481002144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481002142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 804.4676, y: 146.20053, z: -336.1551}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &839042921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1262,6 +1308,11 @@ PrefabInstance:
 --- !u!4 &1998894538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+  m_PrefabInstance: {fileID: 1998894537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1998894539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 512890894839005986, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
   m_PrefabInstance: {fileID: 1998894537}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2095091382

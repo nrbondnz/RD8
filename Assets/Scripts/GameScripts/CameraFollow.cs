@@ -10,7 +10,7 @@ using UnityEngine;
         private float _yOffset = 0.0f;
         [SerializeField] private float lowerBound = -5.0f;
         [SerializeField] private float uppedBound = 25.0f;
-        [SerializeField] private float smoothTime = 0.3f;
+        [SerializeField] private float smoothTime = 2.0f;
         private Vector3 _cameraVelocity = Vector3.zero;
         private float _xPlusZDistance;
         private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);

@@ -604,7 +604,7 @@ MonoBehaviour:
   _offset: {x: -5, y: 5, z: -5}
   lowerBound: 5
   uppedBound: 15
-  smoothTime: 0.3
+  smoothTime: 2
 --- !u!1 &675377209
 GameObject:
   m_ObjectHideFlags: 0
