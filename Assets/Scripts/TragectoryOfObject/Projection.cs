@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Projection : MonoBehaviour {
-    [SerializeField] private LineRenderer _line;
-    [SerializeField] private int _maxPhysicsFrameIterations = 100;
-    [SerializeField] private Transform _obstaclesParent;
+    [SerializeField] private LineRenderer line;
+    [SerializeField] private int maxPhysicsFrameIterations = 100;
+    [SerializeField] private Transform obstaclesParent;
     private bool _projectionEnabled = false;
 
     private Scene _simulationScene;
@@ -19,16 +19,16 @@ public class Projection : MonoBehaviour {
 
     private void CreatePhysicsScene()
     {
-        if (_obstaclesParent == null) return;
+        if (obstaclesParent == null) return;
         _simulationScene = SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         _physicsScene = _simulationScene.GetPhysicsScene();
 
-        AddGameObjects(_simulationScene, _obstaclesParent);
+        AddGameObjects(_simulationScene, obstaclesParent);
     }
 
-    private void AddGameObjects(Scene mySimScene, Transform _obstaclesPar )
+    private void AddGameObjects(Scene mySimScene, Transform obstaclesPar )
     {
-        foreach (Transform obj in _obstaclesPar)
+        foreach (Transform obj in obstaclesPar)
         {
             var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
             Debug.Log("gameObject : " + ghostObj);
@@ -68,19 +68,19 @@ public class Projection : MonoBehaviour {
         SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
         ghostObj.gameObject.GetComponent<Rigidbody>().position = pos;
         ghostObj.Init(velocity);
-        _line.enabled = true;
-        _line.positionCount = _maxPhysicsFrameIterations;
+        line.enabled = true;
+        line.positionCount = maxPhysicsFrameIterations;
 
-        for (var i = 0; i < _maxPhysicsFrameIterations; i++) {
+        for (var i = 0; i < maxPhysicsFrameIterations; i++) {
             _physicsScene.Simulate(Time.fixedDeltaTime);
-            _line.SetPosition(i, ghostObj.transform.position);
+            line.SetPosition(i, ghostObj.transform.position);
         }
 
         Destroy(ghostObj.gameObject);
     }
 
-    public void removeTrajectoryLine()
+    public void RemoveTrajectoryLine()
     {
-        _line.enabled = false;
+        line.enabled = false;
     }
 }

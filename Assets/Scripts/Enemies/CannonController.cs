@@ -10,50 +10,50 @@ public class CannonController : MonoBehaviour
     [SerializeField] private float shootingCoolDown = 3f;
     [SerializeField] private float laserPower = 100f;
     
-    private bool isPlayerInRange = false;
+    private bool _isPlayerInRange = false;
 
-    private GameObject player;
+    private GameObject _player;
 
-    private float timeLeftToShoot = 0;
+    private float _timeLeftToShoot = 0;
 
-    private LineRenderer cannonLaser;
+    private LineRenderer _cannonLaser;
     // Start is called before the first frame update
     void Start()
     {
-        cannonLaser = GetComponent<LineRenderer>();
-        cannonLaser.sharedMaterial.color =Color.green;
-        cannonLaser.enabled = false;
-        player = GameObject.FindGameObjectWithTag("Player");
-        timeLeftToShoot = shootingCoolDown;
+        _cannonLaser = GetComponent<LineRenderer>();
+        _cannonLaser.sharedMaterial.color =Color.green;
+        _cannonLaser.enabled = false;
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _timeLeftToShoot = shootingCoolDown;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerInRange)
+        if (_isPlayerInRange)
         {
-            cannonHead.transform.LookAt(player.transform);
+            cannonHead.transform.LookAt(_player.transform);
             
-            cannonLaser.SetPosition(0,cannonTip.transform.position);
-            cannonLaser.SetPosition(1, player.transform.position);
+            _cannonLaser.SetPosition(0,cannonTip.transform.position);
+            _cannonLaser.SetPosition(1, _player.transform.position);
 
-            timeLeftToShoot -= Time.deltaTime;
-            if (timeLeftToShoot <= shootingCoolDown * 0.15)
+            _timeLeftToShoot -= Time.deltaTime;
+            if (_timeLeftToShoot <= shootingCoolDown * 0.15)
             {
-                cannonLaser.sharedMaterial.color = Color.white;
-            } else if (timeLeftToShoot <= shootingCoolDown * 0.5)
+                _cannonLaser.sharedMaterial.color = Color.white;
+            } else if (_timeLeftToShoot <= shootingCoolDown * 0.5)
             {
-                cannonLaser.sharedMaterial.color = Color.red;
+                _cannonLaser.sharedMaterial.color = Color.red;
             }
 
-            if (timeLeftToShoot < 0)
+            if (_timeLeftToShoot < 0)
             {
-                timeLeftToShoot = shootingCoolDown;
-                Vector3 directionToPushBack = player.transform.position -
+                _timeLeftToShoot = shootingCoolDown;
+                Vector3 directionToPushBack = _player.transform.position -
                                               cannonTip.transform.position;
-                player.GetComponent<Rigidbody>().AddForce(directionToPushBack * laserPower,
+                _player.GetComponent<Rigidbody>().AddForce(directionToPushBack * laserPower,
                     ForceMode.Impulse);
-                cannonLaser.sharedMaterial.color = Color.green;
+                _cannonLaser.sharedMaterial.color = Color.green;
             }
         }
     }
@@ -62,8 +62,8 @@ public class CannonController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInRange = true;
-            cannonLaser.enabled = true;
+            _isPlayerInRange = true;
+            _cannonLaser.enabled = true;
         }
     }
 
@@ -71,10 +71,10 @@ public class CannonController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInRange = false;
-            cannonLaser.enabled = false;
-            timeLeftToShoot = shootingCoolDown;
-            cannonLaser.sharedMaterial.color = Color.green;
+            _isPlayerInRange = false;
+            _cannonLaser.enabled = false;
+            _timeLeftToShoot = shootingCoolDown;
+            _cannonLaser.sharedMaterial.color = Color.green;
         }
     }
 }

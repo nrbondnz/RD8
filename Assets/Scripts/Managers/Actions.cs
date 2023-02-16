@@ -6,7 +6,7 @@ namespace DefaultNamespace
 {
     public static class Actions
     {
-        public static Action<Player> onPlayerChanged;
+        public static Action<Player> OnPlayerChanged;
         public static Action<GamePlay> OnGamePlayChanged;
         public static Action<WaypointManager> OnWaypointUpdate;
     }

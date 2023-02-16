@@ -4,45 +4,45 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    private Toggle m_MenuToggle;
-	private float m_TimeScaleRef = 1f;
-    private float m_VolumeRef = 1f;
-    private bool m_Paused;
+    private Toggle _mMenuToggle;
+	private float _mTimeScaleRef = 1f;
+    private float _mVolumeRef = 1f;
+    private bool _mPaused;
 
 
     void Awake()
     {
-        m_MenuToggle = GetComponent <Toggle> ();
+        _mMenuToggle = GetComponent <Toggle> ();
 	}
 
 
     private void MenuOn ()
     {
-        m_TimeScaleRef = Time.timeScale;
+        _mTimeScaleRef = Time.timeScale;
         Time.timeScale = 0f;
 
-        m_VolumeRef = AudioListener.volume;
+        _mVolumeRef = AudioListener.volume;
         AudioListener.volume = 0f;
 
-        m_Paused = true;
+        _mPaused = true;
     }
 
 
     public void MenuOff ()
     {
-        Time.timeScale = m_TimeScaleRef;
-        AudioListener.volume = m_VolumeRef;
-        m_Paused = false;
+        Time.timeScale = _mTimeScaleRef;
+        AudioListener.volume = _mVolumeRef;
+        _mPaused = false;
     }
 
 
     public void OnMenuStatusChange ()
     {
-        if (m_MenuToggle.isOn && !m_Paused)
+        if (_mMenuToggle.isOn && !_mPaused)
         {
             MenuOn();
         }
-        else if (!m_MenuToggle.isOn && m_Paused)
+        else if (!_mMenuToggle.isOn && _mPaused)
         {
             MenuOff();
         }
@@ -54,8 +54,8 @@ public class PauseMenu : MonoBehaviour
 	{
 		if(Input.GetKeyUp(KeyCode.Escape))
 		{
-		    m_MenuToggle.isOn = !m_MenuToggle.isOn;
-            Cursor.visible = m_MenuToggle.isOn;//force the cursor visible if anythign had hidden it
+		    _mMenuToggle.isOn = !_mMenuToggle.isOn;
+            Cursor.visible = _mMenuToggle.isOn;//force the cursor visible if anythign had hidden it
 		}
 	}
 #endif

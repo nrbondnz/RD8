@@ -7,7 +7,7 @@ namespace Collision
     {
 
         public void DoCollisionAction(CollisionActionController controller,
-            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
+            CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
             Vector3 directionToPushBack = (transform.position - GameObject.FindGameObjectWithTag("Player").transform.position 
                                           );
@@ -22,13 +22,13 @@ namespace Collision
             Debug.Log("Normalised player - object : " + directionToPushBack);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>()
                 .AddForce(directionToPushBack * 12 * ((int)collisionEffectStrengthEnum / 
-                          (int)ICollisionAction.CollisionEffectStrengthEnum.Normal),
+                          (int)CollisionEffectStrengthEnum.Normal),
                 ForceMode.Impulse);
 
         }
 
         public void DoCollisionAreaExitAction(CollisionActionController controller,
-            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
+            CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
             // No action for this Collision
         }

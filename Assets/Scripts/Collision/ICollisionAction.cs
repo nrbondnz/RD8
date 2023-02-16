@@ -1,8 +1,7 @@
 namespace Collision
 {
    
-    public interface ICollisionAction
-    {
+   
         public enum CollisionActionEnum
         {
             Bounce = 0,
@@ -22,11 +21,12 @@ namespace Collision
             Lowest = 1
         }
 
-        
+        public interface ICollisionAction
+        {   
         public void DoCollisionAction(CollisionActionController controller,
-            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum);
+            CollisionEffectStrengthEnum collisionEffectStrengthEnum);
         
         public void DoCollisionAreaExitAction(CollisionActionController controller,
-            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum);
+            CollisionEffectStrengthEnum collisionEffectStrengthEnum);
     }
 }

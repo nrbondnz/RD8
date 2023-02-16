@@ -7,13 +7,13 @@ namespace DefaultNamespace
 
     public class GamePlayManager : MonoBehaviour
     {
-        public GamePlay _gamePlay;
+        public GamePlay GamePlay;
 
         private static GamePlayManager _instance;
 
         public GamePlay GetGamePlay()
         {
-            return _gamePlay;
+            return GamePlay;
         }
         private void Awake()
         {
@@ -25,10 +25,10 @@ namespace DefaultNamespace
             }
             Debug.Log("GamePlayManager Awake");
             _instance = this;
-            _gamePlay._lives = 0;
-            _gamePlay._started = false;
-            _gamePlay._gameLevel = GameLevel.Easy;
-            _gamePlay._timeRemaining = (float) 0.0;
+            GamePlay.Lives = 0;
+            GamePlay.Started = false;
+            GamePlay.GameLevel = GameLevel.Easy;
+            GamePlay.TimeRemaining = (float) 0.0;
             DontDestroyOnLoad(gameObject);
         }
 
@@ -41,51 +41,51 @@ namespace DefaultNamespace
 
         public void Start()
         {
-            _gamePlay._started = false;
+            GamePlay.Started = false;
         }
 
         public void InitGame(GameLevel pGameLevel)
         {
-            _gamePlay = new GamePlay();
-            _gamePlay._gameLevel = pGameLevel;
-            if (_gamePlay._gameLevel == GameLevel.Easy)
+            GamePlay = new GamePlay();
+            GamePlay.GameLevel = pGameLevel;
+            if (GamePlay.GameLevel == GameLevel.Easy)
             {
-                _gamePlay._lives = 15;
-                _gamePlay._timeRemaining = 1000f;
-            } else if (_gamePlay._gameLevel == GameLevel.Hard)
+                GamePlay.Lives = 15;
+                GamePlay.TimeRemaining = 1000f;
+            } else if (GamePlay.GameLevel == GameLevel.Hard)
             {
-                _gamePlay._lives = 3;
-                _gamePlay._timeRemaining = 200f;
+                GamePlay.Lives = 3;
+                GamePlay.TimeRemaining = 200f;
             }
             else
             {
-                _gamePlay._lives = 1;
-                _gamePlay._timeRemaining = 100f;
+                GamePlay.Lives = 1;
+                GamePlay.TimeRemaining = 100f;
             }
-        Actions.OnGamePlayChanged?.Invoke(_gamePlay);
+        Actions.OnGamePlayChanged?.Invoke(GamePlay);
     }
         
         public int RemoveLife()
         {
-            _gamePlay.removeLife();
-            Actions.OnGamePlayChanged?.Invoke(_gamePlay);
-            return _gamePlay._lives;
+            GamePlay.RemoveLife();
+            Actions.OnGamePlayChanged?.Invoke(GamePlay);
+            return GamePlay.Lives;
         }
         
         public int GetLives()
         {
-            return _gamePlay._lives;
+            return GamePlay.Lives;
         }
 
         public bool AnyLivesLeft()
         {
-            return _gamePlay._lives == 0;
+            return GamePlay.Lives == 0;
         }
 
         public void UpdateTimeRemaining()
         {
-            _gamePlay._timeRemaining -= Time.deltaTime;
-            Actions.OnGamePlayChanged?.Invoke(_gamePlay);
+            GamePlay.TimeRemaining -= Time.deltaTime;
+            Actions.OnGamePlayChanged?.Invoke(GamePlay);
             if (!AnyTimeLeft())
             {
                 SceneManager.LoadScene("WinLoseMenu");
@@ -94,12 +94,12 @@ namespace DefaultNamespace
 
         public bool AnyTimeLeft()
         {
-            return _gamePlay._timeRemaining > 0;
+            return GamePlay.TimeRemaining > 0;
         }
 
         public GameLevel GetGameLevel()
         {
-            return _gamePlay._gameLevel;
+            return GamePlay.GameLevel;
         }
         
     }

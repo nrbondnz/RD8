@@ -10,10 +10,10 @@ namespace DefaultNamespace
         private static SoundManager _instance;
         [Header("Sounds")] [SerializeField] private AudioSource audioSource;
 
-        private static Dictionary<ICollisionAction.CollisionActionEnum,
-            Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>> collisionSounds =
-            new Dictionary<ICollisionAction.CollisionActionEnum,
-                Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>>();
+        private static Dictionary<CollisionActionEnum,
+            Dictionary<CollisionEffectStrengthEnum, AudioClip>> _collisionSounds =
+            new Dictionary<CollisionActionEnum,
+                Dictionary<CollisionEffectStrengthEnum, AudioClip>>();
 
         private void Awake()
         {
@@ -27,15 +27,15 @@ namespace DefaultNamespace
             Debug.Log("SoundManager Awake");
             _instance = this as SoundManager;
             DontDestroyOnLoad(gameObject);
-            setupResources();
+            SetupResources();
         }
 
-        private static void setupResources()
+        private static void SetupResources()
         {
             AudioClip[] collAudioArrayList = Resources.LoadAll<AudioClip>("Sounds/Collision");
             Debug.Log(collAudioArrayList);
-            Dictionary<ICollisionAction.CollisionActionEnum, AudioClip> defaultClips =
-                new Dictionary<ICollisionAction.CollisionActionEnum, AudioClip>();
+            Dictionary<CollisionActionEnum, AudioClip> defaultClips =
+                new Dictionary<CollisionActionEnum, AudioClip>();
             // find defaults
             foreach (AudioClip audioClip in collAudioArrayList)
             {
@@ -43,8 +43,8 @@ namespace DefaultNamespace
                 String actionString = audioClipName.Substring(0, audioClipName.IndexOf("-"));
                 String audioClipAction = audioClip.name.Substring(0, audioClip.name.IndexOf("-"));
                 var effectStrength = audioClipName.Substring(audioClipName.IndexOf("-") + 1);
-                ICollisionAction.CollisionActionEnum actionEnum;
-                Enum.TryParse<ICollisionAction.CollisionActionEnum>(actionString, out actionEnum);
+                CollisionActionEnum actionEnum;
+                Enum.TryParse<CollisionActionEnum>(actionString, out actionEnum);
                 if (effectStrength.Equals("Default"))
                 {
                     defaultClips[actionEnum] = audioClip;
@@ -52,10 +52,10 @@ namespace DefaultNamespace
             }
 
             // setup collisionSounds
-            foreach (ICollisionAction.CollisionActionEnum actionVals in Enum.GetValues(
-                         (typeof(ICollisionAction.CollisionActionEnum))))
+            foreach (CollisionActionEnum actionVals in Enum.GetValues(
+                         (typeof(CollisionActionEnum))))
             {
-                collisionSounds[actionVals] = new Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip>();
+                _collisionSounds[actionVals] = new Dictionary<CollisionEffectStrengthEnum, AudioClip>();
             }
 
             // loop over sound list from directory and put them in the dictionary called collisionSounds
@@ -67,14 +67,14 @@ namespace DefaultNamespace
                 Debug.Log(actionString);
                 var effectStrength = audioClipName.Substring(audioClipName.IndexOf("-") + 1);
                 Debug.Log(effectStrength);
-                ICollisionAction.CollisionActionEnum actionEnum;
-                Enum.TryParse<ICollisionAction.CollisionActionEnum>(actionString, out actionEnum);
-                ICollisionAction.CollisionEffectStrengthEnum effectStrengthEnum;
-                Enum.TryParse<ICollisionAction.CollisionEffectStrengthEnum>(effectStrength, out effectStrengthEnum);
+                CollisionActionEnum actionEnum;
+                Enum.TryParse<CollisionActionEnum>(actionString, out actionEnum);
+                CollisionEffectStrengthEnum effectStrengthEnum;
+                Enum.TryParse<CollisionEffectStrengthEnum>(effectStrength, out effectStrengthEnum);
                 if ((actionEnum.GetHashCode() > -1))
                 {
                     Debug.Log(actionEnum.ToString() + "." + effectStrengthEnum.ToString());
-                    var collisionSoundsActionGroup = collisionSounds[actionEnum];
+                    var collisionSoundsActionGroup = _collisionSounds[actionEnum];
                     if (effectStrengthEnum.GetHashCode() > 0)
                     {
                         collisionSoundsActionGroup[effectStrengthEnum] = audioClip;
@@ -82,13 +82,13 @@ namespace DefaultNamespace
                 }
             }
 
-            foreach (ICollisionAction.CollisionActionEnum actionEnumVal in Enum.GetValues(
-                         typeof(ICollisionAction.CollisionActionEnum)))
+            foreach (CollisionActionEnum actionEnumVal in Enum.GetValues(
+                         typeof(CollisionActionEnum)))
             {
                 AudioClip defaultActionAudioClip = defaultClips[actionEnumVal];
-                var collisionSoundsActionGroup = collisionSounds[actionEnumVal];
-                foreach (ICollisionAction.CollisionEffectStrengthEnum effectVal in Enum.GetValues(
-                             typeof(ICollisionAction.CollisionEffectStrengthEnum)))
+                var collisionSoundsActionGroup = _collisionSounds[actionEnumVal];
+                foreach (CollisionEffectStrengthEnum effectVal in Enum.GetValues(
+                             typeof(CollisionEffectStrengthEnum)))
                 {
                     if (!collisionSoundsActionGroup.ContainsKey(effectVal))
                     {
@@ -106,8 +106,8 @@ namespace DefaultNamespace
 
         public void PlayCollisionSound(CollisionActionController collisionActionController)
         {
-            Dictionary<ICollisionAction.CollisionEffectStrengthEnum, AudioClip> actionGroup =
-                collisionSounds[collisionActionController.GetCollisionActionEnum()];
+            Dictionary<CollisionEffectStrengthEnum, AudioClip> actionGroup =
+                _collisionSounds[collisionActionController.GetCollisionActionEnum()];
             AudioClip collisionSound = actionGroup[collisionActionController.GetCollisionEffectStrengthEnum()];
             audioSource.PlayOneShot(collisionSound);
         }

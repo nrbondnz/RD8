@@ -5,8 +5,8 @@ using UnityEngine;
 
     public class CameraFollow : MonoBehaviour
     {
-        private Transform cameraTarget;
-        [SerializeField] private Vector3 _offset;
+        private Transform _cameraTarget;
+        [SerializeField] private Vector3 offset;
         private float _yOffset = 0.0f;
         [SerializeField] private float lowerBound = -5.0f;
         [SerializeField] private float uppedBound = 25.0f;
@@ -15,8 +15,8 @@ using UnityEngine;
         private float _xPlusZDistance;
         private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
         private Player _player = new Player();
-        private Rigidbody targetRigidBody;
-        private GameObject currentWaypoint;
+        private Rigidbody _targetRigidBody;
+        private GameObject _currentWaypoint;
         public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
         public void OnEnable()
@@ -24,27 +24,28 @@ using UnityEngine;
             /*
              * This sets up s subscription to the state of the Player entity as it changes
              */
-            Actions.onPlayerChanged += UpdatePlayer;
+            Actions.OnPlayerChanged += UpdatePlayer;
             Actions.OnWaypointUpdate += UpdateCurrentWaypoint;
         }
 
         public void OnDisable()
         {
-            Actions.onPlayerChanged -= UpdatePlayer;
+            Actions.OnPlayerChanged -= UpdatePlayer;
+            Actions.OnWaypointUpdate -= UpdateCurrentWaypoint;
         }
 
         public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
         {
-            this.currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
+            this._currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
         }
 
         private void Start()
         {
             
-            cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
-            targetRigidBody = cameraTarget.GetComponent<Rigidbody>();
+            _cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
+            _targetRigidBody = _cameraTarget.GetComponent<Rigidbody>();
             //Actions.onPlayerChanged += UpdatePlayer;
-            Vector3 tempOffset = _offset;
+            Vector3 tempOffset = offset;
             tempOffset.y = 0;
             _xPlusZDistance = tempOffset.magnitude;
             //offset = transform.position - cameraTarget.position;
@@ -82,25 +83,25 @@ using UnityEngine;
         {
             
             //if ( (targetRigidBody.velocity.magnitude > 15.0) && ( ! _player.GoingForwards ))
-            if (this.currentWaypoint != null)
+            if (this._currentWaypoint != null)
             {
                 // todo - direction from target to waypoint, normalized
-                _normalizedTargetVelocity = (this.currentWaypoint.transform.position - targetRigidBody.position).normalized;
-                _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
-                _offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
-            } else if ( ( targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards )) {
-                _normalizedTargetVelocity = targetRigidBody.velocity.normalized;
+                _normalizedTargetVelocity = (this._currentWaypoint.transform.position - _targetRigidBody.position).normalized;
+                offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
+                offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
+            } else if ( ( _targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards )) {
+                _normalizedTargetVelocity = _targetRigidBody.velocity.normalized;
                 // now update the offset
-                _offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
-                _offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
+                offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
+                offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
             }
             
             
-            Vector3 offsetWithY = _offset;
+            Vector3 offsetWithY = offset;
             offsetWithY.y += _yOffset;
-            Vector3 targetPosition = cameraTarget.position + offsetWithY;
+            Vector3 targetPosition = _cameraTarget.position + offsetWithY;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition,
                 ref _cameraVelocity, smoothTime);
-            transform.LookAt(cameraTarget);
+            transform.LookAt(_cameraTarget);
         }
     }

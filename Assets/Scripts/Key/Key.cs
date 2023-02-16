@@ -9,7 +9,7 @@ namespace key
     {
         [SerializeField] KeyActionController keyActionController;
         [SerializeField] private float keyRotationSpeed = 3;
-        [SerializeField] WaypointManager _waypointManager;
+        [SerializeField] WaypointManager waypointManager;
 
       
 
@@ -18,7 +18,7 @@ namespace key
             if (other.CompareTag("Player"))
             {
                 keyActionController.CarryOutAction();
-                _waypointManager?.NextWaypoint();
+                waypointManager?.NextWaypoint();
                 gameObject.SetActive(false);
             }
         }

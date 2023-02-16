@@ -24,7 +24,7 @@ namespace key
         // Start is called before the first frame update
         void Start()
         {
-            KeyActionFactory.setKeyAction(this, keyActionEnumEnum);
+            KeyActionFactory.SetKeyAction(this, keyActionEnumEnum);
         }
 
         // Update is called once per frame

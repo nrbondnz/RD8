@@ -13,13 +13,13 @@ namespace DefaultNamespace
 
         void Start()
         {
-            Actions.OnGamePlayChanged += updateGameScore;
-            updateGameScore(GamePlayManager.GetInstance()._gamePlay);
+            Actions.OnGamePlayChanged += UpdateGameScore;
+            UpdateGameScore(GamePlayManager.GetInstance().GamePlay);
         }
 
         private void OnDestroy()
         {
-            Actions.OnGamePlayChanged -= updateGameScore;
+            Actions.OnGamePlayChanged -= UpdateGameScore;
         }
 
         private void Update()
@@ -28,12 +28,12 @@ namespace DefaultNamespace
         }
 
 
-        private void updateGameScore(GamePlay pGamePlay)
+        private void UpdateGameScore(GamePlay pGamePlay)
         {
-            scoreText.text = "Lives : " + pGamePlay._lives + " Time: " + convertToMinsAndSecs(pGamePlay._timeRemaining);
+            scoreText.text = "Lives : " + pGamePlay.Lives + " Time: " + ConvertToMinsAndSecs(pGamePlay.TimeRemaining);
         }
 
-        private String convertToMinsAndSecs(float timeIn)
+        private String ConvertToMinsAndSecs(float timeIn)
         {
             int mins = (int)(timeIn / 60.0);
             int secs = (int)(timeIn - (mins * 60));

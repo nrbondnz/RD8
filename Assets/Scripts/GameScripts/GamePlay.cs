@@ -4,27 +4,27 @@ namespace DefaultNamespace
     {
         public GamePlay(bool started, int lives, GameLevel gameLevel, float timeRemaining)
         {
-            _started = started;
-            _lives = lives;
-            _gameLevel = gameLevel;
-            _timeRemaining = timeRemaining;
+            Started = started;
+            Lives = lives;
+            GameLevel = gameLevel;
+            TimeRemaining = timeRemaining;
         }
 
-        public bool _started
+        public bool Started
         {
             get;
             set;
         }
 
-        public int _lives { get; set; }
-        public GameLevel _gameLevel { get; set; }
-        public float _timeRemaining { get; set; }
+        public int Lives { get; set; }
+        public GameLevel GameLevel { get; set; }
+        public float TimeRemaining { get; set; }
 
        
 
-        public int removeLife()
+        public int RemoveLife()
         {
-            return _lives--;
+            return Lives--;
         }
     }
 }

@@ -7,25 +7,25 @@ public class CameraSwitch : MonoBehaviour
     public GameObject[] objects;
     public Text text;
 
-    private int m_CurrentActiveObject;
+    private int _mCurrentActiveObject;
 
 
     private void OnEnable()
     {
-        text.text = objects[m_CurrentActiveObject].name;
+        text.text = objects[_mCurrentActiveObject].name;
     }
 
 
     public void NextCamera()
     {
-        int nextactiveobject = m_CurrentActiveObject + 1 >= objects.Length ? 0 : m_CurrentActiveObject + 1;
+        int nextactiveobject = _mCurrentActiveObject + 1 >= objects.Length ? 0 : _mCurrentActiveObject + 1;
 
         for (int i = 0; i < objects.Length; i++)
         {
             objects[i].SetActive(i == nextactiveobject);
         }
 
-        m_CurrentActiveObject = nextactiveobject;
-        text.text = objects[m_CurrentActiveObject].name;
+        _mCurrentActiveObject = nextactiveobject;
+        text.text = objects[_mCurrentActiveObject].name;
     }
 }

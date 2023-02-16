@@ -8,38 +8,38 @@ using UnityEngine.UIElements;
 
 public class WaypointManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _waypoints;
+    [SerializeField] private GameObject[] waypoints;
 
-    private int currentWaypoint = 0;
-    private int lastWaypoint = 0;
+    private int _currentWaypoint = 0;
+    private int _lastWaypoint = 0;
 
     public void Start()
     {
-        if (_waypoints is not null)
+        if (waypoints is not null)
         {
-            lastWaypoint = _waypoints.Length - 1;
+            _lastWaypoint = waypoints.Length - 1;
             ResetWaypoints();
         }
     }
 
     public void ResetWaypoints()
     {
-        currentWaypoint = 0;
+        _currentWaypoint = 0;
         Actions.OnWaypointUpdate?.Invoke(this);
     }
 
     public void NextWaypoint()
     {
-        if (currentWaypoint < lastWaypoint)
+        if (_currentWaypoint < _lastWaypoint)
         {
-            currentWaypoint++;
+            _currentWaypoint++;
             Actions.OnWaypointUpdate?.Invoke(this);
         }
     }
 
     public GameObject CurrentWaypointGameObject()
     {
-        return _waypoints == null ? null : _waypoints[currentWaypoint];
+        return waypoints == null ? null : waypoints[_currentWaypoint];
     }
 
 }

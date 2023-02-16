@@ -28,15 +28,15 @@ public class GameStartButtonHandler : MonoBehaviour
             headingForGameStart.text = "Want to play";
         } 
         else */ 
-        if ((GamePlayManager.GetInstance().GetGamePlay()._lives > 0) && (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining > 0.0))
+        if ((GamePlayManager.GetInstance().GetGamePlay().Lives > 0) && (GamePlayManager.GetInstance().GetGamePlay().TimeRemaining > 0.0))
         {
             headingForGameStart.text = "Winner - Play again?";
         }
-        else if ((GamePlayManager.GetInstance().GetGamePlay()._lives == 0) && (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining > 0.0))
+        else if ((GamePlayManager.GetInstance().GetGamePlay().Lives == 0) && (GamePlayManager.GetInstance().GetGamePlay().TimeRemaining > 0.0))
         {
             headingForGameStart.text = "Out of lives - Play again?";
         }
-        else if ((GamePlayManager.GetInstance().GetGamePlay()._lives > 0) && (GamePlayManager.GetInstance().GetGamePlay()._timeRemaining <= 0.0))
+        else if ((GamePlayManager.GetInstance().GetGamePlay().Lives > 0) && (GamePlayManager.GetInstance().GetGamePlay().TimeRemaining <= 0.0))
         {
             headingForGameStart.text = "Out of Time - Play again?";
         }

@@ -44,10 +44,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            //State = GameState.SayHiToMum;
-            //SceneManager.LoadScene("Menu");
-            //UpdateGameState(GameState.Winner);
-            //GamePlayManager.Instance.InitGame(GameLevel.Easy);
+            
             SceneManager.LoadSceneAsync("WinLoseMenu");
             GameState.GetInstance().ResetGameState();
 
@@ -58,7 +55,9 @@ namespace DefaultNamespace
         {
             GameState.GetInstance().GamePhases = newPhase;
             GameState.GetInstance().SceneNum = newLevel;
-            Debug.Log("GameManager: new state : " + GameState.GetInstance());
+            Debug.Log(
+                "GameManager: new state : " + GameState.GetInstance());
+            
             
             switch (GameState.GetInstance().GamePhases)
             {
@@ -80,7 +79,7 @@ namespace DefaultNamespace
                     throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
 
-            //Actions.OnGamePlayChanged?.Invoke(GameState.GetInstance());
+            
         }
     }
 

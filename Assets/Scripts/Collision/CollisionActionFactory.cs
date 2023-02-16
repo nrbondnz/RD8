@@ -2,24 +2,24 @@ using System;
 
 namespace Collision
 {
-    public static class GOCollisionActionFactory
+    public static class GoCollisionActionFactory
     {
         public static void SetGameObjectCollisionAction(CollisionActionController controller,
-            ICollisionAction.CollisionActionEnum collisionActionEnum)
+            CollisionActionEnum collisionActionEnum)
         {
-            if ( collisionActionEnum == ICollisionAction.CollisionActionEnum.Bounce)
+            if ( collisionActionEnum == CollisionActionEnum.Bounce)
             {
                 controller.gameObject.AddComponent<BounceCollisionAction>();
             }
-            else if ( collisionActionEnum == ICollisionAction.CollisionActionEnum.SpeedChange)
+            else if ( collisionActionEnum == CollisionActionEnum.SpeedChange)
             {
                 controller.gameObject.AddComponent<SpeedChangeCollisionAction>();
-            } else if (collisionActionEnum == ICollisionAction.CollisionActionEnum.Death)
+            } else if (collisionActionEnum == CollisionActionEnum.Death)
             {
                 controller.gameObject.AddComponent<DeathCollisionAction>();
-            } else if (collisionActionEnum == ICollisionAction.CollisionActionEnum.Attract)
+            } else if (collisionActionEnum == CollisionActionEnum.Attract)
             {
-                controller.gameObject.AddComponent<AttrctCollisionAction>();
+                controller.gameObject.AddComponent<AttractCollisionAction>();
             } 
             else 
             {

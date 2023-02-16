@@ -8,33 +8,33 @@ namespace Collision
     public class CollisionActionController : MonoBehaviour
     {
 
-        [SerializeField] protected ICollisionAction.CollisionActionEnum _collisionAction;
+        [SerializeField] protected CollisionActionEnum collisionAction;
 
-        [SerializeField] protected ICollisionAction.CollisionEffectStrengthEnum _effectStrengh;
+        [SerializeField] protected CollisionEffectStrengthEnum effectStrengh;
         
 
         //private IKeyAction _keyActionInst;
-        public ICollisionAction.CollisionActionEnum GetCollisionActionEnum()
+        public CollisionActionEnum GetCollisionActionEnum()
         {
-            return _collisionAction;
+            return collisionAction;
         }
 
-        public ICollisionAction.CollisionEffectStrengthEnum GetCollisionEffectStrengthEnum()
+        public CollisionEffectStrengthEnum GetCollisionEffectStrengthEnum()
         {
-            return _effectStrengh;
+            return effectStrengh;
         }
 
         
         public int GetCollisionActionID()
         {
-            return (int)_collisionAction;
+            return (int)collisionAction;
         }
         
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, _effectStrengh);
+                this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, effectStrengh);
                 SoundManager.GetInstance().PlayCollisionSound(this);
             }
         }
@@ -43,7 +43,7 @@ namespace Collision
         {
             if (other.CompareTag("Player"))
             {
-                this.gameObject.GetComponent<ICollisionAction>().DoCollisionAreaExitAction(this, _effectStrengh);
+                this.gameObject.GetComponent<ICollisionAction>().DoCollisionAreaExitAction(this, effectStrengh);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Collision
         void Start()
         {
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
-            GOCollisionActionFactory.SetGameObjectCollisionAction(this, _collisionAction);
+            GoCollisionActionFactory.SetGameObjectCollisionAction(this, collisionAction);
             setColorBasedOnCollisionTypeAndStrenth();
             //soundManager = GetComponent<SoundManager>();
         }
@@ -65,28 +65,28 @@ namespace Collision
         void setColorBasedOnCollisionTypeAndStrenth()
         {
             //int matID = (int)_collisionAction + (int)_effectStrengh;
-            switch (_collisionAction)
+            switch (collisionAction)
             {
-                case ICollisionAction.CollisionActionEnum.Bounce:
+                case CollisionActionEnum.Bounce:
                     gameObject.GetComponent<MeshRenderer>().material.color = new Color(
-                        (float)0.9 - ((((float) (int) _effectStrengh) / (float) 15.0) * (float)0.5), 
+                        (float)0.9 - ((((float) (int) effectStrengh) / (float) 15.0) * (float)0.5), 
                         (float)1.0, 
                         (float)0.25);
                     break;
-                case ICollisionAction.CollisionActionEnum.SpeedChange:
+                case CollisionActionEnum.SpeedChange:
                 {
-                    Color col = new Color((float) 1.0, (float) 1.0 - (((float) (int) _effectStrengh) / (float) 15.0),
+                    Color col = new Color((float) 1.0, (float) 1.0 - (((float) (int) effectStrengh) / (float) 15.0),
                         (float) 0.255);
                     gameObject.GetComponent<MeshRenderer>().material.color = col;
                     Debug.Log("Color: r : " + col.r + " g : " + col.g + " b " + col.b);
                     break;
                 }
-                case ICollisionAction.CollisionActionEnum.Death:
+                case CollisionActionEnum.Death:
                     gameObject.GetComponent<MeshRenderer>().material.color = new Color((float)0.1, (float)0.1, (float)0.1);
                     break;
-                case ICollisionAction.CollisionActionEnum.Attract:
+                case CollisionActionEnum.Attract:
                     gameObject.GetComponent<MeshRenderer>().material.color = new Color((float) 0.021,
-                        (float) 0.65 - ((((float) (int) _effectStrengh) / (float) 15.0) * (float) 0.55),
+                        (float) 0.65 - ((((float) (int) effectStrengh) / (float) 15.0) * (float) 0.55),
                         (float) 0.75);
                     break;
             }

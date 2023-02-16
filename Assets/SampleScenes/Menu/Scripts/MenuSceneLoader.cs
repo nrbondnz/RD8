@@ -5,13 +5,13 @@ public class MenuSceneLoader : MonoBehaviour
 {
     public GameObject menuUI;
 
-    private GameObject m_Go;
+    private GameObject _mGo;
 
 	void Awake ()
 	{
-	    if (m_Go == null)
+	    if (_mGo == null)
 	    {
-	        m_Go = Instantiate(menuUI);
+	        _mGo = Instantiate(menuUI);
 	    }
 	}
 }

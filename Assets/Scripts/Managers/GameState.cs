@@ -17,8 +17,8 @@ namespace DefaultNamespace
     {
     
         private GamePhases _gamePhases = GamePhases.SayHiToMum;
-        private int sceneNum = 0;
-        private int lastLevel = 0;
+        private int _sceneNum = 0;
+        private int _lastLevel = 0;
         private static GameState _instance;
       
         private void Awake()
@@ -43,7 +43,7 @@ namespace DefaultNamespace
 
         public void ResetGameState()
         {
-            this.sceneNum = 0;
+            this._sceneNum = 0;
             this.GamePhases = GamePhases.SayHiToMum;
         }
 
@@ -52,9 +52,12 @@ namespace DefaultNamespace
             string [] files = System.IO.Directory.GetFiles("Assets/Scenes/Game Levels/");
             foreach (var aFile in files)
             {
+                    Debug.Log(aFile);
+                Debug.Log(aFile.EndsWith(".unity"));
+                
                 if (aFile.EndsWith(".unity"))
                 {
-                    lastLevel++;
+                    _lastLevel++;
                 }
             }
 
@@ -64,13 +67,13 @@ namespace DefaultNamespace
         public GameState()
         {
             _gamePhases = GamePhases.SayHiToMum;
-            sceneNum = 0;
+            _sceneNum = 0;
         }
 
         public int LastLevel
         {
-            get => lastLevel;
-            set => lastLevel = value;
+            get => _lastLevel;
+            set => _lastLevel = value;
         }
 
         public GamePhases GamePhases
@@ -81,8 +84,8 @@ namespace DefaultNamespace
 
         public int SceneNum
         {
-            get => sceneNum;
-            set => sceneNum = value;
+            get => _sceneNum;
+            set => _sceneNum = value;
         }
     }
 }

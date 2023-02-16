@@ -5,7 +5,7 @@ namespace Collision
     public class DeathCollisionAction : MonoBehaviour, ICollisionAction
     {
         public void DoCollisionAction(CollisionActionController controller,
-            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
+            CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
             GameResetManager.GetInstance().ResetAction();
             //Debug.Log("Player : " + GameObject.FindGameObjectWithTag("Player").transform.position);
@@ -15,7 +15,7 @@ namespace Collision
         }
         
         public void DoCollisionAreaExitAction(CollisionActionController controller,
-            ICollisionAction.CollisionEffectStrengthEnum collisionEffectStrengthEnum)
+            CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
             // No action for this Collision
         }
