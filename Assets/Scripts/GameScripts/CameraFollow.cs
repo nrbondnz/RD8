@@ -3,6 +3,11 @@ using DefaultNamespace;
 using UnityEngine;
 
 
+
+    /*
+     * Gets the main Camera to follow the _cameraTarget at a specific distance.
+     * It also uses waypoints to determine how to follow the _cameraTarget in a direction that points to the next waypoint.
+     */
     public class CameraFollow : MonoBehaviour
     {
         private Transform _cameraTarget;
@@ -19,26 +24,6 @@ using UnityEngine;
         private GameObject _currentWaypoint;
         public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
-        public void OnEnable()
-        {
-            /*
-             * This sets up s subscription to the state of the Player entity as it changes
-             */
-            Actions.OnPlayerChanged += UpdatePlayer;
-            Actions.OnWaypointUpdate += UpdateCurrentWaypoint;
-        }
-
-        public void OnDisable()
-        {
-            Actions.OnPlayerChanged -= UpdatePlayer;
-            Actions.OnWaypointUpdate -= UpdateCurrentWaypoint;
-        }
-
-        public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
-        {
-            this._currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
-        }
-
         private void Start()
         {
             
@@ -51,6 +36,9 @@ using UnityEngine;
             //offset = transform.position - cameraTarget.position;
         }
 
+        /**
+         * Allows player to move the camera up and down as works for them
+         */
         private void Update()
         {
             if (Input.GetKeyUp(KeyCode.RightApple))
@@ -71,14 +59,6 @@ using UnityEngine;
                 }
             }
         }
-
-        
-        public void UpdatePlayer(Player pPlayer)
-        {
-            _player = pPlayer;
-            Debug.Log("Player : " + pPlayer);
-        }
-
         private void LateUpdate()
         {
             
@@ -104,4 +84,33 @@ using UnityEngine;
                 ref _cameraVelocity, smoothTime);
             transform.LookAt(_cameraTarget);
         }
+
+        /*
+         * This sets up s subscription to the state of the Player entity as it changes
+         * And a subscription to current waypoint as it changes
+         */
+        public void OnEnable()
+        {
+            
+            Actions.OnPlayerChanged += UpdatePlayer;
+            Actions.OnWaypointUpdate += UpdateCurrentWaypoint;
+        }
+
+        public void OnDisable()
+        {
+            Actions.OnPlayerChanged -= UpdatePlayer;
+            Actions.OnWaypointUpdate -= UpdateCurrentWaypoint;
+        }
+        
+        public void UpdatePlayer(Player pPlayer)
+        {
+            _player = pPlayer;
+            Debug.Log("Player : " + pPlayer);
+        }
+
+        public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
+        {
+            this._currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
+        }
+        
     }
