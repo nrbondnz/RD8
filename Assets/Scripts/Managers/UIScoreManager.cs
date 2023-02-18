@@ -1,9 +1,10 @@
 using System;
+using Game;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DefaultNamespace
+namespace Managers
 {
     public class UIScoreManager : MonoBehaviour
     {

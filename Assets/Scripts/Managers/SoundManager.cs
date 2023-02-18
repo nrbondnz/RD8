@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Collision;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Managers
 {
     public class SoundManager : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-namespace DefaultNamespace
+namespace Managers
 {
     public enum GamePhases
     {
