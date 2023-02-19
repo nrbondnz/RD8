@@ -1,9 +1,18 @@
+using Game;
 using UnityEngine;
 
 namespace Collision
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class DeathCollisionAction : MonoBehaviour, ICollisionAction
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
@@ -14,6 +23,11 @@ namespace Collision
             
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAreaExitAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {

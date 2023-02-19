@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 using String = System.String;
 
-namespace DefaultNamespace
+namespace Managers
 {
     public class GameManager : MonoBehaviour
     {

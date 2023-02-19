@@ -1,4 +1,6 @@
-namespace DefaultNamespace
+using Managers;
+
+namespace Game
 {
     public struct GamePlay
     {

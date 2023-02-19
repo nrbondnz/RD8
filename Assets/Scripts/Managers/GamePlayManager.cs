@@ -1,8 +1,10 @@
 using System;
+using Game;
+using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace DefaultNamespace
+namespace Managers
 {
 
     public class GamePlayManager : MonoBehaviour

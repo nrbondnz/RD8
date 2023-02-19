@@ -1,5 +1,5 @@
 using System;
-using DefaultNamespace;
+using Managers;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,23 +13,37 @@ namespace Collision
         [SerializeField] protected CollisionEffectStrengthEnum effectStrengh;
         
 
-        //private IKeyAction _keyActionInst;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public CollisionActionEnum GetCollisionActionEnum()
         {
             return collisionAction;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public CollisionEffectStrengthEnum GetCollisionEffectStrengthEnum()
         {
             return effectStrengh;
         }
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int GetCollisionActionID()
         {
             return (int)collisionAction;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -39,6 +53,10 @@ namespace Collision
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -47,7 +65,9 @@ namespace Collision
             }
         }
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Start is called before the first frame update
+        /// </summary>
         void Start()
         {
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
@@ -62,6 +82,9 @@ namespace Collision
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         void setColorBasedOnCollisionTypeAndStrenth()
         {
             //int matID = (int)_collisionAction + (int)_effectStrengh;
@@ -92,6 +115,9 @@ namespace Collision
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void OnDrawGizmos()
         {
             setColorBasedOnCollisionTypeAndStrenth();

@@ -1,11 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace DefaultNamespace
+namespace Game
 {
 
 

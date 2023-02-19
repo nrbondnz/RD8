@@ -1,7 +1,9 @@
 namespace Collision
 {
    
-   
+   /// <summary>
+   /// 
+   /// </summary>
         public enum CollisionActionEnum
         {
             Bounce = 0,
@@ -10,6 +12,9 @@ namespace Collision
             Attract = 3
         }
 
+   /// <summary>
+   /// 
+   /// </summary>
         public enum CollisionEffectStrengthEnum
         {
             Full = 15,
@@ -21,11 +26,23 @@ namespace Collision
             Lowest = 1
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public interface ICollisionAction
         {   
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="controller"></param>
+            /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum);
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAreaExitAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum);
     }
