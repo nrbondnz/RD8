@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4492067, g: 0.49927777, b: 0.5757142, a: 1}
+  m_IndirectSpecularColor: {r: 0.44920743, g: 0.49927813, b: 0.57571566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -413,7 +413,7 @@ MonoBehaviour:
   easyButton: {fileID: 1375722077}
   hardButton: {fileID: 107849686}
   impossibleButton: {fileID: 1347789806}
-  startLevel: 4
+  startLevel: 3
 --- !u!4 &227502534
 Transform:
   m_ObjectHideFlags: 0

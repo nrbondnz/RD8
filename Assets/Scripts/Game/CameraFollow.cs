@@ -1,5 +1,5 @@
 using System;
-using DefaultNamespace;
+using Managers;
 using UnityEngine;
 
 
@@ -19,7 +19,7 @@ using UnityEngine;
         private Vector3 _cameraVelocity = Vector3.zero;
         private float _xPlusZDistance;
         private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
-        private Player _player = new Player();
+        private Player.Player _player = new Player.Player();
         private Rigidbody _targetRigidBody;
         private GameObject _currentWaypoint;
         public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
@@ -102,7 +102,7 @@ using UnityEngine;
             Actions.OnWaypointUpdate -= UpdateCurrentWaypoint;
         }
         
-        public void UpdatePlayer(Player pPlayer)
+        public void UpdatePlayer(Player.Player pPlayer)
         {
             _player = pPlayer;
             Debug.Log("Player : " + pPlayer);
