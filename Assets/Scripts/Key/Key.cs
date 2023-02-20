@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Key;
 using Managers;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ namespace key
                 keyActionController.CarryOutAction();
                 waypointManager?.NextWaypoint();
                 gameObject.SetActive(false);
+                Debug.LogWarning("Just setActive to false");
             }
         }
 

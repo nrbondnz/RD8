@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace key
+namespace Key
 {
     public class OpenKeyAction : MonoBehaviour, IKeyAction
     {

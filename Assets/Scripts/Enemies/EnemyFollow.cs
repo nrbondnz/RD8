@@ -1,56 +1,56 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+namespace Enemies
 {
-    [SerializeField] private float speed = 1;
-    private Rigidbody _rb;
-    private bool _isPlayerInRange = false;
-    private GameObject _player;
-
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyFollow : MonoBehaviour
     {
-        _rb = GetComponent<Rigidbody>();
-        _player = GameObject.FindGameObjectWithTag("Player");
-    }
+        [SerializeField] private float speed = 1;
+        private Rigidbody _rb;
+        private bool _isPlayerInRange = false;
+        private GameObject _player;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void FixedUpdate()
-    {
-        
-        if (_isPlayerInRange)
+        // Start is called before the first frame update
+        void Start()
         {
-            Vector3 targetPosition = _player.transform.position - transform.position;
-            _rb.AddForce(targetPosition * speed * Time.fixedDeltaTime,ForceMode.VelocityChange);
-
-            Vector3 newVelocity = _rb.velocity;
-            newVelocity.y = 0;
-            _rb.velocity = newVelocity;
+            _rb = GetComponent<Rigidbody>();
+            _player = GameObject.FindGameObjectWithTag("Player");
         }
-        
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        // Update is called once per frame
+        void Update()
         {
-            _isPlayerInRange = true;
+
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        private void FixedUpdate()
         {
-            _isPlayerInRange = false;
+        
+            if (_isPlayerInRange)
+            {
+                Vector3 targetPosition = _player.transform.position - transform.position;
+                _rb.AddForce(targetPosition * speed * Time.fixedDeltaTime,ForceMode.VelocityChange);
+
+                Vector3 newVelocity = _rb.velocity;
+                newVelocity.y = 0;
+                _rb.velocity = newVelocity;
+            }
+        
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _isPlayerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _isPlayerInRange = false;
+            }
         }
     }
 }

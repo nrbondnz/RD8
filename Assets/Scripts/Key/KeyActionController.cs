@@ -1,8 +1,6 @@
-
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace key
+namespace Key
 {
     public class KeyActionController : MonoBehaviour
     {
@@ -10,6 +8,7 @@ namespace key
         [SerializeField] private float actionTime = 3;
         [SerializeField] private bool isActionStarted = false;
         [SerializeField] private bool isReveal = false;
+        
 
         [SerializeField] private IKeyAction.KeyActionEnum keyActionEnumEnum;
         //private IKeyAction _keyActionInst;

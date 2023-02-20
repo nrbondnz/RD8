@@ -1,6 +1,6 @@
 using System;
 
-namespace key
+namespace Key
 {
     public static class KeyActionFactory
     {
