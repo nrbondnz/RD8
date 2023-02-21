@@ -3,7 +3,12 @@ using UnityEngine;
 namespace Collision
 {
     /// <summary>
-    /// 
+    /// Details the action to be taken when a collision occurs with the target.
+    /// In this class the target is bounced away from the collider.
+    /// The strength of the bounce can be specified.
+    ///
+    /// Each action type can be set against the collider object by adding the
+    /// CollectionActionController to the collider object and setting the action name and strength.
     /// </summary>
     public class BounceCollisionAction : MonoBehaviour, ICollisionAction
     {

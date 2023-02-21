@@ -5,7 +5,7 @@ namespace Collision
     /// <summary>
     /// 
     /// </summary>
-    public static class GoCollisionActionFactory
+    public static class CollisionActionFactory
     {
         /// <summary>
         /// 

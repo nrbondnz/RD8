@@ -3,7 +3,12 @@ using UnityEngine;
 namespace Collision
 {
     /// <summary>
-    /// 
+    /// Details the action to be taken when a collision occurs with the target.
+    /// In this class the target is attracted to the collider.
+    /// The strength of the attraction can be specified.
+    ///
+    /// Each action type can be set against the collider object by adding the
+    /// CollectionActionController to the collider object and setting the action name and strength.
     /// </summary>
     public class AttractCollisionAction : MonoBehaviour, ICollisionAction
     {
@@ -24,7 +29,7 @@ namespace Collision
 
         }
 /// <summary>
-/// The effect is applied when the collision has been detected
+/// The effect is applied whilst in the collision effect zone
 /// </summary>
         private void FixedUpdate()
         {

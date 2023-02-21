@@ -5,6 +5,11 @@ using UnityEngine;
 
 namespace Collision
 {
+    /// <summary>
+    /// The collision action controller is responsible for handling the collision of a GameObject.
+    /// It uses an interface implemented by a number of different action classes with dofferent effects when the
+    /// target enters or leaves the collision effect zone
+    /// </summary>
     public class CollisionActionController : MonoBehaviour
     {
 
@@ -14,7 +19,8 @@ namespace Collision
         
 
         /// <summary>
-        /// 
+        /// The unity game object using the collision action controller defines the action(and hence the effect)
+        /// This is returned to interested parties
         /// </summary>
         /// <returns></returns>
         public CollisionActionEnum GetCollisionActionEnum()
@@ -23,7 +29,8 @@ namespace Collision
         }
 
         /// <summary>
-        /// 
+        /// The unity game object using the collision action controller defines the strength of the action effect
+        /// This is returned to interested parties
         /// </summary>
         /// <returns></returns>
         public CollisionEffectStrengthEnum GetCollisionEffectStrengthEnum()
@@ -41,7 +48,8 @@ namespace Collision
         }
         
         /// <summary>
-        /// 
+        /// This method is attached to the game object collision detector
+        /// On activation, the implementation of the collision action is called to take the appropriate action
         /// </summary>
         /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
@@ -54,7 +62,7 @@ namespace Collision
         }
 
         /// <summary>
-        /// 
+        /// When the collision active zone is exited the implementing class will be called
         /// </summary>
         /// <param name="other"></param>
         private void OnTriggerExit(Collider other)
@@ -67,11 +75,13 @@ namespace Collision
 
         /// <summary>
         /// Start is called before the first frame update
+        /// This class sets up the appropriate collision action gameobject by calling the factory method
+        /// Then when triggered for collision the appropriate collision action is called
         /// </summary>
         void Start()
         {
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
-            GoCollisionActionFactory.SetGameObjectCollisionAction(this, collisionAction);
+            CollisionActionFactory.SetGameObjectCollisionAction(this, collisionAction);
             setColorBasedOnCollisionTypeAndStrenth();
             //soundManager = GetComponent<SoundManager>();
         }
@@ -83,7 +93,7 @@ namespace Collision
         }
 
         /// <summary>
-        /// 
+        /// Action plus effect strengh are used to set the color of the collider gameobject
         /// </summary>
         void setColorBasedOnCollisionTypeAndStrenth()
         {
@@ -116,7 +126,7 @@ namespace Collision
         }
 
         /// <summary>
-        /// 
+        /// Draws the action plus effect color effect as the color of the object even during non running mode
         /// </summary>
         private void OnDrawGizmos()
         {
