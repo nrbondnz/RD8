@@ -3,20 +3,19 @@ using UnityEngine;
 namespace Collision
 {
     /// <summary>
-    /// 
+    /// Details the action to be taken when a collision occurs with the target.
+    /// In this class the target is sped up by the collider.
+    /// The strength of the effect can be specified.
+    ///
+    /// Each action type can be set against the collider object by adding the
+    /// CollectionActionController to the collider object and setting the action name and strength.
     /// </summary>
     public class SpeedChangeCollisionAction : MonoBehaviour, ICollisionAction
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="collisionEffectStrengthEnum"></param>
-        public SpeedChangeCollisionAction(CollisionEffectStrengthEnum collisionEffectStrengthEnum)
-        {
-        }
+
 
         /// <summary>
-        /// 
+        /// On entering the collision zone this method is called. in this case the target is sped up through the collider.
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="collisionEffectStrengthEnum"></param>
@@ -36,8 +35,8 @@ namespace Collision
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().velocity = playerMoveVector;
         }
         
-        /// <summary>
-        /// 
+        /// <summar>
+        /// Speed up effect ends
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="collisionEffectStrengthEnum"></param>

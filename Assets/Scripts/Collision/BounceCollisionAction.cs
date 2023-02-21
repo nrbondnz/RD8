@@ -13,7 +13,7 @@ namespace Collision
     public class BounceCollisionAction : MonoBehaviour, ICollisionAction
     {
 /// <summary>
-/// 
+/// On entering the collision zone this method is called. in this case the target is bounced away from the collider.
 /// </summary>
 /// <param name="controller"></param>
 /// <param name="collisionEffectStrengthEnum"></param>

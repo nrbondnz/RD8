@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Enemies
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CannonController : MonoBehaviour
     {
         [SerializeField] private Transform cannonHead;
@@ -16,7 +19,9 @@ namespace Enemies
         private float _timeLeftToShoot = 0;
 
         private LineRenderer _cannonLaser;
-        // Start is called before the first frame update
+        /// <summary>
+        /// Start is called before the first frame update
+        /// </summary>
         void Start()
         {
             _cannonLaser = GetComponent<LineRenderer>();
@@ -26,7 +31,9 @@ namespace Enemies
             _timeLeftToShoot = shootingCoolDown;
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Update is called once per frame
+        /// </summary>
         void Update()
         {
             if (_isPlayerInRange)
