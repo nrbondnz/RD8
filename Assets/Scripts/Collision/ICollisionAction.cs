@@ -27,19 +27,20 @@ namespace Collision
         }
 
         /// <summary>
-        /// 
+        /// This interface is used to allow for different collision effects to be chosen for the collition action controller
         /// </summary>
         public interface ICollisionAction
         {   
             /// <summary>
-            /// 
+            /// When a collision with collider zone happens an implmentation of this method will be called
+            /// e.g. in the CollitionActionController
             /// </summary>
             /// <param name="controller"></param>
             /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum);
         /// <summary>
-        /// 
+        /// As per DoCollisionAction this method will be called in the collision action controller on zone exit
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="collisionEffectStrengthEnum"></param>
