@@ -3,6 +3,7 @@ using Game;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
 namespace Managers
 {
@@ -15,7 +16,7 @@ namespace Managers
         void Start()
         {
             Actions.OnGamePlayChanged += UpdateGameScore;
-            UpdateGameScore(GamePlayManager.GetInstance().GamePlay);
+            UpdateGameScore(GamePlayManager.GetInstance().GameInfo);
         }
 
         private void OnDestroy()
@@ -29,9 +30,9 @@ namespace Managers
         }
 
 
-        private void UpdateGameScore(GamePlay pGamePlay)
+        private void UpdateGameScore(GameInfo pGameInfo)
         {
-            scoreText.text = "Lives : " + pGamePlay.Lives + " Time: " + ConvertToMinsAndSecs(pGamePlay.TimeRemaining);
+            scoreText.text = "Lives : " + pGameInfo.Lives + " Time: " + ConvertToMinsAndSecs(pGameInfo.TimeRemaining);
         }
 
         private String ConvertToMinsAndSecs(float timeIn)

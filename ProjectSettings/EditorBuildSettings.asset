@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Levels/Level 3.unity
     guid: 2681c55b67e554377b14b4b4fb48c4e6
   - enabled: 1
-    path: Assets/Scenes/Game Management/WinLoseMenu.unity
+    path: Assets/Scenes/Game Levels/WinLoseMenu.unity
     guid: 1a192a2498b214257812906602b96bf4
   - enabled: 1
     path: Assets/Scenes/Game Levels/Level 4.unity

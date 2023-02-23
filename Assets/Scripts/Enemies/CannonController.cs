@@ -3,7 +3,9 @@ using UnityEngine;
 namespace Enemies
 {
     /// <summary>
-    /// 
+    /// The cannon controller allows the cannon to follow the player when in range
+    /// The cannon head needs that can rotate from a fixed point.
+    /// The cannon tip is the firing point
     /// </summary>
     public class CannonController : MonoBehaviour
     {
@@ -20,7 +22,7 @@ namespace Enemies
 
         private LineRenderer _cannonLaser;
         /// <summary>
-        /// Start is called before the first frame update
+        /// Start is called before the first frame update to setup the controller ready for use
         /// </summary>
         void Start()
         {
@@ -33,6 +35,17 @@ namespace Enemies
 
         /// <summary>
         /// Update is called once per frame
+        /// The cannon head is held in place at one end so the LookAt means the other end will
+        /// move to look at the player when active.
+        /// This is all achieved by defining the pbject to point as having two points a fixed point and a
+        /// movable point which results in a vector pointing to the player.
+        ///
+        /// The tip is connected to the tip of the head and the lazer beams frpm the tip to the player
+        ///
+        /// The laser color is set according to how much time is left in the countdown to zero(fire time)
+        ///
+        /// When the timer reaches zero an impulse force is applied to the player snd the timer
+        /// will be reset
         /// </summary>
         void Update()
         {
@@ -63,7 +76,10 @@ namespace Enemies
                 }
             }
         }
-
+        
+        /// <summary>
+        ///the target is within the zone of triggering so switch on the in range and laser tracking
+        /// </summary>
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -73,6 +89,11 @@ namespace Enemies
             }
         }
 
+        /// <summary>
+        /// The target is out of range of the zone of following
+        /// So reset to waiting state
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Player"))

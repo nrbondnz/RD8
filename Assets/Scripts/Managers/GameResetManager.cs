@@ -2,7 +2,7 @@ using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Game
+namespace Managers
 {
     public class GameResetManager : MonoBehaviour
     {

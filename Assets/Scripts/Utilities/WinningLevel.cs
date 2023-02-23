@@ -1,8 +1,9 @@
 using System.Collections;
+using Game;
 using Managers;
 using UnityEngine;
 
-namespace Game
+namespace Utilities
 {
 
 

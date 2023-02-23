@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: New Game?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 227502534}
   - component: {fileID: 227502533}
   m_Layer: 0
-  m_Name: GameStartButtonHandler
+  m_Name: StartingTextScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   easyButton: {fileID: 1375722077}
   hardButton: {fileID: 107849686}
   impossibleButton: {fileID: 1347789806}
-  startLevel: 4
+  startLevel: 5
 --- !u!4 &227502534
 Transform:
   m_ObjectHideFlags: 0

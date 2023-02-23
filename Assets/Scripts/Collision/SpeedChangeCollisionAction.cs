@@ -35,8 +35,8 @@ namespace Collision
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().velocity = playerMoveVector;
         }
         
-        /// <summar>
-        /// Speed up effect ends
+        /// <summary>
+        /// Speed up effect zone is exited
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="collisionEffectStrengthEnum"></param>

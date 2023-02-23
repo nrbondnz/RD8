@@ -1,5 +1,6 @@
 using Managers;
 using UnityEngine;
+using Utilities;
 
 
 /*
@@ -8,6 +9,10 @@ using UnityEngine;
      */
     namespace Game
     {
+        /// <summary>
+        /// Gets the main Camera to follow the _cameraTarget at a specific distance.
+        /// It also uses waypoints to determine how to follow the _cameraTarget in a direction that points to the next waypoint.
+        /// </summary>
         public class CameraFollow : MonoBehaviour
         {
             private Transform _cameraTarget;
@@ -24,6 +29,10 @@ using UnityEngine;
             private GameObject _currentWaypoint;
             public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
+            /// <summary>
+            /// The players transform is captured for use in camera follow
+            /// The camera offset is also captured 
+            /// </summary>
             private void Start()
             {
             
@@ -36,9 +45,10 @@ using UnityEngine;
                 //offset = transform.position - cameraTarget.position;
             }
 
-            /**
-         * Allows player to move the camera up and down as works for them
-         */
+            
+            /// <summary>
+            /// Allows player to move the camera up and down as works for them
+            /// </summary> 
             private void Update()
             {
                 if (Input.GetKeyUp(KeyCode.RightApple))
@@ -59,10 +69,14 @@ using UnityEngine;
                     }
                 }
             }
+            
+            /// <summary>
+            /// The camera follows the player from the correct distance and pointing towards the waypoint
+            /// It draws a normalised line from play to waypoint and that gives the camera direction from
+            /// the desired offset magnitude  
+            /// </summary>
             private void LateUpdate()
             {
-            
-                //if ( (targetRigidBody.velocity.magnitude > 15.0) && ( ! _player.GoingForwards ))
                 if (this._currentWaypoint != null)
                 {
                     // todo - direction from target to waypoint, normalized
@@ -84,11 +98,11 @@ using UnityEngine;
                     ref _cameraVelocity, smoothTime);
                 transform.LookAt(_cameraTarget);
             }
-
-            /*
-         * This sets up s subscription to the state of the Player entity as it changes
-         * And a subscription to current waypoint as it changes
-         */
+            
+            /// <summary>
+            /// This sets up s subscription to the state of the Player entity as it changes
+            /// And a subscription to current waypoint as it changes
+            /// </summary>
             public void OnEnable()
             {
             
@@ -108,6 +122,10 @@ using UnityEngine;
                 Debug.Log("Player : " + pPlayer);
             }
 
+            /// <summary>
+            /// Updates the waypoint to the new waypoint when previous waypoint is reached
+            /// </summary>
+            /// <param name="pWaypointManager"></param>
             public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
             {
                 this._currentWaypoint = pWaypointManager.CurrentWaypointGameObject();

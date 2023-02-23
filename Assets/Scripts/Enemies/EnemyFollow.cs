@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Enemies
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class EnemyFollow : MonoBehaviour
     {
         [SerializeField] private float speed = 1;
@@ -9,7 +12,11 @@ namespace Enemies
         private bool _isPlayerInRange = false;
         private GameObject _player;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Start is called before the first frame update
+        /// This script is a child of the enemy object so the rigidbody is stored for use in movement
+        /// </summary>
+        // 
         void Start()
         {
             _rb = GetComponent<Rigidbody>();
@@ -22,6 +29,10 @@ namespace Enemies
 
         }
 
+        /// <summary>
+        /// If player is within the detection range a force is applied in the direction of the player
+        /// The speed attribute given to the enemy is used to determine how fast the enemy will move 
+        /// </summary>
         private void FixedUpdate()
         {
         
@@ -37,6 +48,10 @@ namespace Enemies
         
         }
 
+        /// <summary>
+        /// Player is in range so begin enemy effect
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -44,7 +59,10 @@ namespace Enemies
                 _isPlayerInRange = true;
             }
         }
-
+        /// <summary>
+        /// End the effect on the enemy object
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Player"))

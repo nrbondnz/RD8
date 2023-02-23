@@ -3,19 +3,20 @@ using Game;
 using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utilities;
 
 namespace Managers
 {
 
     public class GamePlayManager : MonoBehaviour
     {
-        public GamePlay GamePlay;
+        public GameInfo GameInfo;
 
         private static GamePlayManager _instance;
 
-        public GamePlay GetGamePlay()
+        public GameInfo GetGamePlay()
         {
-            return GamePlay;
+            return GameInfo;
         }
         private void Awake()
         {
@@ -27,10 +28,10 @@ namespace Managers
             }
             Debug.Log("GamePlayManager Awake");
             _instance = this;
-            GamePlay.Lives = 0;
-            GamePlay.Started = false;
-            GamePlay.GameLevel = GameLevel.Easy;
-            GamePlay.TimeRemaining = (float) 0.0;
+            GameInfo.Lives = 0;
+            GameInfo.Started = false;
+            GameInfo.GameDifficulty = GameDifficulty.Easy;
+            GameInfo.TimeRemaining = (float) 0.0;
             DontDestroyOnLoad(gameObject);
         }
 
@@ -43,51 +44,51 @@ namespace Managers
 
         public void Start()
         {
-            GamePlay.Started = false;
+            GameInfo.Started = false;
         }
 
-        public void InitGame(GameLevel pGameLevel)
+        public void InitGame(GameDifficulty pGameDifficulty)
         {
-            GamePlay = new GamePlay();
-            GamePlay.GameLevel = pGameLevel;
-            if (GamePlay.GameLevel == GameLevel.Easy)
+            GameInfo = new GameInfo();
+            GameInfo.GameDifficulty = pGameDifficulty;
+            if (GameInfo.GameDifficulty == GameDifficulty.Easy)
             {
-                GamePlay.Lives = 15;
-                GamePlay.TimeRemaining = 1000f;
-            } else if (GamePlay.GameLevel == GameLevel.Hard)
+                GameInfo.Lives = 15;
+                GameInfo.TimeRemaining = 1000f;
+            } else if (GameInfo.GameDifficulty == GameDifficulty.Hard)
             {
-                GamePlay.Lives = 3;
-                GamePlay.TimeRemaining = 200f;
+                GameInfo.Lives = 3;
+                GameInfo.TimeRemaining = 200f;
             }
             else
             {
-                GamePlay.Lives = 1;
-                GamePlay.TimeRemaining = 100f;
+                GameInfo.Lives = 1;
+                GameInfo.TimeRemaining = 100f;
             }
-        Actions.OnGamePlayChanged?.Invoke(GamePlay);
+        Actions.OnGamePlayChanged?.Invoke(GameInfo);
     }
         
         public int RemoveLife()
         {
-            GamePlay.RemoveLife();
-            Actions.OnGamePlayChanged?.Invoke(GamePlay);
-            return GamePlay.Lives;
+            GameInfo.RemoveLife();
+            Actions.OnGamePlayChanged?.Invoke(GameInfo);
+            return GameInfo.Lives;
         }
         
         public int GetLives()
         {
-            return GamePlay.Lives;
+            return GameInfo.Lives;
         }
 
         public bool AnyLivesLeft()
         {
-            return GamePlay.Lives == 0;
+            return GameInfo.Lives == 0;
         }
 
         public void UpdateTimeRemaining()
         {
-            GamePlay.TimeRemaining -= Time.deltaTime;
-            Actions.OnGamePlayChanged?.Invoke(GamePlay);
+            GameInfo.TimeRemaining -= Time.deltaTime;
+            Actions.OnGamePlayChanged?.Invoke(GameInfo);
             if (!AnyTimeLeft())
             {
                 SceneManager.LoadScene("WinLoseMenu");
@@ -96,19 +97,19 @@ namespace Managers
 
         public bool AnyTimeLeft()
         {
-            return GamePlay.TimeRemaining > 0;
+            return GameInfo.TimeRemaining > 0;
         }
 
-        public GameLevel GetGameLevel()
+        public GameDifficulty GetGameLevel()
         {
-            return GamePlay.GameLevel;
+            return GameInfo.GameDifficulty;
         }
         
     }
     
     
 
-    public enum GameLevel
+    public enum GameDifficulty
     {
         Easy,
         Hard,

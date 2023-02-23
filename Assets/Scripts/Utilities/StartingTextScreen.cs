@@ -1,11 +1,12 @@
+using Game;
 using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game
+namespace Utilities
 {
-    public class GameStartButtonHandler : MonoBehaviour
+    public class StartingTextScreen : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI headingForGameStart;
 
@@ -48,26 +49,26 @@ namespace Game
 
         public void EasyPressed()
         {
-            StartGame(GameLevel.Easy);
+            StartGame(GameDifficulty.Easy);
         }
     
         public void HardPressed()
         {
-            StartGame(GameLevel.Hard);
+            StartGame(GameDifficulty.Hard);
         }
     
         public void ImpossiblePressed()
         {
-            StartGame(GameLevel.Impossible);
+            StartGame(GameDifficulty.Impossible);
         }
 
-        public void StartGame(GameLevel pGameLevel)
+        public void StartGame(GameDifficulty pGameDifficulty)
         {
             //start game scene
             //GameManager gameManager = GameManager.getInstance();
             Debug.Log("Menu: GameManager.Instance : " + GameManager.GetInstance());
             GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,this.startLevel);
-            GamePlayManager.GetInstance().InitGame(pGameLevel);
+            GamePlayManager.GetInstance().InitGame(pGameDifficulty);
             Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + GameState.GetInstance().SceneNum);
         }
     }

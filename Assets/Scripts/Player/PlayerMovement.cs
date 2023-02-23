@@ -5,6 +5,7 @@ using Managers;
 using TrajectoryObject;
 using Unity.VisualScripting;
 using UnityEngine;
+using Utilities;
 
 namespace Player
 {
