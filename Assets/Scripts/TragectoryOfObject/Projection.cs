@@ -21,6 +21,27 @@ namespace TrajectoryObject
         private PhysicsScene _physicsScene;
         private readonly Dictionary<Transform, Transform> _spawnedObjects = new Dictionary<Transform, Transform>();
 
+        private static Projection _instance;
+
+        private void Awake()
+        {
+            if (_instance != null)
+            {
+                Debug.Log("Projection Trying second Awake");
+                Destroy(gameObject);
+                return;
+            }
+            Debug.Log("Projection Awake");
+            _instance = this as Projection;
+
+            DontDestroyOnLoad(gameObject);
+        }
+        
+        public static Projection GetInstance()
+        {
+            return _instance;
+        }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -32,7 +53,7 @@ namespace TrajectoryObject
         /// <summary>
         ///    Create a new projection by creating a copy of the current scene
         /// </summary>
-        private void CreatePhysicsScene()
+        public void CreatePhysicsScene()
         {
             if (obstaclesParent == null) return;
             _simulationScene =

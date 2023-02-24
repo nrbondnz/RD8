@@ -9,6 +9,9 @@ using Utilities;
 
 namespace Player
 {
+    /// <summary>
+    /// Moves the player by adding force in the required direction
+    /// </summary>
     public partial class PlayerMovement : MonoBehaviour
     {
 
@@ -16,8 +19,8 @@ namespace Player
         [SerializeField] private float speed = 10;
         [SerializeField] private float jumpForce = 13;
         [SerializeField] private float platformPower = 2.5f;
-        [SerializeField] private SimBall simBall;
-        [SerializeField] private Projection projection;
+        private SimBall simBall;
+        private Projection projection;
         [SerializeField] private LineRenderer lineRenderer;
         private GameObject _mainCamera;
 
@@ -25,10 +28,22 @@ namespace Player
 
         private bool _isGhost;
         private readonly Player _player = new();
+        
+        private void OnDrawGizmos()
+        {
+            if (lineRenderer == null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+            }
+        }
 
         // Start is called before the first frame update
         void Start()
         {
+            simBall = SimBall.GetInstance();
+            projection = Projection.GetInstance();
+            projection.CreatePhysicsScene();
             //onGoingForwards += GoingBackwards;
             _rb = GetComponent<Rigidbody>();
             _mainCamera = GameObject.FindWithTag("MainCamera");
@@ -106,13 +121,15 @@ namespace Player
             if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
             {
                 _player.IsGrounded = true;
-                projection.RemoveTrajectoryLine();
-                lineRenderer.enabled = false;
+                
+                    projection?.RemoveTrajectoryLine();
+                    lineRenderer.enabled = false;
+                
             }
             else
             {
                 _player.IsGrounded = false;
-                projection.SimulateTrajectory(simBall, _rb.position, _rb.velocity);
+                projection?.SimulateTrajectory(simBall, _rb.position, _rb.velocity);
                 //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
                 lineRenderer.enabled = true;
                 lineRenderer.SetPosition(0, _rb.position);
