@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-namespace Game
+namespace Managers
 {
     public enum GamePhases
     {
@@ -13,30 +13,30 @@ namespace Game
         Loser
     }
     
-    public class GameState : MonoBehaviour
+    public class GameStatusManager : MonoBehaviour
     {
     
         private GamePhases _gamePhases = GamePhases.SayHiToMum;
         private int _sceneNum = 0;
         private int _lastLevel = 0;
-        private static GameState _instance;
+        private static GameStatusManager _instance;
       
         private void Awake()
         {
             if (_instance != null)
             {
-                Debug.Log("SoundManager Trying second Awake");
+                Debug.Log("GameStatusManager Trying second Awake");
                 Destroy(gameObject);
                 return;
             }
 
-            Debug.Log("GameState Awake");
-            _instance = this as GameState;
+            Debug.Log("GameStatusManager Awake");
+            _instance = this;
             DontDestroyOnLoad(gameObject);
             SetupLastLevel();
         }
 
-        public static GameState GetInstance()
+        public static GameStatusManager GetInstance()
         {
             return _instance;
         }
@@ -64,7 +64,7 @@ namespace Game
             //lastLevel = files.Length;
         }
         
-        public GameState()
+        public GameStatusManager()
         {
             _gamePhases = GamePhases.SayHiToMum;
             _sceneNum = 0;

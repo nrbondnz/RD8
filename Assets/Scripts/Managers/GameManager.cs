@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Game;
+using Managers;
 using Object = UnityEngine.Object;
 using String = System.String;
 
@@ -47,20 +47,20 @@ namespace Managers
         {
             
             SceneManager.LoadSceneAsync("WinLoseMenu");
-            GameState.GetInstance().ResetGameState();
+            GameStatusManager.GetInstance().ResetGameState();
 
         }
 
 
         public void UpdateGameState(GamePhases newPhase, int newLevel)
         {
-            GameState.GetInstance().GamePhases = newPhase;
-            GameState.GetInstance().SceneNum = newLevel;
+            GameStatusManager.GetInstance().GamePhases = newPhase;
+            GameStatusManager.GetInstance().SceneNum = newLevel;
             Debug.Log(
-                "GameManager: new state : " + GameState.GetInstance());
+                "GameManager: new state : " + GameStatusManager.GetInstance());
             
             
-            switch (GameState.GetInstance().GamePhases)
+            switch (GameStatusManager.GetInstance().GamePhases)
             {
                 
                 case GamePhases.SayHiToMum:
@@ -68,7 +68,7 @@ namespace Managers
                     break;
                 case GamePhases.GamePlaying:
                     //State.SceneNum++;
-                    SceneManager.LoadSceneAsync("Level " + GameState.GetInstance().SceneNum);
+                    SceneManager.LoadSceneAsync("Level " + GameStatusManager.GetInstance().SceneNum);
                     break;
                 case GamePhases.Winner:
                     SceneManager.LoadSceneAsync("WinLoseMenu");

@@ -1,5 +1,4 @@
 using System.Collections;
-using Game;
 using Managers;
 using UnityEngine;
 
@@ -51,17 +50,17 @@ namespace Utilities
 
             // TODO work out index max and rotate around scenes
             //SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
-            GameState gameState = GameState.GetInstance();
-            if (gameState.GamePhases == GamePhases.GamePlaying)
+            GameStatusManager gameStatusManager = GameStatusManager.GetInstance();
+            if (gameStatusManager.GamePhases == GamePhases.GamePlaying)
             {
-                if (gameState.SceneNum < gameState.LastLevel)
+                if (gameStatusManager.SceneNum < gameStatusManager.LastLevel)
                 {
-                    gameState.SceneNum++;
-                    GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying, gameState.SceneNum);
+                    gameStatusManager.SceneNum++;
+                    GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying, gameStatusManager.SceneNum);
                 }
                 else
                 {
-                    GameManager.GetInstance().UpdateGameState(GamePhases.Winner, gameState.SceneNum);
+                    GameManager.GetInstance().UpdateGameState(GamePhases.Winner, gameStatusManager.SceneNum);
                 }
             }
            

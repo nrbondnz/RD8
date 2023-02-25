@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092901, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Big Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7245597034087092906, guid: 280811635e266436dac47e779f43dd4e, type: 3}
       propertyPath: m_Drag

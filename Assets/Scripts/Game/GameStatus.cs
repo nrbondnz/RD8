@@ -1,14 +1,14 @@
 using Managers;
 
-namespace Game
+namespace Managers
 {
     /// <summary>
     /// GamePlay tracks the progress of the players game, is it running, lives, gale level amd time remaining
     /// Its just a struct so any business logic must be handled by calling code
     /// </summary>
-    public struct GameInfo
+    public struct GameStatus
     {
-        public GameInfo(bool started, int lives, GameDifficulty gameDifficulty, float timeRemaining)
+        public GameStatus(bool started, int lives, GameDifficulty gameDifficulty, float timeRemaining)
         {
             Started = started;
             Lives = lives;

@@ -12,13 +12,17 @@ namespace Managers
         {
             if (_instance != null)
             {
-                Debug.Log("GameReset Trying second Awake");
+                Debug.Log("GameResetManager Trying second Awake");
                 Destroy(gameObject);
                 return;
             }
-            Debug.Log("GameReset Awake");
+            Debug.Log("GameResetManager Awake");
             _instance = this as GameResetManager;
             DontDestroyOnLoad(gameObject);
+            if (!GamePlayManager.hasBootSceneRun())
+            {
+                SceneManager.LoadSceneAsync("Boot Dont Display");
+            }
         }
 
         public static GameResetManager GetInstance()

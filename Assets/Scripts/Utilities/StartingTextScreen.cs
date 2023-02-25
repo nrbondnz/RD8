@@ -1,7 +1,7 @@
-using Game;
 using Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Utilities
@@ -14,7 +14,15 @@ namespace Utilities
         [SerializeField] private Button hardButton;
         [SerializeField] private Button impossibleButton;
         [SerializeField] private int startLevel = 1;
-    
+
+        void Awake()
+        {
+            if (!GamePlayManager.hasBootSceneRun())
+            {
+                SceneManager.LoadSceneAsync("Boot Dont Display");
+            }
+        }
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -69,7 +77,7 @@ namespace Utilities
             Debug.Log("Menu: GameManager.Instance : " + GameManager.GetInstance());
             GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,this.startLevel);
             GamePlayManager.GetInstance().InitGame(pGameDifficulty);
-            Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + GameState.GetInstance().SceneNum);
+            Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + GameStatusManager.GetInstance().SceneNum);
         }
     }
 }

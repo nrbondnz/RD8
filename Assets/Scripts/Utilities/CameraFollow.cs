@@ -7,7 +7,7 @@ using Utilities;
      * Gets the main Camera to follow the _cameraTarget at a specific distance.
      * It also uses waypoints to determine how to follow the _cameraTarget in a direction that points to the next waypoint.
      */
-    namespace Game
+    namespace Managers
     {
         /// <summary>
         /// Gets the main Camera to follow the _cameraTarget at a specific distance.
