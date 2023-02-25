@@ -41,7 +41,13 @@ namespace Managers
 
         public GameObject CurrentWaypointGameObject()
         {
-            return waypoints == null ? null : waypoints[_currentWaypoint];
+            if (waypoints?.Length > 0)
+            {
+                return waypoints[_currentWaypoint];
+            } else {
+                Debug.LogWarning("No Waypoints set");
+                return null;
+            }
         }
 
     }

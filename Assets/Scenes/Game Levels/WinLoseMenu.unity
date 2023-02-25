@@ -413,7 +413,7 @@ MonoBehaviour:
   easyButton: {fileID: 1375722077}
   hardButton: {fileID: 107849686}
   impossibleButton: {fileID: 1347789806}
-  startLevel: 1
+  startLevel: 4
 --- !u!4 &227502534
 Transform:
   m_ObjectHideFlags: 0
