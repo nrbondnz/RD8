@@ -8,14 +8,7 @@ namespace Managers
     /// </summary>
     public struct GameStatus
     {
-        public GameStatus(bool started, int lives, GameDifficulty gameDifficulty, float timeRemaining)
-        {
-            Started = started;
-            Lives = lives;
-            GameDifficulty = gameDifficulty;
-            TimeRemaining = timeRemaining;
-        }
-
+        
         public bool Started
         {
             get;
@@ -25,9 +18,7 @@ namespace Managers
         public int Lives { get; set; }
         public GameDifficulty GameDifficulty { get; set; }
         public float TimeRemaining { get; set; }
-
-       
-
+        
         public int RemoveLife()
         {
             return Lives--;

@@ -22,7 +22,7 @@ namespace Collision
         public void DoCollisionAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
-            GameResetManager.GetInstance().ResetAction();
+            GameResetManager.GetInstance().RemoveLifeAndResetScene();
             //Debug.Log("Player : " + GameObject.FindGameObjectWithTag("Player").transform.position);
             //Debug.Log("GameReset : " + transform.position);
             

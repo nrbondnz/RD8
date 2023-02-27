@@ -75,9 +75,9 @@ namespace Utilities
             //start game scene
             //GameManager gameManager = GameManager.getInstance();
             Debug.Log("Menu: GameManager.Instance : " + GameManager.GetInstance());
-            GameManager.GetInstance().UpdateGameState(GamePhases.GamePlaying,this.startLevel);
+            GameManager.GetInstance().UpdateGameScene(GamePhase.GamePlaying,this.startLevel);
             GamePlayManager.GetInstance().InitGame(pGameDifficulty);
-            Debug.Log("Menu: New Game state : " + GamePhases.GamePlaying + " " + GameStatusManager.GetInstance().SceneNum);
+            Debug.Log("Menu: New Game state : " + GamePhase.GamePlaying + " " + GameStateManager.GetInstance().SceneNum);
         }
     }
 }

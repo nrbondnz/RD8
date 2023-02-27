@@ -5,7 +5,7 @@ using UnityEngine.PlayerLoop;
 
 namespace Managers
 {
-    public enum GamePhases
+    public enum GamePhase
     {
         SayHiToMum,
         GamePlaying,
@@ -13,30 +13,30 @@ namespace Managers
         Loser
     }
     
-    public class GameStatusManager : MonoBehaviour
+    public class GameStateManager : MonoBehaviour
     {
     
-        private GamePhases _gamePhases = GamePhases.SayHiToMum;
+        private GamePhase _gamePhase = GamePhase.SayHiToMum;
         private int _sceneNum = 0;
         private int _lastLevel = 0;
-        private static GameStatusManager _instance;
+        private static GameStateManager _instance;
       
         private void Awake()
         {
             if (_instance != null)
             {
-                Debug.Log("GameStatusManager Trying second Awake");
+                Debug.Log("GameStateManager Trying second Awake");
                 Destroy(gameObject);
                 return;
             }
 
-            Debug.Log("GameStatusManager Awake");
+            Debug.Log("GameStateManager Awake");
             _instance = this;
             DontDestroyOnLoad(gameObject);
             SetupLastLevel();
         }
 
-        public static GameStatusManager GetInstance()
+        public static GameStateManager GetInstance()
         {
             return _instance;
         }
@@ -44,7 +44,7 @@ namespace Managers
         public void ResetGameState()
         {
             this._sceneNum = 0;
-            this.GamePhases = GamePhases.SayHiToMum;
+            this.GamePhase = GamePhase.SayHiToMum;
         }
 
         private void SetupLastLevel()
@@ -64,9 +64,9 @@ namespace Managers
             //lastLevel = files.Length;
         }
         
-        public GameStatusManager()
+        public GameStateManager()
         {
-            _gamePhases = GamePhases.SayHiToMum;
+            _gamePhase = GamePhase.SayHiToMum;
             _sceneNum = 0;
         }
 
@@ -76,10 +76,10 @@ namespace Managers
             set => _lastLevel = value;
         }
 
-        public GamePhases GamePhases
+        public GamePhase GamePhase
         {
-            get => _gamePhases;
-            set => _gamePhases = value;
+            get => _gamePhase;
+            set => _gamePhase = value;
         }
 
         public int SceneNum

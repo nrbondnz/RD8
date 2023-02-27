@@ -13,12 +13,6 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        
-        //private GameplayManager _GameplayManager = GameplayManager.Instance;
-        
-       
-        
-
         private static GameManager _instance;
 
         private void Awake()
@@ -39,50 +33,46 @@ namespace Managers
         {
             return _instance;
         }
-
-        
-        
-
+ 
+        /// <summary>
+        /// Sets the first scene of the game, WinLoseMEnu and resets the game state
+        /// </summary>
         private void Start()
         {
-            
             SceneManager.LoadSceneAsync("WinLoseMenu");
-            GameStatusManager.GetInstance().ResetGameState();
-
+            GameStateManager.GetInstance().ResetGameState();
         }
-
-
-        public void UpdateGameState(GamePhases newPhase, int newLevel)
+        
+        /// <summary>
+        /// Updates the scene based on the new gamephase
+        /// Update </summary>
+        /// <param name="newPhase"></param>
+        /// <param name="newLevel"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public void UpdateGameScene(GamePhase newPhase, int newLevel)
         {
-            GameStatusManager.GetInstance().GamePhases = newPhase;
-            GameStatusManager.GetInstance().SceneNum = newLevel;
+            GameStateManager.GetInstance().GamePhase = newPhase; GameStateManager.GetInstance().SceneNum = newLevel;
             Debug.Log(
-                "GameManager: new state : " + GameStatusManager.GetInstance());
+                "GameManager: new state : " + GameStateManager.GetInstance());
             
-            
-            switch (GameStatusManager.GetInstance().GamePhases)
+            switch (GameStateManager.GetInstance().GamePhase)
             {
-                
-                case GamePhases.SayHiToMum:
+                case GamePhase.SayHiToMum:
                     //SceneManager.LoadSceneAsync("Menu");
                     break;
-                case GamePhases.GamePlaying:
+                case GamePhase.GamePlaying:
                     //State.SceneNum++;
-                    SceneManager.LoadSceneAsync("Level " + GameStatusManager.GetInstance().SceneNum);
+                    SceneManager.LoadSceneAsync("Level " + GameStateManager.GetInstance().SceneNum);
                     break;
-                case GamePhases.Winner:
+                case GamePhase.Winner:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
                     break;
-                case GamePhases.Loser:
+                case GamePhase.Loser:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
-
-            
         }
     }
-
- 
 }

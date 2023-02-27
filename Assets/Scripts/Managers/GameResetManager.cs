@@ -37,11 +37,11 @@ namespace Managers
             if (other.CompareTag("Player") && ( childTerrainObj != null) && 
                 (childTerrainObj.CompareTag("OutOfBounds")))
             {
-                ResetAction();
+                RemoveLifeAndResetScene();
             }
         }
 
-        public void ResetAction()
+        public void RemoveLifeAndResetScene()
         {
             if (GamePlayManager.GetInstance().GetLives() == 1 )
             {
