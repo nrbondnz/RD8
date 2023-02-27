@@ -578,6 +578,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 85519513092751712, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_Size.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 85519513092751712, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 85519513092751712, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_Size.z
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 85519513092751712, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_Center.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 85519513092751713, guid: 623a417f426f344dd961221bc785df4a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -625,6 +641,10 @@ PrefabInstance:
     - target: {fileID: 85519513092751714, guid: 623a417f426f344dd961221bc785df4a, type: 3}
       propertyPath: m_Name
       value: Game Reset
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481294871441319249, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_TagString
+      value: OutOfBounds
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
