@@ -1,0 +1,81 @@
+\hypertarget{class_collision_1_1_attract_collision_action}{}\doxysection{Collision.\+Attract\+Collision\+Action Class Reference}
+\label{class_collision_1_1_attract_collision_action}\index{Collision.AttractCollisionAction@{Collision.AttractCollisionAction}}
+
+
+Details the action to be taken when a collision occurs with the target. In this class the target is attracted to the collider. The strength of the attraction can be specified.  
+
+
+Inheritance diagram for Collision.\+Attract\+Collision\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_collision_1_1_attract_collision_action}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_collision_1_1_attract_collision_action_a788a66f5b73e8f058ce2a9860eb84157}{Do\+Collision\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em The Unity object detects a collision within its area triggering so the collision action and effect strength. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collision_1_1_attract_collision_action_a96968660f6ba66f1453a703aaef9e1bc}{Do\+Collision\+Area\+Exit\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em When the player leaves the collision area the effect of attraction is stopped. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}{Do\+Collision\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em When a collision with collider zone happens an implmentation of this method will be called e.\+g. in the Collition\+Action\+Controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}{Do\+Collision\+Area\+Exit\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em As per Do\+Collision\+Action this method will be called in the collision action controller on zone exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Details the action to be taken when a collision occurs with the target. In this class the target is attracted to the collider. The strength of the attraction can be specified. 
+
+Each action type can be set against the collider object by adding the Collection\+Action\+Controller to the collider object and setting the action name and strength. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collision_1_1_attract_collision_action_a788a66f5b73e8f058ce2a9860eb84157}\label{class_collision_1_1_attract_collision_action_a788a66f5b73e8f058ce2a9860eb84157}} 
+\index{Collision.AttractCollisionAction@{Collision.AttractCollisionAction}!DoCollisionAction@{DoCollisionAction}}
+\index{DoCollisionAction@{DoCollisionAction}!Collision.AttractCollisionAction@{Collision.AttractCollisionAction}}
+\doxysubsubsection{\texorpdfstring{DoCollisionAction()}{DoCollisionAction()}}
+{\footnotesize\ttfamily void Collision.\+Attract\+Collision\+Action.\+Do\+Collision\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}}]{controller,  }\item[{\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}}}]{collision\+Effect\+Strength\+Enum }\end{DoxyParamCaption})}
+
+
+
+The Unity object detects a collision within its area triggering so the collision action and effect strength. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & \\
+\hline
+{\em collision\+Effect\+Strength\+Enum} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}{Collision.\+ICollision\+Action}}.
+
+\mbox{\Hypertarget{class_collision_1_1_attract_collision_action_a96968660f6ba66f1453a703aaef9e1bc}\label{class_collision_1_1_attract_collision_action_a96968660f6ba66f1453a703aaef9e1bc}} 
+\index{Collision.AttractCollisionAction@{Collision.AttractCollisionAction}!DoCollisionAreaExitAction@{DoCollisionAreaExitAction}}
+\index{DoCollisionAreaExitAction@{DoCollisionAreaExitAction}!Collision.AttractCollisionAction@{Collision.AttractCollisionAction}}
+\doxysubsubsection{\texorpdfstring{DoCollisionAreaExitAction()}{DoCollisionAreaExitAction()}}
+{\footnotesize\ttfamily void Collision.\+Attract\+Collision\+Action.\+Do\+Collision\+Area\+Exit\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}}]{controller,  }\item[{\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}}}]{collision\+Effect\+Strength\+Enum }\end{DoxyParamCaption})}
+
+
+
+When the player leaves the collision area the effect of attraction is stopped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & \\
+\hline
+{\em collision\+Effect\+Strength\+Enum} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}{Collision.\+ICollision\+Action}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/\+RD8/\+Assets/\+Scripts/\+Collision/\mbox{\hyperlink{_attract_collision_action_8cs}{Attract\+Collision\+Action.\+cs}}\end{DoxyCompactItemize}

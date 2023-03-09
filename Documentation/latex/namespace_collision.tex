@@ -1,0 +1,102 @@
+\hypertarget{namespace_collision}{}\doxysection{Collision Namespace Reference}
+\label{namespace_collision}\index{Collision@{Collision}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_collision_1_1_attract_collision_action}{Attract\+Collision\+Action}}
+\begin{DoxyCompactList}\small\item\em Details the action to be taken when a collision occurs with the target. In this class the target is attracted to the collider. The strength of the attraction can be specified. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_collision_1_1_bounce_collision_action}{Bounce\+Collision\+Action}}
+\begin{DoxyCompactList}\small\item\em Details the action to be taken when a collision occurs with the target. In this class the target is bounced away from the collider. The strength of the bounce can be specified. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}
+\begin{DoxyCompactList}\small\item\em The collision action controller is responsible for handling the collision of a Game\+Object. It uses an interface implemented by a number of different action classes with dofferent effects when the target enters or leaves the collision effect zone. \end{DoxyCompactList}\item 
+class {\bfseries Collision\+Action\+Factory}
+\item 
+class \mbox{\hyperlink{class_collision_1_1_death_collision_action}{Death\+Collision\+Action}}
+\begin{DoxyCompactList}\small\item\em Details the action to be taken when a collision occurs with the target. In this class the target is killed when it hits the collider The strength of the death is not relevant in this case. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_collision_1_1_i_collision_action}{ICollision\+Action}}
+\begin{DoxyCompactList}\small\item\em This interface is used to allow for different collision effects to be chosen for the collition action controller. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_collision_1_1_speed_change_collision_action}{Speed\+Change\+Collision\+Action}}
+\begin{DoxyCompactList}\small\item\em Details the action to be taken when a collision occurs with the target. In this class the target is sped up by the collider. The strength of the effect can be specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_collision_a7c45cf11d52bc3377748bac70aebbadd}{Collision\+Action\+Enum}} \{ \mbox{\hyperlink{namespace_collision_a7c45cf11d52bc3377748bac70aebbaddaeb9a56428f85bbdfd3846322baaffe6e}{Bounce}} = 0
+, \mbox{\hyperlink{namespace_collision_a7c45cf11d52bc3377748bac70aebbadda69bc9102f450a30bbd9e13116ceeb821}{Speed\+Change}} = 1
+, \mbox{\hyperlink{namespace_collision_a7c45cf11d52bc3377748bac70aebbadda6097f89e3092d4ccd249c9d479785c1f}{Death}} = 2
+, \mbox{\hyperlink{namespace_collision_a7c45cf11d52bc3377748bac70aebbaddaa3672495414438a089375f560cc23fcd}{Attract}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} \{ \newline
+\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7abbd47109890259c0127154db1af26c75}{Full}} = 15
+, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9}{Strong}} = 10
+, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a48055747c84c3595381b4731490b452e}{Med\+Strong}} = 7
+, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a960b44c579bc2f6818d2daaf9e4c16f0}{Normal}} = 5
+, \newline
+\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac48615a1bc4197056d522af276aa5a85}{Half}} = 3
+, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a28d0edd045e05cf5af64e35ae0c4c6ef}{Low}} = 2
+, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ab5b8e20937205384be7b9e0c29a28fdb}{Lowest}} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_collision_a7c45cf11d52bc3377748bac70aebbadd}\label{namespace_collision_a7c45cf11d52bc3377748bac70aebbadd}} 
+\index{Collision@{Collision}!CollisionActionEnum@{CollisionActionEnum}}
+\index{CollisionActionEnum@{CollisionActionEnum}!Collision@{Collision}}
+\doxysubsubsection{\texorpdfstring{CollisionActionEnum}{CollisionActionEnum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_collision_a7c45cf11d52bc3377748bac70aebbadd}{Collision.\+Collision\+Action\+Enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bounce@{Bounce}!Collision@{Collision}}\index{Collision@{Collision}!Bounce@{Bounce}}}\mbox{\Hypertarget{namespace_collision_a7c45cf11d52bc3377748bac70aebbaddaeb9a56428f85bbdfd3846322baaffe6e}\label{namespace_collision_a7c45cf11d52bc3377748bac70aebbaddaeb9a56428f85bbdfd3846322baaffe6e}} 
+Bounce&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SpeedChange@{SpeedChange}!Collision@{Collision}}\index{Collision@{Collision}!SpeedChange@{SpeedChange}}}\mbox{\Hypertarget{namespace_collision_a7c45cf11d52bc3377748bac70aebbadda69bc9102f450a30bbd9e13116ceeb821}\label{namespace_collision_a7c45cf11d52bc3377748bac70aebbadda69bc9102f450a30bbd9e13116ceeb821}} 
+Speed\+Change&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Death@{Death}!Collision@{Collision}}\index{Collision@{Collision}!Death@{Death}}}\mbox{\Hypertarget{namespace_collision_a7c45cf11d52bc3377748bac70aebbadda6097f89e3092d4ccd249c9d479785c1f}\label{namespace_collision_a7c45cf11d52bc3377748bac70aebbadda6097f89e3092d4ccd249c9d479785c1f}} 
+Death&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Attract@{Attract}!Collision@{Collision}}\index{Collision@{Collision}!Attract@{Attract}}}\mbox{\Hypertarget{namespace_collision_a7c45cf11d52bc3377748bac70aebbaddaa3672495414438a089375f560cc23fcd}\label{namespace_collision_a7c45cf11d52bc3377748bac70aebbaddaa3672495414438a089375f560cc23fcd}} 
+Attract&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}} 
+\index{Collision@{Collision}!CollisionEffectStrengthEnum@{CollisionEffectStrengthEnum}}
+\index{CollisionEffectStrengthEnum@{CollisionEffectStrengthEnum}!Collision@{Collision}}
+\doxysubsubsection{\texorpdfstring{CollisionEffectStrengthEnum}{CollisionEffectStrengthEnum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision.\+Collision\+Effect\+Strength\+Enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Full@{Full}!Collision@{Collision}}\index{Collision@{Collision}!Full@{Full}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7abbd47109890259c0127154db1af26c75}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7abbd47109890259c0127154db1af26c75}} 
+Full&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Strong@{Strong}!Collision@{Collision}}\index{Collision@{Collision}!Strong@{Strong}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9}} 
+Strong&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MedStrong@{MedStrong}!Collision@{Collision}}\index{Collision@{Collision}!MedStrong@{MedStrong}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a48055747c84c3595381b4731490b452e}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a48055747c84c3595381b4731490b452e}} 
+Med\+Strong&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal@{Normal}!Collision@{Collision}}\index{Collision@{Collision}!Normal@{Normal}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a960b44c579bc2f6818d2daaf9e4c16f0}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a960b44c579bc2f6818d2daaf9e4c16f0}} 
+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Half@{Half}!Collision@{Collision}}\index{Collision@{Collision}!Half@{Half}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac48615a1bc4197056d522af276aa5a85}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac48615a1bc4197056d522af276aa5a85}} 
+Half&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Low@{Low}!Collision@{Collision}}\index{Collision@{Collision}!Low@{Low}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a28d0edd045e05cf5af64e35ae0c4c6ef}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7a28d0edd045e05cf5af64e35ae0c4c6ef}} 
+Low&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lowest@{Lowest}!Collision@{Collision}}\index{Collision@{Collision}!Lowest@{Lowest}}}\mbox{\Hypertarget{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ab5b8e20937205384be7b9e0c29a28fdb}\label{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7ab5b8e20937205384be7b9e0c29a28fdb}} 
+Lowest&\\
+\hline
+
+\end{DoxyEnumFields}

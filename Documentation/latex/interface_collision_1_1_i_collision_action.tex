@@ -1,0 +1,73 @@
+\hypertarget{interface_collision_1_1_i_collision_action}{}\doxysection{Collision.\+ICollision\+Action Interface Reference}
+\label{interface_collision_1_1_i_collision_action}\index{Collision.ICollisionAction@{Collision.ICollisionAction}}
+
+
+This interface is used to allow for different collision effects to be chosen for the collition action controller.  
+
+
+Inheritance diagram for Collision.\+ICollision\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.186441cm]{interface_collision_1_1_i_collision_action}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}{Do\+Collision\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em When a collision with collider zone happens an implmentation of this method will be called e.\+g. in the Collition\+Action\+Controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}{Do\+Collision\+Area\+Exit\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em As per Do\+Collision\+Action this method will be called in the collision action controller on zone exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This interface is used to allow for different collision effects to be chosen for the collition action controller. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}\label{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}} 
+\index{Collision.ICollisionAction@{Collision.ICollisionAction}!DoCollisionAction@{DoCollisionAction}}
+\index{DoCollisionAction@{DoCollisionAction}!Collision.ICollisionAction@{Collision.ICollisionAction}}
+\doxysubsubsection{\texorpdfstring{DoCollisionAction()}{DoCollisionAction()}}
+{\footnotesize\ttfamily void Collision.\+ICollision\+Action.\+Do\+Collision\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}}]{controller,  }\item[{\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}}}]{collision\+Effect\+Strength\+Enum }\end{DoxyParamCaption})}
+
+
+
+When a collision with collider zone happens an implmentation of this method will be called e.\+g. in the Collition\+Action\+Controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & \\
+\hline
+{\em collision\+Effect\+Strength\+Enum} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_collision_1_1_attract_collision_action_a788a66f5b73e8f058ce2a9860eb84157}{Collision.\+Attract\+Collision\+Action}}, \mbox{\hyperlink{class_collision_1_1_bounce_collision_action_a38efb2f08cfef25d320601b5e7d95264}{Collision.\+Bounce\+Collision\+Action}}, \mbox{\hyperlink{class_collision_1_1_death_collision_action_aad077cbbf80f2ecd43020f832bcef7f3}{Collision.\+Death\+Collision\+Action}}, and \mbox{\hyperlink{class_collision_1_1_speed_change_collision_action_a75933476f2722478b03eb1fcf2e19949}{Collision.\+Speed\+Change\+Collision\+Action}}.
+
+\mbox{\Hypertarget{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}\label{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}} 
+\index{Collision.ICollisionAction@{Collision.ICollisionAction}!DoCollisionAreaExitAction@{DoCollisionAreaExitAction}}
+\index{DoCollisionAreaExitAction@{DoCollisionAreaExitAction}!Collision.ICollisionAction@{Collision.ICollisionAction}}
+\doxysubsubsection{\texorpdfstring{DoCollisionAreaExitAction()}{DoCollisionAreaExitAction()}}
+{\footnotesize\ttfamily void Collision.\+ICollision\+Action.\+Do\+Collision\+Area\+Exit\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}}]{controller,  }\item[{\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}}}]{collision\+Effect\+Strength\+Enum }\end{DoxyParamCaption})}
+
+
+
+As per Do\+Collision\+Action this method will be called in the collision action controller on zone exit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & \\
+\hline
+{\em collision\+Effect\+Strength\+Enum} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_collision_1_1_attract_collision_action_a96968660f6ba66f1453a703aaef9e1bc}{Collision.\+Attract\+Collision\+Action}}, \mbox{\hyperlink{class_collision_1_1_bounce_collision_action_a2521f69ca99cd88eb35047938c449f76}{Collision.\+Bounce\+Collision\+Action}}, \mbox{\hyperlink{class_collision_1_1_death_collision_action_a74dede4c77e34a6515b994760a12c897}{Collision.\+Death\+Collision\+Action}}, and \mbox{\hyperlink{class_collision_1_1_speed_change_collision_action_a65783cb1457c052d48cc13bb15f7b8db}{Collision.\+Speed\+Change\+Collision\+Action}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/\+RD8/\+Assets/\+Scripts/\+Collision/\mbox{\hyperlink{_i_collision_action_8cs}{ICollision\+Action.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{namespace_managers}{}\doxysection{Managers Namespace Reference}
+\label{namespace_managers}\index{Managers@{Managers}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_managers_1_1_camera_follow}{Camera\+Follow}}
+\begin{DoxyCompactList}\small\item\em Gets the main Camera to follow the \+\_\+camera\+Target at a specific distance. It also uses waypoints to determine how to follow the \+\_\+camera\+Target in a direction that points to the next waypoint. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_managers_1_1_game_manager}{Game\+Manager}}
+\item 
+class \mbox{\hyperlink{class_managers_1_1_game_play_manager}{Game\+Play\+Manager}}
+\item 
+class \mbox{\hyperlink{class_managers_1_1_game_reset_manager}{Game\+Reset\+Manager}}
+\item 
+class \mbox{\hyperlink{class_managers_1_1_game_state_manager}{Game\+State\+Manager}}
+\item 
+struct \mbox{\hyperlink{struct_managers_1_1_game_status}{Game\+Status}}
+\begin{DoxyCompactList}\small\item\em Game\+Play tracks the progress of the players game, is it running, lives, gale level amd time remaining Its just a struct so any business logic must be handled by calling code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_managers_1_1_sound_manager}{Sound\+Manager}}
+\item 
+class \mbox{\hyperlink{class_managers_1_1_u_i_score_manager}{UIScore\+Manager}}
+\item 
+class \mbox{\hyperlink{class_managers_1_1_waypoint_manager}{Waypoint\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0}{Game\+Difficulty}} \{ \mbox{\hyperlink{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a7f943921724d63dc0ac9c6febf99fa88}{Easy}}
+, \mbox{\hyperlink{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a3656183169810334a96b91129dc9d881}{Hard}}
+, \mbox{\hyperlink{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a011d7bb0c88f95394e3a8d417304b218}{Impossible}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fe}{Game\+Phase}} \{ \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fea0bd04291ebce3892e36b31c88f54a6af}{Say\+Hi\+To\+Mum}}
+, \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563feacacd0b18c46ffc9533ad0b6c7e059e15}{Game\+Playing}}
+, \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fea85144ab5880edc8513c39cfeb1bd5a5e}{Winner}}
+, \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fead533d08bcfe8e578ccfe1c311133df7f}{Loser}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0}\label{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0}} 
+\index{Managers@{Managers}!GameDifficulty@{GameDifficulty}}
+\index{GameDifficulty@{GameDifficulty}!Managers@{Managers}}
+\doxysubsubsection{\texorpdfstring{GameDifficulty}{GameDifficulty}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0}{Managers.\+Game\+Difficulty}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Easy@{Easy}!Managers@{Managers}}\index{Managers@{Managers}!Easy@{Easy}}}\mbox{\Hypertarget{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a7f943921724d63dc0ac9c6febf99fa88}\label{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a7f943921724d63dc0ac9c6febf99fa88}} 
+Easy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hard@{Hard}!Managers@{Managers}}\index{Managers@{Managers}!Hard@{Hard}}}\mbox{\Hypertarget{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a3656183169810334a96b91129dc9d881}\label{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a3656183169810334a96b91129dc9d881}} 
+Hard&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Impossible@{Impossible}!Managers@{Managers}}\index{Managers@{Managers}!Impossible@{Impossible}}}\mbox{\Hypertarget{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a011d7bb0c88f95394e3a8d417304b218}\label{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0a011d7bb0c88f95394e3a8d417304b218}} 
+Impossible&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_managers_a611e2d8e9c342f0418b55098824563fe}\label{namespace_managers_a611e2d8e9c342f0418b55098824563fe}} 
+\index{Managers@{Managers}!GamePhase@{GamePhase}}
+\index{GamePhase@{GamePhase}!Managers@{Managers}}
+\doxysubsubsection{\texorpdfstring{GamePhase}{GamePhase}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fe}{Managers.\+Game\+Phase}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SayHiToMum@{SayHiToMum}!Managers@{Managers}}\index{Managers@{Managers}!SayHiToMum@{SayHiToMum}}}\mbox{\Hypertarget{namespace_managers_a611e2d8e9c342f0418b55098824563fea0bd04291ebce3892e36b31c88f54a6af}\label{namespace_managers_a611e2d8e9c342f0418b55098824563fea0bd04291ebce3892e36b31c88f54a6af}} 
+Say\+Hi\+To\+Mum&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GamePlaying@{GamePlaying}!Managers@{Managers}}\index{Managers@{Managers}!GamePlaying@{GamePlaying}}}\mbox{\Hypertarget{namespace_managers_a611e2d8e9c342f0418b55098824563feacacd0b18c46ffc9533ad0b6c7e059e15}\label{namespace_managers_a611e2d8e9c342f0418b55098824563feacacd0b18c46ffc9533ad0b6c7e059e15}} 
+Game\+Playing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Winner@{Winner}!Managers@{Managers}}\index{Managers@{Managers}!Winner@{Winner}}}\mbox{\Hypertarget{namespace_managers_a611e2d8e9c342f0418b55098824563fea85144ab5880edc8513c39cfeb1bd5a5e}\label{namespace_managers_a611e2d8e9c342f0418b55098824563fea85144ab5880edc8513c39cfeb1bd5a5e}} 
+Winner&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Loser@{Loser}!Managers@{Managers}}\index{Managers@{Managers}!Loser@{Loser}}}\mbox{\Hypertarget{namespace_managers_a611e2d8e9c342f0418b55098824563fead533d08bcfe8e578ccfe1c311133df7f}\label{namespace_managers_a611e2d8e9c342f0418b55098824563fead533d08bcfe8e578ccfe1c311133df7f}} 
+Loser&\\
+\hline
+
+\end{DoxyEnumFields}

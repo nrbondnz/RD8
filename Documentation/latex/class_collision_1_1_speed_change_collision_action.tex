@@ -1,0 +1,81 @@
+\hypertarget{class_collision_1_1_speed_change_collision_action}{}\doxysection{Collision.\+Speed\+Change\+Collision\+Action Class Reference}
+\label{class_collision_1_1_speed_change_collision_action}\index{Collision.SpeedChangeCollisionAction@{Collision.SpeedChangeCollisionAction}}
+
+
+Details the action to be taken when a collision occurs with the target. In this class the target is sped up by the collider. The strength of the effect can be specified.  
+
+
+Inheritance diagram for Collision.\+Speed\+Change\+Collision\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_collision_1_1_speed_change_collision_action}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_collision_1_1_speed_change_collision_action_a75933476f2722478b03eb1fcf2e19949}{Do\+Collision\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em On entering the collision zone this method is called. in this case the target is sped up through the collider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collision_1_1_speed_change_collision_action_a65783cb1457c052d48cc13bb15f7b8db}{Do\+Collision\+Area\+Exit\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em Speed up effect zone is exited. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}{Do\+Collision\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em When a collision with collider zone happens an implmentation of this method will be called e.\+g. in the Collition\+Action\+Controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}{Do\+Collision\+Area\+Exit\+Action}} (\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controller, \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}} collision\+Effect\+Strength\+Enum)
+\begin{DoxyCompactList}\small\item\em As per Do\+Collision\+Action this method will be called in the collision action controller on zone exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Details the action to be taken when a collision occurs with the target. In this class the target is sped up by the collider. The strength of the effect can be specified. 
+
+Each action type can be set against the collider object by adding the Collection\+Action\+Controller to the collider object and setting the action name and strength. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collision_1_1_speed_change_collision_action_a75933476f2722478b03eb1fcf2e19949}\label{class_collision_1_1_speed_change_collision_action_a75933476f2722478b03eb1fcf2e19949}} 
+\index{Collision.SpeedChangeCollisionAction@{Collision.SpeedChangeCollisionAction}!DoCollisionAction@{DoCollisionAction}}
+\index{DoCollisionAction@{DoCollisionAction}!Collision.SpeedChangeCollisionAction@{Collision.SpeedChangeCollisionAction}}
+\doxysubsubsection{\texorpdfstring{DoCollisionAction()}{DoCollisionAction()}}
+{\footnotesize\ttfamily void Collision.\+Speed\+Change\+Collision\+Action.\+Do\+Collision\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}}]{controller,  }\item[{\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}}}]{collision\+Effect\+Strength\+Enum }\end{DoxyParamCaption})}
+
+
+
+On entering the collision zone this method is called. in this case the target is sped up through the collider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & \\
+\hline
+{\em collision\+Effect\+Strength\+Enum} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a88286040845768a8e05f9383de334db1}{Collision.\+ICollision\+Action}}.
+
+\mbox{\Hypertarget{class_collision_1_1_speed_change_collision_action_a65783cb1457c052d48cc13bb15f7b8db}\label{class_collision_1_1_speed_change_collision_action_a65783cb1457c052d48cc13bb15f7b8db}} 
+\index{Collision.SpeedChangeCollisionAction@{Collision.SpeedChangeCollisionAction}!DoCollisionAreaExitAction@{DoCollisionAreaExitAction}}
+\index{DoCollisionAreaExitAction@{DoCollisionAreaExitAction}!Collision.SpeedChangeCollisionAction@{Collision.SpeedChangeCollisionAction}}
+\doxysubsubsection{\texorpdfstring{DoCollisionAreaExitAction()}{DoCollisionAreaExitAction()}}
+{\footnotesize\ttfamily void Collision.\+Speed\+Change\+Collision\+Action.\+Do\+Collision\+Area\+Exit\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}}}]{controller,  }\item[{\mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Collision\+Effect\+Strength\+Enum}}}]{collision\+Effect\+Strength\+Enum }\end{DoxyParamCaption})}
+
+
+
+Speed up effect zone is exited. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & \\
+\hline
+{\em collision\+Effect\+Strength\+Enum} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_collision_1_1_i_collision_action_a325eeba8b0a9845290d7d15b5cda8cb2}{Collision.\+ICollision\+Action}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/\+RD8/\+Assets/\+Scripts/\+Collision/\mbox{\hyperlink{_speed_change_collision_action_8cs}{Speed\+Change\+Collision\+Action.\+cs}}\end{DoxyCompactItemize}
