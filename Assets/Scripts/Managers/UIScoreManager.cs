@@ -15,13 +15,13 @@ namespace Managers
 
         void Start()
         {
-            Actions.OnGamePlayChanged += UpdateGameScore;
+            Actions.OnGameStatusChanged += UpdateGameScore;
             UpdateGameScore(GamePlayManager.GetInstance().GameStatus);
         }
 
         private void OnDestroy()
         {
-            Actions.OnGamePlayChanged -= UpdateGameScore;
+            Actions.OnGameStatusChanged -= UpdateGameScore;
         }
 
         private void Update()

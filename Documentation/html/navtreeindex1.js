@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"interface_collision_1_1_i_collision_action.html#a325eeba8b0a9845290d7d15b5cda8cb2":[0,0,0,4,1],
-"interface_collision_1_1_i_collision_action.html#a88286040845768a8e05f9383de334db1":[1,0,0,4,0],
 "interface_collision_1_1_i_collision_action.html#a88286040845768a8e05f9383de334db1":[0,0,0,4,0],
 "interface_key_1_1_i_key_action.html":[1,0,2,0],
 "interface_key_1_1_i_key_action.html":[0,0,2,0],
@@ -49,8 +47,8 @@ var NAVTREEINDEX1 =
 "namespacemembers_enum.html":[0,1,1],
 "namespaces.html":[0,0],
 "pages.html":[],
-"struct_managers_1_1_game_status.html":[0,0,4,5],
 "struct_managers_1_1_game_status.html":[1,0,4,5],
+"struct_managers_1_1_game_status.html":[0,0,4,5],
 "struct_managers_1_1_game_status.html#a217f141cb4fc611f15c904ef4e43c0b1":[0,0,4,5,2],
 "struct_managers_1_1_game_status.html#a217f141cb4fc611f15c904ef4e43c0b1":[1,0,4,5,2],
 "struct_managers_1_1_game_status.html#a5f30f923875057a455abac64216c6a4d":[1,0,4,5,4],

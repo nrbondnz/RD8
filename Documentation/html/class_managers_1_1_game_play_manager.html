@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('class_managers_1_1_game_play_manager.h
   <div class="headertitle"><div class="title">Managers.GamePlayManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Creates a single instance GamePlayManager controlling GameStatus.  
+ <a href="class_managers_1_1_game_play_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Managers.GamePlayManager:</div>
 <div class="dyncontent">
@@ -107,30 +110,38 @@ Inheritance diagram for Managers.GamePlayManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0530ddeff863d573165961a8a3f7869d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_managers_1_1_game_status.html">GameStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a0530ddeff863d573165961a8a3f7869d">GetGamePlay</a> ()</td></tr>
-<tr class="separator:a0530ddeff863d573165961a8a3f7869d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4c559b3bdf8e10bc7dda612c8a64c9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_managers_1_1_game_status.html">GameStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#ab4c559b3bdf8e10bc7dda612c8a64c9c">GetGameStatus</a> ()</td></tr>
+<tr class="memdesc:ab4c559b3bdf8e10bc7dda612c8a64c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GameStatus.  <br /></td></tr>
+<tr class="separator:ab4c559b3bdf8e10bc7dda612c8a64c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af46db0178764718fa37f0599ee3229cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb">Start</a> ()</td></tr>
+<tr class="memdesc:af46db0178764718fa37f0599ee3229cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the GamePlayManager in the <a class="el" href="struct_managers_1_1_game_status.html#aefbd67b1db08f63f88d6f788c9f9aff7">GameStatus.Started</a> = false state.  <br /></td></tr>
 <tr class="separator:af46db0178764718fa37f0599ee3229cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad819fd7dceb7725aa107e511a0a41dca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca">InitGame</a> (<a class="el" href="namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0">GameDifficulty</a> pGameDifficulty)</td></tr>
+<tr class="memdesc:ad819fd7dceb7725aa107e511a0a41dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the GameStatus of the game according to GameDifficulty parameter And informs subscribers of the state change.  <br /></td></tr>
 <tr class="separator:ad819fd7dceb7725aa107e511a0a41dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0a5b0fe596164a0d14870b16ffb070c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#af0a5b0fe596164a0d14870b16ffb070c">RemoveLife</a> ()</td></tr>
+<tr class="memdesc:af0a5b0fe596164a0d14870b16ffb070c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a life from GameStatus and returns the number of lives remaining.  <br /></td></tr>
 <tr class="separator:af0a5b0fe596164a0d14870b16ffb070c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ad4601f2f58d6f09e518ceeb1a9fca1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a3ad4601f2f58d6f09e518ceeb1a9fca1">GetLives</a> ()</td></tr>
+<tr class="memdesc:a3ad4601f2f58d6f09e518ceeb1a9fca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of lives left.  <br /></td></tr>
 <tr class="separator:a3ad4601f2f58d6f09e518ceeb1a9fca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c9d3894d8dc59d89d05e7869eb3e0ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a4c9d3894d8dc59d89d05e7869eb3e0ec">AnyLivesLeft</a> ()</td></tr>
+<tr class="memdesc:a4c9d3894d8dc59d89d05e7869eb3e0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are any lives remaining.  <br /></td></tr>
 <tr class="separator:a4c9d3894d8dc59d89d05e7869eb3e0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60a929ece1c48a297197cff8940253b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#ac60a929ece1c48a297197cff8940253b">UpdateTimeRemaining</a> ()</td></tr>
+<tr class="memdesc:ac60a929ece1c48a297197cff8940253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the time remaining Tells subscribers if the GameStatus has changed If out of time it causes the WinLoseMenu to be displayed.  <br /></td></tr>
 <tr class="separator:ac60a929ece1c48a297197cff8940253b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f6eb1ead67dacaf7a246a5e840c98c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a1f6eb1ead67dacaf7a246a5e840c98c2">AnyTimeLeft</a> ()</td></tr>
-<tr class="separator:a1f6eb1ead67dacaf7a246a5e840c98c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5428e69d04f1a010170dfa1f2b7d79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0">GameDifficulty</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a0c5428e69d04f1a010170dfa1f2b7d79">GetGameLevel</a> ()</td></tr>
+<tr class="memdesc:a0c5428e69d04f1a010170dfa1f2b7d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GameDifficulty.  <br /></td></tr>
 <tr class="separator:a0c5428e69d04f1a010170dfa1f2b7d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9bceca2c962de24f822f3c4819336110"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a9bceca2c962de24f822f3c4819336110">hasBootSceneRun</a> ()</td></tr>
+<tr class="memdesc:a9bceca2c962de24f822f3c4819336110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the single instance has been created, if it has there will be a single instance of GamePlayManager Already.  <br /></td></tr>
 <tr class="separator:a9bceca2c962de24f822f3c4819336110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eb7c3c406d5d83805c3583019ea060a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_managers_1_1_game_play_manager.html">GamePlayManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a4eb7c3c406d5d83805c3583019ea060a">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a4eb7c3c406d5d83805c3583019ea060a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Singleton instance of GamePlayManager.  <br /></td></tr>
 <tr class="separator:a4eb7c3c406d5d83805c3583019ea060a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -138,7 +149,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a96501ef77703985fe7a870d98fe073ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_managers_1_1_game_status.html">GameStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_play_manager.html#a96501ef77703985fe7a870d98fe073ac">GameStatus</a></td></tr>
 <tr class="separator:a96501ef77703985fe7a870d98fe073ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Creates a single instance GamePlayManager controlling GameStatus. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4c9d3894d8dc59d89d05e7869eb3e0ec" name="a4c9d3894d8dc59d89d05e7869eb3e0ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c9d3894d8dc59d89d05e7869eb3e0ec">&#9670;&#160;</a></span>AnyLivesLeft()</h2>
 
@@ -154,22 +167,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a1f6eb1ead67dacaf7a246a5e840c98c2" name="a1f6eb1ead67dacaf7a246a5e840c98c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f6eb1ead67dacaf7a246a5e840c98c2">&#9670;&#160;</a></span>AnyTimeLeft()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Managers.GamePlayManager.AnyTimeLeft </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Are any lives remaining. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
 
 </div>
 </div>
@@ -188,22 +187,28 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get GameDifficulty. </p>
+<dl class="section return"><dt>Returns</dt><dd>GameDifficulty</dd></dl>
+
 </div>
 </div>
-<a id="a0530ddeff863d573165961a8a3f7869d" name="a0530ddeff863d573165961a8a3f7869d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0530ddeff863d573165961a8a3f7869d">&#9670;&#160;</a></span>GetGamePlay()</h2>
+<a id="ab4c559b3bdf8e10bc7dda612c8a64c9c" name="ab4c559b3bdf8e10bc7dda612c8a64c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4c559b3bdf8e10bc7dda612c8a64c9c">&#9670;&#160;</a></span>GetGameStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_managers_1_1_game_status.html">GameStatus</a> Managers.GamePlayManager.GetGamePlay </td>
+          <td class="memname"><a class="el" href="struct_managers_1_1_game_status.html">GameStatus</a> Managers.GamePlayManager.GetGameStatus </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the GameStatus. </p>
+<dl class="section return"><dt>Returns</dt><dd>GameStatus</dd></dl>
 
 </div>
 </div>
@@ -230,6 +235,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the Singleton instance of GamePlayManager. </p>
+<dl class="section return"><dt>Returns</dt><dd>GamePlayManager</dd></dl>
+
 </div>
 </div>
 <a id="a3ad4601f2f58d6f09e518ceeb1a9fca1" name="a3ad4601f2f58d6f09e518ceeb1a9fca1"></a>
@@ -246,6 +254,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the number of lives left. </p>
+<dl class="section return"><dt>Returns</dt><dd>int</dd></dl>
 
 </div>
 </div>
@@ -272,6 +283,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if the single instance has been created, if it has there will be a single instance of GamePlayManager Already. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+
 </div>
 </div>
 <a id="ad819fd7dceb7725aa107e511a0a41dca" name="ad819fd7dceb7725aa107e511a0a41dca"></a>
@@ -290,6 +304,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes the GameStatus of the game according to GameDifficulty parameter And informs subscribers of the state change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pGameDifficulty</td><td>GameDifficulty</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af0a5b0fe596164a0d14870b16ffb070c" name="af0a5b0fe596164a0d14870b16ffb070c"></a>
@@ -306,6 +328,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes a life from GameStatus and returns the number of lives remaining. </p>
+<dl class="section return"><dt>Returns</dt><dd>int</dd></dl>
 
 </div>
 </div>
@@ -324,6 +349,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Start the GamePlayManager in the <a class="el" href="struct_managers_1_1_game_status.html#aefbd67b1db08f63f88d6f788c9f9aff7">GameStatus.Started</a> = false state. </p>
+
 </div>
 </div>
 <a id="ac60a929ece1c48a297197cff8940253b" name="ac60a929ece1c48a297197cff8940253b"></a>
@@ -340,6 +367,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the time remaining Tells subscribers if the GameStatus has changed If out of time it causes the WinLoseMenu to be displayed. </p>
 
 </div>
 </div>
