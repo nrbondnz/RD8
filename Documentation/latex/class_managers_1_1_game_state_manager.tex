@@ -1,5 +1,10 @@
 \hypertarget{class_managers_1_1_game_state_manager}{}\doxysection{Managers.\+Game\+State\+Manager Class Reference}
 \label{class_managers_1_1_game_state_manager}\index{Managers.GameStateManager@{Managers.GameStateManager}}
+
+
+Game state manager controls the Game\+Phase and when running the current scene number and last level scene number before winning the overall game.  
+
+
 Inheritance diagram for Managers.\+Game\+State\+Manager\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,24 +15,27 @@ Inheritance diagram for Managers.\+Game\+State\+Manager\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_managers_1_1_game_state_manager_a8772f72955ed23f42c596a335f35c53a}{Reset\+Game\+State}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em At start of play the game state is reset for the single instance of Game\+State\+Manager. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_managers_1_1_game_state_manager_acf9ccb371ca9df7354dfee412cd871b1}{Game\+State\+Manager}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setup Game\+State\+Manager when first (and only) instance initialisation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_managers_1_1_game_state_manager}{Game\+State\+Manager}} \mbox{\hyperlink{class_managers_1_1_game_state_manager_ad38ce89f2d73edd48f466d14d25db982}{Get\+Instance}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em gets the (single per run) instance of the Game\+State\+Manager which will be created during Awake \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_managers_1_1_game_state_manager_a196ef2da5263c937038d88d569fa9325}{Last\+Level}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Get/\+Set of Last\+Level to be used on initialization. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fe}{Game\+Phase}} \mbox{\hyperlink{class_managers_1_1_game_state_manager_a1ae9f7ad81b72c97952f2ad6fa6ff850}{Game\+Phase}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sets up Game Phase get/set. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_managers_1_1_game_state_manager_a8c0c375f4e55a62a61a058f95a741943}{Scene\+Num}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em get/set of Scene\+Num \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Game state manager controls the Game\+Phase and when running the current scene number and last level scene number before winning the overall game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_managers_1_1_game_state_manager_acf9ccb371ca9df7354dfee412cd871b1}\label{class_managers_1_1_game_state_manager_acf9ccb371ca9df7354dfee412cd871b1}} 
@@ -38,6 +46,10 @@ int \mbox{\hyperlink{class_managers_1_1_game_state_manager_a8c0c375f4e55a62a61a0
 
 
 
+Setup Game\+State\+Manager when first (and only) instance initialisation. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_managers_1_1_game_state_manager_ad38ce89f2d73edd48f466d14d25db982}\label{class_managers_1_1_game_state_manager_ad38ce89f2d73edd48f466d14d25db982}} 
 \index{Managers.GameStateManager@{Managers.GameStateManager}!GetInstance@{GetInstance}}
@@ -45,11 +57,22 @@ int \mbox{\hyperlink{class_managers_1_1_game_state_manager_a8c0c375f4e55a62a61a0
 \doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_managers_1_1_game_state_manager}{Game\+State\+Manager}} Managers.\+Game\+State\+Manager.\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+gets the (single per run) instance of the Game\+State\+Manager which will be created during Awake 
+
+\begin{DoxyReturn}{Returns}
+Game\+State\+Manager
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_managers_1_1_game_state_manager_a8772f72955ed23f42c596a335f35c53a}\label{class_managers_1_1_game_state_manager_a8772f72955ed23f42c596a335f35c53a}} 
 \index{Managers.GameStateManager@{Managers.GameStateManager}!ResetGameState@{ResetGameState}}
 \index{ResetGameState@{ResetGameState}!Managers.GameStateManager@{Managers.GameStateManager}}
 \doxysubsubsection{\texorpdfstring{ResetGameState()}{ResetGameState()}}
 {\footnotesize\ttfamily void Managers.\+Game\+State\+Manager.\+Reset\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+At start of play the game state is reset for the single instance of Game\+State\+Manager. 
 
 
 
@@ -60,17 +83,29 @@ int \mbox{\hyperlink{class_managers_1_1_game_state_manager_a8c0c375f4e55a62a61a0
 \doxysubsubsection{\texorpdfstring{GamePhase}{GamePhase}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespace_managers_a611e2d8e9c342f0418b55098824563fe}{Game\+Phase}} Managers.\+Game\+State\+Manager.\+Game\+Phase\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+Sets up Game Phase get/set. 
+
 \mbox{\Hypertarget{class_managers_1_1_game_state_manager_a196ef2da5263c937038d88d569fa9325}\label{class_managers_1_1_game_state_manager_a196ef2da5263c937038d88d569fa9325}} 
 \index{Managers.GameStateManager@{Managers.GameStateManager}!LastLevel@{LastLevel}}
 \index{LastLevel@{LastLevel}!Managers.GameStateManager@{Managers.GameStateManager}}
 \doxysubsubsection{\texorpdfstring{LastLevel}{LastLevel}}
 {\footnotesize\ttfamily int Managers.\+Game\+State\+Manager.\+Last\+Level\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+Get/\+Set of Last\+Level to be used on initialization. 
+
 \mbox{\Hypertarget{class_managers_1_1_game_state_manager_a8c0c375f4e55a62a61a058f95a741943}\label{class_managers_1_1_game_state_manager_a8c0c375f4e55a62a61a058f95a741943}} 
 \index{Managers.GameStateManager@{Managers.GameStateManager}!SceneNum@{SceneNum}}
 \index{SceneNum@{SceneNum}!Managers.GameStateManager@{Managers.GameStateManager}}
 \doxysubsubsection{\texorpdfstring{SceneNum}{SceneNum}}
 {\footnotesize\ttfamily int Managers.\+Game\+State\+Manager.\+Scene\+Num\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+get/set of Scene\+Num 
 
 
 

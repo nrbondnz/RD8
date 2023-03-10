@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('class_managers_1_1_game_state_manager.
   <div class="headertitle"><div class="title">Managers.GameStateManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Game state manager controls the GamePhase and when running the current scene number and last level scene number before winning the overall game.  
+ <a href="class_managers_1_1_game_state_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Managers.GameStateManager:</div>
 <div class="dyncontent">
@@ -108,25 +111,33 @@ Inheritance diagram for Managers.GameStateManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8772f72955ed23f42c596a335f35c53a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_state_manager.html#a8772f72955ed23f42c596a335f35c53a">ResetGameState</a> ()</td></tr>
+<tr class="memdesc:a8772f72955ed23f42c596a335f35c53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">At start of play the game state is reset for the single instance of GameStateManager.  <br /></td></tr>
 <tr class="separator:a8772f72955ed23f42c596a335f35c53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf9ccb371ca9df7354dfee412cd871b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_state_manager.html#acf9ccb371ca9df7354dfee412cd871b1">GameStateManager</a> ()</td></tr>
+<tr class="memdesc:acf9ccb371ca9df7354dfee412cd871b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup GameStateManager when first (and only) instance initialisation.  <br /></td></tr>
 <tr class="separator:acf9ccb371ca9df7354dfee412cd871b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad38ce89f2d73edd48f466d14d25db982"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_managers_1_1_game_state_manager.html">GameStateManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_state_manager.html#ad38ce89f2d73edd48f466d14d25db982">GetInstance</a> ()</td></tr>
+<tr class="memdesc:ad38ce89f2d73edd48f466d14d25db982"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the (single per run) instance of the GameStateManager which will be created during Awake  <br /></td></tr>
 <tr class="separator:ad38ce89f2d73edd48f466d14d25db982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a196ef2da5263c937038d88d569fa9325"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_state_manager.html#a196ef2da5263c937038d88d569fa9325">LastLevel</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a196ef2da5263c937038d88d569fa9325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set of LastLevel to be used on initialization.  <br /></td></tr>
 <tr class="separator:a196ef2da5263c937038d88d569fa9325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ae9f7ad81b72c97952f2ad6fa6ff850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_managers.html#a611e2d8e9c342f0418b55098824563fe">GamePhase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_state_manager.html#a1ae9f7ad81b72c97952f2ad6fa6ff850">GamePhase</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1ae9f7ad81b72c97952f2ad6fa6ff850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up Game Phase get/set.  <br /></td></tr>
 <tr class="separator:a1ae9f7ad81b72c97952f2ad6fa6ff850"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c0c375f4e55a62a61a058f95a741943"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_game_state_manager.html#a8c0c375f4e55a62a61a058f95a741943">SceneNum</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8c0c375f4e55a62a61a058f95a741943"><td class="mdescLeft">&#160;</td><td class="mdescRight">get/set of SceneNum  <br /></td></tr>
 <tr class="separator:a8c0c375f4e55a62a61a058f95a741943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Game state manager controls the GamePhase and when running the current scene number and last level scene number before winning the overall game. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acf9ccb371ca9df7354dfee412cd871b1" name="acf9ccb371ca9df7354dfee412cd871b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf9ccb371ca9df7354dfee412cd871b1">&#9670;&#160;</a></span>GameStateManager()</h2>
 
@@ -141,6 +152,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Setup GameStateManager when first (and only) instance initialisation. </p>
 
 </div>
 </div>
@@ -168,6 +181,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>gets the (single per run) instance of the GameStateManager which will be created during Awake </p>
+<dl class="section return"><dt>Returns</dt><dd>GameStateManager</dd></dl>
+
 </div>
 </div>
 <a id="a8772f72955ed23f42c596a335f35c53a" name="a8772f72955ed23f42c596a335f35c53a"></a>
@@ -184,6 +200,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>At start of play the game state is reset for the single instance of GameStateManager. </p>
 
 </div>
 </div>
@@ -208,6 +226,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets up Game Phase get/set. </p>
+
 </div>
 </div>
 <a id="a196ef2da5263c937038d88d569fa9325" name="a196ef2da5263c937038d88d569fa9325"></a>
@@ -230,6 +250,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get/Set of LastLevel to be used on initialization. </p>
+
 </div>
 </div>
 <a id="a8c0c375f4e55a62a61a058f95a741943" name="a8c0c375f4e55a62a61a058f95a741943"></a>
@@ -251,6 +273,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>get/set of SceneNum </p>
 
 </div>
 </div>
