@@ -20,6 +20,9 @@ namespace Managers
     {
         private static GameManager _instance;
 
+        /// <summary>
+        /// Sets up the game manager as a new singleton instance
+        /// </summary>
         private void Awake()
         {
             if (_instance != null)
@@ -34,6 +37,10 @@ namespace Managers
             DontDestroyOnLoad(gameObject);
         }
 
+        /// <summary>
+        /// Gets the singleton instance
+        /// </summary>
+        /// <returns></returns>
         public static GameManager GetInstance()
         {
             return _instance;
