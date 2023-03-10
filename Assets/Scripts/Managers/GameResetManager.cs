@@ -58,6 +58,9 @@ namespace Managers
             }
         }
 
+        /// <summary>
+        /// Resets the scene and removes a life from the GamePlayManager
+        /// </summary>
         public void ResetScene()
         {
             Scene currentScene = SceneManager.GetActiveScene();
