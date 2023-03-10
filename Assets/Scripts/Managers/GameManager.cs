@@ -11,6 +11,11 @@ using String = System.String;
 
 namespace Managers
 {
+    /// <summary>
+    /// Manager the overall game with a single instance GameManager
+    /// Initialises the game on the start menu
+    /// Manages the scene updates
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
@@ -23,7 +28,7 @@ namespace Managers
                 Destroy(gameObject);
                 return;
             }
-            Debug.Log("GamePlayManager Awake");
+            Debug.Log("GameManager Awake");
             _instance = this as GameManager;
 
             DontDestroyOnLoad(gameObject);
@@ -44,7 +49,7 @@ namespace Managers
         }
         
         /// <summary>
-        /// Updates the scene based on the new gamephase
+        /// Updates the scene based on the new gamephase and requested level
         /// Update </summary>
         /// <param name="newPhase"></param>
         /// <param name="newLevel"></param>
