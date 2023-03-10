@@ -15,14 +15,14 @@ Inheritance diagram for Managers.\+Game\+Reset\+Manager\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_managers_1_1_game_reset_manager_a41fc068af42ae846d0c396cbfd91ea6b}{Remove\+Life\+And\+Reset\+Scene}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the scene if still lives left else the game has ended so update the Game\+Play\+Manager and loads the Win\+Lose\+Menu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_managers_1_1_game_reset_manager_a9d718417ac8c7e73f41e2ee021b3d0fd}{Reset\+Scene}} ()
 \begin{DoxyCompactList}\small\item\em Resets the scene and removes a life from the Game\+Play\+Manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_managers_1_1_game_reset_manager}{Game\+Reset\+Manager}} \mbox{\hyperlink{class_managers_1_1_game_reset_manager_a7d5227cf05e6f94505a780816aec9292}{Get\+Instance}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the singleton of Game\+Reset\+Manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -35,11 +35,22 @@ Resets the game after losing a life or running out of time with this singleton.
 \doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_managers_1_1_game_reset_manager}{Game\+Reset\+Manager}} Managers.\+Game\+Reset\+Manager.\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Gets the singleton of Game\+Reset\+Manager. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_managers_1_1_game_reset_manager_a41fc068af42ae846d0c396cbfd91ea6b}\label{class_managers_1_1_game_reset_manager_a41fc068af42ae846d0c396cbfd91ea6b}} 
 \index{Managers.GameResetManager@{Managers.GameResetManager}!RemoveLifeAndResetScene@{RemoveLifeAndResetScene}}
 \index{RemoveLifeAndResetScene@{RemoveLifeAndResetScene}!Managers.GameResetManager@{Managers.GameResetManager}}
 \doxysubsubsection{\texorpdfstring{RemoveLifeAndResetScene()}{RemoveLifeAndResetScene()}}
 {\footnotesize\ttfamily void Managers.\+Game\+Reset\+Manager.\+Remove\+Life\+And\+Reset\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the scene if still lives left else the game has ended so update the Game\+Play\+Manager and loads the Win\+Lose\+Menu. 
 
 \mbox{\Hypertarget{class_managers_1_1_game_reset_manager_a9d718417ac8c7e73f41e2ee021b3d0fd}\label{class_managers_1_1_game_reset_manager_a9d718417ac8c7e73f41e2ee021b3d0fd}} 
 \index{Managers.GameResetManager@{Managers.GameResetManager}!ResetScene@{ResetScene}}

@@ -11,6 +11,9 @@ namespace Managers
     {
         private static GameResetManager _instance;
 
+        /// <summary>
+        /// Initializes a Singleton of the GameResetManager class
+        /// </summary>
         private void Awake()
         {
             if (_instance != null)
@@ -28,12 +31,20 @@ namespace Managers
             }
         }
 
+        /// <summary>
+        /// Gets the singleton of GameResetManager
+        /// </summary>
+        /// <returns></returns>
         public static GameResetManager GetInstance()
         {
             return _instance;
         }
 
-    
+        /// <summary>
+        /// Listens for collisions with a Terrain with a tag of 'OutOfBounds'
+        /// then if found calls the RemoveLiveAndResetScene
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
             Terrain childTerrainObj = gameObject.GetComponentInChildren<Terrain>();
@@ -44,6 +55,10 @@ namespace Managers
             }
         }
 
+        /// <summary>
+        /// Resets the scene if still lives left else the game has ended so update the
+        /// GamePlayManager and loads the WinLoseMenu
+        /// </summary>
         public void RemoveLifeAndResetScene()
         {
             if (GamePlayManager.GetInstance().GetLives() == 1 )
