@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 namespace Managers
 {
+    /// <summary>
+    /// Resets the game after losing a life or running out of time with this singleton
+    /// </summary>
     public class GameResetManager : MonoBehaviour
     {
         private static GameResetManager _instance;
