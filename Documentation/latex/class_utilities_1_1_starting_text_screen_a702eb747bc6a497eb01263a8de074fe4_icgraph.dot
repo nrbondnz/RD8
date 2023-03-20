@@ -1,0 +1,15 @@
+digraph "Utilities.StartingTextScreen.StartGame"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Utilities.StartingTextScreen.\lStartGame",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Utilities.StartingTextScreen.\lEasyPressed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_utilities_1_1_starting_text_screen.html#adf5495a7967c20c739dcd37a60a5c95e",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Utilities.StartingTextScreen.\lHardPressed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_utilities_1_1_starting_text_screen.html#a8b980ce71361be1e05183a500e44b039",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Utilities.StartingTextScreen.\lImpossiblePressed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_utilities_1_1_starting_text_screen.html#a7966382b0186922bd6e545d2b186c67b",tooltip=" "];
+}

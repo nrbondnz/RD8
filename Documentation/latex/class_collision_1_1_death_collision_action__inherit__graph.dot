@@ -1,0 +1,12 @@
+digraph "Collision.DeathCollisionAction"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="Collision.DeathCollision\lAction",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Details the action to be taken when a collision occurs with the target. In this class the target is k..."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="MonoBehaviour",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="ICollisionAction",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$interface_collision_1_1_i_collision_action.html",tooltip="This interface is used to allow for different collision effects to be chosen for the collition action..."];
+}

@@ -8,5 +8,6 @@ var searchData=
   ['resetwaypoints_5',['ResetWaypoints',['../class_managers_1_1_waypoint_manager.html#a3fc4750b0c60232aef42b04b0359b121',1,'Managers::WaypointManager']]],
   ['reveal_6',['Reveal',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66ba393c3f5ea8ad35c02691d507bdbb31b0',1,'Key::IKeyAction']]],
   ['revealkeyaction_7',['RevealKeyAction',['../class_key_1_1_reveal_key_action.html',1,'Key']]],
-  ['revealkeyaction_2ecs_8',['RevealKeyAction.cs',['../_reveal_key_action_8cs.html',1,'']]]
+  ['revealkeyaction_2ecs_8',['RevealKeyAction.cs',['../_reveal_key_action_8cs.html',1,'']]],
+  ['rolling_20danger_20home_20page_9',['Rolling Danger Home Page',['../index.html',1,'']]]
 ];

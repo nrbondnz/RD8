@@ -1,0 +1,12 @@
+/*! \mainpage Rolling Danger Home Page
+ *
+ * \section intro_sec Introduction
+ *
+ * Rolling Danger is a 3D Ball game that has limited lives and limited time based on the players difficulty selection
+ *
+ * \section install_sec Document generation
+ *
+ * \subsection step1 Step 1: Ensure that you have doxygen.com installed
+ *
+ * 
+ */

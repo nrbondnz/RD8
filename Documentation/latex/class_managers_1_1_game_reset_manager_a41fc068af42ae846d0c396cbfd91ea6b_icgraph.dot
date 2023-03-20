@@ -1,0 +1,11 @@
+digraph "Managers.GameResetManager.RemoveLifeAndResetScene"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Managers.GameResetManager.\lRemoveLifeAndResetScene",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Resets the scene if still lives left else the game has ended so update the GamePlayManager and loads ..."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Collision.DeathCollision\lAction.DoCollisionAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_collision_1_1_death_collision_action.html#aad077cbbf80f2ecd43020f832bcef7f3",tooltip="This action interacts directly with the GameResetManager tp reduce a life."];
+}

@@ -1,0 +1,16 @@
+digraph "Managers.GamePlayManager.RemoveLife"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Managers.GamePlayManager.\lRemoveLife",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Removes a life from GameStatus and returns the number of lives remaining."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Managers.GameResetManager.\lRemoveLifeAndResetScene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_reset_manager.html#a41fc068af42ae846d0c396cbfd91ea6b",tooltip="Resets the scene if still lives left else the game has ended so update the GamePlayManager and loads ..."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Collision.DeathCollision\lAction.DoCollisionAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_collision_1_1_death_collision_action.html#aad077cbbf80f2ecd43020f832bcef7f3",tooltip="This action interacts directly with the GameResetManager tp reduce a life."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Managers.GameResetManager.\lResetScene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_reset_manager.html#a9d718417ac8c7e73f41e2ee021b3d0fd",tooltip="Resets the scene and removes a life from the GamePlayManager."];
+  Node4 -> Node2 [dir="back",color="steelblue1",style="solid"];
+}

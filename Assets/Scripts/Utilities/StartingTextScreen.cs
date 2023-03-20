@@ -17,7 +17,7 @@ namespace Utilities
 
         void Awake()
         {
-            if (!GamePlayManager.hasBootSceneRun())
+            if (!GameManager.hasBootSceneRun())
             {
                 SceneManager.LoadSceneAsync("Boot Dont Display");
             }

@@ -25,7 +25,7 @@ namespace Managers
             Debug.Log("GameResetManager Awake");
             _instance = this as GameResetManager;
             DontDestroyOnLoad(gameObject);
-            if (!GamePlayManager.hasBootSceneRun())
+            if (!GameManager.hasBootSceneRun())
             {
                 SceneManager.LoadSceneAsync("Boot Dont Display");
             }

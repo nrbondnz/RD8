@@ -1,0 +1,21 @@
+digraph "Managers.GameResetManager.RemoveLifeAndResetScene"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Managers.GameResetManager.\lRemoveLifeAndResetScene",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Resets the scene if still lives left else the game has ended so update the GamePlayManager and loads ..."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Managers.GamePlayManager.\lGetInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_play_manager.html#a4eb7c3c406d5d83805c3583019ea060a",tooltip="Returns the Singleton instance of GamePlayManager."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Managers.GamePlayManager.\lGetLives",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_play_manager.html#a3ad4601f2f58d6f09e518ceeb1a9fca1",tooltip="Get the number of lives left."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Managers.GamePlayManager.\lRemoveLife",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_play_manager.html#af0a5b0fe596164a0d14870b16ffb070c",tooltip="Removes a life from GameStatus and returns the number of lives remaining."];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Managers.GameStatus.RemoveLife",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_managers_1_1_game_status.html#aa1c846b633f5cfd53e5e91b47aa500c0",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Managers.GameResetManager.\lResetScene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_reset_manager.html#a9d718417ac8c7e73f41e2ee021b3d0fd",tooltip="Resets the scene and removes a life from the GamePlayManager."];
+  Node6 -> Node2 [color="steelblue1",style="solid"];
+  Node6 -> Node4 [color="steelblue1",style="solid"];
+}

@@ -86,5 +86,15 @@ namespace Managers
                     throw new ArgumentOutOfRangeException(nameof(State), newPhase, null);
             }
         }
+
+        /// <summary>
+        /// Checks if the single instance has been created, if it has there will be a single instance of GameManager
+        /// Already
+        /// </summary>
+        /// <returns>bool</returns>
+        public static bool hasBootSceneRun()
+        {
+            return _instance != null;
+        }
     }
 }

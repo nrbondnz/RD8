@@ -1,0 +1,11 @@
+digraph "Collision.CollisionActionController.GetCollisionActionEnum"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Collision.CollisionAction\lController.GetCollisionActionEnum",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="The unity game object using the collision action controller defines the action(and hence the effect) ..."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Managers.SoundManager.Play\lCollisionSound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_sound_manager.html#a1803534e0e3379b75104fb7dd5f663ad",tooltip="When calls from the collision action controller it plays the sound for the specified 2 dimensional so..."];
+}

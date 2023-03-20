@@ -1,0 +1,20 @@
+digraph "Utilities.StartingTextScreen.StartGame"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Utilities.StartingTextScreen.\lStartGame",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Managers.GameManager.Get\lInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_manager.html#ad56d8013d6443c092f4043a8398e4fd1",tooltip="Gets the singleton instance."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Managers.GamePlayManager.\lGetInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_play_manager.html#a4eb7c3c406d5d83805c3583019ea060a",tooltip="Returns the Singleton instance of GamePlayManager."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Managers.GameStateManager.\lGetInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_state_manager.html#ad38ce89f2d73edd48f466d14d25db982",tooltip="gets the (single per run) instance of the GameStateManager which will be created during Awake"];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Managers.GamePlayManager.\lInitGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca",tooltip="Initializes the GameStatus of the game according to GameDifficulty parameter And informs subscribers ..."];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Managers.GameManager.Update\lGameScene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_game_manager.html#afeba0bdb67f695ac0ab7237f0b13bbe3",tooltip="Updates the scene based on the new gamephase and requested level Update."];
+  Node6 -> Node4 [color="steelblue1",style="solid"];
+}

@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Rolling Danger", "index.html", [
+    [ "Rolling Danger Home Page", "index.html", "index" ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
@@ -57,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_actions_8cs.html",
-"interface_collision_1_1_i_collision_action.html#a88286040845768a8e05f9383de334db1"
+"interface_collision_1_1_i_collision_action.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

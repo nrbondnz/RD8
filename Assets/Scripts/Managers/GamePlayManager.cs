@@ -16,15 +16,7 @@ namespace Managers
 
         private static GamePlayManager _instance;
 
-        /// <summary>
-        /// Checks if the single instance has been created, if it has there will be a single instance of GamePlayManager
-        /// Already
-        /// </summary>
-        /// <returns>bool</returns>
-        public static bool hasBootSceneRun()
-        {
-            return _instance != null;
-        }
+    
         
         /// <summary>
         /// Returns the GameStatus
@@ -160,7 +152,6 @@ namespace Managers
         {
             return GameStatus.GameDifficulty;
         }
-        
     }
     
     

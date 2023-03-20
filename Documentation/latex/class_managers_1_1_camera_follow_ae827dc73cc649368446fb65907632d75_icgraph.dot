@@ -1,0 +1,13 @@
+digraph "Managers.CameraFollow.UpdatePlayer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Managers.CameraFollow.Update\lPlayer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Managers.CameraFollow.On\lDisable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_camera_follow.html#ab12e06d2d3fc44e877058fcbe0b5fddb",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Managers.CameraFollow.On\lEnable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_managers_1_1_camera_follow.html#a46efdb11082f1563df5f47a3124d7c6c",tooltip="This sets up s subscription to the state of the Player entity as it changes And a subscription to cur..."];
+}
