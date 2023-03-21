@@ -58,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_actions_8cs.html",
-"interface_collision_1_1_i_collision_action.html"
+"index.html#step5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
