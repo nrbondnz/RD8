@@ -6,6 +6,19 @@ using UnityEngine.UI;
 
 namespace Utilities
 {
+    /// <summary>
+    /// This displays what is the starting scene and the restart scene
+    /// It first checks the game managers have been initialized, this is really so the developer can start from any scene
+    /// Then the scene is setup connecting listeners to onClick for the action buttons
+    /// It displays an appropriate message based on the GamePlayManager information
+    /// - New game
+    /// - Win
+    /// - Loss
+    /// - Out of time
+    ///
+    /// When the button is clicked the game is started initialising managers as required and setting the
+    /// time and lives based on the difficulty button clicked
+    /// </summary>
     public class StartingTextScreen : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI headingForGameStart;

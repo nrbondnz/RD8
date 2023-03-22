@@ -247,7 +247,7 @@ var NAVTREEINDEX0 =
 "index.html#install_sec":[0,1],
 "index.html#intro_sec":[0,0],
 "index.html#step1":[0,1,0],
-"index.html#step2":[0,2],
-"index.html#step3":[0,3],
-"index.html#step4":[0,4]
+"index.html#step2":[0,1,1],
+"index.html#step3":[0,1,2],
+"index.html#step4":[0,1,3]
 };

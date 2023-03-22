@@ -11,7 +11,8 @@ namespace Managers
         [Header("Sounds")] [SerializeField] private AudioSource audioSource;
 
         private static Dictionary<CollisionActionEnum,
-            Dictionary<CollisionEffectStrengthEnum, AudioClip>> _collisionSounds;
+            Dictionary<CollisionEffectStrengthEnum, AudioClip>> _collisionSounds =
+            new Dictionary<CollisionActionEnum, Dictionary<CollisionEffectStrengthEnum, AudioClip>>();
 
         /// <summary>
         /// Initializes the singleton SoundManager

@@ -1,5 +1,10 @@
 \hypertarget{class_utilities_1_1_starting_text_screen}{}\doxysection{Utilities.\+Starting\+Text\+Screen Class Reference}
 \label{class_utilities_1_1_starting_text_screen}\index{Utilities.StartingTextScreen@{Utilities.StartingTextScreen}}
+
+
+This displays what is the starting scene and the restart scene It first checks the game managers have been initialized, this is really so the developer can start from any scene Then the scene is setup connecting listeners to on\+Click for the action buttons It displays an appropriate message based on the Game\+Play\+Manager information.  
+
+
 Inheritance diagram for Utilities.\+Starting\+Text\+Screen\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,6 +23,19 @@ void \mbox{\hyperlink{class_utilities_1_1_starting_text_screen_a7966382b0186922b
 void \mbox{\hyperlink{class_utilities_1_1_starting_text_screen_a702eb747bc6a497eb01263a8de074fe4}{Start\+Game}} (\mbox{\hyperlink{namespace_managers_af6b30b52f9ecc439c3edb52135936fd0}{Game\+Difficulty}} p\+Game\+Difficulty)
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This displays what is the starting scene and the restart scene It first checks the game managers have been initialized, this is really so the developer can start from any scene Then the scene is setup connecting listeners to on\+Click for the action buttons It displays an appropriate message based on the Game\+Play\+Manager information. 
+
+
+\begin{DoxyItemize}
+\item New game
+\item Win
+\item Loss
+\item Out of time
+\end{DoxyItemize}
+
+When the button is clicked the game is started initialising managers as required and setting the time and lives based on the difficulty button clicked 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_utilities_1_1_starting_text_screen_adf5495a7967c20c739dcd37a60a5c95e}\label{class_utilities_1_1_starting_text_screen_adf5495a7967c20c739dcd37a60a5c95e}} 

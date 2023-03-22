@@ -16,8 +16,12 @@ namespace Managers
     /// Initialises the game on the start menu
     /// Manages the scene updates
     /// </summary>
+    /// @image html "C:\dev\plantuml\Game Initialisation\Game Initialisation.svg" "Game Initialisation" width=100%
     public class GameManager : MonoBehaviour
     {
+
+
+
         private static GameManager _instance;
 
         /// <summary>
@@ -51,8 +55,8 @@ namespace Managers
         /// </summary>
         private void Start()
         {
-            SceneManager.LoadSceneAsync("WinLoseMenu");
             GameStateManager.GetInstance().ResetGameState();
+            SceneManager.LoadSceneAsync("WinLoseMenu");
         }
         
         /// <summary>
