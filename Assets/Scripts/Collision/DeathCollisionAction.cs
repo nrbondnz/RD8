@@ -16,6 +16,7 @@ namespace Collision
     {
         /// <summary>
         /// This action interacts directly with the GameResetManager tp reduce a life
+        /// if the player hits the collider
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="collisionEffectStrengthEnum"></param>
