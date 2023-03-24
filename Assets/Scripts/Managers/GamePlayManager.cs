@@ -148,7 +148,7 @@ namespace Managers
         /// Get GameDifficulty
         /// </summary>
         /// <returns>GameDifficulty</returns>
-        public GameDifficulty GetGameLevel()
+        public GameDifficulty GetGameDifficulty()
         {
             return GameStatus.GameDifficulty;
         }

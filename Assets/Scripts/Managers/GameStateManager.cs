@@ -10,7 +10,7 @@ namespace Managers
     /// </summary>
     public enum GamePhase
     {
-        SayHiToMum,
+        ReadyToGo,
         GamePlaying,
         Winner,
         Loser
@@ -23,9 +23,9 @@ namespace Managers
     public class GameStateManager : MonoBehaviour
     {
     
-        private GamePhase _gamePhase = GamePhase.SayHiToMum;
+        private GamePhase _gamePhase = GamePhase.ReadyToGo;
         private int _sceneNum = 0;
-        private int _lastLevel = 0;
+        private int _FinalLevel = 0;
         private static GameStateManager _instance;
       
         /// <summary>
@@ -62,7 +62,7 @@ namespace Managers
         public void ResetGameState()
         {
             this._sceneNum = 0;
-            this.GamePhase = GamePhase.SayHiToMum;
+            this.GamePhase = GamePhase.ReadyToGo;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Managers
                 
                 if (aFile.EndsWith(".unity"))
                 {
-                    _lastLevel++;
+                    _FinalLevel++;
                 }
             }
 
@@ -91,7 +91,7 @@ namespace Managers
         /// </summary>
         public GameStateManager()
         {
-            _gamePhase = GamePhase.SayHiToMum;
+            _gamePhase = GamePhase.ReadyToGo;
             _sceneNum = 0;
         }
 
@@ -100,8 +100,8 @@ namespace Managers
         /// </summary>
         public int LastLevel
         {
-            get => _lastLevel;
-            set => _lastLevel = value;
+            get => _FinalLevel;
+            set => _FinalLevel = value;
         }
 
         /// <summary>

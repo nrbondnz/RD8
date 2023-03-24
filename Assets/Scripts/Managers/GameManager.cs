@@ -12,11 +12,12 @@ using String = System.String;
 namespace Managers
 {
     /// <summary>
+    /// 
     /// Manager the overall game with a single instance GameManager
     /// Initialises the game on the start menu
     /// Manages the scene updates
     /// </summary>
-    /// @image html "C:\dev\plantuml\Game Initialisation\Game Initialisation.svg" "Game Initialisation" width=100%
+    /// \image html SequenceDiagrams\GameInit.svg "Game Initialisation" width=100%
     public class GameManager : MonoBehaviour
     {
 
@@ -73,7 +74,7 @@ namespace Managers
             
             switch (GameStateManager.GetInstance().GamePhase)
             {
-                case GamePhase.SayHiToMum:
+                case GamePhase.ReadyToGo:
                     //SceneManager.LoadSceneAsync("Menu");
                     break;
                 case GamePhase.GamePlaying:

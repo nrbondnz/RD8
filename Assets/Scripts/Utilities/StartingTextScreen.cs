@@ -1,3 +1,4 @@
+using System;
 using Managers;
 using TMPro;
 using UnityEngine;
@@ -36,35 +37,54 @@ namespace Utilities
             }
         }
         
-        // Start is called before the first frame update
+        ///<summary>
+        /// Start is called before the first frame update
+        /// The buttons allocated on the screen are connected with listeners
+        /// to methods for when the player clicks on them.
+        /// Then it works out, based on the GamePlayManager state what message to display to the player.
+        /// The message could be,
+        /// - Play a game
+        /// - You won
+        /// - You lost
+        /// - You ran out of time
+        /// These will be displayed in the scene
+        /// </summary>
         void Start()
         {
             easyButton.onClick.AddListener(EasyPressed);
             hardButton.onClick.AddListener(HardPressed);
             impossibleButton.onClick.AddListener(ImpossiblePressed);
-        
-            /*if ((!gamePlay._started))
+            headingForGameStart.text = DecideOnTitleToDisplay();
+        }
+
+        /// <summary>
+        /// Inspects the GamePlayManager state to decide on the title to display
+        /// </summary>
+        /// <returns>String</returns>
+        private String DecideOnTitleToDisplay()
         {
-            gamePlay._started = true;
-            headingForGameStart.text = "Want to play";
-        } 
-        else */ 
-            if ((GamePlayManager.GetInstance().GetGameStatus().Lives > 0) && (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining > 0.0))
+            String titleString = null;
+            if ((GamePlayManager.GetInstance().GetGameStatus().Lives > 0) &&
+                (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining > 0.0))
             {
-                headingForGameStart.text = "Winner - Play again?";
+                titleString = "Winner - Play again?";
             }
-            else if ((GamePlayManager.GetInstance().GetGameStatus().Lives == 0) && (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining > 0.0))
+            else if ((GamePlayManager.GetInstance().GetGameStatus().Lives == 0) &&
+                     (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining > 0.0))
             {
-                headingForGameStart.text = "Out of lives - Play again?";
+                titleString = "Out of lives - Play again?";
             }
-            else if ((GamePlayManager.GetInstance().GetGameStatus().Lives > 0) && (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining <= 0.0))
+            else if ((GamePlayManager.GetInstance().GetGameStatus().Lives > 0) &&
+                     (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining <= 0.0))
             {
-                headingForGameStart.text = "Out of Time - Play again?";
+                titleString = "Out of Time - Play again?";
             }
             else
             {
-                headingForGameStart.text = "Want to Play?";
+                titleString = "Want to Play?";
             }
+
+            return titleString;
         }
 
 
@@ -83,7 +103,13 @@ namespace Utilities
             StartGame(GameDifficulty.Impossible);
         }
 
-        public void StartGame(GameDifficulty pGameDifficulty)
+        /// <summary>
+        /// Sets up the start game state based on difficulty selected by the player
+        /// The GameManager sets up the initial scene
+        /// The GamePlayManager sets up the game based on the difficulty selected
+        /// </summary>
+        /// <param name="pGameDifficulty"></param>
+        private void StartGame(GameDifficulty pGameDifficulty)
         {
             //start game scene
             //GameManager gameManager = GameManager.getInstance();

@@ -12,9 +12,8 @@ var searchData=
   ['speedchangecollisionaction_2ecs_9',['SpeedChangeCollisionAction.cs',['../_speed_change_collision_action_8cs.html',1,'']]],
   ['start_10',['Start',['../class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb',1,'Managers.GamePlayManager.Start()'],['../class_managers_1_1_waypoint_manager.html#af383db5d6035da06a4cfc0b9caf07dca',1,'Managers.WaypointManager.Start()']]],
   ['started_11',['Started',['../struct_managers_1_1_game_status.html#aefbd67b1db08f63f88d6f788c9f9aff7',1,'Managers::GameStatus']]],
-  ['startgame_12',['StartGame',['../class_utilities_1_1_starting_text_screen.html#a702eb747bc6a497eb01263a8de074fe4',1,'Utilities::StartingTextScreen']]],
-  ['startingtextscreen_13',['StartingTextScreen',['../class_utilities_1_1_starting_text_screen.html',1,'Utilities']]],
-  ['startingtextscreen_2ecs_14',['StartingTextScreen.cs',['../_starting_text_screen_8cs.html',1,'']]],
-  ['string_15',['String',['../_game_manager_8cs.html#aa1d8fb822302bf01699083b8c1e996e9',1,'GameManager.cs']]],
-  ['strong_16',['Strong',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9',1,'Collision']]]
+  ['startingtextscreen_12',['StartingTextScreen',['../class_utilities_1_1_starting_text_screen.html',1,'Utilities']]],
+  ['startingtextscreen_2ecs_13',['StartingTextScreen.cs',['../_starting_text_screen_8cs.html',1,'']]],
+  ['string_14',['String',['../_game_manager_8cs.html#aa1d8fb822302bf01699083b8c1e996e9',1,'GameManager.cs']]],
+  ['strong_15',['Strong',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9',1,'Collision']]]
 ];

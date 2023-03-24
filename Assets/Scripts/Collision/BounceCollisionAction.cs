@@ -12,11 +12,15 @@ namespace Collision
     /// </summary>
     public class BounceCollisionAction : MonoBehaviour, ICollisionAction
     {
-/// <summary>
-/// On entering the collision zone this method is called. in this case the target is bounced away from the collider.
-/// </summary>
-/// <param name="controller"></param>
-/// <param name="collisionEffectStrengthEnum"></param>
+        /// <summary>
+        /// On entering the collision zone this method is called.
+        /// In this case the target is bounced away from the collider.
+        /// The strength of the bounce is determined by the parameter set in the game object
+        /// i.e. the parameter CollisionEffectStrengthEnum value
+        /// There is a bit of maths involved!
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
@@ -37,17 +41,16 @@ namespace Collision
                 ForceMode.Impulse);
 
         }
-/// <summary>
-/// 
-/// </summary>
-/// <param name="controller"></param>
-/// <param name="collisionEffectStrengthEnum"></param>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="collisionEffectStrengthEnum"></param>
         public void DoCollisionAreaExitAction(CollisionActionController controller,
             CollisionEffectStrengthEnum collisionEffectStrengthEnum)
         {
-            // No action for this Collision
+            // No action for the Collision exit action
+            // Only here as all collision effects must implement both entry and exit
         }
     }
-    
-    
 }
