@@ -3,7 +3,11 @@ using UnityEngine;
 namespace Enemies
 {
     /// <summary>
-    /// 
+    /// Can be applied to any moveable object, makes the object move towards the player/target
+    /// Needs to have trigger range
+    /// TODO: Could extend to always move towards the player/target
+    /// TODO: Could extend to make it move towards where the player is going by looking at player velocity
+    /// TODO: Could make this be a dual function with 'escape' player
     /// </summary>
     public class EnemyFollow : MonoBehaviour
     {

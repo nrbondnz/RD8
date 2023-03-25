@@ -256,10 +256,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Winning Platorm
       objectReference: {fileID: 0}
+    - target: {fileID: 512890894839005987, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: winningUI
       value: 
       objectReference: {fileID: 286917309}
+    - target: {fileID: 512890894839006044, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 512890894839006044, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 512890894839006044, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: m_Size.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 512890894839006044, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: m_Center.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -893,7 +913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217146b3235ec47018f53f0417ad48b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 135870903}
+  - {fileID: 193626970}
 --- !u!4 &1415246795
 Transform:
   m_ObjectHideFlags: 0
