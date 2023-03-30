@@ -15,13 +15,15 @@ namespace TrajectoryObject
         [SerializeField] private LineRenderer line;
         [SerializeField] private int maxPhysicsFrameIterations = 100;
         [SerializeField] private Transform obstaclesParent;
+        [SerializeField] private SimBall _simBall;
         private bool _projectionEnabled = false;
 
         private Scene _simulationScene;
         private PhysicsScene _physicsScene;
+        
         private readonly Dictionary<Transform, Transform> _spawnedObjects = new Dictionary<Transform, Transform>();
 
-        private static Projection _instance;
+        /**private static Projection _instance;
 
         private void Awake()
         {
@@ -40,14 +42,15 @@ namespace TrajectoryObject
         public static Projection GetInstance()
         {
             return _instance;
-        }
+        }**/
         
         /// <summary>
         /// 
         /// </summary>
         private void Start()
         {
-            CreatePhysicsScene();
+            //CreatePhysicsScene();
+           
         }
 
         /// <summary>
@@ -56,6 +59,11 @@ namespace TrajectoryObject
         public void CreatePhysicsScene()
         {
             if (obstaclesParent == null) return;
+            if (SceneManager.GetSceneByName("Simulation").isLoaded)
+            {
+                SceneManager.UnloadSceneAsync("Simulation");
+            }
+
             _simulationScene =
                 SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
             _physicsScene = _simulationScene.GetPhysicsScene();
@@ -110,17 +118,20 @@ namespace TrajectoryObject
         /// <param name="ballPrefab"></param>
         /// <param name="pos"></param>
         /// <param name="velocity"></param>
-        public void SimulateTrajectory(SimBall ballPrefab, Vector3 pos, Vector3 velocity)
+        public void SimulateTrajectory(GameObject gameObject, Vector3 pos, Vector3 velocity)
         {
-            if (!_projectionEnabled || ballPrefab == null) return;
+            //if (!_projectionEnabled || ballPrefab == null) return;
+            
+            _simBall = SimBall.GetInstance();
             var posTemp = pos;
             posTemp.x = 1000.0f;
             posTemp.y = 1000.0f;
             posTemp.z = 1000.0f;
-            var ghostObj = Instantiate(ballPrefab, posTemp, Quaternion.identity);
+            var ghostObj = Instantiate(_simBall, posTemp, Quaternion.identity);
             SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
             ghostObj.gameObject.GetComponent<Rigidbody>().position = pos;
-            ghostObj.Init(velocity);
+            //ghostObj.Init(velocity);
+            ghostObj.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
             line.enabled = true;
             line.positionCount = maxPhysicsFrameIterations;
 

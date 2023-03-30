@@ -19,11 +19,11 @@ namespace Player
         [SerializeField] private float speed = 10;
         [SerializeField] private float jumpForce = 13;
         [SerializeField] private float platformPower = 2.5f;
-        private SimBall simBall;
-        private Projection projection;
+        
+        [SerializeField] Projection projection;
         [SerializeField] private LineRenderer lineRenderer;
         private GameObject _mainCamera;
-
+        [SerializeField] private bool isTrajectoryLine = true;
 
 
         private bool _isGhost;
@@ -41,8 +41,8 @@ namespace Player
         // Start is called before the first frame update
         void Start()
         {
-            simBall = SimBall.GetInstance();
-            projection = Projection.GetInstance();
+            
+            //projection = Projection.GetInstance();
             projection.CreatePhysicsScene();
             //onGoingForwards += GoingBackwards;
             _rb = GetComponent<Rigidbody>();
@@ -118,34 +118,46 @@ namespace Player
             //send the ray and check if it did hit anything, the ray length is going to be half of our scale(player's radius),
             //plus a small value to make sure our ray is barley longer than the player's radius
 
-            if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f))
-            {
+
+            if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f)) {
                 _player.IsGrounded = true;
-                
+                if (isTrajectoryLine)
+                {
                     projection?.RemoveTrajectoryLine();
+                }
+                else
+                {
                     lineRenderer.enabled = false;
-                
+                }
             }
             else
             {
                 _player.IsGrounded = false;
-                projection?.SimulateTrajectory(simBall, _rb.position, _rb.velocity);
-                //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
                 lineRenderer.enabled = true;
                 lineRenderer.SetPosition(0, _rb.position);
-                if (Physics.Raycast(ray, out var hitInfo, 20.0f))
+                if (isTrajectoryLine)
                 {
-                    lineRenderer.startColor = Color.green;
-                    lineRenderer.endColor = Color.cyan;
-                    lineRenderer.SetPosition(1, hitInfo.point);
+                    projection?.SimulateTrajectory(gameObject, _rb.position, _rb.velocity);
                 }
                 else
                 {
-                    lineRenderer.startColor = Color.red;
-                    lineRenderer.endColor = Color.black;
-                    Vector3 pos = transform.position;
-                    pos.y = pos.y - 15.0f;
-                    lineRenderer.SetPosition(1, pos);
+
+                    //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
+                    
+                    if (Physics.Raycast(ray, out var hitInfo, 20.0f))
+                    {
+                        lineRenderer.startColor = Color.green;
+                        lineRenderer.endColor = Color.cyan;
+                        lineRenderer.SetPosition(1, hitInfo.point);
+                    }
+                    else
+                    {
+                        lineRenderer.startColor = Color.red;
+                        lineRenderer.endColor = Color.black;
+                        Vector3 pos = transform.position;
+                        pos.y = pos.y - 15.0f;
+                        lineRenderer.SetPosition(1, pos);
+                    }
                 }
             }
 
