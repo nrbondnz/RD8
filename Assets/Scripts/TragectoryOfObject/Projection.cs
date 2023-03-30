@@ -15,7 +15,7 @@ namespace TrajectoryObject
         [SerializeField] private LineRenderer line;
         [SerializeField] private int maxPhysicsFrameIterations = 100;
         [SerializeField] private Transform obstaclesParent;
-        [SerializeField] private SimBall _simBall;
+        private SimBall _simBall;
         private bool _projectionEnabled = false;
 
         private Scene _simulationScene;
@@ -23,6 +23,15 @@ namespace TrajectoryObject
         
         private readonly Dictionary<Transform, Transform> _spawnedObjects = new Dictionary<Transform, Transform>();
 
+        private void OnDrawGizmos()
+        {
+            if (line == null || (_projectionEnabled && obstaclesParent == null ))
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+            }
+        }
+        
         /**private static Projection _instance;
 
         private void Awake()
@@ -50,7 +59,7 @@ namespace TrajectoryObject
         private void Start()
         {
             //CreatePhysicsScene();
-           
+            _simBall = GameObject.FindObjectOfType<SimBall>();
         }
 
         /// <summary>
@@ -122,7 +131,7 @@ namespace TrajectoryObject
         {
             //if (!_projectionEnabled || ballPrefab == null) return;
             
-            _simBall = SimBall.GetInstance();
+            //_simBall = SimBall.GetInstance();
             var posTemp = pos;
             posTemp.x = 1000.0f;
             posTemp.y = 1000.0f;

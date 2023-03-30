@@ -22,7 +22,7 @@ namespace key
                 keyActionController.CarryOutAction();
                 waypointManager?.NextWaypoint();
                 gameObject.SetActive(false);
-                Debug.LogWarning("Just setActive to false");
+                Debug.Log("Just setActive to false for waypoint" + gameObject.name);
             }
         }
 

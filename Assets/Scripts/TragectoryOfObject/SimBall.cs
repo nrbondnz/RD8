@@ -8,7 +8,7 @@ namespace TrajectoryObject
     public class SimBall : MonoBehaviour
     {
 
-        private static SimBall _instance;
+        /**private static SimBall _instance;
 
         private void Awake()
         {
@@ -27,7 +27,7 @@ namespace TrajectoryObject
         public static SimBall GetInstance()
         {
             return _instance;
-        }
+        }**/
         
         public void Init(Vector3 velocity)
         {

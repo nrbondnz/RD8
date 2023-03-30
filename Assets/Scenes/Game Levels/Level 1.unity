@@ -1059,17 +1059,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8860765929989090302, guid: 47003c699e89c4ba28540179204b963b, type: 3}
   m_PrefabInstance: {fileID: 839042921}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1611803478 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8204454492729069603, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-  m_PrefabInstance: {fileID: 1814043150862856139}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eb5b5a238d05cd41adfac4dfc37efdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1701731732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,10 +1499,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 839042922}
     - target: {fileID: 6262113473573452854, guid: 863c6fe9b9e5d024f83567955a0e51d7, type: 3}
-      propertyPath: _simBall
-      value: 
-      objectReference: {fileID: 1611803478}
-    - target: {fileID: 6262113473573452854, guid: 863c6fe9b9e5d024f83567955a0e51d7, type: 3}
       propertyPath: obstaclesParent
       value: 
       objectReference: {fileID: 17206817}
@@ -1522,64 +1507,3 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 863c6fe9b9e5d024f83567955a0e51d7, type: 3}
---- !u!1001 &1814043150862856139
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626911944561635825, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347081759181302905, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
-      propertyPath: m_Name
-      value: SimBall
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b6f4f8efef0569046a5e3c59596443bd, type: 3}
