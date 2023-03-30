@@ -31,7 +31,7 @@ namespace Player
         
         private void OnDrawGizmos()
         {
-            if (lineRenderer == null || (isTrajectoryLine && projection ))
+            if (lineRenderer == null || (isTrajectoryLine && (projection == null )))
             {
                 Gizmos.color = Color.red;
                 Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
