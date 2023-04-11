@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="388px" preserveAspectRatio="none" style="width:954px;height:388px;background:#FFFFFF;" version="1.1" viewBox="0 0 954 388" width="954px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="41.4453" id="_title" rx="10" ry="10" style="stroke:none;stroke-width:1.0;" width="230" x="358" y="10"/><text fill="#000000" font-family="sans-serif" font-size="25" font-weight="bold" lengthAdjust="spacing" textLength="220" x="363" y="40.9521">Game Initialisation</text><rect fill="none" height="115.4063" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;" width="927" x="10" y="152.0547"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="357" x2="357" y1="135.0547" y2="284.4609"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="518" x2="518" y1="135.0547" y2="284.4609"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="686" x2="686" y1="135.0547" y2="284.4609"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="856" x2="856" y1="135.0547" y2="284.4609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="334" y="131.9785">Player</text><ellipse cx="357" cy="65.9453" fill="#87CEEB" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M357,73.9453 L357,100.9453 M344,81.9453 L370,81.9453 M357,100.9453 L344,115.9453 M357,100.9453 L370,115.9453 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="334" y="297.9941">Player</text><ellipse cx="357" cy="309.5703" fill="#87CEEB" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M357,317.5703 L357,344.5703 M344,325.5703 L370,325.5703 M357,344.5703 L344,359.5703 M357,344.5703 L370,359.5703 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#87CEEB" height="49.2188" rx="10" ry="10" style="stroke:#181818;stroke-width:0.5;" width="140" x="448" y="84.8359"/><ellipse cx="466" cy="102.8359" fill="#ADD182" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M468.7656,98.7109 Q468.9219,98.4922 469.1094,98.3828 Q469.2969,98.2734 469.5156,98.2734 Q469.8906,98.2734 470.125,98.5391 Q470.3594,98.7891 470.3594,99.3984 L470.3594,100.8516 Q470.3594,101.4609 470.125,101.7266 Q469.8906,101.9922 469.5156,101.9922 Q469.1719,101.9922 468.9688,101.7891 Q468.7656,101.6016 468.6563,101.0859 Q468.6094,100.7266 468.4219,100.5391 Q468.0938,100.1641 467.4844,99.9453 Q466.875,99.7266 466.25,99.7266 Q465.4844,99.7266 464.8438,100.0547 Q464.2188,100.3828 463.7188,101.1328 Q463.2344,101.8828 463.2344,102.9141 L463.2344,104.0078 Q463.2344,105.2422 464.125,106.0703 Q465.0156,106.8828 466.6094,106.8828 Q467.5469,106.8828 468.2031,106.6328 Q468.5938,106.4766 469.0156,106.0391 Q469.2813,105.7734 469.4219,105.6953 Q469.5781,105.6172 469.7813,105.6172 Q470.1094,105.6172 470.3594,105.8828 Q470.625,106.1328 470.625,106.4766 Q470.625,106.8203 470.2813,107.2266 Q469.7813,107.8047 468.9844,108.1328 Q467.9063,108.5859 466.6094,108.5859 Q465.0938,108.5859 463.8906,107.9609 Q462.9063,107.4609 462.2188,106.3984 Q461.5313,105.3203 461.5313,104.0391 L461.5313,102.8828 Q461.5313,101.5547 462.1406,100.4141 Q462.7656,99.2578 463.8594,98.6484 Q464.9531,98.0234 466.1875,98.0234 Q466.9219,98.0234 467.5625,98.1953 Q468.2188,98.3516 468.7656,98.7109 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="80" x="492" y="106.3691">«Managers»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="483" y="123.9785">Game Manager</text><rect fill="#87CEEB" height="49.2188" rx="10" ry="10" style="stroke:#181818;stroke-width:0.5;" width="140" x="448" y="283.4609"/><ellipse cx="466" cy="301.4609" fill="#ADD182" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M468.7656,297.3359 Q468.9219,297.1172 469.1094,297.0078 Q469.2969,296.8984 469.5156,296.8984 Q469.8906,296.8984 470.125,297.1641 Q470.3594,297.4141 470.3594,298.0234 L470.3594,299.4766 Q470.3594,300.0859 470.125,300.3516 Q469.8906,300.6172 469.5156,300.6172 Q469.1719,300.6172 468.9688,300.4141 Q468.7656,300.2266 468.6563,299.7109 Q468.6094,299.3516 468.4219,299.1641 Q468.0938,298.7891 467.4844,298.5703 Q466.875,298.3516 466.25,298.3516 Q465.4844,298.3516 464.8438,298.6797 Q464.2188,299.0078 463.7188,299.7578 Q463.2344,300.5078 463.2344,301.5391 L463.2344,302.6328 Q463.2344,303.8672 464.125,304.6953 Q465.0156,305.5078 466.6094,305.5078 Q467.5469,305.5078 468.2031,305.2578 Q468.5938,305.1016 469.0156,304.6641 Q469.2813,304.3984 469.4219,304.3203 Q469.5781,304.2422 469.7813,304.2422 Q470.1094,304.2422 470.3594,304.5078 Q470.625,304.7578 470.625,305.1016 Q470.625,305.4453 470.2813,305.8516 Q469.7813,306.4297 468.9844,306.7578 Q467.9063,307.2109 466.6094,307.2109 Q465.0938,307.2109 463.8906,306.5859 Q462.9063,306.0859 462.2188,305.0234 Q461.5313,303.9453 461.5313,302.6641 L461.5313,301.5078 Q461.5313,300.1797 462.1406,299.0391 Q462.7656,297.8828 463.8594,297.2734 Q464.9531,296.6484 466.1875,296.6484 Q466.9219,296.6484 467.5625,296.8203 Q468.2188,296.9766 468.7656,297.3359 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="80" x="492" y="304.9941">«Managers»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="483" y="322.6035">Game Manager</text><rect fill="#87CEEB" height="49.2188" rx="10" ry="10" style="stroke:#181818;stroke-width:0.5;" width="177" x="598" y="84.8359"/><ellipse cx="616" cy="102.8359" fill="#ADD182" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M618.7656,98.7109 Q618.9219,98.4922 619.1094,98.3828 Q619.2969,98.2734 619.5156,98.2734 Q619.8906,98.2734 620.125,98.5391 Q620.3594,98.7891 620.3594,99.3984 L620.3594,100.8516 Q620.3594,101.4609 620.125,101.7266 Q619.8906,101.9922 619.5156,101.9922 Q619.1719,101.9922 618.9688,101.7891 Q618.7656,101.6016 618.6563,101.0859 Q618.6094,100.7266 618.4219,100.5391 Q618.0938,100.1641 617.4844,99.9453 Q616.875,99.7266 616.25,99.7266 Q615.4844,99.7266 614.8438,100.0547 Q614.2188,100.3828 613.7188,101.1328 Q613.2344,101.8828 613.2344,102.9141 L613.2344,104.0078 Q613.2344,105.2422 614.125,106.0703 Q615.0156,106.8828 616.6094,106.8828 Q617.5469,106.8828 618.2031,106.6328 Q618.5938,106.4766 619.0156,106.0391 Q619.2813,105.7734 619.4219,105.6953 Q619.5781,105.6172 619.7813,105.6172 Q620.1094,105.6172 620.3594,105.8828 Q620.625,106.1328 620.625,106.4766 Q620.625,106.8203 620.2813,107.2266 Q619.7813,107.8047 618.9844,108.1328 Q617.9063,108.5859 616.6094,108.5859 Q615.0938,108.5859 613.8906,107.9609 Q612.9063,107.4609 612.2188,106.3984 Q611.5313,105.3203 611.5313,104.0391 L611.5313,102.8828 Q611.5313,101.5547 612.1406,100.4141 Q612.7656,99.2578 613.8594,98.6484 Q614.9531,98.0234 616.1875,98.0234 Q616.9219,98.0234 617.5625,98.1953 Q618.2188,98.3516 618.7656,98.7109 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="80" x="660.5" y="106.3691">«Managers»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="633" y="123.9785">Game State Manager</text><rect fill="#87CEEB" height="49.2188" rx="10" ry="10" style="stroke:#181818;stroke-width:0.5;" width="177" x="598" y="283.4609"/><ellipse cx="616" cy="301.4609" fill="#ADD182" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M618.7656,297.3359 Q618.9219,297.1172 619.1094,297.0078 Q619.2969,296.8984 619.5156,296.8984 Q619.8906,296.8984 620.125,297.1641 Q620.3594,297.4141 620.3594,298.0234 L620.3594,299.4766 Q620.3594,300.0859 620.125,300.3516 Q619.8906,300.6172 619.5156,300.6172 Q619.1719,300.6172 618.9688,300.4141 Q618.7656,300.2266 618.6563,299.7109 Q618.6094,299.3516 618.4219,299.1641 Q618.0938,298.7891 617.4844,298.5703 Q616.875,298.3516 616.25,298.3516 Q615.4844,298.3516 614.8438,298.6797 Q614.2188,299.0078 613.7188,299.7578 Q613.2344,300.5078 613.2344,301.5391 L613.2344,302.6328 Q613.2344,303.8672 614.125,304.6953 Q615.0156,305.5078 616.6094,305.5078 Q617.5469,305.5078 618.2031,305.2578 Q618.5938,305.1016 619.0156,304.6641 Q619.2813,304.3984 619.4219,304.3203 Q619.5781,304.2422 619.7813,304.2422 Q620.1094,304.2422 620.3594,304.5078 Q620.625,304.7578 620.625,305.1016 Q620.625,305.4453 620.2813,305.8516 Q619.7813,306.4297 618.9844,306.7578 Q617.9063,307.2109 616.6094,307.2109 Q615.0938,307.2109 613.8906,306.5859 Q612.9063,306.0859 612.2188,305.0234 Q611.5313,303.9453 611.5313,302.6641 L611.5313,301.5078 Q611.5313,300.1797 612.1406,299.0391 Q612.7656,297.8828 613.8594,297.2734 Q614.9531,296.6484 616.1875,296.6484 Q616.9219,296.6484 617.5625,296.8203 Q618.2188,296.9766 618.7656,297.3359 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="80" x="660.5" y="304.9941">«Managers»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="633" y="322.6035">Game State Manager</text><rect fill="#D3D3D3" height="49.2188" rx="10" ry="10" style="stroke:#181818;stroke-width:0.5;" width="142" x="785" y="84.8359"/><ellipse cx="803" cy="102.8359" fill="#ADD182" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M805.7656,98.7109 Q805.9219,98.4922 806.1094,98.3828 Q806.2969,98.2734 806.5156,98.2734 Q806.8906,98.2734 807.125,98.5391 Q807.3594,98.7891 807.3594,99.3984 L807.3594,100.8516 Q807.3594,101.4609 807.125,101.7266 Q806.8906,101.9922 806.5156,101.9922 Q806.1719,101.9922 805.9688,101.7891 Q805.7656,101.6016 805.6563,101.0859 Q805.6094,100.7266 805.4219,100.5391 Q805.0938,100.1641 804.4844,99.9453 Q803.875,99.7266 803.25,99.7266 Q802.4844,99.7266 801.8438,100.0547 Q801.2188,100.3828 800.7188,101.1328 Q800.2344,101.8828 800.2344,102.9141 L800.2344,104.0078 Q800.2344,105.2422 801.125,106.0703 Q802.0156,106.8828 803.6094,106.8828 Q804.5469,106.8828 805.2031,106.6328 Q805.5938,106.4766 806.0156,106.0391 Q806.2813,105.7734 806.4219,105.6953 Q806.5781,105.6172 806.7813,105.6172 Q807.1094,105.6172 807.3594,105.8828 Q807.625,106.1328 807.625,106.4766 Q807.625,106.8203 807.2813,107.2266 Q806.7813,107.8047 805.9844,108.1328 Q804.9063,108.5859 803.6094,108.5859 Q802.0938,108.5859 800.8906,107.9609 Q799.9063,107.4609 799.2188,106.3984 Q798.5313,105.3203 798.5313,104.0391 L798.5313,102.8828 Q798.5313,101.5547 799.1406,100.4141 Q799.7656,99.2578 800.8594,98.6484 Q801.9531,98.0234 803.1875,98.0234 Q803.9219,98.0234 804.5625,98.1953 Q805.2188,98.3516 805.7656,98.7109 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="48" x="846" y="106.3691">«Unity»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="820" y="123.9785">Scene Manager</text><rect fill="#D3D3D3" height="49.2188" rx="10" ry="10" style="stroke:#181818;stroke-width:0.5;" width="142" x="785" y="283.4609"/><ellipse cx="803" cy="301.4609" fill="#ADD182" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M805.7656,297.3359 Q805.9219,297.1172 806.1094,297.0078 Q806.2969,296.8984 806.5156,296.8984 Q806.8906,296.8984 807.125,297.1641 Q807.3594,297.4141 807.3594,298.0234 L807.3594,299.4766 Q807.3594,300.0859 807.125,300.3516 Q806.8906,300.6172 806.5156,300.6172 Q806.1719,300.6172 805.9688,300.4141 Q805.7656,300.2266 805.6563,299.7109 Q805.6094,299.3516 805.4219,299.1641 Q805.0938,298.7891 804.4844,298.5703 Q803.875,298.3516 803.25,298.3516 Q802.4844,298.3516 801.8438,298.6797 Q801.2188,299.0078 800.7188,299.7578 Q800.2344,300.5078 800.2344,301.5391 L800.2344,302.6328 Q800.2344,303.8672 801.125,304.6953 Q802.0156,305.5078 803.6094,305.5078 Q804.5469,305.5078 805.2031,305.2578 Q805.5938,305.1016 806.0156,304.6641 Q806.2813,304.3984 806.4219,304.3203 Q806.5781,304.2422 806.7813,304.2422 Q807.1094,304.2422 807.3594,304.5078 Q807.625,304.7578 807.625,305.1016 Q807.625,305.4453 807.2813,305.8516 Q806.7813,306.4297 805.9844,306.7578 Q804.9063,307.2109 803.6094,307.2109 Q802.0938,307.2109 800.8906,306.5859 Q799.9063,306.0859 799.2188,305.0234 Q798.5313,303.9453 798.5313,302.6641 L798.5313,301.5078 Q798.5313,300.1797 799.1406,299.0391 Q799.7656,297.8828 800.8594,297.2734 Q801.9531,296.6484 803.1875,296.6484 Q803.9219,296.6484 804.5625,296.8203 Q805.2188,296.9766 805.7656,297.3359 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="48" x="846" y="304.9941">«Unity»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="820" y="322.6035">Scene Manager</text><path d="M20,152.0547 L151,152.0547 L151,160.4063 L141,170.4063 L10,170.4063 L10,162.0547 A10,10 0 0 1 20,152.0547 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="115.4063" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;" width="927" x="10" y="152.0547"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="96" x="25" y="166.5498">Start the Game</text><polygon fill="#FF0000" points="506,191.7578,516,195.7578,506,199.7578,510,195.7578" style="stroke:#FF0000;stroke-width:1.0;"/><line style="stroke:#FF0000;stroke-width:1.0;" x1="357" x2="512" y1="195.7578" y2="195.7578"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="364" y="190.9014">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="375" y="190.9014">Press the start button</text><path d="M20,185.4063 L20,191.4063 A10,10 0 0 0 30,201.4063 L342,201.4063 A10,10 0 0 0 352,191.4063 L352,185.4063 L342,175.4063 L30,175.4063 A10,10 0 0 0 20,185.4063 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M342,175.4063 L342,180.4063 A5,5 0 0 0 347,185.4063 L352,185.4063 L342,175.4063 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="311" x="26" y="193.9014">Starts either on the Unity platform or a device platform</text><polygon fill="#FF0000" points="674.5,225.1094,684.5,229.1094,674.5,233.1094,678.5,229.1094" style="stroke:#FF0000;stroke-width:1.0;"/><line style="stroke:#FF0000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="518" x2="680.5" y1="229.1094" y2="229.1094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="525" y="224.2529">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="536" y="224.2529">Reset Game State</text><polygon fill="#FF0000" points="844,255.4609,854,259.4609,844,263.4609,848,259.4609" style="stroke:#FF0000;stroke-width:1.0;"/><line style="stroke:#FF0000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="518" x2="850" y1="259.4609" y2="259.4609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="525" y="254.6045">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="175" x="536" y="254.6045">Move to 'WinLoseMenu' scene</text><rect fill="none" height="18.8672" id="_title" rx="10" ry="10" style="stroke:none;stroke-width:1.0;" width="124" x="822" y="362.0703"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacing" textLength="124" x="822" y="377.6416">Author : Nigel Bond</text><!--MD5=[507d983e17eccc2ca4e2ea3707510542]
+@startuml Game Initialisation
+
+<style>
+header {
+    HorizontalAlignment left
+    FontSize 30
+    FontColor gray
+}
+footer {
+      HorizontalAlignment right
+    FontSize 15
+    FontColor black
+}
+title {
+    FontSize 25
+}
+</style>
+title Game Initialisation
+footer Author : Nigel Bond
+
+autonumber
+
+skinparam RoundCorner 20
+
+skinparam class {
+    BackgroundColor PaleGreen
+    ArrowColor Red
+    BorderColor SpringGreen
+}
+
+actor "Player" as Player #SkyBlue
+participant "Game Manager" as GM <<(C,#ADD182)Managers>> #SkyBlue
+'participant "Game Play Manager" as GPM <<(C,#ADD182)Managers>> #SkyBlue
+'participant "Game Reset Manager" as GRM <<(C,#ADD182)Managers>> #SkyBlue
+'participant "Game State" as GS <<(C,#ADD182)Managers>> #SkyBlue
+participant "Game State Manager" as GSM <<(C,#ADD182)Managers>> #SkyBlue
+'participant "Sound Manager" as SM <<(C,#ADD182)Managers>> #SkyBlue
+'participant "UI Score Manager" as UISM <<(C,#ADD182)Managers>> #SkyBlue
+'participant "Waypoint Manager" as WM <<(C,#ADD182)Managers>> #SkyBlue
+Participant "Scene Manager" as SCM <<(C,#ADD182)Unity>> #LightGray
+
+group Start the Game
+    Player -> GM : Press the start button
+    note left : Starts either on the Unity platform or a device platform
+    GM - -> GSM : Reset Game State
+    GM - -> SCM : Move to 'WinLoseMenu' scene
+end 
+@enduml
+
+@startuml Game Initialisation
+
+<style>
+header {
+    HorizontalAlignment left
+    FontSize 30
+    FontColor gray
+}
+footer {
+      HorizontalAlignment right
+    FontSize 15
+    FontColor black
+}
+title {
+    FontSize 25
+}
+</style>
+title Game Initialisation
+footer Author : Nigel Bond
+
+autonumber
+
+skinparam RoundCorner 20
+
+skinparam class {
+    BackgroundColor PaleGreen
+    ArrowColor Red
+    BorderColor SpringGreen
+}
+
+actor "Player" as Player #SkyBlue
+participant "Game Manager" as GM <<(C,#ADD182)Managers>> #SkyBlue
+participant "Game State Manager" as GSM <<(C,#ADD182)Managers>> #SkyBlue
+Participant "Scene Manager" as SCM <<(C,#ADD182)Unity>> #LightGray
+
+group Start the Game
+    Player -> GM : Press the start button
+    note left : Starts either on the Unity platform or a device platform
+    GM - -> GSM : Reset Game State
+    GM - -> SCM : Move to 'WinLoseMenu' scene
+end 
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 05:01:30 NZST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
