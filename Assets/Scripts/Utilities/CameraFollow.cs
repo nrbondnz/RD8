@@ -1,13 +1,12 @@
 using Managers;
 using UnityEngine;
-using Utilities;
 
 
 /*
      * Gets the main Camera to follow the _cameraTarget at a specific distance.
      * It also uses waypoints to determine how to follow the _cameraTarget in a direction that points to the next waypoint.
      */
-    namespace Managers
+    namespace Utilities
     {
         /// <summary>
         /// Gets the main Camera to follow the _cameraTarget at a specific distance.

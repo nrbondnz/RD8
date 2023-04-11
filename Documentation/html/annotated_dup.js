@@ -23,7 +23,6 @@ var annotated_dup =
       [ "Key", "classkey_1_1_key.html", null ]
     ] ],
     [ "Managers", "namespace_managers.html", [
-      [ "CameraFollow", "class_managers_1_1_camera_follow.html", "class_managers_1_1_camera_follow" ],
       [ "GameManager", "class_managers_1_1_game_manager.html", "class_managers_1_1_game_manager" ],
       [ "GamePlayManager", "class_managers_1_1_game_play_manager.html", "class_managers_1_1_game_play_manager" ],
       [ "GameResetManager", "class_managers_1_1_game_reset_manager.html", "class_managers_1_1_game_reset_manager" ],
@@ -42,6 +41,8 @@ var annotated_dup =
       [ "SimBall", "class_trajectory_object_1_1_sim_ball.html", "class_trajectory_object_1_1_sim_ball" ]
     ] ],
     [ "Utilities", "namespace_utilities.html", [
+      [ "CameraFollow", "class_utilities_1_1_camera_follow.html", "class_utilities_1_1_camera_follow" ],
+      [ "MoveOnAxis", "class_utilities_1_1_move_on_axis.html", null ],
       [ "StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", "class_utilities_1_1_starting_text_screen" ],
       [ "WinningLevel", "class_utilities_1_1_winning_level.html", null ]
     ] ]

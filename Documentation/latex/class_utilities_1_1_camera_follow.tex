@@ -1,0 +1,86 @@
+\hypertarget{class_utilities_1_1_camera_follow}{}\doxysection{Utilities.\+Camera\+Follow Class Reference}
+\label{class_utilities_1_1_camera_follow}\index{Utilities.CameraFollow@{Utilities.CameraFollow}}
+
+
+Gets the main Camera to follow the \+\_\+camera\+Target at a specific distance. It also uses waypoints to determine how to follow the \+\_\+camera\+Target in a direction that points to the next waypoint.  
+
+
+Inheritance diagram for Utilities.\+Camera\+Follow\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_utilities_1_1_camera_follow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a2a72966656acded30b2e81490e8780b0}{On\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em This sets up s subscription to the state of the \mbox{\hyperlink{namespace_player}{Player}} entity as it changes And a subscription to current waypoint as it changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a594d21824394242c0da21edd3d4c56c5}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a92613722a0133aaa960dd929f6c8dbed}{Update\+Player}} (\mbox{\hyperlink{class_player_1_1_player}{Player.\+Player}} p\+Player)
+\item 
+void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a40318aabb24f41071d9e749bacbb4d2d}{Update\+Current\+Waypoint}} (\mbox{\hyperlink{class_managers_1_1_waypoint_manager}{Waypoint\+Manager}} p\+Waypoint\+Manager)
+\begin{DoxyCompactList}\small\item\em Updates the waypoint to the new waypoint when previous waypoint is reached. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_utilities_1_1_camera_follow_a193be5afac19e6f5b18c77db00de35b1}{Normalized\+Target\+Velocity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gets the main Camera to follow the \+\_\+camera\+Target at a specific distance. It also uses waypoints to determine how to follow the \+\_\+camera\+Target in a direction that points to the next waypoint. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_a594d21824394242c0da21edd3d4c56c5}\label{class_utilities_1_1_camera_follow_a594d21824394242c0da21edd3d4c56c5}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Utilities.\+Camera\+Follow.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_a2a72966656acded30b2e81490e8780b0}\label{class_utilities_1_1_camera_follow_a2a72966656acded30b2e81490e8780b0}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Utilities.\+Camera\+Follow.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This sets up s subscription to the state of the \mbox{\hyperlink{namespace_player}{Player}} entity as it changes And a subscription to current waypoint as it changes. 
+
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_a40318aabb24f41071d9e749bacbb4d2d}\label{class_utilities_1_1_camera_follow_a40318aabb24f41071d9e749bacbb4d2d}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!UpdateCurrentWaypoint@{UpdateCurrentWaypoint}}
+\index{UpdateCurrentWaypoint@{UpdateCurrentWaypoint}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrentWaypoint()}{UpdateCurrentWaypoint()}}
+{\footnotesize\ttfamily void Utilities.\+Camera\+Follow.\+Update\+Current\+Waypoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_managers_1_1_waypoint_manager}{Waypoint\+Manager}}}]{p\+Waypoint\+Manager }\end{DoxyParamCaption})}
+
+
+
+Updates the waypoint to the new waypoint when previous waypoint is reached. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Waypoint\+Manager} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_a92613722a0133aaa960dd929f6c8dbed}\label{class_utilities_1_1_camera_follow_a92613722a0133aaa960dd929f6c8dbed}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!UpdatePlayer@{UpdatePlayer}}
+\index{UpdatePlayer@{UpdatePlayer}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{UpdatePlayer()}{UpdatePlayer()}}
+{\footnotesize\ttfamily void Utilities.\+Camera\+Follow.\+Update\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_1_1_player}{Player\+::\+Player}}}]{p\+Player }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_a193be5afac19e6f5b18c77db00de35b1}\label{class_utilities_1_1_camera_follow_a193be5afac19e6f5b18c77db00de35b1}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!NormalizedTargetVelocity@{NormalizedTargetVelocity}}
+\index{NormalizedTargetVelocity@{NormalizedTargetVelocity}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{NormalizedTargetVelocity}{NormalizedTargetVelocity}}
+{\footnotesize\ttfamily Vector3 Utilities.\+Camera\+Follow.\+Normalized\+Target\+Velocity\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/\+RD8/\+Assets/\+Scripts/\+Utilities/\mbox{\hyperlink{_camera_follow_8cs}{Camera\+Follow.\+cs}}\end{DoxyCompactItemize}

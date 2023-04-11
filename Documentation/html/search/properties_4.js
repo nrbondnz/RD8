@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalizedtargetvelocity_0',['NormalizedTargetVelocity',['../class_managers_1_1_camera_follow.html#a78ff0f9c43d8bfec9a6d39caf786657b',1,'Managers::CameraFollow']]]
+  ['normalizedtargetvelocity_0',['NormalizedTargetVelocity',['../class_utilities_1_1_camera_follow.html#a193be5afac19e6f5b18c77db00de35b1',1,'Utilities::CameraFollow']]]
 ];

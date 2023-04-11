@@ -92,7 +92,6 @@ $(document).ready(function(){initNavTree('class_trajectory_object_1_1_sim_ball.h
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_trajectory_object_1_1_sim_ball-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TrajectoryObject.SimBall Class Reference</div></div>
 </div><!--header-->
@@ -111,40 +110,10 @@ Inheritance diagram for TrajectoryObject.SimBall:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a11123858759a0a0e5b7dad09068f8710"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trajectory_object_1_1_sim_ball.html#a11123858759a0a0e5b7dad09068f8710">Init</a> (Vector3 velocity)</td></tr>
 <tr class="separator:a11123858759a0a0e5b7dad09068f8710"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a95f9327cbb139f0617414315f929f8e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_trajectory_object_1_1_sim_ball.html">SimBall</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trajectory_object_1_1_sim_ball.html#a95f9327cbb139f0617414315f929f8e7">GetInstance</a> ()</td></tr>
-<tr class="separator:a95f9327cbb139f0617414315f929f8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sim ball is a copy of the actual ball in the game which is used in the SimBall system. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a95f9327cbb139f0617414315f929f8e7" name="a95f9327cbb139f0617414315f929f8e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95f9327cbb139f0617414315f929f8e7">&#9670;&#160;</a></span>GetInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="class_trajectory_object_1_1_sim_ball.html">SimBall</a> TrajectoryObject.SimBall.GetInstance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a11123858759a0a0e5b7dad09068f8710" name="a11123858759a0a0e5b7dad09068f8710"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11123858759a0a0e5b7dad09068f8710">&#9670;&#160;</a></span>Init()</h2>
 
@@ -160,6 +129,10 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>private static SimBall _instance;</p>
+<p>private void Awake() { if (_instance != null) { Debug.Log("SimBall Trying second Awake"); Destroy(gameObject); return; } Debug.Log("SimBall Awake"); _instance = this as SimBall;</p>
+<p>DontDestroyOnLoad(gameObject); }</p>
+<p>public static SimBall GetInstance() { return _instance; } </p>
 
 </div>
 </div>

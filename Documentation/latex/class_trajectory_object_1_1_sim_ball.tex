@@ -16,30 +16,25 @@ Inheritance diagram for Trajectory\+Object.\+Sim\+Ball\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_trajectory_object_1_1_sim_ball_a11123858759a0a0e5b7dad09068f8710}{Init}} (Vector3 velocity)
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{class_trajectory_object_1_1_sim_ball}{Sim\+Ball}} \mbox{\hyperlink{class_trajectory_object_1_1_sim_ball_a95f9327cbb139f0617414315f929f8e7}{Get\+Instance}} ()
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Sim ball is a copy of the actual ball in the game which is used in the Sim\+Ball system. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_trajectory_object_1_1_sim_ball_a95f9327cbb139f0617414315f929f8e7}\label{class_trajectory_object_1_1_sim_ball_a95f9327cbb139f0617414315f929f8e7}} 
-\index{TrajectoryObject.SimBall@{TrajectoryObject.SimBall}!GetInstance@{GetInstance}}
-\index{GetInstance@{GetInstance}!TrajectoryObject.SimBall@{TrajectoryObject.SimBall}}
-\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_trajectory_object_1_1_sim_ball}{Sim\+Ball}} Trajectory\+Object.\+Sim\+Ball.\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
 \mbox{\Hypertarget{class_trajectory_object_1_1_sim_ball_a11123858759a0a0e5b7dad09068f8710}\label{class_trajectory_object_1_1_sim_ball_a11123858759a0a0e5b7dad09068f8710}} 
 \index{TrajectoryObject.SimBall@{TrajectoryObject.SimBall}!Init@{Init}}
 \index{Init@{Init}!TrajectoryObject.SimBall@{TrajectoryObject.SimBall}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
 {\footnotesize\ttfamily void Trajectory\+Object.\+Sim\+Ball.\+Init (\begin{DoxyParamCaption}\item[{Vector3}]{velocity }\end{DoxyParamCaption})}
 
+private static Sim\+Ball \+\_\+instance;
 
+private void Awake() \{ if (\+\_\+instance != null) \{ Debug.\+Log(\char`\"{}\+Sim\+Ball Trying second Awake\char`\"{}); Destroy(game\+Object); return; \} Debug.\+Log(\char`\"{}\+Sim\+Ball Awake\char`\"{}); \+\_\+instance = this as Sim\+Ball;
+
+Dont\+Destroy\+On\+Load(game\+Object); \}
+
+public static Sim\+Ball Get\+Instance() \{ return \+\_\+instance; \} 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

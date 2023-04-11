@@ -24,7 +24,6 @@ var hierarchy =
       [ "Key.OpenKeyAction", "class_key_1_1_open_key_action.html", null ],
       [ "Key.RevealKeyAction", "class_key_1_1_reveal_key_action.html", null ],
       [ "Key.WalkthroughKeyAction", "class_key_1_1_walkthrough_key_action.html", null ],
-      [ "Managers.CameraFollow", "class_managers_1_1_camera_follow.html", null ],
       [ "Managers.GameManager", "class_managers_1_1_game_manager.html", null ],
       [ "Managers.GamePlayManager", "class_managers_1_1_game_play_manager.html", null ],
       [ "Managers.GameResetManager", "class_managers_1_1_game_reset_manager.html", null ],
@@ -35,6 +34,8 @@ var hierarchy =
       [ "Player.PlayerMovement", "class_player_1_1_player_movement.html", null ],
       [ "TrajectoryObject.Projection", "class_trajectory_object_1_1_projection.html", null ],
       [ "TrajectoryObject.SimBall", "class_trajectory_object_1_1_sim_ball.html", null ],
+      [ "Utilities.CameraFollow", "class_utilities_1_1_camera_follow.html", null ],
+      [ "Utilities.MoveOnAxis", "class_utilities_1_1_move_on_axis.html", null ],
       [ "Utilities.StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", null ],
       [ "Utilities.WinningLevel", "class_utilities_1_1_winning_level.html", null ],
       [ "key.Key", "classkey_1_1_key.html", null ]

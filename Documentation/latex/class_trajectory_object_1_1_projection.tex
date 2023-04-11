@@ -16,15 +16,10 @@ Inheritance diagram for Trajectory\+Object.\+Projection\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_trajectory_object_1_1_projection_a27133bf441030e6b762a1bfbb396c208}{Create\+Physics\+Scene}} ()
 \begin{DoxyCompactList}\small\item\em Create a new projection by creating a copy of the current scene. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_trajectory_object_1_1_projection_ae130cc99ea17e0ee676112570c98d326}{Simulate\+Trajectory}} (\mbox{\hyperlink{class_trajectory_object_1_1_sim_ball}{Sim\+Ball}} ball\+Prefab, Vector3 pos, Vector3 velocity)
+void \mbox{\hyperlink{class_trajectory_object_1_1_projection_a82cb370d6c48bc4ac43acdb84c06772a}{Simulate\+Trajectory}} (Game\+Object game\+Object, Vector3 pos, Vector3 velocity)
 \begin{DoxyCompactList}\small\item\em Simulates the sim balls movement given its position and velocity. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_trajectory_object_1_1_projection_aa07b501fa4c01ab618f53de42fafee0f}{Remove\+Trajectory\+Line}} ()
 \begin{DoxyCompactList}\small\item\em Tidy up the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{class_trajectory_object_1_1_projection}{Projection}} \mbox{\hyperlink{class_trajectory_object_1_1_projection_ad3ff6fc2bd734c264a73c65e6cdbd74e}{Get\+Instance}} ()
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -41,12 +36,6 @@ This class creates a new scene as a copy of the current scene then it projects t
 
 Create a new projection by creating a copy of the current scene. 
 
-\mbox{\Hypertarget{class_trajectory_object_1_1_projection_ad3ff6fc2bd734c264a73c65e6cdbd74e}\label{class_trajectory_object_1_1_projection_ad3ff6fc2bd734c264a73c65e6cdbd74e}} 
-\index{TrajectoryObject.Projection@{TrajectoryObject.Projection}!GetInstance@{GetInstance}}
-\index{GetInstance@{GetInstance}!TrajectoryObject.Projection@{TrajectoryObject.Projection}}
-\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_trajectory_object_1_1_projection}{Projection}} Trajectory\+Object.\+Projection.\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
 \mbox{\Hypertarget{class_trajectory_object_1_1_projection_aa07b501fa4c01ab618f53de42fafee0f}\label{class_trajectory_object_1_1_projection_aa07b501fa4c01ab618f53de42fafee0f}} 
 \index{TrajectoryObject.Projection@{TrajectoryObject.Projection}!RemoveTrajectoryLine@{RemoveTrajectoryLine}}
 \index{RemoveTrajectoryLine@{RemoveTrajectoryLine}!TrajectoryObject.Projection@{TrajectoryObject.Projection}}
@@ -57,11 +46,11 @@ Create a new projection by creating a copy of the current scene.
 
 Tidy up the simulation. 
 
-\mbox{\Hypertarget{class_trajectory_object_1_1_projection_ae130cc99ea17e0ee676112570c98d326}\label{class_trajectory_object_1_1_projection_ae130cc99ea17e0ee676112570c98d326}} 
+\mbox{\Hypertarget{class_trajectory_object_1_1_projection_a82cb370d6c48bc4ac43acdb84c06772a}\label{class_trajectory_object_1_1_projection_a82cb370d6c48bc4ac43acdb84c06772a}} 
 \index{TrajectoryObject.Projection@{TrajectoryObject.Projection}!SimulateTrajectory@{SimulateTrajectory}}
 \index{SimulateTrajectory@{SimulateTrajectory}!TrajectoryObject.Projection@{TrajectoryObject.Projection}}
 \doxysubsubsection{\texorpdfstring{SimulateTrajectory()}{SimulateTrajectory()}}
-{\footnotesize\ttfamily void Trajectory\+Object.\+Projection.\+Simulate\+Trajectory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_trajectory_object_1_1_sim_ball}{Sim\+Ball}}}]{ball\+Prefab,  }\item[{Vector3}]{pos,  }\item[{Vector3}]{velocity }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Trajectory\+Object.\+Projection.\+Simulate\+Trajectory (\begin{DoxyParamCaption}\item[{Game\+Object}]{game\+Object,  }\item[{Vector3}]{pos,  }\item[{Vector3}]{velocity }\end{DoxyParamCaption})}
 
 
 

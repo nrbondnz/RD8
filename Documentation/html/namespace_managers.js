@@ -1,6 +1,5 @@
 var namespace_managers =
 [
-    [ "CameraFollow", "class_managers_1_1_camera_follow.html", "class_managers_1_1_camera_follow" ],
     [ "GameManager", "class_managers_1_1_game_manager.html", "class_managers_1_1_game_manager" ],
     [ "GamePlayManager", "class_managers_1_1_game_play_manager.html", "class_managers_1_1_game_play_manager" ],
     [ "GameResetManager", "class_managers_1_1_game_reset_manager.html", "class_managers_1_1_game_reset_manager" ],
@@ -15,7 +14,7 @@ var namespace_managers =
       [ "Impossible", "namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0a011d7bb0c88f95394e3a8d417304b218", null ]
     ] ],
     [ "GamePhase", "namespace_managers.html#a611e2d8e9c342f0418b55098824563fe", [
-      [ "SayHiToMum", "namespace_managers.html#a611e2d8e9c342f0418b55098824563fea0bd04291ebce3892e36b31c88f54a6af", null ],
+      [ "ReadyToGo", "namespace_managers.html#a611e2d8e9c342f0418b55098824563feac2e0a60d8b2a346703c0ec1a6366db11", null ],
       [ "GamePlaying", "namespace_managers.html#a611e2d8e9c342f0418b55098824563feacacd0b18c46ffc9533ad0b6c7e059e15", null ],
       [ "Winner", "namespace_managers.html#a611e2d8e9c342f0418b55098824563fea85144ab5880edc8513c39cfeb1bd5a5e", null ],
       [ "Loser", "namespace_managers.html#a611e2d8e9c342f0418b55098824563fead533d08bcfe8e578ccfe1c311133df7f", null ]
