@@ -7,5 +7,6 @@ var index =
       [ "Step 3: Load the configuration", "index.html#step3", null ],
       [ "Step 4: Generate output", "index.html#step4", null ],
       [ "Step 5: View the output", "index.html#step5", null ]
-    ] ]
+    ] ],
+    [ "moving around in edit mode", "index.html#Unity", null ]
 ];

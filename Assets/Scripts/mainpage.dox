@@ -13,7 +13,8 @@
  * \subsection step2 Step 2: Run the tool from a terminal - doxywizard.exe
  * opemn a terminal and type doxywizard.exe
  * 
- * \subsection step3 Step 3: Load the configuration 
+ * \subsection step3 Step 3: Load the configuration
+ * <h3 style="color:DarkOrange;"> Note: Be sure to do this or spend an hour trying to work out why diagrams will not load anymore</h3>
  * From the project directory ./doxygen-config/windows/RD8
  * This will add the source code directory to the project directory ./Assets/Scripts
  * OR doxygen.exe C:\dev\RD8\doxygen-config\windows\RD8
@@ -25,4 +26,8 @@
  * \subsection step5 Step 5: View the output 
  * The output will be accessible to the project directly in the index.html 
  * of ./Documentation or from the tool
+ *
+ * \section Unity editing
+ * <a href="https://www.youtube.com/watch?v=aCM3J4fG8B0&ab_channel=InfoGamer">Video of how to move in unity editor</a>
+ * <a href="https://docs.unity3d.com/Manual/Prefabs.html">Managing Prefabs</a>
  */ 
