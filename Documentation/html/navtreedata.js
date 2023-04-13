@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "Rolling Danger", "index.html", [
     [ "Rolling Danger Home Page", "index.html", "index" ],
+    [ "Enemies namespace", "_enemies_01namespace.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [

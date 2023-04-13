@@ -11,7 +11,7 @@
  * On Windows the install is in C:\dev\doxygen-1.9.6.windows.x64.bin
  * 
  * \subsection step2 Step 2: Run the tool from a terminal - doxywizard.exe
- * opemn a terminal and type doxywizard.exe
+ * open a terminal and type doxywizard.exe
  * 
  * \subsection step3 Step 3: Load the configuration
  * <h3 style="color:DarkOrange;"> Note: Be sure to do this or spend an hour trying to work out why diagrams will not load anymore</h3>
