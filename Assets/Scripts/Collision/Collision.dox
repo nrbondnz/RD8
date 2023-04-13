@@ -1,5 +1,5 @@
 /*! \namespace Collision
- * \section sec How collisions work
+ * \section secCollision How collisions work
  * The collision scripts are added to an object.<p>
  * It may have a collision radius as which point an effect will start to be applied.
  * All collision actions must implement the ICollisionAction interface.<p>

@@ -8,5 +8,5 @@ var index =
       [ "Step 4: Generate output", "index.html#step4", null ],
       [ "Step 5: View the output", "index.html#step5", null ]
     ] ],
-    [ "editing", "index.html#Unity", null ]
+    [ "Unity editing", "index.html#sec2", null ]
 ];
