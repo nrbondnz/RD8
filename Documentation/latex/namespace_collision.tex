@@ -40,8 +40,20 @@ enum \mbox{\hyperlink{namespace_collision_a34ae1173aa4a5c5eeeeb0fa24a9e32d7}{Col
 
 
 \doxysubsection{Detailed Description}
-\hypertarget{index_intro_sec}{}\doxysubsection{Introduction}\label{index_intro_sec}
-Hello mum 
+\hypertarget{namespace_collision_sec}{}\doxysubsection{How collisions work}\label{namespace_collision_sec}
+The collision scripts are added to an object.
+
+It may have a collision radius as which point an effect will start to be applied. All collision actions must implement the \mbox{\hyperlink{interface_collision_1_1_i_collision_action}{ICollision\+Action}} interface.
+
+The \mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} controls the Action(\+Collision\+Action\+Enum) and in unity the user will set the collision Action(\+Collision\+Action\+Enum) and strength(\+Collision\+Effect\+Strength\+Enum) It is the \mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} that is added to the object to control the effect.
+
+The object is expected to have a Mesh Collider of the appropriate shape to start the effect For some actions this will be on hitting the object and for some it will be based on proximity to the target object
+
+The color of the object is determined by the action and the strength of the effect. There is a method in the \mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} called on\+Draw\+Gizmos() that sets the color in edit mode. This method defers to set\+Color\+Based\+On\+Collision\+Type\+And\+Strenth() and is also called in game mode to set the same color.
+
+Adding a new action then needs to implement the \mbox{\hyperlink{interface_collision_1_1_i_collision_action}{ICollision\+Action}} interface
+
+Adding a new object using the action needs to add the \mbox{\hyperlink{class_collision_1_1_collision_action_controller}{Collision\+Action\+Controller}} and add an appropriate triggering mesh for when the effect is in play. 
 
 \doxysubsection{Enumeration Type Documentation}
 \mbox{\Hypertarget{namespace_collision_a7c45cf11d52bc3377748bac70aebbadd}\label{namespace_collision_a7c45cf11d52bc3377748bac70aebbadd}} 

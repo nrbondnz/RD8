@@ -1,5 +1,6 @@
 var index =
 [
+    [ "Introduction", "index.html#intro_sec", null ],
     [ "Document generation", "index.html#install_sec", [
       [ "Step 1: Install doxygen", "index.html#step1", null ],
       [ "Step 2: Run the tool from a terminal - doxywizard.exe", "index.html#step2", null ],

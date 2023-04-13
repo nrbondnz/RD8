@@ -1,5 +1,15 @@
 /*! \namespace Collision
- * \section intro_sec Introduction
- * Hello mum
- *
+ * \section sec How collisions work
+ * The collision scripts are added to an object.<p>
+ * It may have a collision radius as which point an effect will start to be applied.
+ * All collision actions must implement the ICollisionAction interface.<p>
+ * The CollisionActionController controls the Action(CollisionActionEnum) and in unity the user will set the collision Action(CollisionActionEnum) and strength(CollisionEffectStrengthEnum)
+ * It is the CollisionActionController that is added to the object to control the effect.<p>
+ * The object is expected to have a Mesh Collider of the appropriate shape to start the effect
+ *     For some actions this will be on hitting the object and for some it will be based on proximity to the target object<p>
+ * The color of the object is determined by the action and the strength of the effect.<li>
+ * There is a method in the CollisionActionController called onDrawGizmos() that sets the color in edit mode.
+ * This method defers to setColorBasedOnCollisionTypeAndStrenth() and is also called in game mode to set the same color.<p>
+ * Adding a new action then needs to implement the ICollisionAction interface<p>
+ * Adding a new object using the action needs to add the CollisionActionController and add an appropriate triggering mesh for when the effect is in play.
  */ 
