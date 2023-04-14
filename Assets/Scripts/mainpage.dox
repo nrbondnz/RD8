@@ -15,18 +15,16 @@
  * 
  * \subsection step3 Step 3: Load the configuration
  * <h3 style="color:DarkOrange;"> Note: Be sure to do this or spend an hour trying to work out why diagrams will not load anymore</h3>
- * From the project directory <project-root>/doxygen-config/windows/RD8
+ * From the project directory <project-root>/doxygen-config/<Platform>/RD8
  * This will add the source code directory to the project directory ./Assets/Scripts
- * OR doxygen.exe <project-root>\doxygen-config\windows\RD8
- * OR on mac doxygen <project-root>\doxygen-config\Mac\RD8
- * Will generate directly
+ * OR doxygen.exe <project-root>\doxygen-config\<platform>\RD8
  * 
  * \subsection step4 Step 4: Generate output 
- * Output will generate to the project directory ./Documentation
+ * Output will generate to the project directory <project-root>/Documentation
  * 
  * \subsection step5 Step 5: View the output 
  * The output will be accessible to the project directly in the index.html 
- * of ./Documentation or from the tool
+ * of <project-root>/Documentation/index.html or can be accessed directly from the gui(if using the doxywizard)
  *
  * \section sec2 Unity editing
  * <a href="https://www.youtube.com/watch?v=aCM3J4fG8B0&ab_channel=InfoGamer">Video of how to move in unity editor</a><p>
