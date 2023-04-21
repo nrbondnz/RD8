@@ -12,4 +12,5 @@
  * This method defers to setColorBasedOnCollisionTypeAndStrenth() and is also called in game mode to set the same color.<p>
  * Adding a new action then needs to implement the ICollisionAction interface<p>
  * Adding a new object using the action needs to add the CollisionActionController and add an appropriate triggering mesh for when the effect is in play.
+ * TODO: Add a class diagram and an interaction diagram.  Interaction diagram should have colors for unity objects and 'scripts' C#
  */ 

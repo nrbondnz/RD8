@@ -413,7 +413,7 @@ MonoBehaviour:
   easyButton: {fileID: 1375722077}
   hardButton: {fileID: 107849686}
   impossibleButton: {fileID: 1347789806}
-  startLevel: 4
+  startLevel: 3
 --- !u!4 &227502534
 Transform:
   m_ObjectHideFlags: 0
@@ -708,6 +708,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

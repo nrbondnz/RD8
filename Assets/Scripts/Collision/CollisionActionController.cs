@@ -101,7 +101,7 @@ namespace Collision
             switch (collisionAction)
             {
                 case CollisionActionEnum.Bounce:
-                    gameObject.GetComponent<MeshRenderer>().material.color = new Color(
+                    gameObject.GetComponent<Renderer>().sharedMaterial.color = new Color(
                         (float)0.9 - ((((float) (int) effectStrengh) / (float) 15.0) * (float)0.5), 
                         (float)1.0, 
                         (float)0.25);
@@ -110,15 +110,15 @@ namespace Collision
                 {
                     Color col = new Color((float) 1.0, (float) 1.0 - (((float) (int) effectStrengh) / (float) 15.0),
                         (float) 0.255);
-                    gameObject.GetComponent<MeshRenderer>().material.color = col;
+                    gameObject.GetComponent<Renderer>().sharedMaterial.color = col;
                     Debug.Log("Color: r : " + col.r + " g : " + col.g + " b " + col.b);
                     break;
                 }
                 case CollisionActionEnum.Death:
-                    gameObject.GetComponent<MeshRenderer>().material.color = new Color((float)0.1, (float)0.1, (float)0.1);
+                    gameObject.GetComponent<Renderer>().sharedMaterial.color = new Color((float)0.1, (float)0.1, (float)0.1);
                     break;
                 case CollisionActionEnum.Attract:
-                    gameObject.GetComponent<MeshRenderer>().material.color = new Color((float) 0.021,
+                    gameObject.GetComponent<Renderer>().sharedMaterial.color = new Color((float) 0.021,
                         (float) 0.65 - ((((float) (int) effectStrengh) / (float) 15.0) * (float) 0.55),
                         (float) 0.75);
                     break;

@@ -7,3 +7,8 @@ class \mbox{\hyperlink{class_enemies_1_1_cannon_controller}{Cannon\+Controller}}
 \begin{DoxyCompactList}\small\item\em The cannon controller allows the cannon to follow the player when in range The cannon head needs that can rotate from a fixed point. The cannon tip is the firing point. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_enemies_1_1_enemy_follow}{Enemy\+Follow}}
 \begin{DoxyCompactList}\small\item\em Can be applied to any moveable object, makes the object move towards the player/target Needs to have trigger range TODO\+: Could extend to always move towards the player/target TODO\+: Could extend to make it move towards where the player is going by looking at player velocity TODO\+: Could make this be a dual function with \textquotesingle{}escape\textquotesingle{} player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{namespace_enemies_secEnemies}{}\doxysubsection{How Enimies work}\label{namespace_enemies_secEnemies}
+The unity object is attached to an enemy script. It has an influence area(usually spherical) within which the enemy object effect starts to happen. Once activated the On\+Trigger\+Enter method will be called to start the effect When the influence area is exited the On\+Trigger\+Exit is called 

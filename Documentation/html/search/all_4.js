@@ -4,8 +4,7 @@ var searchData=
   ['easypressed_1',['EasyPressed',['../class_utilities_1_1_starting_text_screen.html#adf5495a7967c20c739dcd37a60a5c95e',1,'Utilities::StartingTextScreen']]],
   ['effectstrengh_2',['effectStrengh',['../class_collision_1_1_collision_action_controller.html#afdb46b9d31e2bd0a3a8e3d76d8538a13',1,'Collision::CollisionActionController']]],
   ['enemies_3',['Enemies',['../namespace_enemies.html',1,'']]],
-  ['enemies_20namespace_4',['Enemies namespace',['../_enemies_01namespace.html',1,'']]],
-  ['enemies_2edox_5',['Enemies.dox',['../_enemies_8dox.html',1,'']]],
-  ['enemyfollow_6',['EnemyFollow',['../class_enemies_1_1_enemy_follow.html',1,'Enemies']]],
-  ['enemyfollow_2ecs_7',['EnemyFollow.cs',['../_enemy_follow_8cs.html',1,'']]]
+  ['enemies_2edox_4',['Enemies.dox',['../_enemies_8dox.html',1,'']]],
+  ['enemyfollow_5',['EnemyFollow',['../class_enemies_1_1_enemy_follow.html',1,'Enemies']]],
+  ['enemyfollow_2ecs_6',['EnemyFollow.cs',['../_enemy_follow_8cs.html',1,'']]]
 ];

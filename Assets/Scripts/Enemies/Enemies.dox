@@ -1,5 +1,9 @@
-/*! \page "Enemies namespace"
+/*! \namespace Enemies
+ * \section secEnemies How Enimies work
  *
- * <embed type="text/html" src="./Enemies-doc.html" width="500" height="200">
+ * The unity object is attached to an enemy script.
+ * It has an influence area(usually spherical) within which the enemy object effect starts to happen.
+ * Once activated the OnTriggerEnter method will be called to start the effect
+ * When the influence area is exited the OnTriggerExit is called
  *
- */ 
+ */
