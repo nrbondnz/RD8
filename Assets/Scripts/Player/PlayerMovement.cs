@@ -5,12 +5,18 @@ using Managers;
 using TrajectoryObject;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utilities;
 
 namespace Player
 {
     /// <summary>
     /// Moves the player by adding force in the required direction
+    /// TODO: This class is too complex and needs abstraction
+    /// TODO: Remove the projection system in favour of a subscription model so if available it will react correctly
+    /// The _mainCamera is needed to help direct the movement so its not confusing to the player,
+    /// as it swings around to focus on the next waypoint
+    /// TODO: When we get to more than IOS, mobileMultiplier will need extending for other devices during test probably
     /// </summary>
     public partial class PlayerMovement : MonoBehaviour
     {
@@ -18,7 +24,7 @@ namespace Player
         private Rigidbody _rb;
         [SerializeField] private float speed = 10;
         [SerializeField] private float jumpForce = 13;
-        [SerializeField] private float platformPower = 2.5f;
+        [FormerlySerializedAs("platformPower")] [SerializeField] private float mobileMultiplier = 2.5f;
         
         [SerializeField] Projection projection;
         [SerializeField] private LineRenderer lineRenderer;
@@ -61,12 +67,12 @@ namespace Player
 
             if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
             {
-                _player.HozInput = Input.acceleration.x * platformPower;
+                _player.HozInput = Input.acceleration.x * mobileMultiplier;
             }
 
             if ((Input.acceleration.y > 0.1) || (Input.acceleration.y < -0.1))
             {
-                _player.VertInput = Input.acceleration.y * platformPower;
+                _player.VertInput = Input.acceleration.y * mobileMultiplier;
 
             }
 
