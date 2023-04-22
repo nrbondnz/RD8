@@ -40,9 +40,13 @@ namespace Collision
         {
             return effectStrengh;
         }
-
+        /// <summary>
+        /// Sets the collision color to be applied to the gameObject instance
+        /// The color is dependant on collisionAction and effect strength set in unity on the CollisionActionController
+        /// </summary>
         private void SetCollisionColor()
         {
+            // TODO:  fix this rubbish solution with something elegant
             if (sharedMaterialColorBool) return;
             sharedMaterialColorBool = true;
             switch (collisionAction)
@@ -58,9 +62,6 @@ namespace Collision
                     sharedMaterialColor = new Color((float)1.0,
                         (float)1.0 - (((float)(int)effectStrengh) / (float)15.0),
                         (float)0.255);
-                    //gameObject.GetComponent<Renderer>().sharedMaterial.color = sharedMaterialColor;
-                    Debug.Log("Color: r : " + sharedMaterialColor.r + " g : " + sharedMaterialColor.g + " b " +
-                              sharedMaterialColor.b);
                     break;
                 }
                 case CollisionActionEnum.Death:
@@ -120,7 +121,7 @@ namespace Collision
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
             SetCollisionColor();
             CollisionActionFactory.SetGameObjectCollisionAction(this, collisionAction);
-            setColorBasedOnCollisionTypeAndStrenth();
+            SetColorBasedOnCollisionTypeAndStrenth();
             //soundManager = GetComponent<SoundManager>();
         }
 
@@ -131,9 +132,9 @@ namespace Collision
         }
 
         /// <summary>
-        /// Action plus effect strengh are used to set the color of the collider gameobject
+        /// Action plus effect strength are used to set the color of the collider gameobject
         /// </summary>
-        void setColorBasedOnCollisionTypeAndStrenth()
+        void SetColorBasedOnCollisionTypeAndStrenth()
         {
             //int matID = (int)_collisionAction + (int)_effectStrengh;
             SetCollisionColor();
@@ -142,10 +143,62 @@ namespace Collision
 
         /// <summary>
         /// Draws the action plus effect color effect as the color of the object even during non running mode
+        /// Also checks that all the components are in place to make the colliders work
+        /// In descending priority it gives colored spheres above the gameObject for...
+        /// Marks red for no colliders
+        /// Marks blue for no enabled colliders
+        /// Marks yellow for no colliders with enabled triggers
         /// </summary>
         private void OnDrawGizmos()
         {
-            setColorBasedOnCollisionTypeAndStrenth();
+            SetColorBasedOnCollisionTypeAndStrenth();
+            CheckMeshColliderAndTriggerInPlace();
+        }
+
+        /// <summary>
+        /// Checks that all the components are in place to make the colliders work
+        /// In descending priority it gives colored spheres above the gameObject for...
+        /// Marks red for no colliders
+        /// Marks blue for no enabled colliders
+        /// Marks yellow for no colliders with enabled triggers
+        /// </summary>
+        void CheckMeshColliderAndTriggerInPlace()
+        {
+            Collider[] colliders = gameObject.GetComponents<Collider>();
+            if (colliders == null){
+            
+                // needs a red sphere 
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+            }
+            else
+            {
+                bool aColliderHasActiveTrigger = false;
+                bool aColliderIsActive = false;
+                foreach (var variableCollider in colliders)
+                {
+                    if (variableCollider.isTrigger)
+                    {
+                        aColliderHasActiveTrigger = true;
+                    }
+
+                    if (variableCollider.enabled)
+                    {
+                        aColliderIsActive = true;
+                    }
+                }
+
+                if (aColliderIsActive == false)
+                {
+                    // needs a blue
+                    Gizmos.color = Color.blue;
+                    Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+                } else if (aColliderHasActiveTrigger == false)
+                {
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+                }
+            }
         }
     }
 }
