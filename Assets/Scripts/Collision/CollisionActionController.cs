@@ -16,6 +16,9 @@ namespace Collision
         [SerializeField] protected CollisionActionEnum collisionAction;
 
         [SerializeField] protected CollisionEffectStrengthEnum effectStrengh;
+        private Color sharedMaterialColor;
+        private bool sharedMaterialColorBool = false;
+
         
 
         /// <summary>
@@ -36,6 +39,40 @@ namespace Collision
         public CollisionEffectStrengthEnum GetCollisionEffectStrengthEnum()
         {
             return effectStrengh;
+        }
+
+        private void SetCollisionColor()
+        {
+            if (sharedMaterialColorBool) return;
+            sharedMaterialColorBool = true;
+            switch (collisionAction)
+            {
+                case CollisionActionEnum.Bounce:
+                    sharedMaterialColor = new Color(
+                        (float)0.9 - ((((float)(int)effectStrengh) / (float)15.0) * (float)0.5),
+                        (float)1.0,
+                        (float)0.25);
+                    break;
+                case CollisionActionEnum.SpeedChange:
+                {
+                    sharedMaterialColor = new Color((float)1.0,
+                        (float)1.0 - (((float)(int)effectStrengh) / (float)15.0),
+                        (float)0.255);
+                    //gameObject.GetComponent<Renderer>().sharedMaterial.color = sharedMaterialColor;
+                    Debug.Log("Color: r : " + sharedMaterialColor.r + " g : " + sharedMaterialColor.g + " b " +
+                              sharedMaterialColor.b);
+                    break;
+                }
+                case CollisionActionEnum.Death:
+                    sharedMaterialColor = new Color((float)0.1, (float)0.1, (float)0.1);
+                    break;
+                case CollisionActionEnum.Attract:
+                    sharedMaterialColor = new Color((float)0.021,
+                        (float)0.65 - ((((float)(int)effectStrengh) / (float)15.0) * (float)0.55),
+                        (float)0.75);
+                    break;
+            }
+        
         }
 
         /// <summary>
@@ -81,6 +118,7 @@ namespace Collision
         void Start()
         {
             //KeyActionFactory.setKeyAction(this, _keyActionEnum);
+            SetCollisionColor();
             CollisionActionFactory.SetGameObjectCollisionAction(this, collisionAction);
             setColorBasedOnCollisionTypeAndStrenth();
             //soundManager = GetComponent<SoundManager>();
@@ -98,31 +136,8 @@ namespace Collision
         void setColorBasedOnCollisionTypeAndStrenth()
         {
             //int matID = (int)_collisionAction + (int)_effectStrengh;
-            switch (collisionAction)
-            {
-                case CollisionActionEnum.Bounce:
-                    gameObject.GetComponent<Renderer>().sharedMaterial.color = new Color(
-                        (float)0.9 - ((((float) (int) effectStrengh) / (float) 15.0) * (float)0.5), 
-                        (float)1.0, 
-                        (float)0.25);
-                    break;
-                case CollisionActionEnum.SpeedChange:
-                {
-                    Color col = new Color((float) 1.0, (float) 1.0 - (((float) (int) effectStrengh) / (float) 15.0),
-                        (float) 0.255);
-                    gameObject.GetComponent<Renderer>().sharedMaterial.color = col;
-                    Debug.Log("Color: r : " + col.r + " g : " + col.g + " b " + col.b);
-                    break;
-                }
-                case CollisionActionEnum.Death:
-                    gameObject.GetComponent<Renderer>().sharedMaterial.color = new Color((float)0.1, (float)0.1, (float)0.1);
-                    break;
-                case CollisionActionEnum.Attract:
-                    gameObject.GetComponent<Renderer>().sharedMaterial.color = new Color((float) 0.021,
-                        (float) 0.65 - ((((float) (int) effectStrengh) / (float) 15.0) * (float) 0.55),
-                        (float) 0.75);
-                    break;
-            }
+            SetCollisionColor();
+            gameObject.GetComponent<Renderer>().sharedMaterial.color = sharedMaterialColor;
         }
 
         /// <summary>
