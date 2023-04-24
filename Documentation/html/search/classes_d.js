@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uiscoremanager_0',['UIScoreManager',['../class_managers_1_1_u_i_score_manager.html',1,'Managers']]]
+  ['trajectorylinemanager_0',['TrajectoryLineManager',['../class_player_1_1_trajectory_line_manager.html',1,'Player']]]
 ];

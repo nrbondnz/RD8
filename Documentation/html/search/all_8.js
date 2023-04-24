@@ -9,5 +9,6 @@ var searchData=
   ['init_6',['Init',['../class_trajectory_object_1_1_sim_ball.html#a11123858759a0a0e5b7dad09068f8710',1,'TrajectoryObject::SimBall']]],
   ['initgame_7',['InitGame',['../class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca',1,'Managers::GamePlayManager']]],
   ['isgrounded_8',['IsGrounded',['../class_player_1_1_player.html#a99be32aa8d95a69db0a73394d102ff28',1,'Player::Player']]],
-  ['isjumpbuttonpressed_9',['IsJumpButtonPressed',['../class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483',1,'Player::Player']]]
+  ['isjumpbuttonpressed_9',['IsJumpButtonPressed',['../class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483',1,'Player::Player']]],
+  ['istrajectoryline_10',['isTrajectoryLine',['../class_player_1_1_trajectory_line_manager.html#a5a29b109acfef3425eff1f24892859b5',1,'Player::TrajectoryLineManager']]]
 ];

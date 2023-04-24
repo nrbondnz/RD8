@@ -34,7 +34,8 @@ var annotated_dup =
     ] ],
     [ "Player", "namespace_player.html", [
       [ "Player", "class_player_1_1_player.html", "class_player_1_1_player" ],
-      [ "PlayerMovement", "class_player_1_1_player_movement.html", null ]
+      [ "PlayerMovement", "class_player_1_1_player_movement.html", null ],
+      [ "TrajectoryLineManager", "class_player_1_1_trajectory_line_manager.html", "class_player_1_1_trajectory_line_manager" ]
     ] ],
     [ "TrajectoryObject", "namespace_trajectory_object.html", [
       [ "Projection", "class_trajectory_object_1_1_projection.html", "class_trajectory_object_1_1_projection" ],

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['walkthroughkeyaction_0',['WalkthroughKeyAction',['../class_key_1_1_walkthrough_key_action.html',1,'Key']]],
-  ['waypointmanager_1',['WaypointManager',['../class_managers_1_1_waypoint_manager.html',1,'Managers']]],
-  ['winninglevel_2',['WinningLevel',['../class_utilities_1_1_winning_level.html',1,'Utilities']]]
+  ['uiscoremanager_0',['UIScoreManager',['../class_managers_1_1_u_i_score_manager.html',1,'Managers']]]
 ];

@@ -18,38 +18,24 @@ namespace Player
     /// as it swings around to focus on the next waypoint
     /// TODO: When we get to more than IOS, mobileMultiplier will need extending for other devices during test probably
     /// </summary>
-    public partial class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
 
         private Rigidbody _rb;
         [SerializeField] private float speed = 10;
         [SerializeField] private float jumpForce = 13;
+        [SerializeField] TrajectoryLineManager trajectoryLineManager;
         [FormerlySerializedAs("platformPower")] [SerializeField] private float mobileMultiplier = 2.5f;
-        
-        [SerializeField] Projection projection;
-        [SerializeField] private LineRenderer lineRenderer;
         private GameObject _mainCamera;
-        [SerializeField] private bool isTrajectoryLine = true;
-
-
         private bool _isGhost;
         private readonly Player _player = new();
         
-        private void OnDrawGizmos()
-        {
-            if (lineRenderer == null || (isTrajectoryLine && (projection == null )))
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
-            }
-        }
-
         // Start is called before the first frame update
         void Start()
         {
-            
+            //trajectoryLineManager = gameObject.GetComponent<TrajectoryLineManager>();    
             //projection = Projection.GetInstance();
-            projection.CreatePhysicsScene();
+            
             //onGoingForwards += GoingBackwards;
             _rb = GetComponent<Rigidbody>();
             _mainCamera = GameObject.FindWithTag("MainCamera");
@@ -118,54 +104,7 @@ namespace Player
             Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
             _rb.AddForce(playerMovement, ForceMode.Acceleration);
 
-            //create a new ray, it's center is the player position, it's direction is Vector3.Down
-            Ray ray = new Ray(transform.position, Vector3.down);
-            //Physics.Raycast will return true if the ray hits a collider
-            //send the ray and check if it did hit anything, the ray length is going to be half of our scale(player's radius),
-            //plus a small value to make sure our ray is barley longer than the player's radius
-
-
-            if (Physics.Raycast(ray, transform.localScale.x / 2f + 0.01f)) {
-                _player.IsGrounded = true;
-                if (isTrajectoryLine)
-                {
-                    projection?.RemoveTrajectoryLine();
-                }
-                else
-                {
-                    lineRenderer.enabled = false;
-                }
-            }
-            else
-            {
-                _player.IsGrounded = false;
-                lineRenderer.enabled = true;
-                lineRenderer.SetPosition(0, _rb.position);
-                if (isTrajectoryLine)
-                {
-                    projection?.SimulateTrajectory(gameObject, _rb.position, _rb.velocity);
-                }
-                else
-                {
-
-                    //Vector3 down = rb.TransformDirection(Vector3.down) * 10;
-                    
-                    if (Physics.Raycast(ray, out var hitInfo, 20.0f))
-                    {
-                        lineRenderer.startColor = Color.green;
-                        lineRenderer.endColor = Color.cyan;
-                        lineRenderer.SetPosition(1, hitInfo.point);
-                    }
-                    else
-                    {
-                        lineRenderer.startColor = Color.red;
-                        lineRenderer.endColor = Color.black;
-                        Vector3 pos = transform.position;
-                        pos.y = pos.y - 15.0f;
-                        lineRenderer.SetPosition(1, pos);
-                    }
-                }
-            }
+            trajectoryLineManager.DrawRayFromRigidBody(_player);
 
             if (_player.IsJumpButtonPressed && _player.IsGrounded)
             {

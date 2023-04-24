@@ -32,6 +32,7 @@ var hierarchy =
       [ "Managers.UIScoreManager", "class_managers_1_1_u_i_score_manager.html", null ],
       [ "Managers.WaypointManager", "class_managers_1_1_waypoint_manager.html", null ],
       [ "Player.PlayerMovement", "class_player_1_1_player_movement.html", null ],
+      [ "Player.TrajectoryLineManager", "class_player_1_1_trajectory_line_manager.html", null ],
       [ "TrajectoryObject.Projection", "class_trajectory_object_1_1_projection.html", null ],
       [ "TrajectoryObject.SimBall", "class_trajectory_object_1_1_sim_ball.html", null ],
       [ "Utilities.CameraFollow", "class_utilities_1_1_camera_follow.html", null ],

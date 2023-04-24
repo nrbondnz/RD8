@@ -118,7 +118,7 @@ using UnityEngine;
             public void UpdatePlayer(Player.Player pPlayer)
             {
                 _player = pPlayer;
-                Debug.Log("Player : " + pPlayer);
+                Debug.Log("Player : " + _player);
             }
 
             /// <summary>

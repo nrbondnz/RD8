@@ -7,7 +7,7 @@
  * It is the CollisionActionController that is added to the object to control the effect.<p>
  * The object is expected to have a Mesh Collider of the appropriate shape to start the effect
  *     For some actions this will be on hitting the object and for some it will be based on proximity to the target object<p>
- * The color of the object is determined by the action and the strength of the effect.<li>
+ * The color of the object is determined by the action and the strength of the effect.<p>
  * There is a method in the CollisionActionController called onDrawGizmos() that sets the color in edit mode.
  * This method defers to setColorBasedOnCollisionTypeAndStrenth() and is also called in game mode to set the same color.<p>
  * Adding a new action then needs to implement the ICollisionAction interface<p>
