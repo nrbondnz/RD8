@@ -151,11 +151,11 @@ namespace TrajectoryObject
                 _physicsScene.Simulate(Time.fixedDeltaTime);
                 lineRenderer.SetPosition(i, ghostObj.transform.position);
                 //Debug.Log("pos: " + i + " @ " + transform.position);
-                Ray ray2 = new Ray(ghostObj.transform.position, Vector3.down);
+                /*Ray ray2 = new Ray(ghostObj.transform.position, Vector3.down);
                 if (Physics.Raycast(ray2, out var hitInfo2, 1.0f))
                 {
                     Debug.Log("hitInfo2 : i " + i + "gameobject(coll): " + hitInfo2.collider.gameObject.name);
-                }
+                }*/
             }
 
             Ray ray = new Ray(ghostObj.transform.position, Vector3.down);
