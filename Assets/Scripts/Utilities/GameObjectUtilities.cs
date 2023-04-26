@@ -10,6 +10,7 @@ namespace Utilities
             GameObject retObject = Instantiate(originGO, originGO.gameObject.transform.position, Quaternion.identity);
             retObject.name = newObjectName;
             RemoveComponentsWithJustScripts(retObject);
+            retObject.gameObject.tag = newObjectName;
             return retObject;
         }
 

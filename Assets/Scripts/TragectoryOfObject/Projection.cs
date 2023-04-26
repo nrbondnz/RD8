@@ -14,7 +14,7 @@ namespace TrajectoryObject
     public class Projection : MonoBehaviour
     {
         [SerializeField] LineRenderer lineRenderer;
-        [SerializeField] private int maxPhysicsFrameIterations = 100;
+        [SerializeField] private int maxPhysicsFrameIterations = 70;
         [SerializeField] private Transform obstaclesParent;
         //[SerializeField] public GameObject ghostPlayer;
         private bool _projectionEnabled = false;
@@ -100,6 +100,7 @@ namespace TrajectoryObject
                 try
                 {
                     ghostObj.GetComponent<Renderer>().enabled = false;
+                    gameObjectUtilities.RemoveComponentsWithJustScripts(ghostObj);
                     SceneManager.MoveGameObjectToScene(ghostObj, mySimScene);
                     if (!ghostObj.isStatic) _spawnedObjects.Add(obj, ghostObj.transform);
                 }
