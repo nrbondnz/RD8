@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utilities;
 
 namespace TrajectoryObject
 {
@@ -15,9 +16,10 @@ namespace TrajectoryObject
         [SerializeField] LineRenderer lineRenderer;
         [SerializeField] private int maxPhysicsFrameIterations = 100;
         [SerializeField] private Transform obstaclesParent;
-        [SerializeField] SimBall _simBall;
+        [SerializeField] public GameObject ghostPlayer;
         private bool _projectionEnabled = false;
-
+        private GameObject ghosty;
+        
         private Scene _simulationScene;
         private PhysicsScene _physicsScene;
         
@@ -61,6 +63,8 @@ namespace TrajectoryObject
             //CreatePhysicsScene();
             //_simBall = GameObject.FindObjectOfType<SimBall>();
             //lineRenderer = gameObject.GetComponent<LineRenderer>();
+            GameObjectUtilities gameObjectUtilities = gameObject.AddComponent<GameObjectUtilities>();
+            //ghosty = gameObjectUtilities.CreateNewInstanceOfGameObject(gameObject, "Ghosty");
         }
 
         /// <summary>
@@ -128,7 +132,7 @@ namespace TrajectoryObject
         /// <param name="realGameObject"></param>
         /// <param name="pos"></param>
         /// <param name="velocity"></param>
-        public bool SimulateTrajectory(GameObject realGameObject, Vector3 pos, Vector3 velocity)
+        public bool SimulateTrajectory( Vector3 pos, Vector3 velocity)
         {
             //if (!_projectionEnabled || ballPrefab == null) return;
             bool landed = false;
@@ -137,19 +141,22 @@ namespace TrajectoryObject
             posTemp.x = 1000.0f;
             posTemp.y = 1000.0f;
             posTemp.z = 1000.0f;
-            GameObject ghostObj = Instantiate(gameObject, posTemp, Quaternion.identity);
+            ghostPlayer.SetActive(true);
+            GameObject ghostObj = Instantiate(ghostPlayer, posTemp, Quaternion.identity);
+
+           
             SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
-            ghostObj.GetComponent<Rigidbody>().position = pos;
+            ghostObj.gameObject.GetComponent<Rigidbody>().position = pos;
             
             //ghostObj.Init(velocity);
-            ghostObj.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
+            ghostObj.gameObject.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
             lineRenderer.enabled = true;
             lineRenderer.positionCount = maxPhysicsFrameIterations;
 
             for (var i = 0; i < maxPhysicsFrameIterations; i++)
             {
                 _physicsScene.Simulate(Time.fixedDeltaTime);
-                lineRenderer.SetPosition(i, ghostObj.transform.position);
+                lineRenderer.SetPosition(i, ghostObj.gameObject.transform.position);
                 //Debug.Log("pos: " + i + " @ " + transform.position);
                 /*Ray ray2 = new Ray(ghostObj.transform.position, Vector3.down);
                 if (Physics.Raycast(ray2, out var hitInfo2, 1.0f))
@@ -158,17 +165,17 @@ namespace TrajectoryObject
                 }*/
             }
 
-            Ray ray = new Ray(ghostObj.transform.position, Vector3.down);
+            Ray ray = new Ray(ghostObj.gameObject.transform.position, Vector3.down);
             if ( Physics.Raycast(ray, out var hitInfo, 4.0f))
             {
-                Debug.Log("hitInfo : " + hitInfo);
+                //Debug.Log("hitInfo : " + hitInfo);
                 lineRenderer.startColor = Color.green;
                 lineRenderer.endColor = Color.cyan;
                 lineRenderer.SetPosition(1, pos);
             }
             else
             {
-                Debug.Log("false hitInfo : " + hitInfo);
+                //Debug.Log("false hitInfo : " + hitInfo);
                 lineRenderer.startColor = Color.red;
                 lineRenderer.endColor = Color.black;
                 //Vector3 pos = ghostObj.transform.position;
@@ -176,6 +183,8 @@ namespace TrajectoryObject
                 lineRenderer.SetPosition(1, pos);
             }
             Destroy(ghostObj.gameObject);
+            ghostPlayer.SetActive(false);
+            //Destroy(ghosty.gameObject);
             return landed;
         }
 

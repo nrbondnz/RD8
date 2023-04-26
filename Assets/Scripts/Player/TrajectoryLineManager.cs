@@ -55,7 +55,7 @@ namespace Player
                 lineRenderer.SetPosition(0, pRB.position);
                 if (isTrajectoryLine)
                 {
-                    bool? lands = projection?.SimulateTrajectory(gameObject, pRB.position, pRB.velocity);
+                    bool? lands = projection?.SimulateTrajectory( pRB.position, pRB.velocity);
                     
                 }
                 else
