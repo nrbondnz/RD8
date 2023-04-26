@@ -19,6 +19,7 @@ namespace TrajectoryObject
         [SerializeField] public GameObject ghostPlayer;
         private bool _projectionEnabled = false;
         private GameObject ghosty;
+        private GameObjectUtilities gameObjectUtilities;
         
         private Scene _simulationScene;
         private PhysicsScene _physicsScene;
@@ -63,8 +64,8 @@ namespace TrajectoryObject
             //CreatePhysicsScene();
             //_simBall = GameObject.FindObjectOfType<SimBall>();
             //lineRenderer = gameObject.GetComponent<LineRenderer>();
-            GameObjectUtilities gameObjectUtilities = gameObject.AddComponent<GameObjectUtilities>();
-            //ghosty = gameObjectUtilities.CreateNewInstanceOfGameObject(gameObject, "Ghosty");
+            gameObjectUtilities = gameObject.AddComponent<GameObjectUtilities>();
+            ghosty = gameObjectUtilities.CreateNewInstanceOfGameObject(gameObject, "ghosty");
         }
 
         /// <summary>
@@ -134,6 +135,10 @@ namespace TrajectoryObject
         /// <param name="velocity"></param>
         public bool SimulateTrajectory( Vector3 pos, Vector3 velocity)
         {
+            GameObjectUtilities gameObjectUtilities = gameObject.GetComponent<GameObjectUtilities>();
+            
+            ghosty.SetActive(true);
+            Debug.Log("ghosty : " + ghosty );
             //if (!_projectionEnabled || ballPrefab == null) return;
             bool landed = false;
             //
@@ -184,7 +189,7 @@ namespace TrajectoryObject
             }
             Destroy(ghostObj.gameObject);
             ghostPlayer.SetActive(false);
-            //Destroy(ghosty.gameObject);
+            ghosty.gameObject.SetActive(false);
             return landed;
         }
 

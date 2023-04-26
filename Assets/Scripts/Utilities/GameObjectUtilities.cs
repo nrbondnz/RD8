@@ -21,7 +21,9 @@ namespace Utilities
             {
                 if (!comp.GetType().Namespace.Equals("UnityEngine") )
                 {
+                    Destroy(comp);
                     Debug.Log("Bad : " + comp);
+                   
                 }
                 else
                 {
