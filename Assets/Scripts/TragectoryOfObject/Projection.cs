@@ -16,7 +16,7 @@ namespace TrajectoryObject
         [SerializeField] LineRenderer lineRenderer;
         [SerializeField] private int maxPhysicsFrameIterations = 100;
         [SerializeField] private Transform obstaclesParent;
-        [SerializeField] public GameObject ghostPlayer;
+        //[SerializeField] public GameObject ghostPlayer;
         private bool _projectionEnabled = false;
         private GameObject ghosty;
         private GameObjectUtilities gameObjectUtilities;
@@ -135,7 +135,7 @@ namespace TrajectoryObject
         /// <param name="velocity"></param>
         public bool SimulateTrajectory( Vector3 pos, Vector3 velocity)
         {
-            GameObjectUtilities gameObjectUtilities = gameObject.GetComponent<GameObjectUtilities>();
+            //GameObjectUtilities gameObjectUtilities = gameObject.GetComponent<GameObjectUtilities>();
             
             ghosty.SetActive(true);
             Debug.Log("ghosty : " + ghosty );
@@ -146,9 +146,9 @@ namespace TrajectoryObject
             posTemp.x = 1000.0f;
             posTemp.y = 1000.0f;
             posTemp.z = 1000.0f;
-            ghostPlayer.SetActive(true);
-            GameObject ghostObj = Instantiate(ghostPlayer, posTemp, Quaternion.identity);
-
+            //ghostPlayer.SetActive(true);
+            //GameObject ghostObj = Instantiate(ghostPlayer, posTemp, Quaternion.identity);
+            GameObject ghostObj = Instantiate(ghosty, posTemp, Quaternion.identity);
            
             SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
             ghostObj.gameObject.GetComponent<Rigidbody>().position = pos;
@@ -188,7 +188,7 @@ namespace TrajectoryObject
                 lineRenderer.SetPosition(1, pos);
             }
             Destroy(ghostObj.gameObject);
-            ghostPlayer.SetActive(false);
+            //ghostPlayer.SetActive(false);
             ghosty.gameObject.SetActive(false);
             return landed;
         }
