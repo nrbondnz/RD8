@@ -2,7 +2,7 @@ using System;
 using TrajectoryObject;
 using UnityEngine;
 
-namespace Player
+namespace TrajectoryObject
 {
     public class TrajectoryLineManager : MonoBehaviour
     {
@@ -28,7 +28,7 @@ namespace Player
 
        
 
-        public void DrawRayFromRigidBody(Player pPlayer)
+        public void DrawRayFromRigidBody(Player.Player pPlayer)
         {
             Rigidbody pRB = gameObject.GetComponent<Rigidbody>();
             //create a new pRay, it's center is the player position, it's direction is Vector3.Down

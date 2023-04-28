@@ -13,6 +13,7 @@ var searchData=
   ['collisionactionenum_10',['CollisionActionEnum',['../namespace_collision.html#a7c45cf11d52bc3377748bac70aebbadd',1,'Collision']]],
   ['collisionactionfactory_2ecs_11',['CollisionActionFactory.cs',['../_collision_action_factory_8cs.html',1,'']]],
   ['collisioneffectstrengthenum_12',['CollisionEffectStrengthEnum',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7',1,'Collision']]],
-  ['createphysicsscene_13',['CreatePhysicsScene',['../class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208',1,'TrajectoryObject::Projection']]],
-  ['currentwaypointgameobject_14',['CurrentWaypointGameObject',['../class_managers_1_1_waypoint_manager.html#af8d9b9b7fca66b44b07b7b8ed0d0274e',1,'Managers::WaypointManager']]]
+  ['createnewinstanceofgameobject_13',['CreateNewInstanceOfGameObject',['../class_utilities_1_1_game_object_utilities.html#a7724a4cd90f4618d48c4e11bc6871156',1,'Utilities::GameObjectUtilities']]],
+  ['createphysicsscene_14',['CreatePhysicsScene',['../class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208',1,'TrajectoryObject::Projection']]],
+  ['currentwaypointgameobject_15',['CurrentWaypointGameObject',['../class_managers_1_1_waypoint_manager.html#af8d9b9b7fca66b44b07b7b8ed0d0274e',1,'Managers::WaypointManager']]]
 ];

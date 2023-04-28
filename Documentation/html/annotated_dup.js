@@ -34,17 +34,18 @@ var annotated_dup =
     ] ],
     [ "Player", "namespace_player.html", [
       [ "Player", "class_player_1_1_player.html", "class_player_1_1_player" ],
-      [ "PlayerMovement", "class_player_1_1_player_movement.html", null ],
-      [ "TrajectoryLineManager", "class_player_1_1_trajectory_line_manager.html", "class_player_1_1_trajectory_line_manager" ]
+      [ "PlayerMovement", "class_player_1_1_player_movement.html", null ]
     ] ],
     [ "TrajectoryObject", "namespace_trajectory_object.html", [
       [ "Projection", "class_trajectory_object_1_1_projection.html", "class_trajectory_object_1_1_projection" ],
-      [ "SimBall", "class_trajectory_object_1_1_sim_ball.html", "class_trajectory_object_1_1_sim_ball" ]
+      [ "TrajectoryLineManager", "class_trajectory_object_1_1_trajectory_line_manager.html", "class_trajectory_object_1_1_trajectory_line_manager" ]
     ] ],
     [ "Utilities", "namespace_utilities.html", [
       [ "CameraFollow", "class_utilities_1_1_camera_follow.html", "class_utilities_1_1_camera_follow" ],
+      [ "GameObjectUtilities", "class_utilities_1_1_game_object_utilities.html", "class_utilities_1_1_game_object_utilities" ],
       [ "MoveOnAxis", "class_utilities_1_1_move_on_axis.html", null ],
       [ "StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", "class_utilities_1_1_starting_text_screen" ],
       [ "WinningLevel", "class_utilities_1_1_winning_level.html", null ]
-    ] ]
+    ] ],
+    [ "PrefabGameObject", "class_prefab_game_object.html", "class_prefab_game_object" ]
 ];

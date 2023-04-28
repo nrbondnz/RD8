@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>CarryOutAction()&#160;:&#160;<a class="el" href="class_key_1_1_key_action_controller.html#a254da34a859be802c08cd4140e3fcea9">Key.KeyActionController</a></li>
 <li>collisionAction&#160;:&#160;<a class="el" href="class_collision_1_1_collision_action_controller.html#af7814b9876b131f191e51e8e7742a0f6">Collision.CollisionActionController</a></li>
+<li>CreateNewInstanceOfGameObject()&#160;:&#160;<a class="el" href="class_utilities_1_1_game_object_utilities.html#a7724a4cd90f4618d48c4e11bc6871156">Utilities.GameObjectUtilities</a></li>
 <li>CreatePhysicsScene()&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208">TrajectoryObject.Projection</a></li>
 <li>CurrentWaypointGameObject()&#160;:&#160;<a class="el" href="class_managers_1_1_waypoint_manager.html#af8d9b9b7fca66b44b07b7b8ed0d0274e">Managers.WaypointManager</a></li>
 </ul>
@@ -109,7 +110,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>DoCollisionAction()&#160;:&#160;<a class="el" href="class_collision_1_1_attract_collision_action.html#a788a66f5b73e8f058ce2a9860eb84157">Collision.AttractCollisionAction</a>, <a class="el" href="class_collision_1_1_bounce_collision_action.html#a38efb2f08cfef25d320601b5e7d95264">Collision.BounceCollisionAction</a>, <a class="el" href="class_collision_1_1_death_collision_action.html#aad077cbbf80f2ecd43020f832bcef7f3">Collision.DeathCollisionAction</a>, <a class="el" href="interface_collision_1_1_i_collision_action.html#a88286040845768a8e05f9383de334db1">Collision.ICollisionAction</a>, <a class="el" href="class_collision_1_1_speed_change_collision_action.html#a75933476f2722478b03eb1fcf2e19949">Collision.SpeedChangeCollisionAction</a></li>
 <li>DoCollisionAreaExitAction()&#160;:&#160;<a class="el" href="class_collision_1_1_attract_collision_action.html#a96968660f6ba66f1453a703aaef9e1bc">Collision.AttractCollisionAction</a>, <a class="el" href="class_collision_1_1_bounce_collision_action.html#a2521f69ca99cd88eb35047938c449f76">Collision.BounceCollisionAction</a>, <a class="el" href="class_collision_1_1_death_collision_action.html#a74dede4c77e34a6515b994760a12c897">Collision.DeathCollisionAction</a>, <a class="el" href="interface_collision_1_1_i_collision_action.html#a325eeba8b0a9845290d7d15b5cda8cb2">Collision.ICollisionAction</a>, <a class="el" href="class_collision_1_1_speed_change_collision_action.html#a65783cb1457c052d48cc13bb15f7b8db">Collision.SpeedChangeCollisionAction</a></li>
 <li>DoKeyAction()&#160;:&#160;<a class="el" href="interface_key_1_1_i_key_action.html#ace00ab05ac206170d55de753a708d5fe">Key.IKeyAction</a>, <a class="el" href="class_key_1_1_open_key_action.html#a59a82370fe958bab5aa5737451dc685d">Key.OpenKeyAction</a>, <a class="el" href="class_key_1_1_reveal_key_action.html#a94a24735d6ae213bfe8b1bbe2fc1cdfb">Key.RevealKeyAction</a>, <a class="el" href="class_key_1_1_walkthrough_key_action.html#a96e41b09ded03aa102490c7babd62827">Key.WalkthroughKeyAction</a></li>
-<li>DrawRayFromRigidBody()&#160;:&#160;<a class="el" href="class_player_1_1_trajectory_line_manager.html#a2d5dcc64753e7fe3e742ee81d00f97d1">Player.TrajectoryLineManager</a></li>
+<li>DrawRayFromRigidBody()&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_trajectory_line_manager.html#a5a95be5c057c41a9e161e6f0f4cbca6a">TrajectoryObject.TrajectoryLineManager</a></li>
 </ul>
 
 
@@ -144,11 +145,10 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>ImpossiblePressed()&#160;:&#160;<a class="el" href="class_utilities_1_1_starting_text_screen.html#a7966382b0186922bd6e545d2b186c67b">Utilities.StartingTextScreen</a></li>
-<li>Init()&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_sim_ball.html#a11123858759a0a0e5b7dad09068f8710">TrajectoryObject.SimBall</a></li>
 <li>InitGame()&#160;:&#160;<a class="el" href="class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca">Managers.GamePlayManager</a></li>
 <li>IsGrounded&#160;:&#160;<a class="el" href="class_player_1_1_player.html#a99be32aa8d95a69db0a73394d102ff28">Player.Player</a></li>
 <li>IsJumpButtonPressed&#160;:&#160;<a class="el" href="class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483">Player.Player</a></li>
-<li>isTrajectoryLine&#160;:&#160;<a class="el" href="class_player_1_1_trajectory_line_manager.html#a5a29b109acfef3425eff1f24892859b5">Player.TrajectoryLineManager</a></li>
+<li>isTrajectoryLine&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_trajectory_line_manager.html#a90e1d437b08137ad300af93ab51996b4">TrajectoryObject.TrajectoryLineManager</a></li>
 </ul>
 
 
@@ -160,6 +160,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>LastLevel&#160;:&#160;<a class="el" href="class_managers_1_1_game_state_manager.html#a196ef2da5263c937038d88d569fa9325">Managers.GameStateManager</a></li>
 <li>Lives&#160;:&#160;<a class="el" href="struct_managers_1_1_game_status.html#a217f141cb4fc611f15c904ef4e43c0b1">Managers.GameStatus</a></li>
+</ul>
+
+
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>myPrefab&#160;:&#160;<a class="el" href="class_prefab_game_object.html#a7cca55b749a8a6dac8a15d083a908499">PrefabGameObject</a></li>
 </ul>
 
 
@@ -181,6 +186,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>RemoveComponentsWithJustScripts()&#160;:&#160;<a class="el" href="class_utilities_1_1_game_object_utilities.html#adc903eabbf59f48e77a9da13a332e3ff">Utilities.GameObjectUtilities</a></li>
 <li>RemoveLife()&#160;:&#160;<a class="el" href="class_managers_1_1_game_play_manager.html#af0a5b0fe596164a0d14870b16ffb070c">Managers.GamePlayManager</a>, <a class="el" href="struct_managers_1_1_game_status.html#aa1c846b633f5cfd53e5e91b47aa500c0">Managers.GameStatus</a></li>
 <li>RemoveLifeAndResetScene()&#160;:&#160;<a class="el" href="class_managers_1_1_game_reset_manager.html#a41fc068af42ae846d0c396cbfd91ea6b">Managers.GameResetManager</a></li>
 <li>RemoveTrajectoryLine()&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_projection.html#aa07b501fa4c01ab618f53de42fafee0f">TrajectoryObject.Projection</a></li>
@@ -192,8 +198,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>SceneNum&#160;:&#160;<a class="el" href="class_managers_1_1_game_state_manager.html#a8c0c375f4e55a62a61a058f95a741943">Managers.GameStateManager</a></li>
-<li>SimulateTrajectory()&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_projection.html#a52c0214860cb29a1f6e1638b78df7053">TrajectoryObject.Projection</a></li>
-<li>Start()&#160;:&#160;<a class="el" href="class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb">Managers.GamePlayManager</a>, <a class="el" href="class_managers_1_1_waypoint_manager.html#af383db5d6035da06a4cfc0b9caf07dca">Managers.WaypointManager</a>, <a class="el" href="class_player_1_1_trajectory_line_manager.html#a0b797afb276b1f415af8f6bcd6015b1c">Player.TrajectoryLineManager</a></li>
+<li>SimulateTrajectory()&#160;:&#160;<a class="el" href="class_trajectory_object_1_1_projection.html#ab480f9b85621f6b1fce7a3041d948ce7">TrajectoryObject.Projection</a></li>
+<li>Start()&#160;:&#160;<a class="el" href="class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb">Managers.GamePlayManager</a>, <a class="el" href="class_managers_1_1_waypoint_manager.html#af383db5d6035da06a4cfc0b9caf07dca">Managers.WaypointManager</a>, <a class="el" href="class_trajectory_object_1_1_trajectory_line_manager.html#a18987a5846ec7e46ef57139ced3139d9">TrajectoryObject.TrajectoryLineManager</a></li>
 <li>Started&#160;:&#160;<a class="el" href="struct_managers_1_1_game_status.html#aefbd67b1db08f63f88d6f788c9f9aff7">Managers.GameStatus</a></li>
 </ul>
 

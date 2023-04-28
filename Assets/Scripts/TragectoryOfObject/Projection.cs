@@ -8,7 +8,7 @@ namespace TrajectoryObject
 {
 
     /// <summary>
-    ///     This class creates a new scene as a copy of the current scene then it projects the
+    /// This class creates a new scene as a copy of the current scene then it projects the
     /// player into the scene
     /// </summary>
     public class Projection : MonoBehaviour
@@ -26,6 +26,9 @@ namespace TrajectoryObject
         
         private readonly Dictionary<Transform, Transform> _spawnedObjects = new Dictionary<Transform, Transform>();
 
+        /// <summary>
+        /// Gismo to show the developer if the object will not function correctly at run time
+        /// </summary>
         private void OnDrawGizmos()
         {
             if ( (_projectionEnabled && obstaclesParent == null ))
@@ -34,30 +37,10 @@ namespace TrajectoryObject
                 Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
             }
         }
-        
-        /**private static Projection _instance;
 
-        private void Awake()
-        {
-            if (_instance != null)
-            {
-                Debug.Log("Projection Trying second Awake");
-                Destroy(gameObject);
-                return;
-            }
-            Debug.Log("Projection Awake");
-            _instance = this as Projection;
-
-            DontDestroyOnLoad(gameObject);
-        }
-        
-        public static Projection GetInstance()
-        {
-            return _instance;
-        }**/
-        
         /// <summary>
-        /// 
+        /// This start creates a 'ghosty' object that is a copy of the game object being tracked so it can bounce around
+        /// in some limited future in a simulated environment
         /// </summary>
         private void Start()
         {
@@ -69,7 +52,7 @@ namespace TrajectoryObject
         }
 
         /// <summary>
-        ///    Create a new projection by creating a copy of the current scene
+        /// Create a new projection by creating a copy of the current scene
         /// </summary>
         public void CreatePhysicsScene()
         {
@@ -87,7 +70,8 @@ namespace TrajectoryObject
         }
 
         /// <summary>
-        /// Adds a object in the sim scene so the player movement can interact with it
+        /// Adds objects in the sim scene so the player movement can predict what would happen(minus effects)
+        /// 
         /// </summary>
         /// <param name="mySimScene"></param>
         /// <param name="obstaclesPar"></param>
@@ -131,9 +115,8 @@ namespace TrajectoryObject
         /// <summary>
         /// Simulates the sim balls movement given its position and velocity
         /// </summary>
-        /// <param name="realGameObject"></param>
-        /// <param name="pos"></param>
-        /// <param name="velocity"></param>
+        /// <param name="pos">The position of the object being tracked</param>
+        /// <param name="velocity">The current velocity(and direction) of the object being tracked</param>
         public bool SimulateTrajectory( Vector3 pos, Vector3 velocity)
         {
             //GameObjectUtilities gameObjectUtilities = gameObject.GetComponent<GameObjectUtilities>();
@@ -172,7 +155,7 @@ namespace TrajectoryObject
             }
 
             Ray ray = new Ray(ghostObj.gameObject.transform.position, Vector3.down);
-            if ( Physics.Raycast(ray, out var hitInfo, 4.0f))
+            if ( Physics.Raycast(ray, out var hitInfo, 7.0f))
             {
                 //Debug.Log("hitInfo : " + hitInfo);
                 lineRenderer.startColor = Color.green;

@@ -1,4 +1,4 @@
 var _trajectory_line_manager_8cs =
 [
-    [ "Player.TrajectoryLineManager", "class_player_1_1_trajectory_line_manager.html", "class_player_1_1_trajectory_line_manager" ]
+    [ "TrajectoryObject.TrajectoryLineManager", "class_trajectory_object_1_1_trajectory_line_manager.html", "class_trajectory_object_1_1_trajectory_line_manager" ]
 ];
