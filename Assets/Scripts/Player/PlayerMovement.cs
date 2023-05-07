@@ -76,7 +76,7 @@ namespace Player
 
             foreach (Touch touch in Input.touches)
             {
-                if (touch.phase == TouchPhase.Began)
+                if (touch.phase.HumanName() == TouchPhase.Began.HumanName())
                 {
                     _player.IsJumpButtonPressed = true;
                 }

@@ -8,13 +8,13 @@ namespace Utilities
     /// </summary>
     public class GameObjectUtilities : MonoBehaviour
     {
-        public GameObject CreateNewInstanceOfGameObject(GameObject originGO, String newObjectName,
+        public GameObject CreateNewInstanceOfGameObject(GameObject originGo, String newObjectName,
             bool removeActiveScripts = true)
         {
-            GameObject retObject = Instantiate(originGO, originGO.gameObject.transform.position, Quaternion.identity);
+            GameObject retObject = Instantiate(originGo, originGo.gameObject.transform.position, Quaternion.identity);
             retObject.name = newObjectName;
             if ( removeActiveScripts ) { RemoveComponentsWithJustScripts(retObject);}
-            retObject.gameObject.tag = newObjectName;
+            //retObject.gameObject.tag = newObjectName;
             return retObject;
         }
 
