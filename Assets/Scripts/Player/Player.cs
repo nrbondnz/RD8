@@ -1,4 +1,6 @@
 
+using System;
+
 namespace Player
 {
     public class Player
@@ -37,6 +39,11 @@ namespace Player
         {
             get => _goingForwards;
             set => _goingForwards = value;
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(_isJumpButtonPressed)}: {_isJumpButtonPressed}, {nameof(_isGrounded)}: {_isGrounded}, {nameof(_goingForwards)}: {_goingForwards}, {nameof(_hozInput)}: {_hozInput}, {nameof(_vertInput)}: {_vertInput}, {nameof(HozInput)}: {HozInput}, {nameof(VertInput)}: {VertInput}, {nameof(IsJumpButtonPressed)}: {IsJumpButtonPressed}, {nameof(IsGrounded)}: {IsGrounded}, {nameof(GoingForwards)}: {GoingForwards}";
         }
     }
 }
