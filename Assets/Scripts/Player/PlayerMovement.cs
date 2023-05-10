@@ -28,7 +28,19 @@ namespace Player
         [FormerlySerializedAs("platformPower")] [SerializeField] private float mobileMultiplier = 2.5f;
         private GameObject _mainCamera;
         private bool _isGhost;
-        private readonly Player _player = new();
+        private Player _player = new();
+        
+
+        public void Awake()
+        {
+            Actions.OnPlayerChanged += UpdatePlayer;
+        }
+
+        public void UpdatePlayer(Player pPlayer)
+        {
+            _player = pPlayer;
+            Debug.Log("Player : " + _player.ToString());
+        }
         
         // Start is called before the first frame update
         void Start()
@@ -48,7 +60,7 @@ namespace Player
             GamePlayManager.GetInstance().UpdateTimeRemaining();
             // d -> 1.0f, a -> -1.0f
             // TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y
-            _player.HozInput = Input.GetAxis("Horizontal");
+            /*_player.HozInput = Input.GetAxis("Horizontal");
             _player.VertInput = Input.GetAxis("Vertical");
 
             if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
@@ -62,31 +74,13 @@ namespace Player
 
             }
 
-            if ((!_player.GoingForwards) && (_player.VertInput == 1) && (_rb.velocity.magnitude > 6.0f))
-            {
-                _player.GoingForwards = true;
-                Actions.OnPlayerChanged(_player);
-            }
-            else if ((_player.GoingForwards) && (_player.VertInput == -1))
-
-            {
-                _player.GoingForwards = false;
-                Actions.OnPlayerChanged(_player);
-            }
-
             foreach (Touch touch in Input.touches)
             {
                 if (touch.phase.HumanName() == TouchPhase.Began.HumanName())
                 {
                     _player.IsJumpButtonPressed = true;
                 }
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _player.IsJumpButtonPressed = true;
-            }
+            }*/
 
         }
 

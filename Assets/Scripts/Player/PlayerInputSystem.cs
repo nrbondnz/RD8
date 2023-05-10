@@ -43,15 +43,13 @@ namespace Player
             if ((!_player.GoingForwards) && (_player.VertInput == 1) && (_rb.velocity.magnitude > 6.0f))
             {
                 _player.GoingForwards = true;
-                Actions.OnPlayerChanged(_player);
             }
             else if ((_player.GoingForwards) && (_player.VertInput == -1))
 
             {
                 _player.GoingForwards = false;
-                Actions.OnPlayerChanged(_player);
             }
-            //Actions.OnPlayerChanged(_player);
+            Actions.OnPlayerChanged(_player);
             Debug.Log("Player : " + _player);
         }
         
