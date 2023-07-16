@@ -92,14 +92,13 @@ namespace Player
             right.y = 0.0f;
             forward = forward.normalized;
             right = right.normalized;
-            Vector2 vector2 = _player.getNormalisedHozVert();
-            Vector3 forwardRelativeVerticalInput = forward * (vector2.x * speed);
-            Vector3 rightRelativeHorizontalInput = right * (vector2.y * speed);
+            Vector3 forwardRelativeVerticalInput = forward * (_player.VertInput * speed);
+            Vector3 rightRelativeHorizontalInput = right * (_player.HozInput * speed);
             //
             Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
             _rb.AddForce(playerMovement, ForceMode.Acceleration);
 
-            trajectoryLineManager?.DrawRayFromRigidBody(_player);
+            trajectoryLineManager.DrawRayFromRigidBody(_player);
 
             if (_player.IsJumpButtonPressed && _player.IsGrounded)
             {

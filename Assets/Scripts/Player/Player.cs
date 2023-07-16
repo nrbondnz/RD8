@@ -1,6 +1,5 @@
 
 using System;
-using UnityEngine;
 
 namespace Player
 {
@@ -40,11 +39,6 @@ namespace Player
         {
             get => _goingForwards;
             set => _goingForwards = value;
-        }
-
-        public Vector2 getNormalisedHozVert()
-        {
-            return new Vector2(this._vertInput, this._hozInput).normalized;
         }
 
         public override string ToString()

@@ -103,15 +103,59 @@ public partial class @CreateInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""375afbbe-9a15-47f8-b5c3-c17e604345ec"",
-                    ""path"": ""<Touchscreen>/delta"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""a41ef25e-3bd1-4364-b66c-7ae3d8cbae0f"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""touch"",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e1951660-ba68-4b10-b0fc-2614f50c62e7"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b5b763a0-9dc4-4bda-afd9-0ff279f6a560"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""41e5f496-0587-4a8c-8cd6-3d2586e3ab44"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""0e1e17cb-b391-4114-bc98-42f6ab228556"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -120,6 +164,17 @@ public partial class @CreateInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c216259-fd75-4406-9761-f62260f804a7"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -140,12 +195,12 @@ public partial class @CreateInputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""touch"",
-            ""bindingGroup"": ""touch"",
+            ""name"": ""Mobile"",
+            ""bindingGroup"": ""Mobile"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Touchscreen>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -276,13 +331,13 @@ public partial class @CreateInputActions: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    private int m_touchSchemeIndex = -1;
-    public InputControlScheme touchScheme
+    private int m_MobileSchemeIndex = -1;
+    public InputControlScheme MobileScheme
     {
         get
         {
-            if (m_touchSchemeIndex == -1) m_touchSchemeIndex = asset.FindControlSchemeIndex("touch");
-            return asset.controlSchemes[m_touchSchemeIndex];
+            if (m_MobileSchemeIndex == -1) m_MobileSchemeIndex = asset.FindControlSchemeIndex("Mobile");
+            return asset.controlSchemes[m_MobileSchemeIndex];
         }
     }
     public interface IPlayerActions
