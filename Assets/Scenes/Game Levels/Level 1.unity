@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43819863, g: 0.48621672, b: 0.56649154, a: 1}
+  m_IndirectSpecularColor: {r: 0.435751, g: 0.48306292, b: 0.5639966, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,8 +278,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8599098384314487128, guid: c4213484e72d34c49a15c4937743e3d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1621865}
   m_SourcePrefab: {fileID: 100100000, guid: c4213484e72d34c49a15c4937743e3d9, type: 3}
+--- !u!1 &1621864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8599098384314487128, guid: c4213484e72d34c49a15c4937743e3d9, type: 3}
+  m_PrefabInstance: {fileID: 1621863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 50
+  m_DynamicOriginRange: 100
+  m_ControlPath: 
+  m_Behaviour: 0
+  m_UseIsolatedInputActions: 0
+  m_PointerDownAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_PointerMoveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &17206816
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 37833855}
-  maxPhysicsFrameIterations: 70
-  obstaclesParent: {fileID: 17206817}
+  maxPhysicsFrameIterations: 50
+  obstaclesParent: {fileID: 0}
 --- !u!114 &37833854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,11 +608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090299, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.189916
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090299, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 8860765929989090299, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -843,11 +886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165608933552718586, guid: 28e48ef1c75e0c64884b2ce48a6cd396, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 1165608933552718586, guid: 28e48ef1c75e0c64884b2ce48a6cd396, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.43
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 1165608933552718586, guid: 28e48ef1c75e0c64884b2ce48a6cd396, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1228,9 +1271,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6262113473573452854, guid: 863c6fe9b9e5d024f83567955a0e51d7, type: 3}
+      propertyPath: lineRenderer
+      value: 
+      objectReference: {fileID: 37833855}
+    - target: {fileID: 6262113473573452854, guid: 863c6fe9b9e5d024f83567955a0e51d7, type: 3}
       propertyPath: obstaclesParent
       value: 
       objectReference: {fileID: 17206817}
+    - target: {fileID: 6557420415737076836, guid: 863c6fe9b9e5d024f83567955a0e51d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
