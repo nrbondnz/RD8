@@ -92,8 +92,8 @@ namespace Player
             right.y = 0.0f;
             forward = forward.normalized;
             right = right.normalized;
-            Vector3 forwardRelativeVerticalInput = forward * (_player.VertInput * speed);
-            Vector3 rightRelativeHorizontalInput = right * (_player.HozInput * speed);
+            Vector3 forwardRelativeVerticalInput = forward * (mobileMultiplier * (_player.VertInput * speed));
+            Vector3 rightRelativeHorizontalInput = right * (mobileMultiplier * (_player.HozInput * speed));
             //
             Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
             _rb.AddForce(playerMovement, ForceMode.Acceleration);
