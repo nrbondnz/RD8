@@ -77,9 +77,13 @@ namespace Managers
         /// Resets the scene and removes a life from the GamePlayManager
         /// </summary>
         public void ResetScene()
+        
         {
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
+            Player.Player player = Player.Player.getInstance();
+            player.HozInput = 0.0f;
+            player.VertInput = 0.0f;
             GamePlayManager.GetInstance().RemoveLife();
         }
     }

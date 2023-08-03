@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 164552746}
   - component: {fileID: 164552745}
   m_Layer: 5
-  m_Name: Image
+  m_Name: stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,15 +268,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164552743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1.2784375, y: 1.2784375, z: 1.2784376}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000030517578}
+  m_LocalScale: {x: 1.2784375, y: 1.2784376, z: 1.2784376}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 669621245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 130, y: 111}
+  m_AnchoredPosition: {x: 130.00006, y: 110.999954}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164552745
@@ -735,8 +735,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525012771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2784375, y: 1.2784375, z: 1.2784376}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000030517578}
+  m_LocalScale: {x: 1.2784375, y: 1.2784376, z: 1.2784376}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 761498865}
@@ -744,7 +744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -158.5, y: 98.8}
+  m_AnchoredPosition: {x: -158.5, y: 98.79999}
   m_SizeDelta: {x: 160, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525012773
@@ -971,7 +971,7 @@ Canvas:
   m_GameObject: {fileID: 669621241}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1000,7 +1000,7 @@ RectTransform:
   - {fileID: 525012772}
   - {fileID: 164552744}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.056}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1192,6 +1192,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6f1f8e8bbd461a8851b18ae098c671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &840712602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840712597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ee20df0c2cc8f410d80dcbb7d85b6b21, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &841132140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1514,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8860765929989090302, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 840712601}
+    - targetCorrespondingSourceObject: {fileID: 8860765929989090302, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 840712602}
   m_SourcePrefab: {fileID: 100100000, guid: 47003c699e89c4ba28540179204b963b, type: 3}
 --- !u!1 &1814770423
 GameObject:

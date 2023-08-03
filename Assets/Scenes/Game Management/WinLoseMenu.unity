@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.446523, g: 0.49598944, b: 0.5730523, a: 1}
+  m_IndirectSpecularColor: {r: 0.44920743, g: 0.49927813, b: 0.57571566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -411,7 +408,7 @@ MonoBehaviour:
   easyButton: {fileID: 1375722077}
   hardButton: {fileID: 107849686}
   impossibleButton: {fileID: 1347789806}
-  startLevel: 1
+  startLevel: 6
 --- !u!4 &227502534
 Transform:
   m_ObjectHideFlags: 0
