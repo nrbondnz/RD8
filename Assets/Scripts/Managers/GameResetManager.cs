@@ -11,6 +11,9 @@ namespace Managers
     {
         private static GameResetManager _instance;
 
+        
+        
+
         /// <summary>
         /// Initializes a Singleton of the GameResetManager class
         /// </summary>

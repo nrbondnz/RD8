@@ -23,6 +23,8 @@ namespace TrajectoryObject
             {
                 Gizmos.color = Color.red;
                 Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+                Debug.LogError("Line Renderer : " + lineRenderer);
+                Debug.LogError("projection is on : " + isTrajectoryLine + " projection : " + projection);
             }
         }
 

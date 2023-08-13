@@ -15,6 +15,22 @@ namespace Managers
         private int _currentWaypoint = 0;
         private int _lastWaypoint = 0;
 
+        private void OnDrawGizmos()
+        {
+            if ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0) )
+            {
+                Gizmos.color = Color.green;
+                //Gizmos.DrawRay(transform.position, WaypointManager.position - transform.position);
+            }
+            else
+            {
+                Gizmos.color = Color.red;
+                Debug.LogWarning("WaypointManager : elements not set");
+                
+            }
+            Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+        }
+
         public void Start()
         {
             if (waypoints is not null)

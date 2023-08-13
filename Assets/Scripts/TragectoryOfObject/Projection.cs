@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using GameObject = UnityEngine.GameObject;
 
 namespace TrajectoryObject
 {
@@ -13,13 +15,14 @@ namespace TrajectoryObject
     /// </summary>
     public class Projection : MonoBehaviour
     {
-        [SerializeField] LineRenderer lineRenderer;
+        private LineRenderer _lineRenderer;
         [SerializeField] private int maxPhysicsFrameIterations = 70;
         [SerializeField] private Transform obstaclesParent;
         //[SerializeField] public GameObject ghostPlayer;
         private bool _projectionEnabled = false;
         private GameObject ghosty;
         private GameObjectUtilities gameObjectUtilities;
+        private GameObject playerGameObject;
         
         private Scene _simulationScene;
         private PhysicsScene _physicsScene;
@@ -31,10 +34,11 @@ namespace TrajectoryObject
         /// </summary>
         private void OnDrawGizmos()
         {
-            if ( (_projectionEnabled && obstaclesParent == null ))
+            if ( (_lineRenderer.IsUnityNull()) || (_projectionEnabled && obstaclesParent == null ) )
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
+                Gizmos.DrawSphere(playerGameObject.transform.position + Vector3.up * 2, 0.5f);
+                Debug.LogWarning("Projection missing scene elements");
             }
         }
 
@@ -46,9 +50,10 @@ namespace TrajectoryObject
         {
             //CreatePhysicsScene();
             //_simBall = GameObject.FindObjectOfType<SimBall>();
-            //lineRenderer = gameObject.GetComponent<LineRenderer>();
+            playerGameObject = GameObject.FindWithTag("Player");
+            _lineRenderer = playerGameObject.GetComponent<LineRenderer>();
             gameObjectUtilities = gameObject.AddComponent<GameObjectUtilities>();
-            ghosty = gameObjectUtilities.CreateNewInstanceOfGameObject(gameObject, "ghosty");
+            ghosty = gameObjectUtilities.CreateNewInstanceOfGameObject(playerGameObject, "ghosty");
         }
 
         /// <summary>
@@ -139,13 +144,13 @@ namespace TrajectoryObject
             
             //ghostObj.Init(velocity);
             ghostObj.gameObject.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
-            lineRenderer.enabled = true;
-            lineRenderer.positionCount = maxPhysicsFrameIterations;
+            _lineRenderer.enabled = true;
+            _lineRenderer.positionCount = maxPhysicsFrameIterations;
 
             for (var i = 0; i < maxPhysicsFrameIterations; i++)
             {
                 _physicsScene.Simulate(Time.fixedDeltaTime);
-                lineRenderer.SetPosition(i, ghostObj.gameObject.transform.position);
+                _lineRenderer.SetPosition(i, ghostObj.gameObject.transform.position);
                 //Debug.Log("pos: " + i + " @ " + transform.position);
                 /*Ray ray2 = new Ray(ghostObj.transform.position, Vector3.down);
                 if (Physics.Raycast(ray2, out var hitInfo2, 1.0f))
@@ -158,18 +163,18 @@ namespace TrajectoryObject
             if ( Physics.Raycast(ray, out var hitInfo, 7.0f))
             {
                 //Debug.Log("hitInfo : " + hitInfo);
-                lineRenderer.startColor = Color.green;
-                lineRenderer.endColor = Color.cyan;
-                lineRenderer.SetPosition(1, pos);
+                _lineRenderer.startColor = Color.green;
+                _lineRenderer.endColor = Color.cyan;
+                _lineRenderer.SetPosition(1, pos);
             }
             else
             {
                 //Debug.Log("false hitInfo : " + hitInfo);
-                lineRenderer.startColor = Color.red;
-                lineRenderer.endColor = Color.black;
+                _lineRenderer.startColor = Color.red;
+                _lineRenderer.endColor = Color.black;
                 //Vector3 pos = ghostObj.transform.position;
                 //pos.y = pos.y - 15.0f; 
-                lineRenderer.SetPosition(1, pos);
+                _lineRenderer.SetPosition(1, pos);
             }
             Destroy(ghostObj.gameObject);
             //ghostPlayer.SetActive(false);
@@ -182,7 +187,7 @@ namespace TrajectoryObject
         /// </summary>
         public void RemoveTrajectoryLine()
         {
-            lineRenderer.enabled = false;
+            _lineRenderer.enabled = false;
         }
     }
 }

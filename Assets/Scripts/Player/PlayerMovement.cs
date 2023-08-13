@@ -39,7 +39,7 @@ namespace Player
         public void UpdatePlayer(Player pPlayer)
         {
             _player = pPlayer;
-            Debug.Log("Player : " + _player.ToString());
+            Debug.Log("Player x : " + _player.HozInput + ", y " + _player.VertInput);
         }
         
         // Start is called before the first frame update
@@ -58,30 +58,7 @@ namespace Player
         void Update()
         {
             GamePlayManager.GetInstance().UpdateTimeRemaining();
-            // d -> 1.0f, a -> -1.0f
-            // TODO does not really mean this to the player, they are looking at the ball, so its ball change not x and y
-            /*_player.HozInput = Input.GetAxis("Horizontal");
-            _player.VertInput = Input.GetAxis("Vertical");
-
-            if ((Input.acceleration.x > 0.1) || (Input.acceleration.x < -0.1))
-            {
-                _player.HozInput = Input.acceleration.x * mobileMultiplier;
-            }
-
-            if ((Input.acceleration.y > 0.1) || (Input.acceleration.y < -0.1))
-            {
-                _player.VertInput = Input.acceleration.y * mobileMultiplier;
-
-            }
-
-            foreach (Touch touch in Input.touches)
-            {
-                if (touch.phase.HumanName() == TouchPhase.Began.HumanName())
-                {
-                    _player.IsJumpButtonPressed = true;
-                }
-            }*/
-
+           
         }
 
         private void FixedUpdate()
@@ -96,6 +73,8 @@ namespace Player
             Vector3 rightRelativeHorizontalInput = right * (mobileMultiplier * (_player.HozInput * speed));
             //
             Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
+            Debug.Log("forward : " + forwardRelativeVerticalInput + ", right : " + rightRelativeHorizontalInput);
+            Debug.Log("Combined : " + playerMovement);
             _rb.AddForce(playerMovement, ForceMode.Acceleration);
 
             trajectoryLineManager.DrawRayFromRigidBody(_player);
