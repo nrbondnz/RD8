@@ -17,7 +17,7 @@ namespace TrajectoryObject
     {
         private LineRenderer _lineRenderer;
         [SerializeField] private int maxPhysicsFrameIterations = 70;
-        [SerializeField] private Transform obstaclesParent;
+        private Transform obstaclesParent;
         //[SerializeField] public GameObject ghostPlayer;
         private bool _projectionEnabled = false;
         private GameObject ghosty;
@@ -54,6 +54,14 @@ namespace TrajectoryObject
             _lineRenderer = playerGameObject.GetComponent<LineRenderer>();
             gameObjectUtilities = gameObject.AddComponent<GameObjectUtilities>();
             ghosty = gameObjectUtilities.CreateNewInstanceOfGameObject(playerGameObject, "ghosty");
+            try
+            {
+                obstaclesParent = GameObject.FindWithTag("SceneElements").transform;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("SceneElements tag not found in objects in scene : " + e);
+            }
         }
 
         /// <summary>
