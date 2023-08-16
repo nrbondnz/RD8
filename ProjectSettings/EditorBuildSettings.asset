@@ -29,5 +29,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Support Levels/Test Level.unity
     guid: 987eb71157d80b24ca6b0b3c6cb603f7
+  - enabled: 0
+    path: Assets/Scenes/Game Levels/Lavel 7.unity
+    guid: 5e57710efaacbe34294b4676295ce288
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level 7.unity
+    guid: e091e48f68051314a866782650955073
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
