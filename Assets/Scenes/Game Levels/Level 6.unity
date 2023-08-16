@@ -322,6 +322,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7660726682753258919, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 397421651}
+    - targetCorrespondingSourceObject: {fileID: 7660726682753258919, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 397421657}
   m_SourcePrefab: {fileID: 100100000, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
 --- !u!1 &397421650 stripped
 GameObject:
@@ -345,6 +348,19 @@ MonoBehaviour:
   isActionStarted: 0
   isReveal: 0
   keyActionEnumEnum: 1
+--- !u!114 &397421657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397421650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c77c4ff26ba15847928195b2c7712b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAllowedToWaypoint: 5
 --- !u!1 &417782582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,13 +1446,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7660726682753258919, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610532854}
   m_SourcePrefab: {fileID: 100100000, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
 --- !u!1 &1610532848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7660726682753258919, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
   m_PrefabInstance: {fileID: 1610532847}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610532854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610532848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c77c4ff26ba15847928195b2c7712b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAllowedToWaypoint: 25
 --- !u!1 &1657452181
 GameObject:
   m_ObjectHideFlags: 0

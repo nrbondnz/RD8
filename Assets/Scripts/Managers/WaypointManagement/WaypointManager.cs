@@ -50,11 +50,11 @@ namespace Managers
         public void setTimeAllowedToWaypoint()
         {
             GameObject currentWaypoint = CurrentWaypointGameObject();
-            if (currentWaypoint.IsConvertibleTo<IKeyTimeAllowedToWaypoint>(currentWaypoint))
+            if (currentWaypoint.IsConvertibleTo<ITimeAllowedToWaypoint>(currentWaypoint))
             {
-                Debug.Log("GameObject on waypoint implements IKeyTimeAllowedToWaypoint");
-                IKeyTimeAllowedToWaypoint timeAllowedToWaypoint =
-                    Utilities.GameObjectUtilities.KeyTimeAllowedToWaypointComponent(currentWaypoint);
+                Debug.Log("GameObject on waypoint implements ITimeAllowedToWaypoint");
+                ITimeAllowedToWaypoint timeAllowedToWaypoint =
+                    Utilities.GameObjectUtilities.TimeAllowedToWaypointComponent(currentWaypoint);
                 if (( ! timeAllowedToWaypoint.IsUnityNull() ) &&
                     timeAllowedToWaypoint.TimeAllowedToWaypoint() > 0.0)
                 {

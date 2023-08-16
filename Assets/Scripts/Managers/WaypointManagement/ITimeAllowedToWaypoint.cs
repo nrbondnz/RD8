@@ -1,6 +1,6 @@
 namespace Key
 {
-    public interface IKeyTimeAllowedToWaypoint
+    public interface ITimeAllowedToWaypoint
     {
         public float TimeAllowedToWaypoint();
     }

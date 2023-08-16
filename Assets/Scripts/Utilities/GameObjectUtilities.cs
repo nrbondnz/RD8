@@ -47,9 +47,9 @@ namespace Utilities
             return gameObject.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
         }
         
-        public static IKeyTimeAllowedToWaypoint KeyTimeAllowedToWaypointComponent(GameObject gameObject)
+        public static ITimeAllowedToWaypoint TimeAllowedToWaypointComponent(GameObject gameObject)
         {
-            return (IKeyTimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<IKeyTimeAllowedToWaypoint>(gameObject);
+            return (ITimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<ITimeAllowedToWaypoint>(gameObject);
 
     }
     }

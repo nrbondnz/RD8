@@ -8,15 +8,13 @@ using UnityEngine;
 
 namespace key
 {
-    public class Key : MonoBehaviour, IKeyTimeAllowedToWaypoint
+    public class Key : MonoBehaviour
     {
         [SerializeField] KeyActionController keyActionController;
         [SerializeField] private float keyRotationSpeed = 3;
         [SerializeField] WaypointManager waypointManager;
 
-        [SerializeField] private float timeToWaypoint = 0.0f;
 
-      
 
         private void OnTriggerEnter(Collider other)
         {
@@ -47,10 +45,6 @@ namespace key
                 Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
             }
         }
-
-        public float TimeAllowedToWaypoint()
-        {
-            return this.timeToWaypoint;
-        }
+        
     }
 }
