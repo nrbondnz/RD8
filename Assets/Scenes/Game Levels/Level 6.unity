@@ -1372,6 +1372,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7660726682753258918, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
+      propertyPath: timeToWaypoint
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660726682753258918, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
       propertyPath: waypointManager
       value: 
       objectReference: {fileID: 889618204}

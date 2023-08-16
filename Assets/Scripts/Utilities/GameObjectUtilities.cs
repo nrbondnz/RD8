@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Key;
 using UnityEngine;
 
 namespace Utilities
@@ -40,5 +42,15 @@ namespace Utilities
                 }
             }
         }
+        public static Component GetComponentOfType<T>(GameObject gameObject)
+        {
+            return gameObject.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
+        }
+        
+        public static IKeyTimeAllowedToWaypoint KeyTimeAllowedToWaypointComponent(GameObject gameObject)
+        {
+            return (IKeyTimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<IKeyTimeAllowedToWaypoint>(gameObject);
+
+    }
     }
 }

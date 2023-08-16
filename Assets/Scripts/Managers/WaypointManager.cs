@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Key;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -13,8 +14,14 @@ namespace Managers
         [SerializeField] private GameObject[] waypoints;
 
         private int _currentWaypoint = 0;
+        private float _timeAllowedToWaypoint = 0.0f;
         private int _lastWaypoint = 0;
 
+        public bool hasWaypoints()
+        {
+            return ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0 ) );
+        }
+        
         private void OnDrawGizmos()
         {
             if ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0) )
@@ -40,9 +47,36 @@ namespace Managers
             }
         }
 
+        public void setTimeAllowedToWaypoint()
+        {
+            GameObject currentWaypoint = CurrentWaypointGameObject();
+            if (currentWaypoint.IsConvertibleTo<IKeyTimeAllowedToWaypoint>(currentWaypoint))
+            {
+                Debug.Log("GameObject on waypoint implements IKeyTimeAllowedToWaypoint");
+                IKeyTimeAllowedToWaypoint timeAllowedToWaypoint =
+                    Utilities.GameObjectUtilities.KeyTimeAllowedToWaypointComponent(currentWaypoint);
+                if (( ! timeAllowedToWaypoint.IsUnityNull() ) &&
+                    timeAllowedToWaypoint.TimeAllowedToWaypoint() > 0.0)
+                {
+                    GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining =
+                        timeAllowedToWaypoint.TimeAllowedToWaypoint();
+                    //Actions.OnGameStatusChanged(GamePlayManager.GetInstance().GameStatus);
+                }
+                else
+                {
+                    GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining = 0.0f;
+                }
+            }
+            else
+            {
+                GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining = 0.0f;
+            } 
+        }
+
         public void ResetWaypoints()
         {
             _currentWaypoint = 0;
+            setTimeAllowedToWaypoint();
             Actions.OnWaypointUpdate?.Invoke(this);
         }
 
@@ -51,6 +85,7 @@ namespace Managers
             if (_currentWaypoint < _lastWaypoint)
             {
                 _currentWaypoint++;
+                setTimeAllowedToWaypoint();
                 Actions.OnWaypointUpdate?.Invoke(this);
             }
         }

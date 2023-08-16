@@ -19,6 +19,8 @@ namespace Managers
         public GameDifficulty GameDifficulty { get; set; }
         public float TimeRemaining { get; set; }
         
+        public float WaypointTimeRemaining { get; set; }
+        
         public int RemoveLife()
         {
             return Lives--;

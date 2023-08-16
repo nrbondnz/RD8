@@ -44,6 +44,7 @@ namespace Managers
             GameStatus.Started = false;
             GameStatus.GameDifficulty = GameDifficulty.Easy;
             GameStatus.TimeRemaining = (float) 0.0;
+            GameStatus.WaypointTimeRemaining = (float)0.0;
             DontDestroyOnLoad(gameObject);
         }
 
@@ -125,14 +126,33 @@ namespace Managers
         /// Tells subscribers if the GameStatus has changed
         /// If out of time it causes the WinLoseMenu to be displayed
         /// </summary>
-        public void UpdateTimeRemaining()
+        public void UpdateTimers()
         {
             GameStatus.TimeRemaining -= Time.deltaTime;
-            Actions.OnGameStatusChanged?.Invoke(GameStatus);
+            
             if (!AnyTimeLeft())
             {
                 SceneManager.LoadScene("WinLoseMenu");
             }
+
+            if (GameStatus.WaypointTimeRemaining > 0.0f)
+            {
+                GameStatus.WaypointTimeRemaining -= Time.deltaTime;
+                if (GameStatus.WaypointTimeRemaining <= 0.0f)
+                {
+                    // last life?
+                    if (GamePlayManager.GetInstance().GetLives() == 1)
+                    {
+                        SceneManager.LoadSceneAsync("WinLoseMenu");
+                    }
+                    else
+                    {
+                        // removes life, resets waypoints and times
+                        GameResetManager.GetInstance().ResetScene();
+                    }
+                }
+            }
+            Actions.OnGameStatusChanged?.Invoke(GameStatus);
         }
 
         /// <summary>

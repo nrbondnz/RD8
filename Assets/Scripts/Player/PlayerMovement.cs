@@ -57,7 +57,7 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            GamePlayManager.GetInstance().UpdateTimeRemaining();
+            GamePlayManager.GetInstance().UpdateTimers();
            
         }
 

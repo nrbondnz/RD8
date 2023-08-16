@@ -3,15 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Key;
 using Managers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace key
 {
-    public class Key : MonoBehaviour
+    public class Key : MonoBehaviour, IKeyTimeAllowedToWaypoint
     {
         [SerializeField] KeyActionController keyActionController;
         [SerializeField] private float keyRotationSpeed = 3;
         [SerializeField] WaypointManager waypointManager;
+
+        [SerializeField] private float timeToWaypoint = 0.0f;
 
       
 
@@ -33,7 +36,7 @@ namespace key
 
         private void OnDrawGizmos()
         {
-            if (keyActionController != null)
+            if (( ! keyActionController.IsUnityNull()) && ( waypointManager.hasWaypoints()))
             {
                 Gizmos.color = Color.green;
                 Gizmos.DrawRay(transform.position, keyActionController.transform.position - transform.position);
@@ -43,6 +46,11 @@ namespace key
                 Gizmos.color = Color.red;
                 Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
             }
+        }
+
+        public float TimeAllowedToWaypoint()
+        {
+            return this.timeToWaypoint;
         }
     }
 }
