@@ -32,7 +32,17 @@ namespace Managers
 
         private void UpdateGameScore(GameStatus pGameStatus)
         {
-            scoreText.text = "Lives : " + pGameStatus.Lives + " Time: " + ConvertToMinsAndSecs(pGameStatus.TimeRemaining);
+            scoreText.text = "Lives : " + pGameStatus.Lives +
+                             " Time: " + ConvertToMinsAndSecs(pGameStatus.TimeRemaining);
+            if (pGameStatus.WaypointTimeRemaining > 0.0f)
+            {
+                scoreText.text += " Waypoint time left: " + 
+                                  (int)pGameStatus.WaypointTimeRemaining;
+            }
+            else
+            {
+                scoreText.text += " Waypoint time left: --";
+            }
         }
 
         private String ConvertToMinsAndSecs(float timeIn)
@@ -41,6 +51,13 @@ namespace Managers
             int secs = (int)(timeIn - (mins * 60));
             String secString = secs < 10 ? "0" + secs : secs.ToString();
             return mins + ":" + secString;
+        }
+        
+        private String ConvertToSecs(float timeIn)
+        {
+            int secs = (int)timeIn;
+            String secString = secs < 10 ? "0" + secs : secs.ToString();
+            return secString;
         }
     }
 }
