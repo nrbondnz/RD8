@@ -88,6 +88,12 @@ namespace Managers
                 setTimeAllowedToWaypoint();
                 Actions.OnWaypointUpdate?.Invoke(this);
             }
+            else
+            {
+                // last waypoint - reset the timer
+                this._timeAllowedToWaypoint = 0.0f;
+                Actions.OnWaypointUpdate?.Invoke(this);
+            }
         }
 
         public GameObject CurrentWaypointGameObject()
