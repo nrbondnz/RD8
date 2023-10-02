@@ -29,11 +29,14 @@ namespace TrajectoryObject
         
         private readonly Dictionary<Transform, Transform> _spawnedObjects = new Dictionary<Transform, Transform>();
 
+      
+
         /// <summary>
         /// Gismo to show the developer if the object will not function correctly at run time
         /// </summary>
         private void OnDrawGizmos()
         {
+            if (playerGameObject.IsUnityNull() ) return;
             if ( (_lineRenderer.IsUnityNull()) || (_projectionEnabled && obstaclesParent == null ) )
             {
                 Gizmos.color = Color.red;
