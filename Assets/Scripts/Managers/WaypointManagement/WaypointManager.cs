@@ -14,7 +14,7 @@ namespace Managers
         [SerializeField] private GameObject[] waypoints;
 
         private int _currentWaypoint = 0;
-        private float _timeAllowedToWaypoint = 0.0f;
+        //private float _timeAllowedToWaypoint = 0.0f;
         private int _lastWaypoint = 0;
 
         public bool hasWaypoints()
@@ -91,7 +91,7 @@ namespace Managers
             else
             {
                 // last waypoint - reset the timer
-                this._timeAllowedToWaypoint = 0.0f;
+                //this._timeAllowedToWaypoint = 0.0f;
                 Actions.OnWaypointUpdate?.Invoke(this);
             }
         }

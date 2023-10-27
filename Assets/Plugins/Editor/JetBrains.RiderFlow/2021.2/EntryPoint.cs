@@ -1,6 +1,7 @@
 using JetBrains.Collections.Viewable;
 using JetBrains.Lifetimes;
 using JetBrains.RiderFlow.Core.Launchers;
+using JetBrains.RiderFlow.Core.Logging;
 using JetBrains.RiderFlow.Core.ReEditor.Notifications;
 using JetBrains.RiderFlow.Core.Requirements;
 using JetBrains.RiderFlow.Core.Services.Caches.RecentFiles;
@@ -23,9 +24,11 @@ namespace JetBrains.RiderFlow.Since2021_2
 
         static DelayedEntryPoint()
         {
+            LogManager.Instance.Initialize();
+            
             SearchEverywhereWindow.Settings = SearchWindowSettings.instance;
             RecentFilesCacheController.Cache = RecentFilesCache.instance;
-            ProgressManagerOwner.ProgressManager = new ProgressManager();
+            ProgressManagerOwner.ProgressManager = ProgressManager.Instance;
             
             GameObjectUtils.GlobalObjectIdentifiersToInstanceIDsSlow = GlobalObjectId.GlobalObjectIdentifiersToInstanceIDsSlow;
 

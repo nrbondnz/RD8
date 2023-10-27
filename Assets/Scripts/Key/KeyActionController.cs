@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Key
@@ -42,8 +43,8 @@ namespace Key
             if (this.actionTime < 0)
             {
                 gameObject.SetActive(false);
-            }
-        } else if (isReveal && isActionStarted)
+            }*/
+        if (isReveal && isActionStarted)
         {
             if (actionTime > 0)
             {
@@ -51,7 +52,7 @@ namespace Key
                 transform.Translate(Vector3.up * Time.deltaTime * this.actionSpeed);
             }
 
-        }*/
+        }
         }
     }
 }

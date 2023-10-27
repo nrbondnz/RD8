@@ -2,6 +2,8 @@
 using System;
 using System.ComponentModel.Design.Serialization;
 using Unity.VisualScripting;
+using UnityEngine;
+using Utilities;
 
 namespace Player
 {
@@ -24,10 +26,27 @@ namespace Player
             return Instance;
         }
 
+        public float GetMagnitude()
+        {
+            return (float)Math.Sqrt(_hozInput * _hozInput + _vertInput * _vertInput);
+        }
+
         public void Awake()
         {
             getInstance();
+            Actions.OnPlayerChanged += UpdatePlayer;
         }
+        
+ 
+
+        public void UpdatePlayer(Player pPlayer)
+        {
+            //_player = pPlayer;
+            this.VertInput = pPlayer.VertInput;
+            this.HozInput = pPlayer.HozInput;
+            Debug.Log("Player x : " + this.HozInput + ", y " + this.VertInput);
+        }
+        
         
         public float HozInput
         {

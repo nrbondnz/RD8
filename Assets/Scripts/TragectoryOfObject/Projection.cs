@@ -104,7 +104,7 @@ namespace TrajectoryObject
                     SceneManager.MoveGameObjectToScene(ghostObj, mySimScene);
                     if (!ghostObj.isStatic) _spawnedObjects.Add(obj, ghostObj.transform);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
 
                     // assume its a parent
@@ -138,7 +138,7 @@ namespace TrajectoryObject
             //GameObjectUtilities gameObjectUtilities = gameObject.GetComponent<GameObjectUtilities>();
             
             ghosty.SetActive(true);
-            Debug.Log("ghosty : " + ghosty );
+            //Debug.Log("ghosty : " + ghosty );
             //if (!_projectionEnabled || ballPrefab == null) return;
             bool landed = false;
             //
