@@ -234,11 +234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660726682753258922, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56
+      value: 56.516
       objectReference: {fileID: 0}
     - target: {fileID: 7660726682753258922, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.2
+      value: -3.123
       objectReference: {fileID: 0}
     - target: {fileID: 7660726682753258922, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1025,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.88
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1324,11 +1324,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1293824232635049745, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: speed
-      value: 14
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1293824232635049745, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: jumpForce
-      value: 14
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623075962506928622, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143599598237250283, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143599598237250283, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143599598237250283, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: a4b77fdb-e453-4775-9109-10ebe941f0ed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143599598237250283, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: e5f5bca2-6f22-4999-a124-c4f160431832
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143599598237250283, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143599598237250283, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'Player/Jump[/Keyboard/space]'
       objectReference: {fileID: 0}
     - target: {fileID: 8215222938593013741, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: waypoints.Array.size

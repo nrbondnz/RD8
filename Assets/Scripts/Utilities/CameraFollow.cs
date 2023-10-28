@@ -47,8 +47,9 @@ using UnityEngine;
             
             /// <summary>
             /// Allows player to move the camera up and down as works for them
-            /// </summary> 
-            private void Update()
+            /// </summary>
+            // TODO fix for new input system ie add OnCameraUp and OnCameraDown
+            /*private void Update()
             {
                 if (Input.GetKeyUp(KeyCode.RightApple))
                 {
@@ -67,7 +68,7 @@ using UnityEngine;
                         Debug.Log("yOffseet: " + _yOffset);
                     }
                 }
-            }
+            }*/
             
             /// <summary>
             /// The camera follows the player from the correct distance and pointing towards the waypoint
