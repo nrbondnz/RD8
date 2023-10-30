@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &807427002072952199
+--- !u!1001 &303591046694405390
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,9 +8,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1927567974837570198, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927567974837570198, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139739278469401705, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806907009623138156, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806907009623138156, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806907009623138156, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: a4b77fdb-e453-4775-9109-10ebe941f0ed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806907009623138156, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: e5f5bca2-6f22-4999-a124-c4f160431832
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806907009623138156, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806907009623138156, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'Player/Jump[/Keyboard/space]'
+      objectReference: {fileID: 0}
     - target: {fileID: 8249056179872689837, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player 3
       objectReference: {fileID: 0}
     - target: {fileID: 8384751249500087757, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8734409492544340586, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3032912477859820677, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
     - {fileID: 4139739278469401705, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
@@ -60,20 +100,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8249056179872689837, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 798292085613090230}
+      addedObject: {fileID: 2390573860787184372}
   m_SourcePrefab: {fileID: 100100000, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
---- !u!1 &8740931037041820458 stripped
+--- !u!1 &8524217405494848419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8249056179872689837, guid: c44cf6217a39888469de88e90d985ac7, type: 3}
-  m_PrefabInstance: {fileID: 807427002072952199}
+  m_PrefabInstance: {fileID: 303591046694405390}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &798292085613090230
+--- !u!114 &2390573860787184372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8740931037041820458}
+  m_GameObject: {fileID: 8524217405494848419}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2fa7d79cc145e6a49aa89008192af3, type: 3}

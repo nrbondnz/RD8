@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43819863, g: 0.48621672, b: 0.56649154, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -472,6 +471,7 @@ Material:
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &106077383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,9 +899,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051996082}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 0.94785494, g: 0.9528302, b: 0.85844606, a: 1}
   m_Intensity: 0.92
   m_Range: 10000
@@ -1068,15 +1067,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1295,6 +1296,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1439,12 +1442,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
   m_PrefabInstance: {fileID: 1998894537}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1998894539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 512890894839005986, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
-  m_PrefabInstance: {fileID: 1998894537}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2965370656107398822
+--- !u!1001 &2021735641
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1452,10 +1450,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8215222938593013741, guid: 47003c699e89c4ba28540179204b963b, type: 3}
-      propertyPath: 'waypoints.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1998894539}
     - target: {fileID: 8740931037041820458, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1511,9 +1505,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1051996084}
   - {fileID: 1621863}
-  - {fileID: 2965370656107398822}
   - {fileID: 1746685593}
   - {fileID: 840979617}
   - {fileID: 17206817}
   - {fileID: 1966978579}
   - {fileID: 1360043046}
+  - {fileID: 2021735641}
