@@ -25,7 +25,7 @@ namespace Managers
     
         private GamePhase _gamePhase = GamePhase.ReadyToGo;
         private int _sceneNum = 0;
-        private int _FinalLevel = 0;
+        private int _finalLevel = 0;
         private static GameStateManager _instance;
       
         /// <summary>
@@ -79,7 +79,7 @@ namespace Managers
                 
                 if (aFile.EndsWith(".unity"))
                 {
-                    _FinalLevel++;
+                    _finalLevel++;
                 }
             }
 
@@ -100,8 +100,8 @@ namespace Managers
         /// </summary>
         public int LastLevel
         {
-            get => _FinalLevel;
-            set => _FinalLevel = value;
+            get => _finalLevel;
+            set => _finalLevel = value;
         }
 
         /// <summary>

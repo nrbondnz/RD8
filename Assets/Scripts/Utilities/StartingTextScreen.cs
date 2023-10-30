@@ -95,6 +95,7 @@ namespace Utilities
     
         public void HardPressed()
         {
+            startLevel = GameStateManager.GetInstance().LastLevel;
             StartGame(GameDifficulty.Hard);
         }
     
