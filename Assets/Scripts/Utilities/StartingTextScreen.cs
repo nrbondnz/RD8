@@ -97,6 +97,7 @@ namespace Utilities
         {
             startLevel = GameStateManager.GetInstance().LastLevel;
             StartGame(GameDifficulty.Hard);
+            startLevel = 1;
         }
     
         public void ImpossiblePressed()

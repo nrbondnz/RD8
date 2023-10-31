@@ -1442,6 +1442,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
   m_PrefabInstance: {fileID: 1998894537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1998894539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 512890894839005986, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+  m_PrefabInstance: {fileID: 1998894537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2021735641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1450,6 +1455,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8215222938593013741, guid: 47003c699e89c4ba28540179204b963b, type: 3}
+      propertyPath: 'waypoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1998894539}
     - target: {fileID: 8740931037041820458, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_Name
       value: Player

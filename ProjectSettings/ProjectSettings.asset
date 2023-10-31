@@ -137,7 +137,8 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 1728153820279930635, guid: 5211d60d1ae6c3c46bc4a7141d65722a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -977,7 +978,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 3
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 8476019c-7b19-4c7e-9be6-dc8fb7a8c64c
   framebufferDepthMemorylessMode: 0

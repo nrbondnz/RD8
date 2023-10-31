@@ -24,7 +24,7 @@ namespace Managers
     {
     
         private GamePhase _gamePhase = GamePhase.ReadyToGo;
-        private int _sceneNum = 0;
+        private int _sceneNum = 1;
         private int _finalLevel = 0;
         private static GameStateManager _instance;
       
@@ -61,7 +61,7 @@ namespace Managers
         /// </summary>
         public void ResetGameState()
         {
-            this._sceneNum = 0;
+            this._sceneNum = 1;
             this.GamePhase = GamePhase.ReadyToGo;
         }
 
@@ -75,14 +75,15 @@ namespace Managers
             foreach (var aFile in files)
             {
                     Debug.Log(aFile);
-                Debug.Log(aFile.EndsWith(".unity"));
+               
                 
                 if (aFile.EndsWith(".unity"))
                 {
+                    Debug.Log(aFile.EndsWith(".unity"));
                     _finalLevel++;
                 }
             }
-
+            Debug.Log("Final level : " + _finalLevel);
             //lastLevel = files.Length;
         }
         
@@ -92,7 +93,7 @@ namespace Managers
         public GameStateManager()
         {
             _gamePhase = GamePhase.ReadyToGo;
-            _sceneNum = 0;
+            _sceneNum = 1;
         }
 
         /// <summary>

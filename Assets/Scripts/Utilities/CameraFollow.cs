@@ -15,11 +15,11 @@ using UnityEngine;
         public class CameraFollow : MonoBehaviour
         {
             private Transform _cameraTarget;
-            [SerializeField] private Vector3 offset = new Vector3(-8f,-6f);
+            [SerializeField] private Vector3 offset = new Vector3(-8f,-12f);
             private float _yOffset = 0.0f;
             [SerializeField] private float lowerBound = -5.0f;
             [SerializeField] private float uppedBound = 25.0f;
-            [SerializeField] private float smoothTime = 2.0f;
+            [SerializeField] private float smoothTime = 1.5f;
             private Vector3 _cameraVelocity = Vector3.zero;
             private float _xPlusZDistance;
             private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);

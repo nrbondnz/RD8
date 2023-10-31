@@ -68,7 +68,8 @@ namespace Managers
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void UpdateGameScene(GamePhase newPhase, int newLevel)
         {
-            GameStateManager.GetInstance().GamePhase = newPhase; GameStateManager.GetInstance().SceneNum = newLevel;
+            GameStateManager.GetInstance().GamePhase = newPhase; 
+            GameStateManager.GetInstance().SceneNum = newLevel;
             Debug.Log(
                 "GameManager: new state : " + GameStateManager.GetInstance());
             
