@@ -33,12 +33,12 @@ namespace Utilities
                 if (!comp.GetType().Namespace.Equals("UnityEngine") )
                 {
                     Destroy(comp);
-                    Debug.Log("Bad : " + comp);
+                    //Debug.Log("Bad : " + comp);
                    
                 }
                 else
                 {
-                    Debug.Log("good : " + comp);
+                    //Debug.Log("good : " + comp);
                 }
             }
         }

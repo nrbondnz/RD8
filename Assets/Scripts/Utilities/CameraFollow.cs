@@ -28,6 +28,12 @@ using UnityEngine;
             private GameObject _currentWaypoint;
             public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
+            public float YOffset
+            {
+                get => _yOffset;
+                set => _yOffset = value;
+            }
+
             /// <summary>
             /// The players transform is captured for use in camera follow
             /// The camera offset is also captured 
@@ -130,6 +136,11 @@ using UnityEngine;
             {
                 this._currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
             }
-        
+
+            public void MoveCamera(Vector2 input2D)
+            {
+                offset.x += input2D.x;
+                offset.y += input2D.y;
+            }
         }
     }

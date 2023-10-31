@@ -26,6 +26,16 @@ namespace Player
             _controls.Player.Disable();
         }
 
+        public void OnMovement(InputValue pInputValue)
+        {
+            Debug.Log("Old world OnMovement");
+        }
+
+        public void OnJump(InputValue pInputValue)
+        {
+            Debug.Log("Old world OnJump");
+        }
+
 
         public void OnMovement(InputAction.CallbackContext context)
         {
@@ -33,9 +43,16 @@ namespace Player
                 _player.HozInput = input2D.x;
                 _player.VertInput = input2D.y;
                 string zero = _player.HozInput == 0 && _player.VertInput == 0 ? " ZERO" : "";
-                UnityEngine.Debug.Log("OnMovement : x = " + _player.HozInput + " y = " + _player.VertInput + zero);
+                //UnityEngine.Debug.Log("OnMovement : x = " + _player.HozInput + " y = " + _player.VertInput + zero);
                 Actions.OnPlayerChanged(_player);
                
+        }
+
+        public void OnCameraMove(InputAction.CallbackContext context)
+        {
+            Vector2 input2D = context.ReadValue<Vector2>();
+            CameraFollow cameraFollow = (CameraFollow)GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+            cameraFollow.MoveCamera(input2D);
         }
 
         public void OnJump(InputAction.CallbackContext context)

@@ -62,7 +62,7 @@ namespace Player
             forward.Normalize();
             right.Normalize();
             Vector3 desiredDirection = forward * Player.getInstance().VertInput + right * Player.getInstance().HozInput;
-            Debug.Log("Desired Direction : " + desiredDirection);
+            //Debug.Log("Desired Direction : " + desiredDirection);
             // forwardRelativeVerticalInput = forward * (mobileMultiplier * (_player.VertInput * speed));
             // Vector3 rightRelativeHorizontalInput = right * (mobileMultiplier * (_player.HozInput * speed));
             //
@@ -71,7 +71,7 @@ namespace Player
             //Debug.Log("Combined : " + playerMovement);
             
                 _rb.AddForce(desiredDirection * speed, ForceMode.Acceleration);
-                Debug.Log("Desired Direction * speed: " + desiredDirection * speed);
+                //Debug.Log("Desired Direction * speed: " + desiredDirection * speed);
             
         
         //}

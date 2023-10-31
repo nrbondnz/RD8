@@ -95,9 +95,9 @@ namespace Utilities
     
         public void HardPressed()
         {
-            startLevel = GameStateManager.GetInstance().LastLevel;
+            //startLevel = GameStateManager.GetInstance().LastLevel;
             StartGame(GameDifficulty.Hard);
-            startLevel = 1;
+            //startLevel = 1;
         }
     
         public void ImpossiblePressed()
@@ -115,7 +115,7 @@ namespace Utilities
         {
             //start game scene
             //GameManager gameManager = GameManager.getInstance();
-            Debug.Log("Menu: GameManager.Instance : " + GameManager.GetInstance());
+            Debug.Log("Menu: StartingTextScreen.StartGame.difficulty : " + pGameDifficulty + " startLevel : " + this.startLevel);
             GameManager.GetInstance().UpdateGameScene(GamePhase.GamePlaying,this.startLevel);
             GamePlayManager.GetInstance().InitGame(pGameDifficulty);
             Debug.Log("Menu: New Game state : " + GamePhase.GamePlaying + " " + GameStateManager.GetInstance().SceneNum);
