@@ -7,7 +7,12 @@ var searchData=
   ['impossible_4',['Impossible',['../namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0a011d7bb0c88f95394e3a8d417304b218',1,'Managers']]],
   ['impossiblepressed_5',['ImpossiblePressed',['../class_utilities_1_1_starting_text_screen.html#a7966382b0186922bd6e545d2b186c67b',1,'Utilities::StartingTextScreen']]],
   ['initgame_6',['InitGame',['../class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca',1,'Managers::GamePlayManager']]],
-  ['isgrounded_7',['IsGrounded',['../class_player_1_1_player.html#a99be32aa8d95a69db0a73394d102ff28',1,'Player::Player']]],
-  ['isjumpbuttonpressed_8',['IsJumpButtonPressed',['../class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483',1,'Player::Player']]],
-  ['istrajectoryline_9',['isTrajectoryLine',['../class_trajectory_object_1_1_trajectory_line_manager.html#a90e1d437b08137ad300af93ab51996b4',1,'TrajectoryObject::TrajectoryLineManager']]]
+  ['inputreader_7',['InputReader',['../class_player_1_1_input_reader.html',1,'Player']]],
+  ['inputreader_2ecs_8',['InputReader.cs',['../_input_reader_8cs.html',1,'']]],
+  ['iplayeractions_9',['IPlayerActions',['../interface_controls_1_1_i_player_actions.html',1,'Controls.IPlayerActions'],['../interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html',1,'Player.Generated.PlayerInputActions.IPlayerActions']]],
+  ['isgrounded_10',['IsGrounded',['../class_player_1_1_player.html#a99be32aa8d95a69db0a73394d102ff28',1,'Player::Player']]],
+  ['isjumpbuttonpressed_11',['IsJumpButtonPressed',['../class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483',1,'Player::Player']]],
+  ['istrajectoryline_12',['isTrajectoryLine',['../class_trajectory_object_1_1_trajectory_line_manager.html#a90e1d437b08137ad300af93ab51996b4',1,'TrajectoryObject::TrajectoryLineManager']]],
+  ['itimeallowedtowaypoint_13',['ITimeAllowedToWaypoint',['../interface_key_1_1_i_time_allowed_to_waypoint.html',1,'Key']]],
+  ['itimeallowedtowaypoint_2ecs_14',['ITimeAllowedToWaypoint.cs',['../_i_time_allowed_to_waypoint_8cs.html',1,'']]]
 ];

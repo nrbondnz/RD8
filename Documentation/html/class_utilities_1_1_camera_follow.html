@@ -119,15 +119,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40318aabb24f41071d9e749bacbb4d2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities_1_1_camera_follow.html#a40318aabb24f41071d9e749bacbb4d2d">UpdateCurrentWaypoint</a> (<a class="el" href="class_managers_1_1_waypoint_manager.html">WaypointManager</a> pWaypointManager)</td></tr>
 <tr class="memdesc:a40318aabb24f41071d9e749bacbb4d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the waypoint to the new waypoint when previous waypoint is reached.  <br /></td></tr>
 <tr class="separator:a40318aabb24f41071d9e749bacbb4d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f028f5394ff12e2bbddcf11a29490fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities_1_1_camera_follow.html#a2f028f5394ff12e2bbddcf11a29490fd">MoveCamera</a> (Vector2 input2D)</td></tr>
+<tr class="separator:a2f028f5394ff12e2bbddcf11a29490fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a193be5afac19e6f5b18c77db00de35b1"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities_1_1_camera_follow.html#a193be5afac19e6f5b18c77db00de35b1">NormalizedTargetVelocity</a><code> [get]</code></td></tr>
 <tr class="separator:a193be5afac19e6f5b18c77db00de35b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d132df2f188502a91e2bd610359fff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utilities_1_1_camera_follow.html#ae4d132df2f188502a91e2bd610359fff">YOffset</a><code> [get, set]</code></td></tr>
+<tr class="separator:ae4d132df2f188502a91e2bd610359fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gets the main Camera to follow the _cameraTarget at a specific distance. It also uses waypoints to determine how to follow the _cameraTarget in a direction that points to the next waypoint. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2f028f5394ff12e2bbddcf11a29490fd" name="a2f028f5394ff12e2bbddcf11a29490fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f028f5394ff12e2bbddcf11a29490fd">&#9670;&#160;</a></span>MoveCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Utilities.CameraFollow.MoveCamera </td>
+          <td>(</td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>input2D</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a594d21824394242c0da21edd3d4c56c5" name="a594d21824394242c0da21edd3d4c56c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a594d21824394242c0da21edd3d4c56c5">&#9670;&#160;</a></span>OnDisable()</h2>
 
@@ -225,6 +247,28 @@ Properties</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4d132df2f188502a91e2bd610359fff" name="ae4d132df2f188502a91e2bd610359fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d132df2f188502a91e2bd610359fff">&#9670;&#160;</a></span>YOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Utilities.CameraFollow.YOffset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

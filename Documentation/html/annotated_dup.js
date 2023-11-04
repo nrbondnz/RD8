@@ -14,6 +14,7 @@ var annotated_dup =
     ] ],
     [ "Key", "namespace_key.html", [
       [ "IKeyAction", "interface_key_1_1_i_key_action.html", "interface_key_1_1_i_key_action" ],
+      [ "ITimeAllowedToWaypoint", "interface_key_1_1_i_time_allowed_to_waypoint.html", "interface_key_1_1_i_time_allowed_to_waypoint" ],
       [ "KeyActionController", "class_key_1_1_key_action_controller.html", "class_key_1_1_key_action_controller" ],
       [ "OpenKeyAction", "class_key_1_1_open_key_action.html", "class_key_1_1_open_key_action" ],
       [ "RevealKeyAction", "class_key_1_1_reveal_key_action.html", "class_key_1_1_reveal_key_action" ],
@@ -33,6 +34,10 @@ var annotated_dup =
       [ "WaypointManager", "class_managers_1_1_waypoint_manager.html", "class_managers_1_1_waypoint_manager" ]
     ] ],
     [ "Player", "namespace_player.html", [
+      [ "Generated", "namespace_player_1_1_generated.html", [
+        [ "PlayerInputActions", "class_player_1_1_generated_1_1_player_input_actions.html", "class_player_1_1_generated_1_1_player_input_actions" ]
+      ] ],
+      [ "InputReader", "class_player_1_1_input_reader.html", "class_player_1_1_input_reader" ],
       [ "Player", "class_player_1_1_player.html", "class_player_1_1_player" ],
       [ "PlayerMovement", "class_player_1_1_player_movement.html", null ]
     ] ],
@@ -47,5 +52,7 @@ var annotated_dup =
       [ "StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", "class_utilities_1_1_starting_text_screen" ],
       [ "WinningLevel", "class_utilities_1_1_winning_level.html", null ]
     ] ],
-    [ "PrefabGameObject", "class_prefab_game_object.html", "class_prefab_game_object" ]
+    [ "Controls", "class_controls.html", "class_controls" ],
+    [ "PrefabGameObject", "class_prefab_game_object.html", "class_prefab_game_object" ],
+    [ "WaypointTimeout", "class_waypoint_timeout.html", "class_waypoint_timeout" ]
 ];

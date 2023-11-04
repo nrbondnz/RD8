@@ -7,6 +7,7 @@ namespace Utilities
     /// <summary>
     /// TODO: Just and idea at the moment.  Apply a force to an object
     /// It would be either constant or triggered and expire either after a period of time or on an exit trigger
+    /// Note: Now I cannot visualise what I was talking about but i'll leave it here and add a feature request
     ///
     /// strength of force
     /// type of force

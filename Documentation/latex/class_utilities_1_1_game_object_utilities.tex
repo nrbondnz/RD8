@@ -1,0 +1,71 @@
+\hypertarget{class_utilities_1_1_game_object_utilities}{}\doxysection{Utilities.\+Game\+Object\+Utilities Class Reference}
+\label{class_utilities_1_1_game_object_utilities}\index{Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}}
+
+
+Used to create a copy of an object and optionally remove the active scripts and leave just the physics.  
+
+
+Inheritance diagram for Utilities.\+Game\+Object\+Utilities\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_utilities_1_1_game_object_utilities}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}} \mbox{\hyperlink{class_utilities_1_1_game_object_utilities_a9094c1950f2b25d7723743e555cf3c49}{Create\+New\+Instance\+Of\+Game\+Object}} (\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}} origin\+Go, \mbox{\hyperlink{_game_manager_8cs_aa1d8fb822302bf01699083b8c1e996e9}{String}} new\+Object\+Name, bool remove\+Active\+Scripts=true)
+\item 
+void \mbox{\hyperlink{class_utilities_1_1_game_object_utilities_adc903eabbf59f48e77a9da13a332e3ff}{Remove\+Components\+With\+Just\+Scripts}} (\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}} game\+Obj)
+\begin{DoxyCompactList}\small\item\em Inspects the game object components and removes those with just scripts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Component \mbox{\hyperlink{class_utilities_1_1_game_object_utilities_a8f380771288c37b612d682d8e2f0cf18}{Get\+Component\+Of\+Type$<$ T $>$}} (\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}} game\+Object)
+\item 
+static \mbox{\hyperlink{interface_key_1_1_i_time_allowed_to_waypoint}{ITime\+Allowed\+To\+Waypoint}} \mbox{\hyperlink{class_utilities_1_1_game_object_utilities_a7e1bd9ee76b40b9e16cf4f184f8476bb}{Time\+Allowed\+To\+Waypoint\+Component}} (\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}} game\+Object)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to create a copy of an object and optionally remove the active scripts and leave just the physics. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utilities_1_1_game_object_utilities_a9094c1950f2b25d7723743e555cf3c49}\label{class_utilities_1_1_game_object_utilities_a9094c1950f2b25d7723743e555cf3c49}} 
+\index{Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}!CreateNewInstanceOfGameObject@{CreateNewInstanceOfGameObject}}
+\index{CreateNewInstanceOfGameObject@{CreateNewInstanceOfGameObject}!Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}}
+\doxysubsubsection{\texorpdfstring{CreateNewInstanceOfGameObject()}{CreateNewInstanceOfGameObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}} Utilities.\+Game\+Object\+Utilities.\+Create\+New\+Instance\+Of\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}}}]{origin\+Go,  }\item[{\mbox{\hyperlink{_game_manager_8cs_aa1d8fb822302bf01699083b8c1e996e9}{String}}}]{new\+Object\+Name,  }\item[{bool}]{remove\+Active\+Scripts = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utilities_1_1_game_object_utilities_a8f380771288c37b612d682d8e2f0cf18}\label{class_utilities_1_1_game_object_utilities_a8f380771288c37b612d682d8e2f0cf18}} 
+\index{Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}!GetComponentOfType$<$ T $>$@{GetComponentOfType$<$ T $>$}}
+\index{GetComponentOfType$<$ T $>$@{GetComponentOfType$<$ T $>$}!Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}}
+\doxysubsubsection{\texorpdfstring{GetComponentOfType$<$ T $>$()}{GetComponentOfType< T >()}}
+{\footnotesize\ttfamily static Component Utilities.\+Game\+Object\+Utilities.\+Get\+Component\+Of\+Type$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}}}]{game\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_utilities_1_1_game_object_utilities_adc903eabbf59f48e77a9da13a332e3ff}\label{class_utilities_1_1_game_object_utilities_adc903eabbf59f48e77a9da13a332e3ff}} 
+\index{Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}!RemoveComponentsWithJustScripts@{RemoveComponentsWithJustScripts}}
+\index{RemoveComponentsWithJustScripts@{RemoveComponentsWithJustScripts}!Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}}
+\doxysubsubsection{\texorpdfstring{RemoveComponentsWithJustScripts()}{RemoveComponentsWithJustScripts()}}
+{\footnotesize\ttfamily void Utilities.\+Game\+Object\+Utilities.\+Remove\+Components\+With\+Just\+Scripts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}}}]{game\+Obj }\end{DoxyParamCaption})}
+
+
+
+Inspects the game object components and removes those with just scripts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Obj} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_utilities_1_1_game_object_utilities_a7e1bd9ee76b40b9e16cf4f184f8476bb}\label{class_utilities_1_1_game_object_utilities_a7e1bd9ee76b40b9e16cf4f184f8476bb}} 
+\index{Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}!TimeAllowedToWaypointComponent@{TimeAllowedToWaypointComponent}}
+\index{TimeAllowedToWaypointComponent@{TimeAllowedToWaypointComponent}!Utilities.GameObjectUtilities@{Utilities.GameObjectUtilities}}
+\doxysubsubsection{\texorpdfstring{TimeAllowedToWaypointComponent()}{TimeAllowedToWaypointComponent()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{interface_key_1_1_i_time_allowed_to_waypoint}{ITime\+Allowed\+To\+Waypoint}} Utilities.\+Game\+Object\+Utilities.\+Time\+Allowed\+To\+Waypoint\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projection_8cs_ad6202de196e474a0f9098e0c18a3bcda}{Game\+Object}}}]{game\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/\+RD8/\+Assets/\+Scripts/\+Utilities/\mbox{\hyperlink{_game_object_utilities_8cs}{Game\+Object\+Utilities.\+cs}}\end{DoxyCompactItemize}

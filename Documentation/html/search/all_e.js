@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['playcollisionsound_0',['PlayCollisionSound',['../class_managers_1_1_sound_manager.html#a1803534e0e3379b75104fb7dd5f663ad',1,'Managers::SoundManager']]],
-  ['player_1',['Player',['../namespace_player.html',1,'Player'],['../class_player_1_1_player.html',1,'Player.Player']]],
-  ['player_2ecs_2',['Player.cs',['../_player_8cs.html',1,'']]],
-  ['playermovement_3',['PlayerMovement',['../class_player_1_1_player_movement.html',1,'Player']]],
-  ['playermovement_2ecs_4',['PlayerMovement.cs',['../_player_movement_8cs.html',1,'']]],
-  ['prefabgameobject_5',['PrefabGameObject',['../class_prefab_game_object.html',1,'']]],
-  ['prefabgameobject_2ecs_6',['PrefabGameObject.cs',['../_prefab_game_object_8cs.html',1,'']]],
-  ['projection_7',['Projection',['../class_trajectory_object_1_1_projection.html',1,'TrajectoryObject']]],
-  ['projection_2ecs_8',['Projection.cs',['../_projection_8cs.html',1,'']]]
+  ['object_0',['Object',['../_game_manager_8cs.html#aef19bab18b9814edeef255c43e4f6bbc',1,'GameManager.cs']]],
+  ['oncameramove_1',['OnCameraMove',['../interface_controls_1_1_i_player_actions.html#a8cd0198ec165ca56967b50b66f9906b1',1,'Controls.IPlayerActions.OnCameraMove()'],['../class_player_1_1_input_reader.html#a6561b038abfa68cf9eceae46f1c44720',1,'Player.InputReader.OnCameraMove(InputAction.CallbackContext context)']]],
+  ['ondisable_2',['OnDisable',['../class_player_1_1_input_reader.html#a47af5cbce0a61f2813e4a83639031a04',1,'Player.InputReader.OnDisable()'],['../class_utilities_1_1_camera_follow.html#a594d21824394242c0da21edd3d4c56c5',1,'Utilities.CameraFollow.OnDisable()']]],
+  ['onenable_3',['OnEnable',['../class_utilities_1_1_camera_follow.html#a2a72966656acded30b2e81490e8780b0',1,'Utilities::CameraFollow']]],
+  ['onjump_4',['OnJump',['../interface_controls_1_1_i_player_actions.html#a8d3f401da084c125a18517b6e7489ebb',1,'Controls.IPlayerActions.OnJump()'],['../interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html#afe6c47bcb532b781eec66cfa81676835',1,'Player.Generated.PlayerInputActions.IPlayerActions.OnJump()'],['../class_player_1_1_input_reader.html#a4ad839ede9ad8033ee42fe0685cd5887',1,'Player.InputReader.OnJump(InputValue pInputValue)'],['../class_player_1_1_input_reader.html#aeb4f8e8d75e0577d07ebe0c4c4ad0934',1,'Player.InputReader.OnJump(InputAction.CallbackContext context)']]],
+  ['onmovement_5',['OnMovement',['../interface_controls_1_1_i_player_actions.html#adbb9241c71b3518f711f60b0fbc752ae',1,'Controls.IPlayerActions.OnMovement()'],['../interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html#a8fdb6374830d3e4d160c565c112cd945',1,'Player.Generated.PlayerInputActions.IPlayerActions.OnMovement()'],['../class_player_1_1_input_reader.html#a4c34f1babea8da6484e36f5f8d1138ae',1,'Player.InputReader.OnMovement(InputValue pInputValue)'],['../class_player_1_1_input_reader.html#aa88817187ae61120a54f53532941a590',1,'Player.InputReader.OnMovement(InputAction.CallbackContext context)']]],
+  ['open_6',['Open',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66bac3bf447eabe632720a3aa1a7ce401274',1,'Key::IKeyAction']]],
+  ['openkeyaction_7',['OpenKeyAction',['../class_key_1_1_open_key_action.html',1,'Key']]],
+  ['openkeyaction_2ecs_8',['OpenKeyAction.cs',['../_open_key_action_8cs.html',1,'']]],
+  ['operator_20inputactionmap_9',['operator InputActionMap',['../struct_controls_1_1_player_actions.html#abcbb4fc2a27f5f40791415d3cfb64288',1,'Controls.PlayerActions.operator InputActionMap()'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#ada391f482f7dc5077c77cf19d03e1627',1,'Player.Generated.PlayerInputActions.PlayerActions.operator InputActionMap()']]]
 ];

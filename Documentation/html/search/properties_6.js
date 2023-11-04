@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timeremaining_0',['TimeRemaining',['../struct_managers_1_1_game_status.html#a5f30f923875057a455abac64216c6a4d',1,'Managers::GameStatus']]]
+  ['hozinput_0',['HozInput',['../class_player_1_1_player.html#a7cf077ec94125c2385f3f8c0ace4ac9b',1,'Player::Player']]]
 ];

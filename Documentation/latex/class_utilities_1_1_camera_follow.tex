@@ -21,11 +21,15 @@ void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a594d21824394242c0da21ed
 void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a92613722a0133aaa960dd929f6c8dbed}{Update\+Player}} (\mbox{\hyperlink{class_player_1_1_player}{Player.\+Player}} p\+Player)
 \item 
 void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a40318aabb24f41071d9e749bacbb4d2d}{Update\+Current\+Waypoint}} (\mbox{\hyperlink{class_managers_1_1_waypoint_manager}{Waypoint\+Manager}} p\+Waypoint\+Manager)
-\begin{DoxyCompactList}\small\item\em Updates the waypoint to the new waypoint when previous waypoint is reached. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the waypoint to the new waypoint when previous waypoint is reached. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utilities_1_1_camera_follow_a2f028f5394ff12e2bbddcf11a29490fd}{Move\+Camera}} (Vector2 input2D)
+\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 Vector3 \mbox{\hyperlink{class_utilities_1_1_camera_follow_a193be5afac19e6f5b18c77db00de35b1}{Normalized\+Target\+Velocity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_utilities_1_1_camera_follow_ae4d132df2f188502a91e2bd610359fff}{YOffset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 
 
@@ -33,6 +37,12 @@ Vector3 \mbox{\hyperlink{class_utilities_1_1_camera_follow_a193be5afac19e6f5b18c
 Gets the main Camera to follow the \+\_\+camera\+Target at a specific distance. It also uses waypoints to determine how to follow the \+\_\+camera\+Target in a direction that points to the next waypoint. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_a2f028f5394ff12e2bbddcf11a29490fd}\label{class_utilities_1_1_camera_follow_a2f028f5394ff12e2bbddcf11a29490fd}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!MoveCamera@{MoveCamera}}
+\index{MoveCamera@{MoveCamera}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{MoveCamera()}{MoveCamera()}}
+{\footnotesize\ttfamily void Utilities.\+Camera\+Follow.\+Move\+Camera (\begin{DoxyParamCaption}\item[{Vector2}]{input2D }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_utilities_1_1_camera_follow_a594d21824394242c0da21edd3d4c56c5}\label{class_utilities_1_1_camera_follow_a594d21824394242c0da21edd3d4c56c5}} 
 \index{Utilities.CameraFollow@{Utilities.CameraFollow}!OnDisable@{OnDisable}}
 \index{OnDisable@{OnDisable}!Utilities.CameraFollow@{Utilities.CameraFollow}}
@@ -78,6 +88,12 @@ Updates the waypoint to the new waypoint when previous waypoint is reached.
 \index{NormalizedTargetVelocity@{NormalizedTargetVelocity}!Utilities.CameraFollow@{Utilities.CameraFollow}}
 \doxysubsubsection{\texorpdfstring{NormalizedTargetVelocity}{NormalizedTargetVelocity}}
 {\footnotesize\ttfamily Vector3 Utilities.\+Camera\+Follow.\+Normalized\+Target\+Velocity\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_utilities_1_1_camera_follow_ae4d132df2f188502a91e2bd610359fff}\label{class_utilities_1_1_camera_follow_ae4d132df2f188502a91e2bd610359fff}} 
+\index{Utilities.CameraFollow@{Utilities.CameraFollow}!YOffset@{YOffset}}
+\index{YOffset@{YOffset}!Utilities.CameraFollow@{Utilities.CameraFollow}}
+\doxysubsubsection{\texorpdfstring{YOffset}{YOffset}}
+{\footnotesize\ttfamily float Utilities.\+Camera\+Follow.\+YOffset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 

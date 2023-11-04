@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['isgrounded_0',['IsGrounded',['../class_player_1_1_player.html#a99be32aa8d95a69db0a73394d102ff28',1,'Player::Player']]],
-  ['isjumpbuttonpressed_1',['IsJumpButtonPressed',['../class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483',1,'Player::Player']]]
+  ['cameramove_0',['CameraMove',['../struct_controls_1_1_player_actions.html#a0121dcc6b52ed10856ecd17e6d80640a',1,'Controls::PlayerActions']]],
+  ['controlschemes_1',['controlSchemes',['../class_controls.html#a40efe45bbdbd6f62eeb243bfd91f5060',1,'Controls.controlSchemes()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a88f539f22cbcced8f00bc6d286985754',1,'Player.Generated.PlayerInputActions.controlSchemes()']]]
 ];

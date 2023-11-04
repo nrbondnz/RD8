@@ -16,7 +16,7 @@ Inheritance diagram for Trajectory\+Object.\+Projection\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_trajectory_object_1_1_projection_a27133bf441030e6b762a1bfbb396c208}{Create\+Physics\+Scene}} ()
 \begin{DoxyCompactList}\small\item\em Create a new projection by creating a copy of the current scene. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_trajectory_object_1_1_projection_a52c0214860cb29a1f6e1638b78df7053}{Simulate\+Trajectory}} (Game\+Object real\+Game\+Object, Vector3 pos, Vector3 velocity)
+bool \mbox{\hyperlink{class_trajectory_object_1_1_projection_ab480f9b85621f6b1fce7a3041d948ce7}{Simulate\+Trajectory}} (Vector3 pos, Vector3 velocity)
 \begin{DoxyCompactList}\small\item\em Simulates the sim balls movement given its position and velocity. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_trajectory_object_1_1_projection_aa07b501fa4c01ab618f53de42fafee0f}{Remove\+Trajectory\+Line}} ()
 \begin{DoxyCompactList}\small\item\em Tidy up the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -46,11 +46,11 @@ Create a new projection by creating a copy of the current scene.
 
 Tidy up the simulation. 
 
-\mbox{\Hypertarget{class_trajectory_object_1_1_projection_a52c0214860cb29a1f6e1638b78df7053}\label{class_trajectory_object_1_1_projection_a52c0214860cb29a1f6e1638b78df7053}} 
+\mbox{\Hypertarget{class_trajectory_object_1_1_projection_ab480f9b85621f6b1fce7a3041d948ce7}\label{class_trajectory_object_1_1_projection_ab480f9b85621f6b1fce7a3041d948ce7}} 
 \index{TrajectoryObject.Projection@{TrajectoryObject.Projection}!SimulateTrajectory@{SimulateTrajectory}}
 \index{SimulateTrajectory@{SimulateTrajectory}!TrajectoryObject.Projection@{TrajectoryObject.Projection}}
 \doxysubsubsection{\texorpdfstring{SimulateTrajectory()}{SimulateTrajectory()}}
-{\footnotesize\ttfamily bool Trajectory\+Object.\+Projection.\+Simulate\+Trajectory (\begin{DoxyParamCaption}\item[{Game\+Object}]{real\+Game\+Object,  }\item[{Vector3}]{pos,  }\item[{Vector3}]{velocity }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Trajectory\+Object.\+Projection.\+Simulate\+Trajectory (\begin{DoxyParamCaption}\item[{Vector3}]{pos,  }\item[{Vector3}]{velocity }\end{DoxyParamCaption})}
 
 
 
@@ -58,11 +58,9 @@ Simulates the sim balls movement given its position and velocity.
 
 
 \begin{DoxyParams}{Parameters}
-{\em real\+Game\+Object} & \\
+{\em pos} & The position of the object being tracked\\
 \hline
-{\em pos} & \\
-\hline
-{\em velocity} & \\
+{\em velocity} & The current velocity(and direction) of the object being tracked\\
 \hline
 \end{DoxyParams}
 

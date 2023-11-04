@@ -1,0 +1,187 @@
+\hypertarget{class_controls}{}\doxysection{Controls Class Reference}
+\label{class_controls}\index{Controls@{Controls}}
+Inheritance diagram for Controls\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controls}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interface_controls_1_1_i_player_actions}{IPlayer\+Actions}}
+\item 
+struct \mbox{\hyperlink{struct_controls_1_1_player_actions}{Player\+Actions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controls_a4295674e77bd87c0ae8304f2d2c6019f}{Controls}} ()
+\item 
+void \mbox{\hyperlink{class_controls_aa6865d9f932ae68bd0814c686baeb8ff}{Dispose}} ()
+\item 
+bool \mbox{\hyperlink{class_controls_a253f968412fe7fa422ba14c32f1c7017}{Contains}} (Input\+Action action)
+\item 
+IEnumerator$<$ Input\+Action $>$ \mbox{\hyperlink{class_controls_a1fca51ed3562dcc188188646181df81c}{Get\+Enumerator}} ()
+\item 
+void \mbox{\hyperlink{class_controls_ac9f8ebd56c2a475ceb26f13f9f027398}{Enable}} ()
+\item 
+void \mbox{\hyperlink{class_controls_a2cbfe1781d8abc77daa6259bba5e7dce}{Disable}} ()
+\item 
+Input\+Action \mbox{\hyperlink{class_controls_a4090174308f25682677d4aec5dc31a87}{Find\+Action}} (string action\+Name\+Or\+Id, bool throw\+If\+Not\+Found=false)
+\item 
+int \mbox{\hyperlink{class_controls_ae85cd2c0c8bb708c202f83f97f658111}{Find\+Binding}} (Input\+Binding \mbox{\hyperlink{class_controls_ac9fdfbfe32455a7f881b406684aa28dc}{binding\+Mask}}, out Input\+Action action)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Asset \mbox{\hyperlink{class_controls_a584d45d692cfc9d11dceb0eace0cc646}{asset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Binding? \mbox{\hyperlink{class_controls_ac9fdfbfe32455a7f881b406684aa28dc}{binding\+Mask}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Read\+Only\+Array$<$ Input\+Device $>$? \mbox{\hyperlink{class_controls_a99c0c0e747a753664752c7108adea123}{devices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Read\+Only\+Array$<$ Input\+Control\+Scheme $>$ \mbox{\hyperlink{class_controls_a40efe45bbdbd6f62eeb243bfd91f5060}{control\+Schemes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+IEnumerable$<$ Input\+Binding $>$ \mbox{\hyperlink{class_controls_a6e78f4414782284d98c55563c860b121}{bindings}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{struct_controls_1_1_player_actions}{Player\+Actions}} \mbox{\hyperlink{class_controls_ae1e4e6997c5843d1d7f34507cb9cf30b}{Player}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Control\+Scheme \mbox{\hyperlink{class_controls_ab5699f19a5438823fea016c8448a7f27}{Keyboard\+Mouse\+Scheme}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Control\+Scheme \mbox{\hyperlink{class_controls_ad996e2186430e848c14e34fe3fd75902}{Gamepad\+Scheme}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Control\+Scheme \mbox{\hyperlink{class_controls_addc2649bd459258fe9b6af2fe46214f2}{Touch\+Scheme}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Control\+Scheme \mbox{\hyperlink{class_controls_af6e9b7a2844b4c32f4cb166989436203}{Joystick\+Scheme}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Control\+Scheme \mbox{\hyperlink{class_controls_acbf3d51f8a54d01484bad3a69702e1ae}{XRScheme}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controls_a4295674e77bd87c0ae8304f2d2c6019f}\label{class_controls_a4295674e77bd87c0ae8304f2d2c6019f}} 
+\index{Controls@{Controls}!Controls@{Controls}}
+\index{Controls@{Controls}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{Controls()}{Controls()}}
+{\footnotesize\ttfamily Controls.\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controls_a253f968412fe7fa422ba14c32f1c7017}\label{class_controls_a253f968412fe7fa422ba14c32f1c7017}} 
+\index{Controls@{Controls}!Contains@{Contains}}
+\index{Contains@{Contains}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Controls.\+Contains (\begin{DoxyParamCaption}\item[{Input\+Action}]{action }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controls_a2cbfe1781d8abc77daa6259bba5e7dce}\label{class_controls_a2cbfe1781d8abc77daa6259bba5e7dce}} 
+\index{Controls@{Controls}!Disable@{Disable}}
+\index{Disable@{Disable}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{Disable()}{Disable()}}
+{\footnotesize\ttfamily void Controls.\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controls_aa6865d9f932ae68bd0814c686baeb8ff}\label{class_controls_aa6865d9f932ae68bd0814c686baeb8ff}} 
+\index{Controls@{Controls}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Controls.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controls_ac9f8ebd56c2a475ceb26f13f9f027398}\label{class_controls_ac9f8ebd56c2a475ceb26f13f9f027398}} 
+\index{Controls@{Controls}!Enable@{Enable}}
+\index{Enable@{Enable}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily void Controls.\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controls_a4090174308f25682677d4aec5dc31a87}\label{class_controls_a4090174308f25682677d4aec5dc31a87}} 
+\index{Controls@{Controls}!FindAction@{FindAction}}
+\index{FindAction@{FindAction}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{FindAction()}{FindAction()}}
+{\footnotesize\ttfamily Input\+Action Controls.\+Find\+Action (\begin{DoxyParamCaption}\item[{string}]{action\+Name\+Or\+Id,  }\item[{bool}]{throw\+If\+Not\+Found = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controls_ae85cd2c0c8bb708c202f83f97f658111}\label{class_controls_ae85cd2c0c8bb708c202f83f97f658111}} 
+\index{Controls@{Controls}!FindBinding@{FindBinding}}
+\index{FindBinding@{FindBinding}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{FindBinding()}{FindBinding()}}
+{\footnotesize\ttfamily int Controls.\+Find\+Binding (\begin{DoxyParamCaption}\item[{Input\+Binding}]{binding\+Mask,  }\item[{out Input\+Action}]{action }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_controls_a1fca51ed3562dcc188188646181df81c}\label{class_controls_a1fca51ed3562dcc188188646181df81c}} 
+\index{Controls@{Controls}!GetEnumerator@{GetEnumerator}}
+\index{GetEnumerator@{GetEnumerator}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{GetEnumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily IEnumerator$<$ Input\+Action $>$ Controls.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_controls_a584d45d692cfc9d11dceb0eace0cc646}\label{class_controls_a584d45d692cfc9d11dceb0eace0cc646}} 
+\index{Controls@{Controls}!asset@{asset}}
+\index{asset@{asset}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{asset}{asset}}
+{\footnotesize\ttfamily Input\+Action\+Asset Controls.\+asset\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_ac9fdfbfe32455a7f881b406684aa28dc}\label{class_controls_ac9fdfbfe32455a7f881b406684aa28dc}} 
+\index{Controls@{Controls}!bindingMask@{bindingMask}}
+\index{bindingMask@{bindingMask}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{bindingMask}{bindingMask}}
+{\footnotesize\ttfamily Input\+Binding? Controls.\+binding\+Mask\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_controls_a6e78f4414782284d98c55563c860b121}\label{class_controls_a6e78f4414782284d98c55563c860b121}} 
+\index{Controls@{Controls}!bindings@{bindings}}
+\index{bindings@{bindings}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{bindings}{bindings}}
+{\footnotesize\ttfamily IEnumerable$<$Input\+Binding$>$ Controls.\+bindings\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_a40efe45bbdbd6f62eeb243bfd91f5060}\label{class_controls_a40efe45bbdbd6f62eeb243bfd91f5060}} 
+\index{Controls@{Controls}!controlSchemes@{controlSchemes}}
+\index{controlSchemes@{controlSchemes}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{controlSchemes}{controlSchemes}}
+{\footnotesize\ttfamily Read\+Only\+Array$<$Input\+Control\+Scheme$>$ Controls.\+control\+Schemes\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_a99c0c0e747a753664752c7108adea123}\label{class_controls_a99c0c0e747a753664752c7108adea123}} 
+\index{Controls@{Controls}!devices@{devices}}
+\index{devices@{devices}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{devices}{devices}}
+{\footnotesize\ttfamily Read\+Only\+Array$<$Input\+Device$>$? Controls.\+devices\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_controls_ad996e2186430e848c14e34fe3fd75902}\label{class_controls_ad996e2186430e848c14e34fe3fd75902}} 
+\index{Controls@{Controls}!GamepadScheme@{GamepadScheme}}
+\index{GamepadScheme@{GamepadScheme}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{GamepadScheme}{GamepadScheme}}
+{\footnotesize\ttfamily Input\+Control\+Scheme Controls.\+Gamepad\+Scheme\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_af6e9b7a2844b4c32f4cb166989436203}\label{class_controls_af6e9b7a2844b4c32f4cb166989436203}} 
+\index{Controls@{Controls}!JoystickScheme@{JoystickScheme}}
+\index{JoystickScheme@{JoystickScheme}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{JoystickScheme}{JoystickScheme}}
+{\footnotesize\ttfamily Input\+Control\+Scheme Controls.\+Joystick\+Scheme\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_ab5699f19a5438823fea016c8448a7f27}\label{class_controls_ab5699f19a5438823fea016c8448a7f27}} 
+\index{Controls@{Controls}!KeyboardMouseScheme@{KeyboardMouseScheme}}
+\index{KeyboardMouseScheme@{KeyboardMouseScheme}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{KeyboardMouseScheme}{KeyboardMouseScheme}}
+{\footnotesize\ttfamily Input\+Control\+Scheme Controls.\+Keyboard\+Mouse\+Scheme\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_ae1e4e6997c5843d1d7f34507cb9cf30b}\label{class_controls_ae1e4e6997c5843d1d7f34507cb9cf30b}} 
+\index{Controls@{Controls}!Player@{Player}}
+\index{Player@{Player}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_controls_1_1_player_actions}{Player\+Actions}} Controls.\+Player\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_addc2649bd459258fe9b6af2fe46214f2}\label{class_controls_addc2649bd459258fe9b6af2fe46214f2}} 
+\index{Controls@{Controls}!TouchScheme@{TouchScheme}}
+\index{TouchScheme@{TouchScheme}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{TouchScheme}{TouchScheme}}
+{\footnotesize\ttfamily Input\+Control\+Scheme Controls.\+Touch\+Scheme\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_controls_acbf3d51f8a54d01484bad3a69702e1ae}\label{class_controls_acbf3d51f8a54d01484bad3a69702e1ae}} 
+\index{Controls@{Controls}!XRScheme@{XRScheme}}
+\index{XRScheme@{XRScheme}!Controls@{Controls}}
+\doxysubsubsection{\texorpdfstring{XRScheme}{XRScheme}}
+{\footnotesize\ttfamily Input\+Control\+Scheme Controls.\+XRScheme\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/\+RD8/\+Assets/\+Scripts/\+Player/\+Generated/\mbox{\hyperlink{_controls_8cs}{Controls.\+cs}}\end{DoxyCompactItemize}

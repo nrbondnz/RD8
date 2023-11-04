@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['playcollisionsound_0',['PlayCollisionSound',['../class_managers_1_1_sound_manager.html#a1803534e0e3379b75104fb7dd5f663ad',1,'Managers::SoundManager']]]
+  ['nextwaypoint_0',['NextWaypoint',['../class_managers_1_1_waypoint_manager.html#ab714ade95a3bb44ddbd6caf480c9de91',1,'Managers::WaypointManager']]]
 ];

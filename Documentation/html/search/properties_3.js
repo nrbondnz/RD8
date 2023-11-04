@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lastlevel_0',['LastLevel',['../class_managers_1_1_game_state_manager.html#a196ef2da5263c937038d88d569fa9325',1,'Managers::GameStateManager']]],
-  ['lives_1',['Lives',['../struct_managers_1_1_game_status.html#a217f141cb4fc611f15c904ef4e43c0b1',1,'Managers::GameStatus']]]
+  ['devices_0',['devices',['../class_controls.html#a99c0c0e747a753664752c7108adea123',1,'Controls.devices()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a85170e4a5ccf4d1f0622692b21f53984',1,'Player.Generated.PlayerInputActions.devices()']]]
 ];

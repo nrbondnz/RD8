@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['simulatetrajectory_0',['SimulateTrajectory',['../class_trajectory_object_1_1_projection.html#ab480f9b85621f6b1fce7a3041d948ce7',1,'TrajectoryObject::Projection']]],
-  ['start_1',['Start',['../class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb',1,'Managers.GamePlayManager.Start()'],['../class_managers_1_1_waypoint_manager.html#af383db5d6035da06a4cfc0b9caf07dca',1,'Managers.WaypointManager.Start()'],['../class_trajectory_object_1_1_trajectory_line_manager.html#a18987a5846ec7e46ef57139ced3139d9',1,'TrajectoryObject.TrajectoryLineManager.Start()']]]
+  ['playcollisionsound_0',['PlayCollisionSound',['../class_managers_1_1_sound_manager.html#a1803534e0e3379b75104fb7dd5f663ad',1,'Managers::SoundManager']]],
+  ['playeractions_1',['PlayerActions',['../struct_controls_1_1_player_actions.html#af9a50c29b516e55ca953339cc2db9fc4',1,'Controls.PlayerActions.PlayerActions()'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#a498ed32b85d78f11e2af5c0d4dfb7add',1,'Player.Generated.PlayerInputActions.PlayerActions.PlayerActions()']]],
+  ['playerinputactions_2',['PlayerInputActions',['../class_player_1_1_generated_1_1_player_input_actions.html#a18998d1776e345f3af93c15a2400a522',1,'Player::Generated::PlayerInputActions']]]
 ];

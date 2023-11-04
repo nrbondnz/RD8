@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['scenenum_0',['SceneNum',['../class_managers_1_1_game_state_manager.html#a8c0c375f4e55a62a61a058f95a741943',1,'Managers::GameStateManager']]],
-  ['simulatetrajectory_1',['SimulateTrajectory',['../class_trajectory_object_1_1_projection.html#ab480f9b85621f6b1fce7a3041d948ce7',1,'TrajectoryObject::Projection']]],
-  ['soundmanager_2',['SoundManager',['../class_managers_1_1_sound_manager.html',1,'Managers']]],
-  ['soundmanager_2ecs_3',['SoundManager.cs',['../_sound_manager_8cs.html',1,'']]],
-  ['speedchange_4',['SpeedChange',['../namespace_collision.html#a7c45cf11d52bc3377748bac70aebbadda69bc9102f450a30bbd9e13116ceeb821',1,'Collision']]],
-  ['speedchangecollisionaction_5',['SpeedChangeCollisionAction',['../class_collision_1_1_speed_change_collision_action.html',1,'Collision']]],
-  ['speedchangecollisionaction_2ecs_6',['SpeedChangeCollisionAction.cs',['../_speed_change_collision_action_8cs.html',1,'']]],
-  ['start_7',['Start',['../class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb',1,'Managers.GamePlayManager.Start()'],['../class_managers_1_1_waypoint_manager.html#af383db5d6035da06a4cfc0b9caf07dca',1,'Managers.WaypointManager.Start()'],['../class_trajectory_object_1_1_trajectory_line_manager.html#a18987a5846ec7e46ef57139ced3139d9',1,'TrajectoryObject.TrajectoryLineManager.Start()']]],
-  ['started_8',['Started',['../struct_managers_1_1_game_status.html#aefbd67b1db08f63f88d6f788c9f9aff7',1,'Managers::GameStatus']]],
-  ['startingtextscreen_9',['StartingTextScreen',['../class_utilities_1_1_starting_text_screen.html',1,'Utilities']]],
-  ['startingtextscreen_2ecs_10',['StartingTextScreen.cs',['../_starting_text_screen_8cs.html',1,'']]],
-  ['string_11',['String',['../_game_manager_8cs.html#aa1d8fb822302bf01699083b8c1e996e9',1,'GameManager.cs']]],
-  ['strong_12',['Strong',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9',1,'Collision']]]
+  ['readytogo_0',['ReadyToGo',['../namespace_managers.html#a611e2d8e9c342f0418b55098824563feac2e0a60d8b2a346703c0ec1a6366db11',1,'Managers']]],
+  ['removecallbacks_1',['RemoveCallbacks',['../struct_controls_1_1_player_actions.html#a5b0172e75b46f750b295f0c2f252cdaf',1,'Controls.PlayerActions.RemoveCallbacks()'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#a1f8ead289491d723666ebe9b50452be3',1,'Player.Generated.PlayerInputActions.PlayerActions.RemoveCallbacks()']]],
+  ['removecomponentswithjustscripts_2',['RemoveComponentsWithJustScripts',['../class_utilities_1_1_game_object_utilities.html#adc903eabbf59f48e77a9da13a332e3ff',1,'Utilities::GameObjectUtilities']]],
+  ['removelife_3',['RemoveLife',['../class_managers_1_1_game_play_manager.html#af0a5b0fe596164a0d14870b16ffb070c',1,'Managers.GamePlayManager.RemoveLife()'],['../struct_managers_1_1_game_status.html#aa1c846b633f5cfd53e5e91b47aa500c0',1,'Managers.GameStatus.RemoveLife()']]],
+  ['removelifeandresetscene_4',['RemoveLifeAndResetScene',['../class_managers_1_1_game_reset_manager.html#a41fc068af42ae846d0c396cbfd91ea6b',1,'Managers::GameResetManager']]],
+  ['removetrajectoryline_5',['RemoveTrajectoryLine',['../class_trajectory_object_1_1_projection.html#aa07b501fa4c01ab618f53de42fafee0f',1,'TrajectoryObject::Projection']]],
+  ['resetgamestate_6',['ResetGameState',['../class_managers_1_1_game_state_manager.html#a8772f72955ed23f42c596a335f35c53a',1,'Managers::GameStateManager']]],
+  ['resetscene_7',['ResetScene',['../class_managers_1_1_game_reset_manager.html#a9d718417ac8c7e73f41e2ee021b3d0fd',1,'Managers::GameResetManager']]],
+  ['resetwaypoints_8',['ResetWaypoints',['../class_managers_1_1_waypoint_manager.html#a3fc4750b0c60232aef42b04b0359b121',1,'Managers::WaypointManager']]],
+  ['reveal_9',['Reveal',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66ba393c3f5ea8ad35c02691d507bdbb31b0',1,'Key::IKeyAction']]],
+  ['revealkeyaction_10',['RevealKeyAction',['../class_key_1_1_reveal_key_action.html',1,'Key']]],
+  ['revealkeyaction_2ecs_11',['RevealKeyAction.cs',['../_reveal_key_action_8cs.html',1,'']]],
+  ['rolling_20danger_20home_20page_12',['Rolling Danger Home Page',['../index.html',1,'']]]
 ];

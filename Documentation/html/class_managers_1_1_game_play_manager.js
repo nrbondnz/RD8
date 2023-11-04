@@ -7,6 +7,6 @@ var class_managers_1_1_game_play_manager =
     [ "InitGame", "class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca", null ],
     [ "RemoveLife", "class_managers_1_1_game_play_manager.html#af0a5b0fe596164a0d14870b16ffb070c", null ],
     [ "Start", "class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb", null ],
-    [ "UpdateTimeRemaining", "class_managers_1_1_game_play_manager.html#ac60a929ece1c48a297197cff8940253b", null ],
+    [ "UpdateTimers", "class_managers_1_1_game_play_manager.html#abc089f7185937cbc9a8694763b2e62d4", null ],
     [ "GameStatus", "class_managers_1_1_game_play_manager.html#a96501ef77703985fe7a870d98fe073ac", null ]
 ];
