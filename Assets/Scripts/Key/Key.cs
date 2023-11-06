@@ -34,7 +34,8 @@ namespace key
 
         private void OnDrawGizmos()
         {
-            if (( ! keyActionController.IsUnityNull()) && ( waypointManager.hasWaypoints()))
+            this.waypointManager.OnDrawGizmos();
+            /*if (( ! keyActionController.IsUnityNull()) && ( waypointManager.hasWaypoints()))
             {
                 Gizmos.color = Color.green;
                 Gizmos.DrawRay(transform.position, keyActionController.transform.position - transform.position);
@@ -43,7 +44,7 @@ namespace key
             {
                 Gizmos.color = Color.red;
                 Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
-            }
+            }*/
         }
         
     }

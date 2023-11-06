@@ -22,12 +22,36 @@ namespace Managers
             return ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0 ) );
         }
         
-        private void OnDrawGizmos()
+        public void OnDrawGizmos()
         {
             if ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0) )
             {
-                Gizmos.color = Color.green;
-                //Gizmos.DrawRay(transform.position, WaypointManager.position - transform.position);
+                bool changesImplTimeAllowed = false;
+                GameObject gameObj = null;
+                foreach (var waypoint in waypoints)
+                {
+                    if (waypoint.IsConvertibleTo<ITimeAllowedToWaypoint>(waypoint))
+                    {
+                        changesImplTimeAllowed = true;
+                    }
+                    else
+                    {
+                        changesImplTimeAllowed = false;
+                        gameObj = waypoint;
+                        break;
+                    }
+                }
+
+                if (changesImplTimeAllowed)
+                {
+                    Gizmos.color = Color.green;
+                    //Gizmos.DrawRay(transform.position, WaypointManager.position - transform.position);
+                }
+                else
+                {
+                    Gizmos.color = Color.magenta;
+                    Debug.LogError("Waypoint : " + gameObj + " does not implement ITimeAllowedToWaypoint" );
+                }
             }
             else
             {
