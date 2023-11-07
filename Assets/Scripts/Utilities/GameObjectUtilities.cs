@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Key;
+using Managers.WaypointManagement;
 using UnityEngine;
 
 namespace Utilities
@@ -47,10 +48,10 @@ namespace Utilities
             return gameObject.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
         }
         
-        public static ITimeAllowedToWaypoint TimeAllowedToWaypointComponent(GameObject gameObject)
+        public static ITimeAllowedToWaypoint TimeAllowedToWaypointComponent(WaypointSubscriber gameObject)
         {
-            return (ITimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<ITimeAllowedToWaypoint>(gameObject);
-
-    }
+            //return (ITimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<ITimeAllowedToWaypoint>(gameObject);
+            return gameObject;
+        }
     }
 }

@@ -1,12 +1,13 @@
 using System.Collections;
 using Managers;
+using Managers.WaypointManagement;
 using UnityEngine;
 
 namespace Utilities
 {
 
 
-    public class WinningLevel : MonoBehaviour
+    public class WinningLevel : WaypointSubscriber
     {
         //private GameManager _gameManager;
         [SerializeField] private Material winningMaterial;

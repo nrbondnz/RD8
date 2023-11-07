@@ -3,27 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using Key;
 using Managers;
+using Managers.WaypointManagement;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace key
 {
-    public class Key : MonoBehaviour
+    public class Key : WaypointSubscriber
     {
         [SerializeField] KeyActionController keyActionController;
         [SerializeField] private float keyRotationSpeed = 3;
-        [SerializeField] WaypointManager waypointManager;
+        //private WaypointManager _waypointManager;
 
-
+        
+        
+      
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 keyActionController.CarryOutAction();
-                waypointManager?.NextWaypoint();
+                WaypointManager.GetInstance().NextWaypoint();
                 gameObject.SetActive(false);
-                Debug.Log("Just setActive to false for waypoint" + gameObject.name);
+                Debug.Log("Just setActive to false for waypoint : " + gameObject.name);
             }
         }
 
@@ -34,7 +37,7 @@ namespace key
 
         private void OnDrawGizmos()
         {
-            this.waypointManager.OnDrawGizmos();
+            //WaypointManager.GetInstance().OnDrawGizmos();
             /*if (( ! keyActionController.IsUnityNull()) && ( waypointManager.hasWaypoints()))
             {
                 Gizmos.color = Color.green;

@@ -1,33 +1,59 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using Key;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Utilities;
 
-namespace Managers
+namespace Managers.WaypointManagement
 {
     public class WaypointManager : MonoBehaviour
     {
-        [SerializeField] private GameObject[] waypoints;
-
+        private WaypointSubscriber[] waypoints;
+        private int _masterIndex = 5;
+        private static WaypointManager _instance;
         private int _currentWaypoint = 0;
         //private float _timeAllowedToWaypoint = 0.0f;
-        private int _lastWaypoint = 0;
+        //private int _lastWaypoint = 0;
+        
+        private void Awake()
+        {
+            if (_instance != null)
+            {
+                Debug.Log("WaypointManager Trying second Awake");
+                Destroy(gameObject);
+                return;
+            }
 
-        public bool hasWaypoints()
+            Debug.Log("WaypointManager Awake");
+            _instance = this;
+            _instance.waypoints = new WaypointSubscriber[_masterIndex];
+            DontDestroyOnLoad(gameObject);
+            //SetupLastLevel();
+        }
+
+        
+
+        /// <summary>
+        /// gets the (single per run) instance of the WaypointManager
+        /// which will be created during Awake
+        /// </summary>
+        /// <returns>WaypointManager</returns>
+        public static WaypointManager GetInstance()
+        {
+            return _instance;
+        }
+        
+        public bool HasWaypoints()
         {
             return ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0 ) );
         }
         
-        public void OnDrawGizmos()
+        /*public void OnDrawGizmos()
         {
             if ( ( ! waypoints.IsUnityNull() ) && ( waypoints.Length > 0) )
             {
                 bool changesImplTimeAllowed = false;
-                GameObject gameObj = null;
+                WaypointSubscriber gameObj = null;
                 foreach (var waypoint in waypoints)
                 {
                     if (waypoint.IsConvertibleTo<ITimeAllowedToWaypoint>(waypoint))
@@ -60,20 +86,20 @@ namespace Managers
                 
             }
             Gizmos.DrawSphere(transform.position + Vector3.up * 2, 0.5f);
-        }
+        }*/
 
         public void Start()
         {
-            if (waypoints is not null)
-            {
-                _lastWaypoint = waypoints.Length - 1;
-                ResetWaypoints();
-            }
+            //if (waypoints is not null)
+            //{
+            //    _lastWaypoint = waypoints.Length - 1;
+                //ResetWaypoints();
+            //}
         }
 
         public void setTimeAllowedToWaypoint()
         {
-            GameObject currentWaypoint = CurrentWaypointGameObject();
+            WaypointSubscriber currentWaypoint = CurrentWaypointSubscriber();
             if (currentWaypoint.IsConvertibleTo<ITimeAllowedToWaypoint>(currentWaypoint))
             {
                 Debug.Log("GameObject on waypoint implements ITimeAllowedToWaypoint");
@@ -106,7 +132,7 @@ namespace Managers
 
         public void NextWaypoint()
         {
-            if (_currentWaypoint < _lastWaypoint)
+            if (_currentWaypoint < _masterIndex)
             {
                 _currentWaypoint++;
                 setTimeAllowedToWaypoint();
@@ -120,7 +146,7 @@ namespace Managers
             }
         }
 
-        public GameObject CurrentWaypointGameObject()
+        public WaypointSubscriber CurrentWaypointSubscriber()
         {
             if (waypoints?.Length > 0)
             {
@@ -131,5 +157,19 @@ namespace Managers
             }
         }
 
+        public void AddSubscriber(WaypointSubscriber waypointSubscriber, int index, bool isLast)
+        {
+            Debug.Log("AddSubscriber index " + index + " set to " + waypointSubscriber.name);
+            this.waypoints[index] = waypointSubscriber;
+            if (isLast)
+            {Debug.Log("AddSubscriber is last is true");
+                for (int i = index + 1; i < _masterIndex; i++)
+                {
+                    Debug.Log("Index " + i + " set to null");
+                    this.waypoints[i] = null;
+                }
+                ResetWaypoints();
+            }
+        }
     }
 }

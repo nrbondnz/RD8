@@ -1,5 +1,6 @@
 using System;
 using Managers;
+using Managers.WaypointManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 

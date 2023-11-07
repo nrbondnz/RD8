@@ -1,4 +1,5 @@
 using Managers;
+using Managers.WaypointManagement;
 using UnityEngine;
 
 
@@ -25,7 +26,7 @@ using UnityEngine;
             private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
             private Player.Player _player = new Player.Player();
             private Rigidbody _targetRigidBody;
-            private GameObject _currentWaypoint;
+            private WaypointSubscriber _currentWaypoint;
             public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
 
             public float YOffset
@@ -134,7 +135,7 @@ using UnityEngine;
             /// <param name="pWaypointManager"></param>
             public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
             {
-                this._currentWaypoint = pWaypointManager.CurrentWaypointGameObject();
+                this._currentWaypoint = WaypointManager.GetInstance().CurrentWaypointSubscriber();
             }
 
             public void MoveCamera(Vector2 input2D)

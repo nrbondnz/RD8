@@ -1373,6 +1373,10 @@ PrefabInstance:
       value: Winning Platorm
       objectReference: {fileID: 0}
     - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: isLast
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: winningUI
       value: 
       objectReference: {fileID: 1843773449}
@@ -1384,6 +1388,10 @@ PrefabInstance:
       propertyPath: winningMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
+    - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: timeAllowedToWaypoint
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1513,10 +1521,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1051996084}
+  - {fileID: 17206817}
   - {fileID: 1621863}
   - {fileID: 1746685593}
   - {fileID: 840979617}
-  - {fileID: 17206817}
   - {fileID: 1966978579}
   - {fileID: 1360043046}
   - {fileID: 2021735641}
