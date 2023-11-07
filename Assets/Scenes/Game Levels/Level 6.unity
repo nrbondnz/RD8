@@ -872,8 +872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeAllowedToWaypoint: 15
-  index: 0
-  isLast: 0
+  index: 2
+  isLast: 1
 --- !u!1001 &1056320844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1642,6 +1642,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1384024507}
   - {fileID: 1610532847}
   - {fileID: 397421649}
   - {fileID: 899763406}
@@ -1650,5 +1651,4 @@ SceneRoots:
   - {fileID: 417782586}
   - {fileID: 1355295681}
   - {fileID: 790022249}
-  - {fileID: 1384024507}
   - {fileID: 1056320844}

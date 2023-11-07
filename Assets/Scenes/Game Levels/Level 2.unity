@@ -372,9 +372,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: isLast
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: winningUI
       value: 
       objectReference: {fileID: 286917309}
+    - target: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+      propertyPath: timeAllowedToWaypoint
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 512890894839006044, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
       propertyPath: m_Size.x
       value: 0.9
@@ -1856,6 +1868,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 598632138}
   - {fileID: 135870908}
   - {fileID: 314288442}
   - {fileID: 193626969}
@@ -1866,6 +1879,5 @@ SceneRoots:
   - {fileID: 841132143}
   - {fileID: 1915443687}
   - {fileID: 1814770427}
-  - {fileID: 598632138}
   - {fileID: 669621245}
   - {fileID: 1093925842}

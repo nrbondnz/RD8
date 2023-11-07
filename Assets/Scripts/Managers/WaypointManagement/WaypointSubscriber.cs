@@ -10,7 +10,7 @@ namespace Managers.WaypointManagement
         [SerializeField] private bool isLast = false;
         
         // Start is called before the first frame update
-        void Awake()
+        void Start()
         {
            
             WaypointManager.GetInstance().AddSubscriber(this, index, isLast);

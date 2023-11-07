@@ -161,14 +161,16 @@ namespace Managers.WaypointManagement
         {
             Debug.Log("AddSubscriber index " + index + " set to " + waypointSubscriber.name);
             this.waypoints[index] = waypointSubscriber;
+            ResetWaypoints();
             if (isLast)
-            {Debug.Log("AddSubscriber is last is true");
+            {
+                Debug.Log("AddSubscriber is last is true");
                 for (int i = index + 1; i < _masterIndex; i++)
                 {
                     Debug.Log("Index " + i + " set to null");
                     this.waypoints[i] = null;
                 }
-                ResetWaypoints();
+                
             }
         }
     }
