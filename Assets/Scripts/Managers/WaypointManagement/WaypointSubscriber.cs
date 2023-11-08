@@ -7,13 +7,13 @@ namespace Managers.WaypointManagement
     {
         [SerializeField] private float timeAllowedToWaypoint = 0.0f;
         [SerializeField] private int index;
-        [SerializeField] private bool isLast = false;
+        //[SerializeField] private bool isLast = false;
         
-        // Start is called before the first frame update
-        void Start()
+        //  Awake are all called before the first start on a scene
+        void Awake()
         {
             Debug.Log("WaypointSubscriber : " + this + " start method");
-            WaypointManager.GetInstance().AddSubscriber(this, index, isLast);
+            //WaypointManager.GetInstance().AddSubscriber(this, index);
             
         }
 
@@ -27,10 +27,6 @@ namespace Managers.WaypointManagement
         {
             return this.timeAllowedToWaypoint;
         }
-
-        public bool IsLast()
-        {
-            return isLast;
-        }
+        
     }
 }

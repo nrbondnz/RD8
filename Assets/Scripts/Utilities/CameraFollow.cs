@@ -135,7 +135,7 @@ using UnityEngine;
             /// <param name="pWaypointManager"></param>
             public void UpdateCurrentWaypoint(WaypointManager pWaypointManager)
             {
-                this._currentWaypoint = WaypointManager.GetInstance().CurrentWaypointSubscriber();
+                this._currentWaypoint = pWaypointManager.CurrentWaypointSubscriber();
             }
 
             public void MoveCamera(Vector2 input2D)

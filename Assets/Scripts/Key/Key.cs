@@ -24,7 +24,7 @@ namespace key
             if (other.CompareTag("Player"))
             {
                 keyActionController.CarryOutAction();
-                WaypointManager.GetInstance().NextWaypoint();
+                FindAnyObjectByType<WaypointManager>().NextWaypoint();
                 gameObject.SetActive(false);
                 Debug.Log("Just setActive to false for waypoint : " + gameObject.name);
             }

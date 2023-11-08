@@ -356,6 +356,17 @@ MonoBehaviour:
   isActionStarted: 0
   isReveal: 0
   keyActionEnumEnum: 1
+--- !u!114 &397421652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7717853794996407974, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
+  m_PrefabInstance: {fileID: 397421649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397421650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b0662150cf74462bbb0d7cf5081130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417782582
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +471,54 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 4.74, z: 24.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &451931262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451931264}
+  - component: {fileID: 451931263}
+  m_Layer: 0
+  m_Name: WaypointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451931263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451931262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217146b3235ec47018f53f0417ad48b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1610532849}
+  - {fileID: 397421652}
+  - {fileID: 899763408}
+--- !u!4 &451931264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451931262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 801.6374, y: 166.92662, z: -435.7295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -837,6 +896,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 512890894839005986, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
   m_PrefabInstance: {fileID: 899763406}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &899763408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
+  m_PrefabInstance: {fileID: 899763406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899763407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96df3d9cf0df446cd89ebe1909434672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &899763413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512890894839006047, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
@@ -873,7 +943,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeAllowedToWaypoint: 15
   index: 2
-  isLast: 1
 --- !u!1001 &1056320844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1376,6 +1445,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7660726682753258919, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
   m_PrefabInstance: {fileID: 1610532847}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610532849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7717853794996407974, guid: 30c4cce25c4cc4881b22c4fcc84ea0aa, type: 3}
+  m_PrefabInstance: {fileID: 1610532847}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610532848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b0662150cf74462bbb0d7cf5081130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1610532854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,7 +1470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeAllowedToWaypoint: 20
   index: 0
-  isLast: 0
 --- !u!1 &1657452181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,3 +1731,4 @@ SceneRoots:
   - {fileID: 1355295681}
   - {fileID: 790022249}
   - {fileID: 1056320844}
+  - {fileID: 451931264}

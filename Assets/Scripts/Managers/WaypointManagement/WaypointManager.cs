@@ -8,40 +8,18 @@ namespace Managers.WaypointManagement
 {
     public class WaypointManager : MonoBehaviour
     {
-        private WaypointSubscriber[] waypoints;
-        private int _masterIndex = 5;
+        [SerializeField] private WaypointSubscriber[] waypoints;
+        //private int _masterIndex = 5;
         private static WaypointManager _instance;
         private int _currentWaypoint = 0;
         //private float _timeAllowedToWaypoint = 0.0f;
         //private int _lastWaypoint = 0;
         
-        private void Awake()
-        {
-            if (_instance != null)
-            {
-                Debug.Log("WaypointManager Trying second Awake");
-                Destroy(gameObject);
-                return;
-            }
-
-            Debug.Log("WaypointManager Awake");
-            _instance = this;
-            _instance.waypoints = new WaypointSubscriber[_masterIndex];
-            DontDestroyOnLoad(gameObject);
-            //SetupLastLevel();
-        }
+       
 
         
 
-        /// <summary>
-        /// gets the (single per run) instance of the WaypointManager
-        /// which will be created during Awake
-        /// </summary>
-        /// <returns>WaypointManager</returns>
-        public static WaypointManager GetInstance()
-        {
-            return _instance;
-        }
+        
         
         public bool HasWaypoints()
         {
@@ -90,6 +68,7 @@ namespace Managers.WaypointManagement
 
         public void Start()
         {
+            ResetWaypoints();
             //if (waypoints is not null)
             //{
             //    _lastWaypoint = waypoints.Length - 1;
@@ -126,13 +105,17 @@ namespace Managers.WaypointManagement
         public void ResetWaypoints()
         {
             _currentWaypoint = 0;
+            /*for (int i = 0; i < _masterIndex; i++)
+            {
+                this.waypoints[i] = null;
+            }*/
             setTimeAllowedToWaypoint();
             Actions.OnWaypointUpdate?.Invoke(this);
         }
 
         public void NextWaypoint()
         {
-            if (_currentWaypoint < _masterIndex)
+            if (_currentWaypoint < waypoints.Length)
             {
                 _currentWaypoint++;
                 setTimeAllowedToWaypoint();
@@ -157,12 +140,12 @@ namespace Managers.WaypointManagement
             }
         }
 
-        public void AddSubscriber(WaypointSubscriber waypointSubscriber, int index, bool isLast)
+        public void AddSubscriber(WaypointSubscriber waypointSubscriber, int index)
         {
             Debug.Log("AddSubscriber index " + index + " set to " + waypointSubscriber.name);
             this.waypoints[index] = waypointSubscriber;
             ResetWaypoints();
-            if (isLast)
+            /*if (isLast)
             {
                 Debug.Log("AddSubscriber is last is true");
                 for (int i = index + 1; i < _masterIndex; i++)
@@ -171,7 +154,7 @@ namespace Managers.WaypointManagement
                     this.waypoints[i] = null;
                 }
                 
-            }
+            }*/
         }
     }
 }
