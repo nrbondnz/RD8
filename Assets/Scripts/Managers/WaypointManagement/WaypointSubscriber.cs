@@ -12,7 +12,7 @@ namespace Managers.WaypointManagement
         // Start is called before the first frame update
         void Start()
         {
-           
+            Debug.Log("WaypointSubscriber : " + this + " start method");
             WaypointManager.GetInstance().AddSubscriber(this, index, isLast);
             
         }

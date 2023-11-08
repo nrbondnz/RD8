@@ -14,13 +14,7 @@ namespace Utilities
         [SerializeField] private bool instantWin = false;
         [SerializeField] private GameObject winningUI;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
-        
-        
+       
 
         // Update is called once per frame
         void Update()
