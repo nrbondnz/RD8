@@ -24,14 +24,17 @@ var annotated_dup =
       [ "Key", "classkey_1_1_key.html", null ]
     ] ],
     [ "Managers", "namespace_managers.html", [
+      [ "WaypointManagement", "namespace_managers_1_1_waypoint_management.html", [
+        [ "WaypointManager", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html", "class_managers_1_1_waypoint_management_1_1_waypoint_manager" ],
+        [ "WaypointSubscriber", "class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html", "class_managers_1_1_waypoint_management_1_1_waypoint_subscriber" ]
+      ] ],
       [ "GameManager", "class_managers_1_1_game_manager.html", "class_managers_1_1_game_manager" ],
       [ "GamePlayManager", "class_managers_1_1_game_play_manager.html", "class_managers_1_1_game_play_manager" ],
       [ "GameResetManager", "class_managers_1_1_game_reset_manager.html", "class_managers_1_1_game_reset_manager" ],
       [ "GameStateManager", "class_managers_1_1_game_state_manager.html", "class_managers_1_1_game_state_manager" ],
       [ "GameStatus", "struct_managers_1_1_game_status.html", "struct_managers_1_1_game_status" ],
       [ "SoundManager", "class_managers_1_1_sound_manager.html", "class_managers_1_1_sound_manager" ],
-      [ "UIScoreManager", "class_managers_1_1_u_i_score_manager.html", null ],
-      [ "WaypointManager", "class_managers_1_1_waypoint_manager.html", "class_managers_1_1_waypoint_manager" ]
+      [ "UIScoreManager", "class_managers_1_1_u_i_score_manager.html", null ]
     ] ],
     [ "Player", "namespace_player.html", [
       [ "Generated", "namespace_player_1_1_generated.html", [
@@ -53,6 +56,5 @@ var annotated_dup =
       [ "WinningLevel", "class_utilities_1_1_winning_level.html", null ]
     ] ],
     [ "Controls", "class_controls.html", "class_controls" ],
-    [ "PrefabGameObject", "class_prefab_game_object.html", "class_prefab_game_object" ],
-    [ "WaypointTimeout", "class_waypoint_timeout.html", "class_waypoint_timeout" ]
+    [ "PrefabGameObject", "class_prefab_game_object.html", "class_prefab_game_object" ]
 ];

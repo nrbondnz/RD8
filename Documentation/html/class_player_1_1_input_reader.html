@@ -96,6 +96,9 @@ $(document).ready(function(){initNavTree('class_player_1_1_input_reader.html',''
   <div class="headertitle"><div class="title">Player.InputReader Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Uses the New Input '<a class="el" href="class_controls.html">Controls</a>'(name you choose) which causes dot net generation of controls for the scenes OnMovement is generated to connect to the Movement action(in unity) Input Actions object The <a class="el" href="interface_controls_1_1_i_player_actions.html">Controls.IPlayerActions</a> is then an interface that this class implments and will be called when the action takes place.  
+ <a href="class_player_1_1_input_reader.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Player.InputReader:</div>
 <div class="dyncontent">
@@ -109,12 +112,15 @@ Inheritance diagram for Player.InputReader:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a47af5cbce0a61f2813e4a83639031a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_1_1_input_reader.html#a47af5cbce0a61f2813e4a83639031a04">OnDisable</a> ()</td></tr>
+<tr class="memdesc:a47af5cbce0a61f2813e4a83639031a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">OnDissable is used as the InputReader is dissabled, ending callbacks and setting the service to dissabled.  <br /></td></tr>
 <tr class="separator:a47af5cbce0a61f2813e4a83639031a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c34f1babea8da6484e36f5f8d1138ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_1_1_input_reader.html#a4c34f1babea8da6484e36f5f8d1138ae">OnMovement</a> (InputValue pInputValue)</td></tr>
+<tr class="memdesc:a4c34f1babea8da6484e36f5f8d1138ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is one of the implementing interface methods that will be called when the action takes place. However, this old input system using a parameter of InputValue. The new input action is below.  <br /></td></tr>
 <tr class="separator:a4c34f1babea8da6484e36f5f8d1138ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ad839ede9ad8033ee42fe0685cd5887"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_1_1_input_reader.html#a4ad839ede9ad8033ee42fe0685cd5887">OnJump</a> (InputValue pInputValue)</td></tr>
 <tr class="separator:a4ad839ede9ad8033ee42fe0685cd5887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa88817187ae61120a54f53532941a590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_1_1_input_reader.html#aa88817187ae61120a54f53532941a590">OnMovement</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:aa88817187ae61120a54f53532941a590"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is using the new input system with its signature of CallbackContext(which is more rich in functionality) The fact its value is a Vector2 comes from the unity setup of the action properties It uses the Actions class to connect it to interested consumers of change.  <br /></td></tr>
 <tr class="separator:aa88817187ae61120a54f53532941a590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6561b038abfa68cf9eceae46f1c44720"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_1_1_input_reader.html#a6561b038abfa68cf9eceae46f1c44720">OnCameraMove</a> (InputAction.CallbackContext context)</td></tr>
 <tr class="separator:a6561b038abfa68cf9eceae46f1c44720"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,7 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8cd0198ec165ca56967b50b66f9906b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_controls_1_1_i_player_actions.html#a8cd0198ec165ca56967b50b66f9906b1">OnCameraMove</a> (InputAction.CallbackContext context)</td></tr>
 <tr class="separator:a8cd0198ec165ca56967b50b66f9906b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Uses the New Input '<a class="el" href="class_controls.html">Controls</a>'(name you choose) which causes dot net generation of controls for the scenes OnMovement is generated to connect to the Movement action(in unity) Input Actions object The <a class="el" href="interface_controls_1_1_i_player_actions.html">Controls.IPlayerActions</a> is then an interface that this class implments and will be called when the action takes place. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6561b038abfa68cf9eceae46f1c44720" name="a6561b038abfa68cf9eceae46f1c44720"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6561b038abfa68cf9eceae46f1c44720">&#9670;&#160;</a></span>OnCameraMove()</h2>
 
@@ -162,6 +170,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>OnDissable is used as the InputReader is dissabled, ending callbacks and setting the service to dissabled. </p>
 
 </div>
 </div>
@@ -219,6 +229,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is using the new input system with its signature of CallbackContext(which is more rich in functionality) The fact its value is a Vector2 comes from the unity setup of the action properties It uses the Actions class to connect it to interested consumers of change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="interface_controls_1_1_i_player_actions.html#adbb9241c71b3518f711f60b0fbc752ae">Controls.IPlayerActions</a>.</p>
 
 </div>
@@ -238,6 +256,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is one of the implementing interface methods that will be called when the action takes place. However, this old input system using a parameter of InputValue. The new input action is below. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pInputValue</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

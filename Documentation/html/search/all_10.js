@@ -8,7 +8,7 @@ var searchData=
   ['removetrajectoryline_5',['RemoveTrajectoryLine',['../class_trajectory_object_1_1_projection.html#aa07b501fa4c01ab618f53de42fafee0f',1,'TrajectoryObject::Projection']]],
   ['resetgamestate_6',['ResetGameState',['../class_managers_1_1_game_state_manager.html#a8772f72955ed23f42c596a335f35c53a',1,'Managers::GameStateManager']]],
   ['resetscene_7',['ResetScene',['../class_managers_1_1_game_reset_manager.html#a9d718417ac8c7e73f41e2ee021b3d0fd',1,'Managers::GameResetManager']]],
-  ['resetwaypoints_8',['ResetWaypoints',['../class_managers_1_1_waypoint_manager.html#a3fc4750b0c60232aef42b04b0359b121',1,'Managers::WaypointManager']]],
+  ['resetwaypoints_8',['ResetWaypoints',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ae98351686325d62e2ac8173a286a493b',1,'Managers::WaypointManagement::WaypointManager']]],
   ['reveal_9',['Reveal',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66ba393c3f5ea8ad35c02691d507bdbb31b0',1,'Key::IKeyAction']]],
   ['revealkeyaction_10',['RevealKeyAction',['../class_key_1_1_reveal_key_action.html',1,'Key']]],
   ['revealkeyaction_2ecs_11',['RevealKeyAction.cs',['../_reveal_key_action_8cs.html',1,'']]],

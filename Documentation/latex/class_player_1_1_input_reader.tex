@@ -1,5 +1,10 @@
 \hypertarget{class_player_1_1_input_reader}{}\doxysection{Player.\+Input\+Reader Class Reference}
 \label{class_player_1_1_input_reader}\index{Player.InputReader@{Player.InputReader}}
+
+
+Uses the New Input \textquotesingle{}\mbox{\hyperlink{class_controls}{Controls}}\textquotesingle{}(name you choose) which causes dot net generation of controls for the scenes On\+Movement is generated to connect to the Movement action(in unity) Input Actions object The \mbox{\hyperlink{interface_controls_1_1_i_player_actions}{Controls.\+IPlayer\+Actions}} is then an interface that this class implments and will be called when the action takes place.  
+
+
 Inheritance diagram for Player.\+Input\+Reader\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,13 +15,13 @@ Inheritance diagram for Player.\+Input\+Reader\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_player_1_1_input_reader_a47af5cbce0a61f2813e4a83639031a04}{On\+Disable}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em On\+Dissable is used as the Input\+Reader is dissabled, ending callbacks and setting the service to dissabled. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_1_1_input_reader_a4c34f1babea8da6484e36f5f8d1138ae}{On\+Movement}} (Input\+Value p\+Input\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em This is one of the implementing interface methods that will be called when the action takes place. However, this old input system using a parameter of Input\+Value. The new input action is below. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_1_1_input_reader_a4ad839ede9ad8033ee42fe0685cd5887}{On\+Jump}} (Input\+Value p\+Input\+Value)
 \item 
 void \mbox{\hyperlink{class_player_1_1_input_reader_aa88817187ae61120a54f53532941a590}{On\+Movement}} (Input\+Action.\+Callback\+Context context)
-\item 
+\begin{DoxyCompactList}\small\item\em This is using the new input system with its signature of Callback\+Context(which is more rich in functionality) The fact its value is a Vector2 comes from the unity setup of the action properties It uses the Actions class to connect it to interested consumers of change. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_1_1_input_reader_a6561b038abfa68cf9eceae46f1c44720}{On\+Camera\+Move}} (Input\+Action.\+Callback\+Context context)
 \item 
 void \mbox{\hyperlink{class_player_1_1_input_reader_aeb4f8e8d75e0577d07ebe0c4c4ad0934}{On\+Jump}} (Input\+Action.\+Callback\+Context context)
@@ -30,6 +35,9 @@ void \mbox{\hyperlink{interface_controls_1_1_i_player_actions_a8d3f401da084c125a
 void \mbox{\hyperlink{interface_controls_1_1_i_player_actions_a8cd0198ec165ca56967b50b66f9906b1}{On\+Camera\+Move}} (Input\+Action.\+Callback\+Context context)
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Uses the New Input \textquotesingle{}\mbox{\hyperlink{class_controls}{Controls}}\textquotesingle{}(name you choose) which causes dot net generation of controls for the scenes On\+Movement is generated to connect to the Movement action(in unity) Input Actions object The \mbox{\hyperlink{interface_controls_1_1_i_player_actions}{Controls.\+IPlayer\+Actions}} is then an interface that this class implments and will be called when the action takes place. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_player_1_1_input_reader_a6561b038abfa68cf9eceae46f1c44720}\label{class_player_1_1_input_reader_a6561b038abfa68cf9eceae46f1c44720}} 
@@ -47,6 +55,10 @@ Implements \mbox{\hyperlink{interface_controls_1_1_i_player_actions_a8cd0198ec16
 \index{OnDisable@{OnDisable}!Player.InputReader@{Player.InputReader}}
 \doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
 {\footnotesize\ttfamily void Player.\+Input\+Reader.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+On\+Dissable is used as the Input\+Reader is dissabled, ending callbacks and setting the service to dissabled. 
 
 \mbox{\Hypertarget{class_player_1_1_input_reader_aeb4f8e8d75e0577d07ebe0c4c4ad0934}\label{class_player_1_1_input_reader_aeb4f8e8d75e0577d07ebe0c4c4ad0934}} 
 \index{Player.InputReader@{Player.InputReader}!OnJump@{OnJump}}
@@ -72,6 +84,15 @@ Implements \mbox{\hyperlink{interface_controls_1_1_i_player_actions_a8d3f401da08
 
 
 
+This is using the new input system with its signature of Callback\+Context(which is more rich in functionality) The fact its value is a Vector2 comes from the unity setup of the action properties It uses the Actions class to connect it to interested consumers of change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{interface_controls_1_1_i_player_actions_adbb9241c71b3518f711f60b0fbc752ae}{Controls.\+IPlayer\+Actions}}.
 
 \mbox{\Hypertarget{class_player_1_1_input_reader_a4c34f1babea8da6484e36f5f8d1138ae}\label{class_player_1_1_input_reader_a4c34f1babea8da6484e36f5f8d1138ae}} 
@@ -80,6 +101,15 @@ Implements \mbox{\hyperlink{interface_controls_1_1_i_player_actions_adbb9241c71b
 \doxysubsubsection{\texorpdfstring{OnMovement()}{OnMovement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Player.\+Input\+Reader.\+On\+Movement (\begin{DoxyParamCaption}\item[{Input\+Value}]{p\+Input\+Value }\end{DoxyParamCaption})}
 
+
+
+This is one of the implementing interface methods that will be called when the action takes place. However, this old input system using a parameter of Input\+Value. The new input action is below. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Input\+Value} & \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

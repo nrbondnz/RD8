@@ -20,5 +20,5 @@ var searchData=
   ['controlschemes_17',['controlSchemes',['../class_controls.html#a40efe45bbdbd6f62eeb243bfd91f5060',1,'Controls.controlSchemes()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a88f539f22cbcced8f00bc6d286985754',1,'Player.Generated.PlayerInputActions.controlSchemes()']]],
   ['createnewinstanceofgameobject_18',['CreateNewInstanceOfGameObject',['../class_utilities_1_1_game_object_utilities.html#a9094c1950f2b25d7723743e555cf3c49',1,'Utilities::GameObjectUtilities']]],
   ['createphysicsscene_19',['CreatePhysicsScene',['../class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208',1,'TrajectoryObject::Projection']]],
-  ['currentwaypointgameobject_20',['CurrentWaypointGameObject',['../class_managers_1_1_waypoint_manager.html#af8d9b9b7fca66b44b07b7b8ed0d0274e',1,'Managers::WaypointManager']]]
+  ['currentwaypointsubscriber_20',['CurrentWaypointSubscriber',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#abcb460c5215c041a4114e61013d89c74',1,'Managers::WaypointManagement::WaypointManager']]]
 ];

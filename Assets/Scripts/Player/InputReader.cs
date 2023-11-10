@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities;
-
 namespace Player
 {
+    /// <summary>
+    /// Uses the New Input 'Controls'(name you choose) which causes dot net generation of controls for the scenes
+    /// OnMovement is generated to connect to the Movement action(in unity) Input Actions object
+    /// The Controls.IPlayerActions is then an interface that this class implments and will be called when the action takes place
+    /// </summary>
     public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
 
@@ -11,6 +15,9 @@ namespace Player
         
         private Controls _controls;
 
+        /// <summary>
+        /// OnEnable is used to connect up the callbacks to this 'implementing' class
+        /// </summary>
         private void OnEnable()
         {
             if (_controls != null)
@@ -21,11 +28,19 @@ namespace Player
             _controls.Player.Enable();
         }
 
+        /// <summary>
+        /// OnDissable is used as the InputReader is dissabled, ending callbacks and setting the service to dissabled
+        /// </summary>
         public void OnDisable()
         {
             _controls.Player.Disable();
         }
 
+        /// <summary>
+        /// This is one of the implementing interface methods that will be called when the action takes place.
+        /// However, this old input system using a parameter of InputValue.  The new input action is below
+        /// </summary>
+        /// <param name="pInputValue"></param>
         public void OnMovement(InputValue pInputValue)
         {
             Debug.Log("Old world OnMovement");
@@ -37,6 +52,12 @@ namespace Player
         }
 
 
+        /// <summary>
+        /// This is using the new input system with its signature of CallbackContext(which is more rich in functionality)
+        /// The fact its value is a Vector2 comes from the unity setup of the action properties
+        /// It uses the Actions class to connect it to interested consumers of change
+        /// </summary>
+        /// <param name="context"></param>
         public void OnMovement(InputAction.CallbackContext context)
         {
                 Vector2 input2D = context.ReadValue<Vector2>();

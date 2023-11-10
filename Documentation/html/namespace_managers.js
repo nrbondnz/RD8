@@ -1,5 +1,6 @@
 var namespace_managers =
 [
+    [ "WaypointManagement", "namespace_managers_1_1_waypoint_management.html", "namespace_managers_1_1_waypoint_management" ],
     [ "GameManager", "class_managers_1_1_game_manager.html", "class_managers_1_1_game_manager" ],
     [ "GamePlayManager", "class_managers_1_1_game_play_manager.html", "class_managers_1_1_game_play_manager" ],
     [ "GameResetManager", "class_managers_1_1_game_reset_manager.html", "class_managers_1_1_game_reset_manager" ],
@@ -7,7 +8,6 @@ var namespace_managers =
     [ "GameStatus", "struct_managers_1_1_game_status.html", "struct_managers_1_1_game_status" ],
     [ "SoundManager", "class_managers_1_1_sound_manager.html", "class_managers_1_1_sound_manager" ],
     [ "UIScoreManager", "class_managers_1_1_u_i_score_manager.html", null ],
-    [ "WaypointManager", "class_managers_1_1_waypoint_manager.html", "class_managers_1_1_waypoint_manager" ],
     [ "GameDifficulty", "namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0", [
       [ "Easy", "namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0a7f943921724d63dc0ac9c6febf99fa88", null ],
       [ "Hard", "namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0a3656183169810334a96b91129dc9d881", null ],

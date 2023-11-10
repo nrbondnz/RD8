@@ -25,7 +25,10 @@ var hierarchy =
     ] ],
     [ "Player.Generated.PlayerInputActions.IPlayerActions", "interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html", null ],
     [ "Key.ITimeAllowedToWaypoint", "interface_key_1_1_i_time_allowed_to_waypoint.html", [
-      [ "WaypointTimeout", "class_waypoint_timeout.html", null ]
+      [ "Managers.WaypointManagement.WaypointSubscriber", "class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html", [
+        [ "Utilities.WinningLevel", "class_utilities_1_1_winning_level.html", null ],
+        [ "key.Key", "classkey_1_1_key.html", null ]
+      ] ]
     ] ],
     [ "MonoBehaviour", null, [
       [ "Collision.AttractCollisionAction", "class_collision_1_1_attract_collision_action.html", null ],
@@ -45,7 +48,8 @@ var hierarchy =
       [ "Managers.GameStateManager", "class_managers_1_1_game_state_manager.html", null ],
       [ "Managers.SoundManager", "class_managers_1_1_sound_manager.html", null ],
       [ "Managers.UIScoreManager", "class_managers_1_1_u_i_score_manager.html", null ],
-      [ "Managers.WaypointManager", "class_managers_1_1_waypoint_manager.html", null ],
+      [ "Managers.WaypointManagement.WaypointManager", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html", null ],
+      [ "Managers.WaypointManagement.WaypointSubscriber", "class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html", null ],
       [ "Player.InputReader", "class_player_1_1_input_reader.html", null ],
       [ "Player.PlayerMovement", "class_player_1_1_player_movement.html", null ],
       [ "PrefabGameObject", "class_prefab_game_object.html", null ],
@@ -54,10 +58,7 @@ var hierarchy =
       [ "Utilities.CameraFollow", "class_utilities_1_1_camera_follow.html", null ],
       [ "Utilities.GameObjectUtilities", "class_utilities_1_1_game_object_utilities.html", null ],
       [ "Utilities.MoveOnAxis", "class_utilities_1_1_move_on_axis.html", null ],
-      [ "Utilities.StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", null ],
-      [ "Utilities.WinningLevel", "class_utilities_1_1_winning_level.html", null ],
-      [ "WaypointTimeout", "class_waypoint_timeout.html", null ],
-      [ "key.Key", "classkey_1_1_key.html", null ]
+      [ "Utilities.StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", null ]
     ] ],
     [ "Player.Player", "class_player_1_1_player.html", null ],
     [ "Controls.PlayerActions", "struct_controls_1_1_player_actions.html", null ],

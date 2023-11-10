@@ -1,0 +1,9 @@
+/*! \namespace Player
+ * \section secPlayer How Enimies input and movement work
+ *
+ * The unity object is attached to the player and that is what the 'player' will move via some input controls
+ * This sets up the input controls (using the new input system in unity) and actions taken
+ * As appropriate inputs are processed and then the Actions class is used to broadcast changes to interested consumers
+ * Currently just the player object but could easily be an intelligent enemy as another consumer of change
+ *
+ */

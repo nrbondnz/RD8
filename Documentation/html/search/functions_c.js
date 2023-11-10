@@ -7,5 +7,5 @@ var searchData=
   ['removetrajectoryline_4',['RemoveTrajectoryLine',['../class_trajectory_object_1_1_projection.html#aa07b501fa4c01ab618f53de42fafee0f',1,'TrajectoryObject::Projection']]],
   ['resetgamestate_5',['ResetGameState',['../class_managers_1_1_game_state_manager.html#a8772f72955ed23f42c596a335f35c53a',1,'Managers::GameStateManager']]],
   ['resetscene_6',['ResetScene',['../class_managers_1_1_game_reset_manager.html#a9d718417ac8c7e73f41e2ee021b3d0fd',1,'Managers::GameResetManager']]],
-  ['resetwaypoints_7',['ResetWaypoints',['../class_managers_1_1_waypoint_manager.html#a3fc4750b0c60232aef42b04b0359b121',1,'Managers::WaypointManager']]]
+  ['resetwaypoints_7',['ResetWaypoints',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ae98351686325d62e2ac8173a286a493b',1,'Managers::WaypointManagement::WaypointManager']]]
 ];
