@@ -95,7 +95,7 @@ namespace Managers
 
         /// <summary>
         /// Checks if the single instance has been created, if it has there will be a single instance of GameManager
-        /// Already
+        /// Already.  This method ensures whatever scene you are on in edit if required the managers will be started and then the game intro
         /// </summary>
         /// <returns>bool</returns>
         public static bool hasBootSceneRun()

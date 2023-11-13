@@ -2,7 +2,9 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Key
-{
+{/// <summary>
+ /// Triggered into action with a call to CarryOutAction
+ /// </summary>
     public class KeyActionController : MonoBehaviour
     {
         [SerializeField] private float actionSpeed = 2;
@@ -21,16 +23,22 @@ namespace Key
 
         }
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Start is called before the first frame update
+        /// Thr start call adds this KeyActionController to the KeyActionFactory with the defined name
+        /// </summary>
+        
         void Start()
         {
             KeyActionFactory.SetKeyAction(this, keyActionEnumEnum);
         }
 
         // Update is called once per frame
+        /// <summary>
+        /// The IKeyAction assumes one implementor in the factory, looks wrong
+        /// </summary>
         void Update()
         {
-
             actionTime = this.gameObject.GetComponent<IKeyAction>().DoKeyAction(isActionStarted,
                 actionTime,
                 this,

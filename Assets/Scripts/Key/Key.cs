@@ -18,7 +18,11 @@ namespace key
         
         
       
-
+/// <summary>
+/// Carries out the keyActionController action and sets the waypoint to the next waypoint(partly so the camera can look at it)
+/// The next waypoint will optionally have a countdown timer to get to it in time
+/// </summary>
+/// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -30,9 +34,13 @@ namespace key
             }
         }
 
+
+/// <summary>
+/// Keys can use a rotation speed to turn the key in space
+/// </summary>
         private void Update()
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * keyRotationSpeed);
+            transform.Rotate(Vector3.up * (Time.deltaTime * keyRotationSpeed));
         }
 
         private void OnDrawGizmos()
