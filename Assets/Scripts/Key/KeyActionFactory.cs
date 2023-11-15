@@ -4,6 +4,7 @@ namespace Key
 {
     public static class KeyActionFactory
     {
+        
         public static void SetKeyAction(KeyActionController keyActionController,
             IKeyAction.KeyActionEnum keyActionEnum)
         {
