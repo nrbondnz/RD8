@@ -16,6 +16,7 @@ var hierarchy =
       [ "Player.Generated.PlayerInputActions", "class_player_1_1_generated_1_1_player_input_actions.html", null ]
     ] ],
     [ "Key.IKeyAction", "interface_key_1_1_i_key_action.html", [
+      [ "Key.KeyAction", "class_key_1_1_key_action.html", null ],
       [ "Key.OpenKeyAction", "class_key_1_1_open_key_action.html", null ],
       [ "Key.RevealKeyAction", "class_key_1_1_reveal_key_action.html", null ],
       [ "Key.WalkthroughKeyAction", "class_key_1_1_walkthrough_key_action.html", null ]
@@ -38,6 +39,7 @@ var hierarchy =
       [ "Collision.SpeedChangeCollisionAction", "class_collision_1_1_speed_change_collision_action.html", null ],
       [ "Enemies.CannonController", "class_enemies_1_1_cannon_controller.html", null ],
       [ "Enemies.EnemyFollow", "class_enemies_1_1_enemy_follow.html", null ],
+      [ "Key.KeyAction", "class_key_1_1_key_action.html", null ],
       [ "Key.KeyActionController", "class_key_1_1_key_action_controller.html", null ],
       [ "Key.OpenKeyAction", "class_key_1_1_open_key_action.html", null ],
       [ "Key.RevealKeyAction", "class_key_1_1_reveal_key_action.html", null ],

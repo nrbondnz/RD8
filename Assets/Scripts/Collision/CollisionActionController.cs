@@ -118,7 +118,7 @@ namespace Collision
         /// </summary>
         void Start()
         {
-            //KeyActionFactory.setKeyAction(this, _keyActionEnum);
+            //KeyActionScriptSetting.setKeyAction(this, _keyActionEnum);
             SetCollisionColor();
             CollisionActionFactory.SetGameObjectCollisionAction(this, collisionAction);
             SetColorBasedOnCollisionTypeAndStrenth();

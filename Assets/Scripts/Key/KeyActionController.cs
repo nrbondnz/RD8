@@ -14,8 +14,14 @@ namespace Key
         
 
         [SerializeField] private IKeyAction.KeyActionEnum keyActionEnumEnum;
+
+        private KeyAction fred;
         //private IKeyAction _keyActionInst;
 
+        public IKeyAction.KeyActionEnum getKeyActionEnum()
+        {
+            return keyActionEnumEnum;
+        }
 
         public void CarryOutAction()
         {
@@ -25,12 +31,13 @@ namespace Key
 
         /// <summary>
         /// Start is called before the first frame update
-        /// Thr start call adds this KeyActionController to the KeyActionFactory with the defined name
+        /// Thr start call adds this KeyActionController to the KeyActionScriptSetting with the defined name
         /// </summary>
         
         void Start()
         {
-            KeyActionFactory.SetKeyAction(this, keyActionEnumEnum);
+            KeyActionScriptSetting.SetKeyAction(this);
+            KeyAction fred = (KeyAction)this.gameObject.GetComponent<IKeyAction>();
         }
 
         // Update is called once per frame
@@ -39,7 +46,7 @@ namespace Key
         /// </summary>
         void Update()
         {
-            actionTime = this.gameObject.GetComponent<IKeyAction>().DoKeyAction(
+            actionTime = fred.DoKeyAction(
                 isActionStarted,
                 actionTime,
                 this,

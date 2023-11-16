@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Key
 {
+    /// <summary>
+    /// Selects an object in the keyActionController and performs an action pregessively over a time period
+    /// Open: Moves the object that was an obstical out of the way over a time period
+    /// </summary>
     public class OpenKeyAction : MonoBehaviour, IKeyAction
     {
         

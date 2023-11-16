@@ -2,13 +2,19 @@ using System;
 
 namespace Key
 {
-    public static class KeyActionFactory
+    public static class KeyActionScriptSetting
     {
-        
-        public static void SetKeyAction(KeyActionController keyActionController,
-            IKeyAction.KeyActionEnum keyActionEnum)
+        /// <summary>
+        /// Adds the script as a component of the input keyActionController
+        /// This is done here dynamically because the selection of action is in the
+        /// Unity parameter at config time
+        /// </summary>
+        /// <param name="keyActionController"></param>
+        /// <param name="keyActionEnum"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        public static void SetKeyAction(KeyActionController keyActionController)
         {
-            
+            var keyActionEnum = keyActionController.getKeyActionEnum();
             if (keyActionEnum == IKeyAction.KeyActionEnum.Reveal)
             {
                 keyActionController.gameObject.AddComponent<RevealKeyAction>();
