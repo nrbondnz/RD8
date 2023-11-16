@@ -4,10 +4,7 @@ namespace Key
 {
     public class RevealKeyAction : MonoBehaviour, IKeyAction {
     
-    public void Start()
-    {
-        KeyActionFact.addKeyActionImplementation(IKeyAction.KeyActionEnum.Reveal, this.gameObject.GetComponent<KeyAction>());
-    }
+    
 
         public float DoKeyAction(bool isActionStarted,
             float actionTime,

@@ -30,7 +30,7 @@ namespace Key
         
         void Start()
         {
-            //KeyActionFactory.SetKeyAction(this, keyActionEnumEnum);
+            KeyActionFactory.SetKeyAction(this, keyActionEnumEnum);
         }
 
         // Update is called once per frame
@@ -39,8 +39,7 @@ namespace Key
         /// </summary>
         void Update()
         {
-            actionTime = //this.gameObject.GetComponent<IKeyAction>().DoKeyAction(
-                KeyActionFact.getKeyActionImpl(keyActionEnumEnum).GetComponent<KeyAction>().DoKeyAction(
+            actionTime = this.gameObject.GetComponent<IKeyAction>().DoKeyAction(
                 isActionStarted,
                 actionTime,
                 this,

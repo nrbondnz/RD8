@@ -5,10 +5,7 @@ namespace Key
     public class WalkthroughKeyAction : MonoBehaviour, IKeyAction
     {
 
-        public void Start()
-        {
-            KeyActionFact.addKeyActionImplementation(IKeyAction.KeyActionEnum.WalkThrough, this.gameObject.GetComponent<KeyAction>());
-        }
+       
         
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
