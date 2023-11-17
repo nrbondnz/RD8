@@ -14,10 +14,14 @@ namespace Key
         private readonly IKeyAction _keyAction;
         private KeyActionController _keyActionController;
 
-        
+        /// <summary>
+        /// Sets up the key action according to the parent KeyActionController settings
+        /// The action will be to call the appropriate child class
+        /// </summary>
+        /// <param name="pKeyActionController"></param>
+        /// <exception cref="NotImplementedException"></exception>
         public  KeyAction(KeyActionController pKeyActionController)
         {
-            //= gameObject.GetComponent<KeyActionController>();
             _keyActionController = pKeyActionController;
             var keyActionEnum = pKeyActionController.GetKeyActionEnum();
             if (keyActionEnum == IKeyAction.KeyActionEnum.Reveal)
@@ -38,6 +42,13 @@ namespace Key
             }            
         }
 
+        /// <summary>
+        /// Calls through from this as the parent to the implementing child action class
+        /// </summary>
+        /// <param name="isActionStarted"></param>
+        /// <param name="actionTime"></param>
+        /// <param name="actionSpeed"></param>
+        /// <returns></returns>
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             float actionSpeed)

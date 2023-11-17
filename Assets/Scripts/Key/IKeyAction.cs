@@ -15,6 +15,13 @@ namespace Key
             WalkThrough
         }
 
+        /// <summary>
+        /// Carries out/continues the key induced action on the game object
+        /// </summary>
+        /// <param name="isActionStarted"></param>
+        /// <param name="actionTime"></param>
+        /// <param name="actionSpeed"></param>
+        /// <returns></returns>
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             float actionSpeed);

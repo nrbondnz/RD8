@@ -151,10 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b0662150cf74462bbb0d7cf5081130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAllowedToWaypoint: 20
-  index: 0
+  timeAllowedToWaypoint: 25
   keyActionController: {fileID: 314288438}
-  keyRotationSpeed: 20
+  keyRotationSpeed: 30
 --- !u!65 &135870905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -731,10 +730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b0662150cf74462bbb0d7cf5081130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAllowedToWaypoint: 20
-  index: 1
+  timeAllowedToWaypoint: 35
   keyActionController: {fileID: 193626971}
-  keyRotationSpeed: 3
+  keyRotationSpeed: 20
 --- !u!1 &525012771
 GameObject:
   m_ObjectHideFlags: 0

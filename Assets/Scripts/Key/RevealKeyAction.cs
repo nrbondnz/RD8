@@ -13,6 +13,13 @@ namespace Key
             //_boxCollider = pKeyActionController.gameObject.GetComponent<BoxCollider>();
         }
 
+        /// <summary>
+        /// Pretty similar to Open but moves the object up when triggered
+        /// </summary>
+        /// <param name="isActionStarted"></param>
+        /// <param name="actionTime"></param>
+        /// <param name="actionSpeed"></param>
+        /// <returns></returns>
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             float actionSpeed)

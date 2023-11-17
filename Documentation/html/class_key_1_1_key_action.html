@@ -112,10 +112,13 @@ Inheritance diagram for Key.KeyAction:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acd733dbc66975bc206418b85532918b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_1_1_key_action.html#acd733dbc66975bc206418b85532918b4">KeyAction</a> (<a class="el" href="class_key_1_1_key_action_controller.html">KeyActionController</a> pKeyActionController)</td></tr>
+<tr class="memdesc:acd733dbc66975bc206418b85532918b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the key action according to the parent KeyActionController settings The action will be to call the appropriate child class.  <br /></td></tr>
 <tr class="separator:acd733dbc66975bc206418b85532918b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaebf80efd7b9e26dc4e021873371a02"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_1_1_key_action.html#adaebf80efd7b9e26dc4e021873371a02">DoKeyAction</a> (bool isActionStarted, float actionTime, float actionSpeed)</td></tr>
+<tr class="memdesc:adaebf80efd7b9e26dc4e021873371a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls through from this as the parent to the implementing child action class.  <br /></td></tr>
 <tr class="separator:adaebf80efd7b9e26dc4e021873371a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae64c3f00901c42643fd327de9cf1669"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_key_1_1_i_key_action.html#aae64c3f00901c42643fd327de9cf1669">DoKeyAction</a> (bool isActionStarted, float actionTime, float actionSpeed)</td></tr>
+<tr class="memdesc:aae64c3f00901c42643fd327de9cf1669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carries out/continues the key induced action on the game object.  <br /></td></tr>
 <tr class="separator:aae64c3f00901c42643fd327de9cf1669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -145,6 +148,20 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets up the key action according to the parent KeyActionController settings The action will be to call the appropriate child class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pKeyActionController</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotImplementedException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -180,6 +197,17 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calls through from this as the parent to the implementing child action class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isActionStarted</td><td></td></tr>
+    <tr><td class="paramname">actionTime</td><td></td></tr>
+    <tr><td class="paramname">actionSpeed</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p>Implements <a class="el" href="interface_key_1_1_i_key_action.html#aae64c3f00901c42643fd327de9cf1669">Key.IKeyAction</a>.</p>
 

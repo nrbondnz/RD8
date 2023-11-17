@@ -9,6 +9,5 @@ var searchData=
   ['keyactioncontroller_6',['KeyActionController',['../class_key_1_1_key_action_controller.html',1,'Key']]],
   ['keyactioncontroller_2ecs_7',['KeyActionController.cs',['../_key_action_controller_8cs.html',1,'']]],
   ['keyactionenum_8',['KeyActionEnum',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66b',1,'Key::IKeyAction']]],
-  ['keyactionscriptsetting_2ecs_9',['KeyActionScriptSetting.cs',['../_key_action_script_setting_8cs.html',1,'']]],
-  ['keyboardmousescheme_10',['KeyboardMouseScheme',['../class_controls.html#ab5699f19a5438823fea016c8448a7f27',1,'Controls.KeyboardMouseScheme()'],['../class_player_1_1_generated_1_1_player_input_actions.html#aa15ddca92ecee0067977c936b577eea1',1,'Player.Generated.PlayerInputActions.KeyboardMouseScheme()']]]
+  ['keyboardmousescheme_9',['KeyboardMouseScheme',['../class_controls.html#ab5699f19a5438823fea016c8448a7f27',1,'Controls.KeyboardMouseScheme()'],['../class_player_1_1_generated_1_1_player_input_actions.html#aa15ddca92ecee0067977c936b577eea1',1,'Player.Generated.PlayerInputActions.KeyboardMouseScheme()']]]
 ];

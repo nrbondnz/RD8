@@ -12,7 +12,7 @@ namespace key
     public class Key : WaypointSubscriber
     {
         [SerializeField] KeyActionController keyActionController;
-        [SerializeField] private float keyRotationSpeed = 3;
+        [SerializeField] private float keyRotationSpeed = 20;
         //private WaypointManager _waypointManager;
 
         

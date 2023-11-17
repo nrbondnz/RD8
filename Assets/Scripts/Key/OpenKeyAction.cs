@@ -16,10 +16,16 @@ namespace Key
         public OpenKeyAction(KeyActionController pKeyActionController)
         {
               _keyActionController = pKeyActionController;
-            //_renderer = pKeyActionController.gameObject.GetComponent<Renderer>();
-            //_boxCollider = pKeyActionController.gameObject.GetComponent<BoxCollider>();
         }
 
+        /// <summary>
+        /// This action moves the associated object out of the way over a number of frames when triggered
+        /// Only does 'down' at the moment but could be extended
+        /// </summary>
+        /// <param name="isActionStarted"></param>
+        /// <param name="actionTime"></param>
+        /// <param name="actionSpeed"></param>
+        /// <returns></returns>
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
             float actionSpeed)
