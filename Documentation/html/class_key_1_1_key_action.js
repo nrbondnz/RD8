@@ -1,4 +1,5 @@
 var class_key_1_1_key_action =
 [
-    [ "DoKeyAction", "class_key_1_1_key_action.html#a943ff4872c92fda0726d5f641ed83696", null ]
+    [ "KeyAction", "class_key_1_1_key_action.html#acd733dbc66975bc206418b85532918b4", null ],
+    [ "DoKeyAction", "class_key_1_1_key_action.html#adaebf80efd7b9e26dc4e021873371a02", null ]
 ];

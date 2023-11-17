@@ -17,7 +17,6 @@ namespace Key
 
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
-            KeyActionController actorObject,
             float actionSpeed);
     }
 

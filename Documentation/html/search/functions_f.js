@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['updatecurrentwaypoint_0',['UpdateCurrentWaypoint',['../class_utilities_1_1_camera_follow.html#a40318aabb24f41071d9e749bacbb4d2d',1,'Utilities::CameraFollow']]],
-  ['updategamescene_1',['UpdateGameScene',['../class_managers_1_1_game_manager.html#afeba0bdb67f695ac0ab7237f0b13bbe3',1,'Managers::GameManager']]],
-  ['updateplayer_2',['UpdatePlayer',['../class_player_1_1_player.html#a4b618b327464f4c7cba431f30d3fa6cd',1,'Player.Player.UpdatePlayer()'],['../class_utilities_1_1_camera_follow.html#a92613722a0133aaa960dd929f6c8dbed',1,'Utilities.CameraFollow.UpdatePlayer()']]],
-  ['updatetimers_3',['UpdateTimers',['../class_managers_1_1_game_play_manager.html#abc089f7185937cbc9a8694763b2e62d4',1,'Managers::GamePlayManager']]]
+  ['timeallowedtowaypoint_0',['TimeAllowedToWaypoint',['../interface_key_1_1_i_time_allowed_to_waypoint.html#ac7cbc81574d524773ffd5b932959e019',1,'Key.ITimeAllowedToWaypoint.TimeAllowedToWaypoint()'],['../class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html#a3ada3f22cddf1e10646397ef1d378adb',1,'Managers.WaypointManagement.WaypointSubscriber.TimeAllowedToWaypoint()']]],
+  ['timeallowedtowaypointcomponent_1',['TimeAllowedToWaypointComponent',['../class_utilities_1_1_game_object_utilities.html#ad62cca5605cb1707b3b0f22de3e57694',1,'Utilities::GameObjectUtilities']]],
+  ['tostring_2',['ToString',['../class_player_1_1_player.html#afb7139219a3db8ffbd4d6be262b388af',1,'Player::Player']]]
 ];

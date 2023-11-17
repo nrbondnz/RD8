@@ -4,6 +4,8 @@ namespace Key
 {
     public static class KeyActionScriptSetting
     {
+        
+        
         /// <summary>
         /// Adds the script as a component of the input keyActionController
         /// This is done here dynamically because the selection of action is in the
@@ -12,9 +14,9 @@ namespace Key
         /// <param name="keyActionController"></param>
         /// <param name="keyActionEnum"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public static void SetKeyAction(KeyActionController keyActionController)
+        /*public static void SetKeyAction(KeyActionController keyActionController)
         {
-            var keyActionEnum = keyActionController.getKeyActionEnum();
+            var keyActionEnum = keyActionController.GetKeyActionEnum();
             if (keyActionEnum == IKeyAction.KeyActionEnum.Reveal)
             {
                 keyActionController.gameObject.AddComponent<RevealKeyAction>();
@@ -29,10 +31,10 @@ namespace Key
             }
             else
             {
-                throw new NotImplementedException("Non implemented IKeyAction used in factory");
+                throw new NotImplementedException("Non implemented IKeyAction used :" + keyActionEnum);
             }
 
             //return _keyActionInst;
-        }
+        }*/
     }
 }

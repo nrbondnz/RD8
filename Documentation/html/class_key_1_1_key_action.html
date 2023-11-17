@@ -96,22 +96,27 @@ $(document).ready(function(){initNavTree('class_key_1_1_key_action.html',''); in
   <div class="headertitle"><div class="title">Key.KeyAction Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class sets up and later calls the KeyActionController's key activation action Its not a unity class but uses Unity classes to perform actions against During the init, a constructor call, the key action is put in place and then later called as needed by the KeyActionController instance(which will have picked an action at config time)  
+ <a href="class_key_1_1_key_action.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Key.KeyAction:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_key_1_1_key_action.png" usemap="#Key.KeyAction_map" alt=""/>
   <map id="Key.KeyAction_map" name="Key.KeyAction_map">
-<area href="interface_key_1_1_i_key_action.html" title="Interface defining the action that happen on the KeyActionController when the action is triggered Thi..." alt="Key.IKeyAction" shape="rect" coords="112,0,214,24"/>
+<area href="interface_key_1_1_i_key_action.html" title="Interface defining the action that happen on the KeyActionController when the action is triggered Thi..." alt="Key.IKeyAction" shape="rect" coords="0,0,99,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a943ff4872c92fda0726d5f641ed83696"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_1_1_key_action.html#a943ff4872c92fda0726d5f641ed83696">DoKeyAction</a> (bool isActionStarted, float actionTime, <a class="el" href="class_key_1_1_key_action_controller.html">KeyActionController</a> actorObject, float actionSpeed)</td></tr>
-<tr class="separator:a943ff4872c92fda0726d5f641ed83696"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace00ab05ac206170d55de753a708d5fe"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_key_1_1_i_key_action.html#ace00ab05ac206170d55de753a708d5fe">DoKeyAction</a> (bool isActionStarted, float actionTime, <a class="el" href="class_key_1_1_key_action_controller.html">KeyActionController</a> actorObject, float actionSpeed)</td></tr>
-<tr class="separator:ace00ab05ac206170d55de753a708d5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd733dbc66975bc206418b85532918b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_1_1_key_action.html#acd733dbc66975bc206418b85532918b4">KeyAction</a> (<a class="el" href="class_key_1_1_key_action_controller.html">KeyActionController</a> pKeyActionController)</td></tr>
+<tr class="separator:acd733dbc66975bc206418b85532918b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaebf80efd7b9e26dc4e021873371a02"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_1_1_key_action.html#adaebf80efd7b9e26dc4e021873371a02">DoKeyAction</a> (bool isActionStarted, float actionTime, float actionSpeed)</td></tr>
+<tr class="separator:adaebf80efd7b9e26dc4e021873371a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae64c3f00901c42643fd327de9cf1669"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_key_1_1_i_key_action.html#aae64c3f00901c42643fd327de9cf1669">DoKeyAction</a> (bool isActionStarted, float actionTime, float actionSpeed)</td></tr>
+<tr class="separator:aae64c3f00901c42643fd327de9cf1669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -122,9 +127,30 @@ Additional Inherited Members</h2></td></tr>
  }</td></tr>
 <tr class="separator:a730234001c6c76e4be6de603c036e66b inherit pub_types_interface_key_1_1_i_key_action"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class sets up and later calls the KeyActionController's key activation action Its not a unity class but uses Unity classes to perform actions against During the init, a constructor call, the key action is put in place and then later called as needed by the KeyActionController instance(which will have picked an action at config time) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acd733dbc66975bc206418b85532918b4" name="acd733dbc66975bc206418b85532918b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd733dbc66975bc206418b85532918b4">&#9670;&#160;</a></span>KeyAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Key.KeyAction.KeyAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_key_1_1_key_action_controller.html">KeyActionController</a>&#160;</td>
+          <td class="paramname"><em>pKeyActionController</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a943ff4872c92fda0726d5f641ed83696" name="a943ff4872c92fda0726d5f641ed83696"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a943ff4872c92fda0726d5f641ed83696">&#9670;&#160;</a></span>DoKeyAction()</h2>
+<a id="adaebf80efd7b9e26dc4e021873371a02" name="adaebf80efd7b9e26dc4e021873371a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaebf80efd7b9e26dc4e021873371a02">&#9670;&#160;</a></span>DoKeyAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,12 +170,6 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_key_1_1_key_action_controller.html">KeyActionController</a>&#160;</td>
-          <td class="paramname"><em>actorObject</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>actionSpeed</em>&#160;</td>
         </tr>
@@ -161,7 +181,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_key_1_1_i_key_action.html#ace00ab05ac206170d55de753a708d5fe">Key.IKeyAction</a>.</p>
+<p>Implements <a class="el" href="interface_key_1_1_i_key_action.html#aae64c3f00901c42643fd327de9cf1669">Key.IKeyAction</a>.</p>
 
 </div>
 </div>

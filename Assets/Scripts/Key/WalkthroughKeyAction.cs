@@ -1,15 +1,23 @@
+using System;
 using UnityEngine;
 
 namespace Key
 {
-    public class WalkthroughKeyAction : MonoBehaviour, IKeyAction
+    public class WalkthroughKeyAction : IKeyAction
     {
+        //private KeyActionController _keyActionController;
+        private Renderer _renderer;
+        private BoxCollider _boxCollider;
 
-       
-        
+        public WalkthroughKeyAction(KeyActionController pKeyActionController)
+        {
+          //  _keyActionController = pKeyActionController;
+            _renderer = pKeyActionController.gameObject.GetComponent<Renderer>();
+            _boxCollider = pKeyActionController.gameObject.GetComponent<BoxCollider>();
+        }
+
         public float DoKeyAction(bool isActionStarted,
             float actionTime,
-            KeyActionController actorObject,
             float actionSpeed)
         {
             if (!isActionStarted) return actionTime;
@@ -19,15 +27,16 @@ namespace Key
             if (actionTime < 0)
             {
                 //actorObject.gameObject.se = Color.green;
-                Material[] materials = actorObject.gameObject.GetComponent<Renderer>().materials;
+                //var render = _keyActionController.gameObject.GetComponent<Renderer>();
+                Material[] materials = _renderer.materials;
                 //Material material = materials[0];
                 if (materials.Length > 1)
                 {
                     materials[0] = materials[1];
-                    actorObject.gameObject.GetComponent<Renderer>().materials = materials;
+                    _renderer.materials = materials;
                 }
 
-                actorObject.gameObject.GetComponent<BoxCollider>().enabled = false;
+                _boxCollider.enabled = false;
             }
 
             return actionTime;
