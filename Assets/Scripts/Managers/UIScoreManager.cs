@@ -1,8 +1,5 @@
-using System;
-using Managers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Utilities;
 
 namespace Managers
@@ -11,53 +8,43 @@ namespace Managers
     {
         [SerializeField] private TextMeshProUGUI scoreText;
         //private GamePlay _gamePlay;
-        private GamePlayManager _gameplayManager = GamePlayManager.GetInstance();
+        //private GamePlayManager _gameplayManager = GamePlayManager.GetInstance();
 
+        /// <summary>
+        /// The subscription to OnGameStatusChanged will cause this screen to update the text on screen during the game
+        /// </summary>
         void Start()
         {
-            Actions.OnGameStatusChanged += UpdateGameScore;
             UpdateGameScore(GamePlayManager.GetInstance().GameStatus);
         }
 
-        private void OnDestroy()
+        private void OnEnable()
+        {
+            Actions.OnGameStatusChanged += UpdateGameScore;
+        }
+
+        private void OnDisable()
         {
             Actions.OnGameStatusChanged -= UpdateGameScore;
         }
 
-        private void Update()
-        {
-            //updateGameScore(GamePlayManager.Instance._gamePlay);
-        }
-
-
+        /// <summary>
+        /// Displays the game score info top left
+        /// </summary>
+        /// <param name="pGameStatus"></param>
         private void UpdateGameScore(GameStatus pGameStatus)
         {
-            scoreText.text = "Lives : " + pGameStatus.Lives +
-                             " Time: " + ConvertToMinsAndSecs(pGameStatus.TimeRemaining);
+            scoreText.text = "Lives : " + pGameStatus.Lives + "<br>" +
+                             "Time: " + GameObjectUtilities.ConvertToMinsAndSecs(pGameStatus.TimeRemaining);
             if (pGameStatus.WaypointTimeRemaining > 0.0f)
             {
-                scoreText.text += " Waypoint time left: " + 
+                scoreText.text += "<br>" +"Waypoint time : " + 
                                   (int)pGameStatus.WaypointTimeRemaining;
             }
             else
             {
-                scoreText.text += " Waypoint time left: --";
+                scoreText.text += "<br>" +"Waypoint time : --";
             }
-        }
-
-        private String ConvertToMinsAndSecs(float timeIn)
-        {
-            int mins = (int)(timeIn / 60.0);
-            int secs = (int)(timeIn - (mins * 60));
-            String secString = secs < 10 ? "0" + secs : secs.ToString();
-            return mins + ":" + secString;
-        }
-        
-        private String ConvertToSecs(float timeIn)
-        {
-            int secs = (int)timeIn;
-            String secString = secs < 10 ? "0" + secs : secs.ToString();
-            return secString;
         }
     }
 }

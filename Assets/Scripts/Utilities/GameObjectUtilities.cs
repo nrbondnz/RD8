@@ -16,7 +16,11 @@ namespace Utilities
         {
             GameObject retObject = Instantiate(originGo, originGo.gameObject.transform.position, Quaternion.identity);
             retObject.name = newObjectName;
-            if ( removeActiveScripts ) { RemoveComponentsWithJustScripts(retObject);}
+            if (removeActiveScripts)
+            {
+                RemoveComponentsWithJustScripts(retObject);
+            }
+
             //retObject.gameObject.tag = newObjectName;
             return retObject;
         }
@@ -31,11 +35,11 @@ namespace Utilities
             Component[] components = gameObj.GetComponents<Component>();
             foreach (var comp in components)
             {
-                if (!comp.GetType().Namespace.Equals("UnityEngine") )
+                if (!comp.GetType().Namespace.Equals("UnityEngine"))
                 {
                     Destroy(comp);
                     //Debug.Log("Bad : " + comp);
-                   
+
                 }
                 else
                 {
@@ -43,15 +47,31 @@ namespace Utilities
                 }
             }
         }
+
         public static Component GetComponentOfType<T>(GameObject gameObject)
         {
             return gameObject.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
         }
-        
+
         /*public static ITimeAllowedToWaypoint TimeAllowedToWaypointComponent(WaypointSubscriber gameObject)
         {
             //return (ITimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<ITimeAllowedToWaypoint>(gameObject);
             return gameObject;
         }*/
+
+        public static String ConvertToMinsAndSecs(float timeIn)
+        {
+            int mins = (int)(timeIn / 60.0);
+            int secs = (int)(timeIn - (mins * 60));
+            String secString = secs < 10 ? "0" + secs : secs.ToString();
+            return mins + ":" + secString;
+        }
+
+        public String ConvertToSecs(float timeIn)
+        {
+            int secs = (int)timeIn;
+            String secString = secs < 10 ? "0" + secs : secs.ToString();
+            return secString;
+        }
     }
 }

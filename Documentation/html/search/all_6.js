@@ -25,10 +25,11 @@ var searchData=
   ['getenumerator_22',['GetEnumerator',['../class_controls.html#a1fca51ed3562dcc188188646181df81c',1,'Controls.GetEnumerator()'],['../class_player_1_1_generated_1_1_player_input_actions.html#afa240789074fb5c3e1bdd75e0b9fe971',1,'Player.Generated.PlayerInputActions.GetEnumerator()']]],
   ['getgamedifficulty_23',['GetGameDifficulty',['../class_managers_1_1_game_play_manager.html#aa1ac31011e344a592a6da4e4346aeea4',1,'Managers::GamePlayManager']]],
   ['getgamestatus_24',['GetGameStatus',['../class_managers_1_1_game_play_manager.html#ab4c559b3bdf8e10bc7dda612c8a64c9c',1,'Managers::GamePlayManager']]],
-  ['getinstance_25',['getInstance',['../class_player_1_1_player.html#a55b499b3a738d1107f509baedcf17d8a',1,'Player::Player']]],
-  ['getinstance_26',['GetInstance',['../class_managers_1_1_game_manager.html#ad56d8013d6443c092f4043a8398e4fd1',1,'Managers.GameManager.GetInstance()'],['../class_managers_1_1_game_play_manager.html#a4eb7c3c406d5d83805c3583019ea060a',1,'Managers.GamePlayManager.GetInstance()'],['../class_managers_1_1_game_state_manager.html#ad38ce89f2d73edd48f466d14d25db982',1,'Managers.GameStateManager.GetInstance()'],['../class_managers_1_1_sound_manager.html#a40c7bc78f9de1a80f7bdbfb72cf2c289',1,'Managers.SoundManager.GetInstance()'],['../class_managers_1_1_game_reset_manager.html#a7d5227cf05e6f94505a780816aec9292',1,'Managers.GameResetManager.GetInstance()']]],
-  ['getkeyactionenum_27',['GetKeyActionEnum',['../class_key_1_1_key_action_controller.html#a67b6b1b44a840a3bfc603c0eb5fd8d96',1,'Key::KeyActionController']]],
-  ['getlives_28',['GetLives',['../class_managers_1_1_game_play_manager.html#a3ad4601f2f58d6f09e518ceeb1a9fca1',1,'Managers::GamePlayManager']]],
-  ['getmagnitude_29',['GetMagnitude',['../class_player_1_1_player.html#acc6494d15481a70f65fe9f2824719ff7',1,'Player::Player']]],
-  ['goingforwards_30',['GoingForwards',['../class_player_1_1_player.html#a003dae3af2e53e8a587edc50dd175814',1,'Player::Player']]]
+  ['getinstance_25',['GetInstance',['../class_managers_1_1_game_manager.html#ad56d8013d6443c092f4043a8398e4fd1',1,'Managers.GameManager.GetInstance()'],['../class_managers_1_1_game_play_manager.html#a4eb7c3c406d5d83805c3583019ea060a',1,'Managers.GamePlayManager.GetInstance()'],['../class_managers_1_1_game_reset_manager.html#a7d5227cf05e6f94505a780816aec9292',1,'Managers.GameResetManager.GetInstance()'],['../class_managers_1_1_sound_manager.html#a40c7bc78f9de1a80f7bdbfb72cf2c289',1,'Managers.SoundManager.GetInstance()']]],
+  ['getinstance_26',['getInstance',['../class_player_1_1_player.html#a55b499b3a738d1107f509baedcf17d8a',1,'Player::Player']]],
+  ['getinstance_27',['GetInstance',['../class_managers_1_1_game_state_manager.html#ad38ce89f2d73edd48f466d14d25db982',1,'Managers::GameStateManager']]],
+  ['getkeyactionenum_28',['GetKeyActionEnum',['../class_key_1_1_key_action_controller.html#a67b6b1b44a840a3bfc603c0eb5fd8d96',1,'Key::KeyActionController']]],
+  ['getlives_29',['GetLives',['../class_managers_1_1_game_play_manager.html#a3ad4601f2f58d6f09e518ceeb1a9fca1',1,'Managers::GamePlayManager']]],
+  ['getmagnitude_30',['GetMagnitude',['../class_player_1_1_player.html#acc6494d15481a70f65fe9f2824719ff7',1,'Player::Player']]],
+  ['goingforwards_31',['GoingForwards',['../class_player_1_1_player.html#a003dae3af2e53e8a587edc50dd175814',1,'Player::Player']]]
 ];
