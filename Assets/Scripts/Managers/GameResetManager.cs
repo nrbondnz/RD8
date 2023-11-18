@@ -88,6 +88,7 @@ namespace Managers
             player.HozInput = 0.0f;
             player.VertInput = 0.0f;
             GamePlayManager.GetInstance().RemoveLife();
+            
         }
     }
 }

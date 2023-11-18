@@ -48,10 +48,10 @@ namespace Utilities
             return gameObject.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
         }
         
-        public static ITimeAllowedToWaypoint TimeAllowedToWaypointComponent(WaypointSubscriber gameObject)
+        /*public static ITimeAllowedToWaypoint TimeAllowedToWaypointComponent(WaypointSubscriber gameObject)
         {
             //return (ITimeAllowedToWaypoint)GameObjectUtilities.GetComponentOfType<ITimeAllowedToWaypoint>(gameObject);
             return gameObject;
-        }
+        }*/
     }
 }

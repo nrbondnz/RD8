@@ -12,7 +12,7 @@ namespace Managers.WaypointManagement
         //  Awake are all called before the first start on a scene
         void Awake()
         {
-            Debug.Log("WaypointSubscriber : " + this + " start method");
+            //Debug.Log("WaypointSubscriber : " + this + " start method");
             //WaypointManager.GetInstance().AddSubscriber(this, index);
             
         }

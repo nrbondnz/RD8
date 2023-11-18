@@ -138,9 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSpeed: 0.8
   actionTime: 3
-  isActionStarted: 0
-  isReveal: 1
-  keyActionEnumEnum: 1
+  kayActionEnum: 1
 --- !u!21 &68683571
 Material:
   serializedVersion: 8
@@ -1164,6 +1162,7 @@ MonoBehaviour:
   - {fileID: 1522228372}
   - {fileID: 886203272}
   - {fileID: 265750189}
+  waypointTimeAdds: 1
 --- !u!4 &693722320
 Transform:
   m_ObjectHideFlags: 0

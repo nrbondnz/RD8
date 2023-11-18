@@ -5,6 +5,6 @@ var class_managers_1_1_waypoint_management_1_1_waypoint_manager =
     [ "HasWaypoints", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ae00102c6b55d4b1561890ff5ca33b97d", null ],
     [ "NextWaypoint", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#a2f2c51310606137d5935582bf56dd723", null ],
     [ "ResetWaypoints", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ae98351686325d62e2ac8173a286a493b", null ],
-    [ "setTimeAllowedToWaypoint", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#acdd9c72bc0df761721d75e3a88c260d2", null ],
+    [ "setTimeAllowedToNextWaypoint", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac75afe7b4b5c9d48d24efc128774e91d", null ],
     [ "Start", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac66e84524a06f49f06661913227e83c4", null ]
 ];

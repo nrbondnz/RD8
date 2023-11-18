@@ -322,9 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSpeed: 2
   actionTime: 3
-  isActionStarted: 0
-  isReveal: 0
-  keyActionEnumEnum: 1
+  kayActionEnum: 1
 --- !u!1001 &296258867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1205,9 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSpeed: 2
   actionTime: 3
-  isActionStarted: 0
-  isReveal: 0
-  keyActionEnumEnum: 1
+  kayActionEnum: 1
 --- !u!114 &1711238413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
@@ -1384,6 +1380,7 @@ MonoBehaviour:
   - {fileID: 1890913851}
   - {fileID: 85811182}
   - {fileID: 1711238413}
+  waypointTimeAdds: 1
 --- !u!4 &1757991962
 Transform:
   m_ObjectHideFlags: 0

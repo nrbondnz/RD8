@@ -27,8 +27,8 @@ var hierarchy =
     [ "Player.Generated.PlayerInputActions.IPlayerActions", "interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html", null ],
     [ "Key.ITimeAllowedToWaypoint", "interface_key_1_1_i_time_allowed_to_waypoint.html", [
       [ "Managers.WaypointManagement.WaypointSubscriber", "class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html", [
-        [ "Utilities.WinningLevel", "class_utilities_1_1_winning_level.html", null ],
-        [ "key.Key", "classkey_1_1_key.html", null ]
+        [ "Key.Key", "class_key_1_1_key.html", null ],
+        [ "Utilities.WinningLevel", "class_utilities_1_1_winning_level.html", null ]
       ] ]
     ] ],
     [ "MonoBehaviour", null, [

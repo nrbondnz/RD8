@@ -472,9 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSpeed: 2
   actionTime: 3.75
-  isActionStarted: 0
-  isReveal: 0
-  keyActionEnumEnum: 1
+  kayActionEnum: 1
 --- !u!114 &193626972 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 512890894839006040, guid: 23fb33f55f1db4e5baf6bb80586f34a2, type: 3}
@@ -627,9 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSpeed: 2
   actionTime: 3
-  isActionStarted: 0
-  isReveal: 1
-  keyActionEnumEnum: 1
+  kayActionEnum: 1
 --- !u!65 &314288439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -962,6 +958,7 @@ MonoBehaviour:
   - {fileID: 135870904}
   - {fileID: 314288443}
   - {fileID: 193626972}
+  waypointTimeAdds: 1
 --- !u!4 &665372322
 Transform:
   m_ObjectHideFlags: 0
