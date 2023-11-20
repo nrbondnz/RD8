@@ -44,15 +44,16 @@ namespace Managers
         }
 
         /// <summary>
-        /// Listens for collisions with a Terrain with a tag of 'OutOfBounds'
+        /// Listens for collisions with a collider object setup in GameReset
+        /// TODO needs more TLC as simplistic
         /// then if found calls the RemoveLiveAndResetScene
         /// </summary>
         /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
-            Terrain childTerrainObj = gameObject.GetComponentInChildren<Terrain>();
-            if (other.CompareTag("Player") && ( childTerrainObj != null) && 
-                (childTerrainObj.CompareTag("OutOfBounds")))
+            //Terrain childTerrainObj = gameObject.GetComponentInChildren<Terrain>();
+            if (other.CompareTag("Player")) /*&& ( childTerrainObj != null) && 
+                (childTerrainObj.CompareTag("OutOfBounds")))*/
             {
                 RemoveLifeAndResetScene();
             }

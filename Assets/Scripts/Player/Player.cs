@@ -7,6 +7,9 @@ using Utilities;
 
 namespace Player
 {
+    /// <summary>
+    /// Player records input states and player action stage for update in PlayerMovement
+    /// </summary>
     public class Player
     {
         private static Player Instance;
