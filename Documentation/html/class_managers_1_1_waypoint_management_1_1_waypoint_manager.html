@@ -96,6 +96,9 @@ $(document).ready(function(){initNavTree('class_managers_1_1_waypoint_management
   <div class="headertitle"><div class="title">Managers.WaypointManagement.WaypointManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Tracks current waypoint and if using timed then time allowed to waypoint In addition if waypointTimeAdds is set to true the remaining waypoint time after one just completed is added to the available time to get to the next waypoint.  
+ <a href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Managers.WaypointManagement.WaypointManager:</div>
 <div class="dyncontent">
@@ -109,8 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae00102c6b55d4b1561890ff5ca33b97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac66e84524a06f49f06661913227e83c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac66e84524a06f49f06661913227e83c4">Start</a> ()</td></tr>
 <tr class="separator:ac66e84524a06f49f06661913227e83c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdd9c72bc0df761721d75e3a88c260d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#acdd9c72bc0df761721d75e3a88c260d2">setTimeAllowedToWaypoint</a> ()</td></tr>
-<tr class="separator:acdd9c72bc0df761721d75e3a88c260d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75afe7b4b5c9d48d24efc128774e91d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac75afe7b4b5c9d48d24efc128774e91d">setTimeAllowedToNextWaypoint</a> ()</td></tr>
+<tr class="separator:ac75afe7b4b5c9d48d24efc128774e91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98351686325d62e2ac8173a286a493b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ae98351686325d62e2ac8173a286a493b">ResetWaypoints</a> ()</td></tr>
 <tr class="separator:ae98351686325d62e2ac8173a286a493b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f2c51310606137d5935582bf56dd723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#a2f2c51310606137d5935582bf56dd723">NextWaypoint</a> ()</td></tr>
@@ -120,7 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac5968455b887d6c12d42c2b42ea4ab5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac5968455b887d6c12d42c2b42ea4ab5d">AddSubscriber</a> (<a class="el" href="class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html">WaypointSubscriber</a> waypointSubscriber, int index)</td></tr>
 <tr class="separator:ac5968455b887d6c12d42c2b42ea4ab5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Tracks current waypoint and if using timed then time allowed to waypoint In addition if waypointTimeAdds is set to true the remaining waypoint time after one just completed is added to the available time to get to the next waypoint. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac5968455b887d6c12d42c2b42ea4ab5d" name="ac5968455b887d6c12d42c2b42ea4ab5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5968455b887d6c12d42c2b42ea4ab5d">&#9670;&#160;</a></span>AddSubscriber()</h2>
 
@@ -217,14 +222,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acdd9c72bc0df761721d75e3a88c260d2" name="acdd9c72bc0df761721d75e3a88c260d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdd9c72bc0df761721d75e3a88c260d2">&#9670;&#160;</a></span>setTimeAllowedToWaypoint()</h2>
+<a id="ac75afe7b4b5c9d48d24efc128774e91d" name="ac75afe7b4b5c9d48d24efc128774e91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75afe7b4b5c9d48d24efc128774e91d">&#9670;&#160;</a></span>setTimeAllowedToNextWaypoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Managers.WaypointManagement.WaypointManager.setTimeAllowedToWaypoint </td>
+          <td class="memname">void Managers.WaypointManagement.WaypointManager.setTimeAllowedToNextWaypoint </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

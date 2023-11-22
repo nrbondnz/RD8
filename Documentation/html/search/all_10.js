@@ -10,7 +10,7 @@ var searchData=
   ['resetscene_7',['ResetScene',['../class_managers_1_1_game_reset_manager.html#a9d718417ac8c7e73f41e2ee021b3d0fd',1,'Managers::GameResetManager']]],
   ['resetwaypoints_8',['ResetWaypoints',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ae98351686325d62e2ac8173a286a493b',1,'Managers::WaypointManagement::WaypointManager']]],
   ['reveal_9',['Reveal',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66ba393c3f5ea8ad35c02691d507bdbb31b0',1,'Key::IKeyAction']]],
-  ['revealkeyaction_10',['RevealKeyAction',['../class_key_1_1_reveal_key_action.html',1,'Key']]],
+  ['revealkeyaction_10',['RevealKeyAction',['../class_key_1_1_reveal_key_action.html',1,'Key.RevealKeyAction'],['../class_key_1_1_reveal_key_action.html#ad99c5afa516fd0425a5563e5778854d5',1,'Key.RevealKeyAction.RevealKeyAction()']]],
   ['revealkeyaction_2ecs_11',['RevealKeyAction.cs',['../_reveal_key_action_8cs.html',1,'']]],
   ['rolling_20danger_20home_20page_12',['Rolling Danger Home Page',['../index.html',1,'']]]
 ];

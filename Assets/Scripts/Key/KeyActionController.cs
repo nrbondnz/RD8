@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Key
 {/// <summary>
@@ -9,20 +10,24 @@ namespace Key
     {
         [SerializeField] private float actionSpeed = 2;
         [SerializeField] private float actionTime = 3;
-        [SerializeField] private bool isActionStarted = false;
-        [SerializeField] private bool isReveal = false;
+        private bool isActionStarted;
+        
         
 
-        [SerializeField] private IKeyAction.KeyActionEnum keyActionEnumEnum;
+        [FormerlySerializedAs("keyActionEnumEnum")] [SerializeField] private IKeyAction.KeyActionEnum kayActionEnum;
 
-        private KeyAction fred;
-        //private IKeyAction _keyActionInst;
+        private KeyAction _keyAction;
 
-        public IKeyAction.KeyActionEnum getKeyActionEnum()
+        public IKeyAction.KeyActionEnum GetKeyActionEnum()
         {
-            return keyActionEnumEnum;
+            return kayActionEnum;
         }
 
+        /// <summary>
+        /// This is called to do the (currently) one way action when the object its monitoring
+        /// is triggered, likely by a collider entry
+        /// Then during the fixed update the action will be carried out
+        /// </summary>
         public void CarryOutAction()
         {
             this.isActionStarted = true;
@@ -33,42 +38,22 @@ namespace Key
         /// Start is called before the first frame update
         /// Thr start call adds this KeyActionController to the KeyActionScriptSetting with the defined name
         /// </summary>
-        
         void Start()
         {
-            KeyActionScriptSetting.SetKeyAction(this);
-            KeyAction fred = (KeyAction)this.gameObject.GetComponent<IKeyAction>();
+            _keyAction = new KeyAction(this);
         }
 
-        // Update is called once per frame
+       
         /// <summary>
-        /// The IKeyAction assumes one implementor in the factory, looks wrong
+        /// The IKeyAction is called on KeyAction which can be seen as the parent of the actual
+        /// required action
         /// </summary>
-        void Update()
+        void FixedUpdate()
         {
-            actionTime = fred.DoKeyAction(
+            actionTime = _keyAction.DoKeyAction(
                 isActionStarted,
                 actionTime,
-                this,
                 actionSpeed);
-
-            /*if (isActionStarted  && (! isReveal ))
-        {
-            actionTime -= Time.deltaTime;
-            transform.Translate(Vector3.down * Time.deltaTime * this.actionSpeed);
-            if (this.actionTime < 0)
-            {
-                gameObject.SetActive(false);
-            }*/
-        if (isReveal && isActionStarted)
-        {
-            if (actionTime > 0)
-            {
-                actionTime -= Time.deltaTime;
-                transform.Translate(Vector3.up * Time.deltaTime * this.actionSpeed);
-            }
-
-        }
         }
     }
 }

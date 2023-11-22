@@ -55,16 +55,7 @@ namespace Managers
         {
             return _instance;
         }
-
-        /// <summary>
-        /// At start of play the game state is reset for the single instance of GameStateManager
-        /// </summary>
-        public void ResetGameState()
-        {
-            this._sceneNum = 1;
-            this.GamePhase = GamePhase.ReadyToGo;
-        }
-
+        
         /// <summary>
         /// At initialization the Assets are inspected to determine the available game levels within the
         /// Assets/Scenes/Game Levels repository
@@ -74,7 +65,7 @@ namespace Managers
             string [] files = System.IO.Directory.GetFiles("Assets/Scenes/Game Levels/");
             foreach (var aFile in files)
             {
-                    Debug.Log(aFile);
+                Debug.Log(aFile);
                
                 
                 if (aFile.EndsWith(".unity"))
@@ -85,6 +76,15 @@ namespace Managers
             }
             Debug.Log("Final level : " + _finalLevel);
             //lastLevel = files.Length;
+        }
+
+        /// <summary>
+        /// At start of play the game state is reset for the single instance of GameStateManager
+        /// </summary>
+        public void ResetGameState()
+        {
+            this._sceneNum = 1;
+            this.GamePhase = GamePhase.ReadyToGo;
         }
         
         /// <summary>

@@ -18,7 +18,9 @@ var searchData=
   ['controls_15',['Controls',['../class_controls.html',1,'Controls'],['../class_controls.html#a4295674e77bd87c0ae8304f2d2c6019f',1,'Controls.Controls()']]],
   ['controls_2ecs_16',['Controls.cs',['../_controls_8cs.html',1,'']]],
   ['controlschemes_17',['controlSchemes',['../class_controls.html#a40efe45bbdbd6f62eeb243bfd91f5060',1,'Controls.controlSchemes()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a88f539f22cbcced8f00bc6d286985754',1,'Player.Generated.PlayerInputActions.controlSchemes()']]],
-  ['createnewinstanceofgameobject_18',['CreateNewInstanceOfGameObject',['../class_utilities_1_1_game_object_utilities.html#a9094c1950f2b25d7723743e555cf3c49',1,'Utilities::GameObjectUtilities']]],
-  ['createphysicsscene_19',['CreatePhysicsScene',['../class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208',1,'TrajectoryObject::Projection']]],
-  ['currentwaypointsubscriber_20',['CurrentWaypointSubscriber',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#abcb460c5215c041a4114e61013d89c74',1,'Managers::WaypointManagement::WaypointManager']]]
+  ['converttominsandsecs_18',['ConvertToMinsAndSecs',['../class_utilities_1_1_game_object_utilities.html#a6e60213cc13bb75fedb08fddf9878de4',1,'Utilities::GameObjectUtilities']]],
+  ['converttosecs_19',['ConvertToSecs',['../class_utilities_1_1_game_object_utilities.html#a465f8514572f9d80a6657e9c1ebd5819',1,'Utilities::GameObjectUtilities']]],
+  ['createnewinstanceofgameobject_20',['CreateNewInstanceOfGameObject',['../class_utilities_1_1_game_object_utilities.html#a9094c1950f2b25d7723743e555cf3c49',1,'Utilities::GameObjectUtilities']]],
+  ['createphysicsscene_21',['CreatePhysicsScene',['../class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208',1,'TrajectoryObject::Projection']]],
+  ['currentwaypointsubscriber_22',['CurrentWaypointSubscriber',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#abcb460c5215c041a4114e61013d89c74',1,'Managers::WaypointManagement::WaypointManager']]]
 ];

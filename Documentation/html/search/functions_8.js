@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['movecamera_0',['MoveCamera',['../class_utilities_1_1_camera_follow.html#a2f028f5394ff12e2bbddcf11a29490fd',1,'Utilities::CameraFollow']]]
+  ['keyaction_0',['KeyAction',['../class_key_1_1_key_action.html#acd733dbc66975bc206418b85532918b4',1,'Key::KeyAction']]]
 ];

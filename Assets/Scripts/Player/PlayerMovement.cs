@@ -25,7 +25,7 @@ namespace Player
         [SerializeField] private float jumpForce = 13;
         [SerializeField] TrajectoryLineManager trajectoryLineManager;
         private GameObject _mainCamera;
-        private bool _isGhost;
+        //private bool _isGhost;
         private Player _player;
         
     
@@ -43,18 +43,11 @@ namespace Player
             _mainCamera = GameObject.FindWithTag("MainCamera");
             Debug.Log("_cameraFollow set to : " + _mainCamera);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-            GamePlayManager.GetInstance().UpdateTimers();
-           
-        }
-
+        
         private void FixedUpdate()
         {
-            //if (_player.GetMagnitude() > 0.1)
-            //{
+            GamePlayManager.GetInstance().UpdateTimers();
+ 
             Vector3 forward = _mainCamera.transform.forward;
             Vector3 right = _mainCamera.transform.right;
             forward.y = 0.0f;
@@ -62,20 +55,9 @@ namespace Player
             forward.Normalize();
             right.Normalize();
             Vector3 desiredDirection = forward * Player.getInstance().VertInput + right * Player.getInstance().HozInput;
-            //Debug.Log("Desired Direction : " + desiredDirection);
-            // forwardRelativeVerticalInput = forward * (mobileMultiplier * (_player.VertInput * speed));
-            // Vector3 rightRelativeHorizontalInput = right * (mobileMultiplier * (_player.HozInput * speed));
-            //
-            //Vector3 playerMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
-            //Debug.Log("forward : " + forwardRelativeVerticalInput + ", right : " + rightRelativeHorizontalInput);
-            //Debug.Log("Combined : " + playerMovement);
+                       
+            _rb.AddForce(desiredDirection * speed, ForceMode.Acceleration);
             
-                _rb.AddForce(desiredDirection * speed, ForceMode.Acceleration);
-                //Debug.Log("Desired Direction * speed: " + desiredDirection * speed);
-            
-        
-        //}
-
             trajectoryLineManager.DrawRayFromRigidBody(_player);
 
             if (_player.IsJumpButtonPressed && _player.IsGrounded)
