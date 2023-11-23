@@ -49,7 +49,7 @@ var hierarchy =
       [ "Managers.WaypointManagement.WaypointManager", "class_managers_1_1_waypoint_management_1_1_waypoint_manager.html", null ],
       [ "Managers.WaypointManagement.WaypointSubscriber", "class_managers_1_1_waypoint_management_1_1_waypoint_subscriber.html", null ],
       [ "Player.InputReader", "class_player_1_1_input_reader.html", null ],
-      [ "Player.PlayerMovement", "class_player_1_1_player_movement.html", null ],
+      [ "Player.UpdatePlayerForces", "class_player_1_1_update_player_forces.html", null ],
       [ "PrefabGameObject", "class_prefab_game_object.html", null ],
       [ "TrajectoryObject.Projection", "class_trajectory_object_1_1_projection.html", null ],
       [ "TrajectoryObject.TrajectoryLineManager", "class_trajectory_object_1_1_trajectory_line_manager.html", null ],
@@ -58,7 +58,7 @@ var hierarchy =
       [ "Utilities.MoveOnAxis", "class_utilities_1_1_move_on_axis.html", null ],
       [ "Utilities.StartingTextScreen", "class_utilities_1_1_starting_text_screen.html", null ]
     ] ],
-    [ "Player.Player", "class_player_1_1_player.html", null ],
+    [ "Player.OnScreenPlayerUpdate", "class_player_1_1_on_screen_player_update.html", null ],
     [ "Controls.PlayerActions", "struct_controls_1_1_player_actions.html", null ],
     [ "Player.Generated.PlayerInputActions.PlayerActions", "struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html", null ]
 ];

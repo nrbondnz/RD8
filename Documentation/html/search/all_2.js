@@ -1,26 +1,4 @@
 var searchData=
 [
-  ['camerafollow_0',['CameraFollow',['../class_utilities_1_1_camera_follow.html',1,'Utilities']]],
-  ['camerafollow_2ecs_1',['CameraFollow.cs',['../_camera_follow_8cs.html',1,'']]],
-  ['cameramove_2',['CameraMove',['../struct_controls_1_1_player_actions.html#a0121dcc6b52ed10856ecd17e6d80640a',1,'Controls::PlayerActions']]],
-  ['cannoncontroller_3',['CannonController',['../class_enemies_1_1_cannon_controller.html',1,'Enemies']]],
-  ['cannoncontroller_2ecs_4',['CannonController.cs',['../_cannon_controller_8cs.html',1,'']]],
-  ['carryoutaction_5',['CarryOutAction',['../class_key_1_1_key_action_controller.html#a254da34a859be802c08cd4140e3fcea9',1,'Key::KeyActionController']]],
-  ['collision_6',['Collision',['../namespace_collision.html',1,'']]],
-  ['collision_2edox_7',['Collision.dox',['../_collision_8dox.html',1,'']]],
-  ['collisionaction_8',['collisionAction',['../class_collision_1_1_collision_action_controller.html#af7814b9876b131f191e51e8e7742a0f6',1,'Collision::CollisionActionController']]],
-  ['collisionactioncontroller_9',['CollisionActionController',['../class_collision_1_1_collision_action_controller.html',1,'Collision']]],
-  ['collisionactioncontroller_2ecs_10',['CollisionActionController.cs',['../_collision_action_controller_8cs.html',1,'']]],
-  ['collisionactionenum_11',['CollisionActionEnum',['../namespace_collision.html#a7c45cf11d52bc3377748bac70aebbadd',1,'Collision']]],
-  ['collisionactionfactory_2ecs_12',['CollisionActionFactory.cs',['../_collision_action_factory_8cs.html',1,'']]],
-  ['collisioneffectstrengthenum_13',['CollisionEffectStrengthEnum',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7',1,'Collision']]],
-  ['contains_14',['Contains',['../class_controls.html#a253f968412fe7fa422ba14c32f1c7017',1,'Controls.Contains()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a822929ac93d9379d46c9f6d385245010',1,'Player.Generated.PlayerInputActions.Contains()']]],
-  ['controls_15',['Controls',['../class_controls.html',1,'Controls'],['../class_controls.html#a4295674e77bd87c0ae8304f2d2c6019f',1,'Controls.Controls()']]],
-  ['controls_2ecs_16',['Controls.cs',['../_controls_8cs.html',1,'']]],
-  ['controlschemes_17',['controlSchemes',['../class_controls.html#a40efe45bbdbd6f62eeb243bfd91f5060',1,'Controls.controlSchemes()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a88f539f22cbcced8f00bc6d286985754',1,'Player.Generated.PlayerInputActions.controlSchemes()']]],
-  ['converttominsandsecs_18',['ConvertToMinsAndSecs',['../class_utilities_1_1_game_object_utilities.html#a6e60213cc13bb75fedb08fddf9878de4',1,'Utilities::GameObjectUtilities']]],
-  ['converttosecs_19',['ConvertToSecs',['../class_utilities_1_1_game_object_utilities.html#a465f8514572f9d80a6657e9c1ebd5819',1,'Utilities::GameObjectUtilities']]],
-  ['createnewinstanceofgameobject_20',['CreateNewInstanceOfGameObject',['../class_utilities_1_1_game_object_utilities.html#a9094c1950f2b25d7723743e555cf3c49',1,'Utilities::GameObjectUtilities']]],
-  ['createphysicsscene_21',['CreatePhysicsScene',['../class_trajectory_object_1_1_projection.html#a27133bf441030e6b762a1bfbb396c208',1,'TrajectoryObject::Projection']]],
-  ['currentwaypointsubscriber_22',['CurrentWaypointSubscriber',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#abcb460c5215c041a4114e61013d89c74',1,'Managers::WaypointManagement::WaypointManager']]]
+  ['3_3a_20load_20the_20configuration_0',['Step 3: Load the configuration',['../index.html#step3',1,'']]]
 ];

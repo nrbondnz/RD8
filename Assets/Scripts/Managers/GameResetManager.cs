@@ -85,9 +85,9 @@ namespace Managers
         {
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
-            Player.Player player = Player.Player.getInstance();
-            player.HozInput = 0.0f;
-            player.VertInput = 0.0f;
+            Player.OnScreenPlayerUpdate onScreenPlayerUpdate = Player.OnScreenPlayerUpdate.GetInstance();
+            onScreenPlayerUpdate.HozInput = 0.0f;
+            onScreenPlayerUpdate.VertInput = 0.0f;
             GamePlayManager.GetInstance().RemoveLife();
             
         }

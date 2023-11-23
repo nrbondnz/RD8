@@ -1,4 +1,4 @@
-using System;
+                using System;
 using System.Collections;
 using System.Collections.Generic;
 using Managers;
@@ -11,13 +11,12 @@ namespace Player
 {
     /// <summary>
     /// Moves the player by adding force in the required direction
-    /// TODO: This class is too complex and needs abstraction
     /// TODO: Remove the projection system in favour of a subscription model so if available it will react correctly
     /// The _mainCamera is needed to help direct the movement so its not confusing to the player,
     /// as it swings around to focus on the next waypoint
     /// TODO: When we get to more than IOS, mobileMultiplier will need extending for other devices during test probably
     /// </summary>
-    public class PlayerMovement : MonoBehaviour
+    public class UpdatePlayerForces : MonoBehaviour
     {
 
         private Rigidbody _rb;
@@ -26,7 +25,7 @@ namespace Player
         [SerializeField] TrajectoryLineManager trajectoryLineManager;
         private GameObject _mainCamera;
         //private bool _isGhost;
-        private Player _player;
+        private OnScreenPlayerUpdate _onScreenPlayerUpdate;
         
     
         
@@ -39,7 +38,7 @@ namespace Player
             
             //onGoingForwards += GoingBackwards;
             _rb = GetComponent<Rigidbody>();
-            _player = Player.getInstance();
+            _onScreenPlayerUpdate = OnScreenPlayerUpdate.GetInstance();
             _mainCamera = GameObject.FindWithTag("MainCamera");
             Debug.Log("_cameraFollow set to : " + _mainCamera);
         }
@@ -54,18 +53,18 @@ namespace Player
             right.y = 0.0f;
             forward.Normalize();
             right.Normalize();
-            Vector3 desiredDirection = forward * Player.getInstance().VertInput + right * Player.getInstance().HozInput;
+            Vector3 desiredDirection = forward * OnScreenPlayerUpdate.GetInstance().VertInput + right * OnScreenPlayerUpdate.GetInstance().HozInput;
                        
             _rb.AddForce(desiredDirection * speed, ForceMode.Acceleration);
             
-            trajectoryLineManager.DrawRayFromRigidBody(_player);
+            trajectoryLineManager.DrawRayFromRigidBody(_onScreenPlayerUpdate);
 
-            if (_player.IsJumpButtonPressed && _player.IsGrounded)
+            if (_onScreenPlayerUpdate.IsJumpButtonPressed && _onScreenPlayerUpdate.IsGrounded)
             {
                 //if true, then add a force in the up direction of our player in the form of an impulse
                 _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 //then reset the jump variable so we don't fly to the moon :).
-                _player.IsJumpButtonPressed = false;
+                _onScreenPlayerUpdate.IsJumpButtonPressed = false;
             }
         }
     }

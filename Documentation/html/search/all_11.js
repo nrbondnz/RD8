@@ -1,18 +1,13 @@
 var searchData=
 [
-  ['scenenum_0',['SceneNum',['../class_managers_1_1_game_state_manager.html#a8c0c375f4e55a62a61a058f95a741943',1,'Managers::GameStateManager']]],
-  ['setcallbacks_1',['SetCallbacks',['../struct_controls_1_1_player_actions.html#a011aadec6501418214c55e5f3b3d581f',1,'Controls.PlayerActions.SetCallbacks()'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#aaeb6abedf2f09b10a3e03e82d24d705b',1,'Player.Generated.PlayerInputActions.PlayerActions.SetCallbacks()']]],
-  ['settimeallowedtonextwaypoint_2',['setTimeAllowedToNextWaypoint',['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac75afe7b4b5c9d48d24efc128774e91d',1,'Managers::WaypointManagement::WaypointManager']]],
-  ['simulatetrajectory_3',['SimulateTrajectory',['../class_trajectory_object_1_1_projection.html#ab480f9b85621f6b1fce7a3041d948ce7',1,'TrajectoryObject::Projection']]],
-  ['soundmanager_4',['SoundManager',['../class_managers_1_1_sound_manager.html',1,'Managers']]],
-  ['soundmanager_2ecs_5',['SoundManager.cs',['../_sound_manager_8cs.html',1,'']]],
-  ['speedchange_6',['SpeedChange',['../namespace_collision.html#a7c45cf11d52bc3377748bac70aebbadda69bc9102f450a30bbd9e13116ceeb821',1,'Collision']]],
-  ['speedchangecollisionaction_7',['SpeedChangeCollisionAction',['../class_collision_1_1_speed_change_collision_action.html',1,'Collision']]],
-  ['speedchangecollisionaction_2ecs_8',['SpeedChangeCollisionAction.cs',['../_speed_change_collision_action_8cs.html',1,'']]],
-  ['start_9',['Start',['../class_managers_1_1_game_play_manager.html#af46db0178764718fa37f0599ee3229cb',1,'Managers.GamePlayManager.Start()'],['../class_managers_1_1_waypoint_management_1_1_waypoint_manager.html#ac66e84524a06f49f06661913227e83c4',1,'Managers.WaypointManagement.WaypointManager.Start()'],['../class_trajectory_object_1_1_trajectory_line_manager.html#a18987a5846ec7e46ef57139ced3139d9',1,'TrajectoryObject.TrajectoryLineManager.Start()']]],
-  ['started_10',['Started',['../struct_managers_1_1_game_status.html#aefbd67b1db08f63f88d6f788c9f9aff7',1,'Managers::GameStatus']]],
-  ['startingtextscreen_11',['StartingTextScreen',['../class_utilities_1_1_starting_text_screen.html',1,'Utilities']]],
-  ['startingtextscreen_2ecs_12',['StartingTextScreen.cs',['../_starting_text_screen_8cs.html',1,'']]],
-  ['string_13',['String',['../_game_manager_8cs.html#aa1d8fb822302bf01699083b8c1e996e9',1,'GameManager.cs']]],
-  ['strong_14',['Strong',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7ac43e0fd449c758dab8f891d8e19eb1a9',1,'Collision']]]
+  ['mainpage_2edox_0',['mainpage.dox',['../mainpage_8dox.html',1,'']]],
+  ['managers_1',['Managers',['../namespace_managers.html',1,'']]],
+  ['managers_3a_3awaypointmanagement_2',['WaypointManagement',['../namespace_managers_1_1_waypoint_management.html',1,'Managers']]],
+  ['medstrong_3',['MedStrong',['../namespace_collision.html#a34ae1173aa4a5c5eeeeb0fa24a9e32d7a48055747c84c3595381b4731490b452e',1,'Collision']]],
+  ['movecamera_4',['MoveCamera',['../class_utilities_1_1_camera_follow.html#a2f028f5394ff12e2bbddcf11a29490fd',1,'Utilities::CameraFollow']]],
+  ['movement_5',['movement',['../struct_controls_1_1_player_actions.html#a56ed5b06ce8b2140339ec06c046fe037',1,'Controls.PlayerActions.Movement'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#a7079007db863c38e294d5be5e2ca5cd3',1,'Player.Generated.PlayerInputActions.PlayerActions.Movement']]],
+  ['movement_20work_6',['How Enimies input and movement work',['../namespace_player.html#secPlayer',1,'']]],
+  ['moveonaxis_7',['MoveOnAxis',['../class_utilities_1_1_move_on_axis.html',1,'Utilities']]],
+  ['moveonaxis_2ecs_8',['MoveOnAxis.cs',['../_move_on_axis_8cs.html',1,'']]],
+  ['myprefab_9',['myPrefab',['../class_prefab_game_object.html#a7cca55b749a8a6dac8a15d083a908499',1,'PrefabGameObject']]]
 ];

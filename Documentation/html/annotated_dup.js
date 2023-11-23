@@ -40,8 +40,8 @@ var annotated_dup =
         [ "PlayerInputActions", "class_player_1_1_generated_1_1_player_input_actions.html", "class_player_1_1_generated_1_1_player_input_actions" ]
       ] ],
       [ "InputReader", "class_player_1_1_input_reader.html", "class_player_1_1_input_reader" ],
-      [ "Player", "class_player_1_1_player.html", "class_player_1_1_player" ],
-      [ "PlayerMovement", "class_player_1_1_player_movement.html", null ]
+      [ "OnScreenPlayerUpdate", "class_player_1_1_on_screen_player_update.html", "class_player_1_1_on_screen_player_update" ],
+      [ "UpdatePlayerForces", "class_player_1_1_update_player_forces.html", null ]
     ] ],
     [ "TrajectoryObject", "namespace_trajectory_object.html", [
       [ "Projection", "class_trajectory_object_1_1_projection.html", "class_trajectory_object_1_1_projection" ],

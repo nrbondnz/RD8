@@ -11,7 +11,7 @@ namespace Player
     public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
 
-        private Player _player = new();
+        private OnScreenPlayerUpdate _onScreenPlayerUpdate = new();
         
         private Controls _controls;
 
@@ -61,11 +61,11 @@ namespace Player
         public void OnMovement(InputAction.CallbackContext context)
         {
                 Vector2 input2D = context.ReadValue<Vector2>();
-                _player.HozInput = input2D.x;
-                _player.VertInput = input2D.y;
-                string zero = _player.HozInput == 0 && _player.VertInput == 0 ? " ZERO" : "";
+                _onScreenPlayerUpdate.HozInput = input2D.x;
+                _onScreenPlayerUpdate.VertInput = input2D.y;
+                string zero = _onScreenPlayerUpdate.HozInput == 0 && _onScreenPlayerUpdate.VertInput == 0 ? " ZERO" : "";
                 //UnityEngine.Debug.Log("OnMovement : x = " + _player.HozInput + " y = " + _player.VertInput + zero);
-                Actions.OnPlayerChanged(_player);
+                Actions.OnPlayerChanged(_onScreenPlayerUpdate);
                
         }
 
@@ -81,8 +81,8 @@ namespace Player
             if (context.started)
             {
                 Debug.Log("Jump Pressed");
-                _player.IsJumpButtonPressed = true;
-                Actions.OnPlayerChanged(_player);
+                _onScreenPlayerUpdate.IsJumpButtonPressed = true;
+                Actions.OnPlayerChanged(_onScreenPlayerUpdate);
             }
         }
     }

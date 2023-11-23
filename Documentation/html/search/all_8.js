@@ -1,18 +1,17 @@
 var searchData=
 [
-  ['icollisionaction_0',['ICollisionAction',['../interface_collision_1_1_i_collision_action.html',1,'Collision']]],
-  ['icollisionaction_2ecs_1',['ICollisionAction.cs',['../_i_collision_action_8cs.html',1,'']]],
-  ['ikeyaction_2',['IKeyAction',['../interface_key_1_1_i_key_action.html',1,'Key']]],
-  ['ikeyaction_2ecs_3',['IKeyAction.cs',['../_i_key_action_8cs.html',1,'']]],
-  ['impossible_4',['Impossible',['../namespace_managers.html#af6b30b52f9ecc439c3edb52135936fd0a011d7bb0c88f95394e3a8d417304b218',1,'Managers']]],
-  ['impossiblepressed_5',['ImpossiblePressed',['../class_utilities_1_1_starting_text_screen.html#a7966382b0186922bd6e545d2b186c67b',1,'Utilities::StartingTextScreen']]],
-  ['initgame_6',['InitGame',['../class_managers_1_1_game_play_manager.html#ad819fd7dceb7725aa107e511a0a41dca',1,'Managers::GamePlayManager']]],
-  ['inputreader_7',['InputReader',['../class_player_1_1_input_reader.html',1,'Player']]],
-  ['inputreader_2ecs_8',['InputReader.cs',['../_input_reader_8cs.html',1,'']]],
-  ['iplayeractions_9',['IPlayerActions',['../interface_controls_1_1_i_player_actions.html',1,'Controls.IPlayerActions'],['../interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html',1,'Player.Generated.PlayerInputActions.IPlayerActions']]],
-  ['isgrounded_10',['IsGrounded',['../class_player_1_1_player.html#a99be32aa8d95a69db0a73394d102ff28',1,'Player::Player']]],
-  ['isjumpbuttonpressed_11',['IsJumpButtonPressed',['../class_player_1_1_player.html#a52033bcf2965fd1a375cfe291f381483',1,'Player::Player']]],
-  ['istrajectoryline_12',['isTrajectoryLine',['../class_trajectory_object_1_1_trajectory_line_manager.html#a90e1d437b08137ad300af93ab51996b4',1,'TrajectoryObject::TrajectoryLineManager']]],
-  ['itimeallowedtowaypoint_13',['ITimeAllowedToWaypoint',['../interface_key_1_1_i_time_allowed_to_waypoint.html',1,'Key']]],
-  ['itimeallowedtowaypoint_2ecs_14',['ITimeAllowedToWaypoint.cs',['../_i_time_allowed_to_waypoint_8cs.html',1,'']]]
+  ['danger_20home_20page_0',['Rolling Danger Home Page',['../index.html',1,'']]],
+  ['death_1',['Death',['../namespace_collision.html#a7c45cf11d52bc3377748bac70aebbadda6097f89e3092d4ccd249c9d479785c1f',1,'Collision']]],
+  ['deathcollisionaction_2',['DeathCollisionAction',['../class_collision_1_1_death_collision_action.html',1,'Collision']]],
+  ['deathcollisionaction_2ecs_3',['DeathCollisionAction.cs',['../_death_collision_action_8cs.html',1,'']]],
+  ['devices_4',['devices',['../class_controls.html#a99c0c0e747a753664752c7108adea123',1,'Controls.devices'],['../class_player_1_1_generated_1_1_player_input_actions.html#a85170e4a5ccf4d1f0622692b21f53984',1,'Player.Generated.PlayerInputActions.devices']]],
+  ['disable_5',['disable',['../class_controls.html#a2cbfe1781d8abc77daa6259bba5e7dce',1,'Controls.Disable()'],['../struct_controls_1_1_player_actions.html#ab3abe8c648468ad2c2b9dd9767490b99',1,'Controls.PlayerActions.Disable()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a89d49c2586387c550233ced97a139ed6',1,'Player.Generated.PlayerInputActions.Disable()'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#a2050ba151c5fcb3f2489a8e63a767817',1,'Player.Generated.PlayerInputActions.PlayerActions.Disable()']]],
+  ['dispose_6',['dispose',['../class_controls.html#aa6865d9f932ae68bd0814c686baeb8ff',1,'Controls.Dispose()'],['../class_player_1_1_generated_1_1_player_input_actions.html#a35bc2c783ec5dc121892451d1a084647',1,'Player.Generated.PlayerInputActions.Dispose()']]],
+  ['docollisionaction_7',['docollisionaction',['../class_collision_1_1_attract_collision_action.html#a788a66f5b73e8f058ce2a9860eb84157',1,'Collision.AttractCollisionAction.DoCollisionAction()'],['../class_collision_1_1_bounce_collision_action.html#a38efb2f08cfef25d320601b5e7d95264',1,'Collision.BounceCollisionAction.DoCollisionAction()'],['../class_collision_1_1_death_collision_action.html#aad077cbbf80f2ecd43020f832bcef7f3',1,'Collision.DeathCollisionAction.DoCollisionAction()'],['../interface_collision_1_1_i_collision_action.html#a88286040845768a8e05f9383de334db1',1,'Collision.ICollisionAction.DoCollisionAction()'],['../class_collision_1_1_speed_change_collision_action.html#a75933476f2722478b03eb1fcf2e19949',1,'Collision.SpeedChangeCollisionAction.DoCollisionAction()']]],
+  ['docollisionareaexitaction_8',['docollisionareaexitaction',['../class_collision_1_1_attract_collision_action.html#a96968660f6ba66f1453a703aaef9e1bc',1,'Collision.AttractCollisionAction.DoCollisionAreaExitAction()'],['../class_collision_1_1_bounce_collision_action.html#a2521f69ca99cd88eb35047938c449f76',1,'Collision.BounceCollisionAction.DoCollisionAreaExitAction()'],['../class_collision_1_1_death_collision_action.html#a74dede4c77e34a6515b994760a12c897',1,'Collision.DeathCollisionAction.DoCollisionAreaExitAction()'],['../interface_collision_1_1_i_collision_action.html#a325eeba8b0a9845290d7d15b5cda8cb2',1,'Collision.ICollisionAction.DoCollisionAreaExitAction()'],['../class_collision_1_1_speed_change_collision_action.html#a65783cb1457c052d48cc13bb15f7b8db',1,'Collision.SpeedChangeCollisionAction.DoCollisionAreaExitAction()']]],
+  ['document_20generation_9',['Document generation',['../index.html#install_sec',1,'']]],
+  ['dokeyaction_10',['dokeyaction',['../interface_key_1_1_i_key_action.html#aae64c3f00901c42643fd327de9cf1669',1,'Key.IKeyAction.DoKeyAction()'],['../class_key_1_1_key_action.html#adaebf80efd7b9e26dc4e021873371a02',1,'Key.KeyAction.DoKeyAction()'],['../class_key_1_1_open_key_action.html#a3a92228cf951c5c5b110e98fcf9e5699',1,'Key.OpenKeyAction.DoKeyAction()'],['../class_key_1_1_reveal_key_action.html#a4d3bc50e2180c19a6c13fc6e59b964b1',1,'Key.RevealKeyAction.DoKeyAction()'],['../class_key_1_1_walkthrough_key_action.html#a6c81df39b62e1d76d998a1e26ab245ac',1,'Key.WalkthroughKeyAction.DoKeyAction()']]],
+  ['doxygen_11',['Step 1: Install doxygen',['../index.html#step1',1,'']]],
+  ['doxywizard_20exe_12',['Step 2: Run the tool from a terminal - doxywizard.exe',['../index.html#step2',1,'']]],
+  ['drawrayfromrigidbody_13',['DrawRayFromRigidBody',['../class_trajectory_object_1_1_trajectory_line_manager.html#a0b9dd18e65b7fd236bc79b70e27f6ebb',1,'TrajectoryObject::TrajectoryLineManager']]]
 ];

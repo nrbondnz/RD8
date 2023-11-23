@@ -8,7 +8,7 @@ namespace Utilities
 {
     public static class Actions
     {
-        public static Action<Player.Player> OnPlayerChanged;
+        public static Action<Player.OnScreenPlayerUpdate> OnPlayerChanged;
         public static Action<GameStatus> OnGameStatusChanged;
         public static Action<WaypointManager> OnWaypointUpdate;
     }
