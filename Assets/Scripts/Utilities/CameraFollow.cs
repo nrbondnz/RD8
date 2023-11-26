@@ -24,7 +24,7 @@ using UnityEngine;
             private Vector3 _cameraVelocity = Vector3.zero;
             private float _xPlusZDistance;
             private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
-            private Player.Player _player = new Player.Player();
+            private Player.OnScreenPlayerUpdate _onScreenPlayerUpdate = new Player.OnScreenPlayerUpdate();
             private Rigidbody _targetRigidBody;
             private WaypointSubscriber _currentWaypoint;
             public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
@@ -90,7 +90,7 @@ using UnityEngine;
                     _normalizedTargetVelocity = (this._currentWaypoint.transform.position - _targetRigidBody.position).normalized;
                     offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
                     offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
-                } else if ( ( _targetRigidBody.velocity.magnitude > 8.0 ) && (  _player.GoingForwards )) {
+                } else if ( ( _targetRigidBody.velocity.magnitude > 8.0 ) && (  _onScreenPlayerUpdate.GoingForwards )) {
                     _normalizedTargetVelocity = _targetRigidBody.velocity.normalized;
                     // now update the offset
                     offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
@@ -123,10 +123,10 @@ using UnityEngine;
                 Actions.OnWaypointUpdate -= UpdateCurrentWaypoint;
             }
         
-            public void UpdatePlayer(Player.Player pPlayer)
+            public void UpdatePlayer(Player.OnScreenPlayerUpdate pOnScreenPlayerUpdate)
             {
-                _player = pPlayer;
-                Debug.Log("Player : " + _player);
+                _onScreenPlayerUpdate = pOnScreenPlayerUpdate;
+                Debug.Log("Player : " + _onScreenPlayerUpdate);
             }
 
             /// <summary>

@@ -1,6 +1,5 @@
 
 using System;
-using System.ComponentModel.Design.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
 using Utilities;
@@ -10,23 +9,23 @@ namespace Player
     /// <summary>
     /// Player records input states and player action stage for update in PlayerMovement
     /// </summary>
-    public class Player
+    public class OnScreenPlayerUpdate
     {
-        private static Player Instance;
-        private bool _isJumpButtonPressed = false;
+        private static OnScreenPlayerUpdate _instance;
+        private bool _isJumpButtonPressed;
         private bool _isGrounded = true;
         private bool _goingForwards = true;
         private float _hozInput;
         private float _vertInput;
 
-        public static Player getInstance()
+        public static OnScreenPlayerUpdate GetInstance()
         {
-            if (Instance.IsUnityNull())
+            if (_instance.IsUnityNull())
             {
-                Instance = new Player();
+                _instance = new OnScreenPlayerUpdate();
             }
 
-            return Instance;
+            return _instance;
         }
 
         public float GetMagnitude()
@@ -36,49 +35,48 @@ namespace Player
 
         public void Awake()
         {
-            getInstance();
+            GetInstance();
             Actions.OnPlayerChanged += UpdatePlayer;
         }
-        
- 
 
-        public void UpdatePlayer(Player pPlayer)
+
+        private void UpdatePlayer(OnScreenPlayerUpdate pOnScreenPlayerUpdate)
         {
             //_player = pPlayer;
-            this.VertInput = pPlayer.VertInput;
-            this.HozInput = pPlayer.HozInput;
+            this.VertInput = pOnScreenPlayerUpdate.VertInput;
+            this.HozInput = pOnScreenPlayerUpdate.HozInput;
             Debug.Log("Player x : " + this.HozInput + ", y " + this.VertInput);
         }
         
         
         public float HozInput
         {
-            get => getInstance()._hozInput;
-            set => getInstance()._hozInput = value;
+            get => GetInstance()._hozInput;
+            set => GetInstance()._hozInput = value;
         }
 
         public float VertInput
         {
-            get => getInstance()._vertInput;
-            set => getInstance()._vertInput = value;
+            get => GetInstance()._vertInput;
+            set => GetInstance()._vertInput = value;
         }
 
         public bool IsJumpButtonPressed
         {
-            get => getInstance()._isJumpButtonPressed;
-            set => getInstance()._isJumpButtonPressed = value;
+            get => GetInstance()._isJumpButtonPressed;
+            set => GetInstance()._isJumpButtonPressed = value;
         }
 
         public bool IsGrounded
         {
-            get => getInstance()._isGrounded;
-            set => getInstance()._isGrounded = value;
+            get => GetInstance()._isGrounded;
+            set => GetInstance()._isGrounded = value;
         }
 
         public bool GoingForwards
         {
-            get => getInstance()._goingForwards;
-            set => getInstance()._goingForwards = value;
+            get => GetInstance()._goingForwards;
+            set => GetInstance()._goingForwards = value;
         }
 
         public override string ToString()

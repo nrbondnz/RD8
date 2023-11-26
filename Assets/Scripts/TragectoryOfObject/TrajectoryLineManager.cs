@@ -9,10 +9,11 @@ namespace TrajectoryObject
         [SerializeField] Projection projection;
         [SerializeField] private LineRenderer lineRenderer;
         [SerializeField] public bool isTrajectoryLine = true;
-        
+        private Rigidbody _pRb;
 
         public void Start()
         {
+            _pRb = gameObject.GetComponent<Rigidbody>();
             projection.CreatePhysicsScene();
             //lineRenderer = new LineRenderer();
         }
@@ -30,17 +31,17 @@ namespace TrajectoryObject
 
        
 
-        public void DrawRayFromRigidBody(Player.Player pPlayer)
+        public void DrawRayFromRigidBody(Player.OnScreenPlayerUpdate pOnScreenPlayerUpdate)
         {
-            Rigidbody pRB = gameObject.GetComponent<Rigidbody>();
+            
             //create a new pRay, it's center is the player position, it's direction is Vector3.Down
-            Ray ray = new Ray(pRB.transform.position, Vector3.down);
+            Ray ray = new Ray(_pRb.transform.position, Vector3.down);
             //Physics.Raycast will return true if the pRay hits a collider
             //send the pRay and check if it did hit anything, the pRay length is going to be half of our scale(player's radius),
             //plus a small value to make sure our pRay is barley longer than the player's radius
-            if (Physics.Raycast(ray, pRB.transform.localScale.x / 2f + 0.01f))
+            if (Physics.Raycast(ray, _pRb.transform.localScale.x / 2f + 0.01f))
             {
-                pPlayer.IsGrounded = true;
+                pOnScreenPlayerUpdate.IsGrounded = true;
                 if (isTrajectoryLine)
                 {
                     projection?.RemoveTrajectoryLine();
@@ -52,12 +53,12 @@ namespace TrajectoryObject
             }
             else
             {
-                pPlayer.IsGrounded = false;
+                pOnScreenPlayerUpdate.IsGrounded = false;
                 lineRenderer.enabled = true;
-                lineRenderer.SetPosition(0, pRB.position);
+                lineRenderer.SetPosition(0, _pRb.position);
                 if (isTrajectoryLine)
                 {
-                    bool? lands = projection?.SimulateTrajectory( pRB.position, pRB.velocity);
+                    bool? lands = projection?.SimulateTrajectory( _pRb.position, _pRb.velocity);
                     
                 }
                 else
@@ -74,7 +75,7 @@ namespace TrajectoryObject
                     {
                         lineRenderer.startColor = Color.red;
                         lineRenderer.endColor = Color.black;
-                        Vector3 pos = pRB.transform.position;
+                        Vector3 pos = _pRb.transform.position;
                         pos.y = pos.y - 15.0f; 
                         lineRenderer.SetPosition(1, pos);
                     }

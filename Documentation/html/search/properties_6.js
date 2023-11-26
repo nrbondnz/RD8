@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hozinput_0',['HozInput',['../class_player_1_1_player.html#a7cf077ec94125c2385f3f8c0ace4ac9b',1,'Player::Player']]]
+  ['hozinput_0',['HozInput',['../class_player_1_1_on_screen_player_update.html#a740759c4496b7c27ca360150b7cbdae3',1,'Player::OnScreenPlayerUpdate']]]
 ];

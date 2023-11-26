@@ -1,11 +1,16 @@
 var searchData=
 [
-  ['uiscoremanager_0',['UIScoreManager',['../class_managers_1_1_u_i_score_manager.html',1,'Managers']]],
-  ['uiscoremanager_2ecs_1',['UIScoreManager.cs',['../_u_i_score_manager_8cs.html',1,'']]],
-  ['updatecurrentwaypoint_2',['UpdateCurrentWaypoint',['../class_utilities_1_1_camera_follow.html#a40318aabb24f41071d9e749bacbb4d2d',1,'Utilities::CameraFollow']]],
-  ['updategamescene_3',['UpdateGameScene',['../class_managers_1_1_game_manager.html#afeba0bdb67f695ac0ab7237f0b13bbe3',1,'Managers::GameManager']]],
-  ['updateplayer_4',['UpdatePlayer',['../class_player_1_1_player.html#a4b618b327464f4c7cba431f30d3fa6cd',1,'Player.Player.UpdatePlayer()'],['../class_utilities_1_1_camera_follow.html#a92613722a0133aaa960dd929f6c8dbed',1,'Utilities.CameraFollow.UpdatePlayer()']]],
-  ['updatetimers_5',['UpdateTimers',['../class_managers_1_1_game_play_manager.html#abc089f7185937cbc9a8694763b2e62d4',1,'Managers::GamePlayManager']]],
-  ['utilities_6',['Utilities',['../namespace_utilities.html',1,'']]],
-  ['utilities_2edox_7',['Utilities.dox',['../_utilities_8dox.html',1,'']]]
+  ['object_0',['Object',['../_game_manager_8cs.html#aef19bab18b9814edeef255c43e4f6bbc',1,'GameManager.cs']]],
+  ['oncameramove_1',['oncameramove',['../interface_controls_1_1_i_player_actions.html#a8cd0198ec165ca56967b50b66f9906b1',1,'Controls.IPlayerActions.OnCameraMove()'],['../class_player_1_1_input_reader.html#a6561b038abfa68cf9eceae46f1c44720',1,'Player.InputReader.OnCameraMove(InputAction.CallbackContext context)']]],
+  ['ondisable_2',['ondisable',['../class_player_1_1_input_reader.html#a47af5cbce0a61f2813e4a83639031a04',1,'Player.InputReader.OnDisable()'],['../class_utilities_1_1_camera_follow.html#a594d21824394242c0da21edd3d4c56c5',1,'Utilities.CameraFollow.OnDisable()']]],
+  ['onenable_3',['OnEnable',['../class_utilities_1_1_camera_follow.html#a2a72966656acded30b2e81490e8780b0',1,'Utilities::CameraFollow']]],
+  ['onjump_4',['onjump',['../interface_controls_1_1_i_player_actions.html#a8d3f401da084c125a18517b6e7489ebb',1,'Controls.IPlayerActions.OnJump()'],['../interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html#afe6c47bcb532b781eec66cfa81676835',1,'Player.Generated.PlayerInputActions.IPlayerActions.OnJump()'],['../class_player_1_1_input_reader.html#a4ad839ede9ad8033ee42fe0685cd5887',1,'Player.InputReader.OnJump(InputValue pInputValue)'],['../class_player_1_1_input_reader.html#aeb4f8e8d75e0577d07ebe0c4c4ad0934',1,'Player.InputReader.OnJump(InputAction.CallbackContext context)']]],
+  ['onmovement_5',['onmovement',['../interface_controls_1_1_i_player_actions.html#adbb9241c71b3518f711f60b0fbc752ae',1,'Controls.IPlayerActions.OnMovement()'],['../interface_player_1_1_generated_1_1_player_input_actions_1_1_i_player_actions.html#a8fdb6374830d3e4d160c565c112cd945',1,'Player.Generated.PlayerInputActions.IPlayerActions.OnMovement()'],['../class_player_1_1_input_reader.html#a4c34f1babea8da6484e36f5f8d1138ae',1,'Player.InputReader.OnMovement(InputValue pInputValue)'],['../class_player_1_1_input_reader.html#aa88817187ae61120a54f53532941a590',1,'Player.InputReader.OnMovement(InputAction.CallbackContext context)']]],
+  ['onscreenplayerupdate_6',['OnScreenPlayerUpdate',['../class_player_1_1_on_screen_player_update.html',1,'Player']]],
+  ['onscreenplayerupdate_2ecs_7',['OnScreenPlayerUpdate.cs',['../_on_screen_player_update_8cs.html',1,'']]],
+  ['open_8',['Open',['../interface_key_1_1_i_key_action.html#a730234001c6c76e4be6de603c036e66bac3bf447eabe632720a3aa1a7ce401274',1,'Key::IKeyAction']]],
+  ['openkeyaction_9',['openkeyaction',['../class_key_1_1_open_key_action.html',1,'Key.OpenKeyAction'],['../class_key_1_1_open_key_action.html#a3253e2befdf4c37135a2f7ce4b9d66a4',1,'Key.OpenKeyAction.OpenKeyAction()']]],
+  ['openkeyaction_2ecs_10',['OpenKeyAction.cs',['../_open_key_action_8cs.html',1,'']]],
+  ['operator_20inputactionmap_11',['operator inputactionmap',['../struct_controls_1_1_player_actions.html#abcbb4fc2a27f5f40791415d3cfb64288',1,'Controls.PlayerActions.operator InputActionMap()'],['../struct_player_1_1_generated_1_1_player_input_actions_1_1_player_actions.html#ada391f482f7dc5077c77cf19d03e1627',1,'Player.Generated.PlayerInputActions.PlayerActions.operator InputActionMap()']]],
+  ['output_12',['output',['../index.html#step4',1,'Step 4: Generate output'],['../index.html#step5',1,'Step 5: View the output']]]
 ];
