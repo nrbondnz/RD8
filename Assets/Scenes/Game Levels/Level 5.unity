@@ -544,8 +544,16 @@ PrefabInstance:
       value: OutOfBounds
       objectReference: {fileID: 0}
     - target: {fileID: 7013519269793611860, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -805.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013519269793611860, guid: 623a417f426f344dd961221bc785df4a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013519269793611860, guid: 623a417f426f344dd961221bc785df4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -132.53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
