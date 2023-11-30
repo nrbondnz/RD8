@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 85519513092751712, guid: 623a417f426f344dd961221bc785df4a, type: 3}
       propertyPath: m_Center.y
-      value: -50
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 85519513092751713, guid: 623a417f426f344dd961221bc785df4a, type: 3}
       propertyPath: m_RootOrder
