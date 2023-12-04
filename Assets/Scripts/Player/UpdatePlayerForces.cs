@@ -25,9 +25,23 @@ namespace Player
         [SerializeField] TrajectoryLineManager trajectoryLineManager;
         private GameObject _mainCamera;
         //private bool _isGhost;
-        private OnScreenPlayerUpdate _onScreenPlayerUpdate;
+        //private OnScreenPlayerUpdate _onScreenPlayerUpdate;
+        private PlayerInputState _playerInputState;
         
-    
+        private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
+        {
+            _playerInputState = pPlayerInputState;
+        }
+        
+        public void OnEnable()
+        {
+            Actions.OnPlayerInput += UpdatePlayerInputState;
+        }
+
+        public void OnDisable()
+        {
+            Actions.OnPlayerInput -= UpdatePlayerInputState;
+        }
         
         
         // Start is called before the first frame update
@@ -38,7 +52,7 @@ namespace Player
             
             //onGoingForwards += GoingBackwards;
             _rb = GetComponent<Rigidbody>();
-            _onScreenPlayerUpdate = OnScreenPlayerUpdate.GetInstance();
+            //_onScreenPlayerUpdate = OnScreenPlayerUpdate.GetInstance();
             _mainCamera = GameObject.FindWithTag("MainCamera");
             Debug.Log("_cameraFollow set to : " + _mainCamera);
         }
@@ -53,18 +67,19 @@ namespace Player
             right.y = 0.0f;
             forward.Normalize();
             right.Normalize();
-            Vector3 desiredDirection = forward * OnScreenPlayerUpdate.GetInstance().VertInput + right * OnScreenPlayerUpdate.GetInstance().HozInput;
+            Vector3 desiredDirection = forward * _playerInputState.Vertical + right * _playerInputState.Horizontal;
                        
             _rb.AddForce(desiredDirection * speed, ForceMode.Acceleration);
             
-            trajectoryLineManager.DrawRayFromRigidBody(_onScreenPlayerUpdate);
+            trajectoryLineManager.DrawRayFromRigidBody(_playerInputState);
 
-            if (_onScreenPlayerUpdate.IsJumpButtonPressed && _onScreenPlayerUpdate.IsGrounded)
+            if (_playerInputState.JumpPressed )
             {
                 //if true, then add a force in the up direction of our player in the form of an impulse
                 _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 //then reset the jump variable so we don't fly to the moon :).
-                _onScreenPlayerUpdate.IsJumpButtonPressed = false;
+                _playerInputState.JumpPressed = false;
+                Actions.OnPlayerInput(_playerInputState);
             }
         }
     }

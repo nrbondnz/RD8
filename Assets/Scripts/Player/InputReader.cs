@@ -11,7 +11,8 @@ namespace Player
     public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
 
-        private OnScreenPlayerUpdate _onScreenPlayerUpdate = new();
+        //private OnScreenPlayerUpdate _onScreenPlayerUpdate = new();
+        private PlayerInputState _playerInputState;
         
         private Controls _controls;
 
@@ -61,12 +62,14 @@ namespace Player
         public void OnMovement(InputAction.CallbackContext context)
         {
                 Vector2 input2D = context.ReadValue<Vector2>();
-                _onScreenPlayerUpdate.HozInput = input2D.x;
-                _onScreenPlayerUpdate.VertInput = input2D.y;
-                string zero = _onScreenPlayerUpdate.HozInput == 0 && _onScreenPlayerUpdate.VertInput == 0 ? " ZERO" : "";
+                //_onScreenPlayerUpdate.HozInput = input2D.x;
+                //_onScreenPlayerUpdate.VertInput = input2D.y;
+                _playerInputState = new PlayerInputState(input2D.x, input2D.y);
+                //string zero = _onScreenPlayerUpdate.HozInput == 0 && _onScreenPlayerUpdate.VertInput == 0 ? " ZERO" : "";
                 //UnityEngine.Debug.Log("OnMovement : x = " + _player.HozInput + " y = " + _player.VertInput + zero);
-                Actions.OnPlayerChanged(_onScreenPlayerUpdate);
-               
+                //Actions.OnPlayerChanged(_onScreenPlayerUpdate);
+                Actions.OnPlayerInput(_playerInputState);
+
         }
 
         public void OnCameraMove(InputAction.CallbackContext context)
@@ -81,8 +84,11 @@ namespace Player
             if (context.started)
             {
                 Debug.Log("Jump Pressed");
-                _onScreenPlayerUpdate.IsJumpButtonPressed = true;
-                Actions.OnPlayerChanged(_onScreenPlayerUpdate);
+                //_onScreenPlayerUpdate.IsJumpButtonPressed = true;
+
+                _playerInputState.JumpPressed = true;
+                //Actions.OnPlayerChanged(_onScreenPlayerUpdate);
+                Actions.OnPlayerInput(_playerInputState);
             }
         }
     }

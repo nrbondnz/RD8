@@ -1,5 +1,6 @@
 using Managers;
 using Managers.WaypointManagement;
+using Player;
 using UnityEngine;
 
 
@@ -24,11 +25,18 @@ using UnityEngine;
             private Vector3 _cameraVelocity = Vector3.zero;
             private float _xPlusZDistance;
             private Vector3 _normalizedTargetVelocity = new Vector3(0.5f, 0.0f, 0.5f);
-            private Player.OnScreenPlayerUpdate _onScreenPlayerUpdate = new Player.OnScreenPlayerUpdate();
+            //private Player.OnScreenPlayerUpdate _onScreenPlayerUpdate = new Player.OnScreenPlayerUpdate();
             private Rigidbody _targetRigidBody;
             private WaypointSubscriber _currentWaypoint;
             public Vector3 NormalizedTargetVelocity => _normalizedTargetVelocity;
+            private PlayerInputState _playerInputState;
 
+            private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
+            {
+                _playerInputState = pPlayerInputState;
+            }
+            
+            
             public float YOffset
             {
                 get => _yOffset;
@@ -86,11 +94,10 @@ using UnityEngine;
             {
                 if (this._currentWaypoint != null)
                 {
-                    // todo - direction from target to waypoint, normalized
                     _normalizedTargetVelocity = (this._currentWaypoint.transform.position - _targetRigidBody.position).normalized;
                     offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
                     offset.z = -(_normalizedTargetVelocity.z * _xPlusZDistance);
-                } else if ( ( _targetRigidBody.velocity.magnitude > 8.0 ) && (  _onScreenPlayerUpdate.GoingForwards )) {
+                } else if ( ( _targetRigidBody.velocity.magnitude > 8.0 ) /*&& (  _onScreenPlayerUpdate.GoingForwards )*/) {
                     _normalizedTargetVelocity = _targetRigidBody.velocity.normalized;
                     // now update the offset
                     offset.x = -(_normalizedTargetVelocity.x * _xPlusZDistance);
@@ -113,21 +120,23 @@ using UnityEngine;
             public void OnEnable()
             {
             
-                Actions.OnPlayerChanged += UpdatePlayer;
+                //Actions.OnPlayerChanged += UpdatePlayer;
+                Actions.OnPlayerInput += UpdatePlayerInputState; 
                 Actions.OnWaypointUpdate += UpdateCurrentWaypoint;
             }
 
             public void OnDisable()
             {
-                Actions.OnPlayerChanged -= UpdatePlayer;
+                //Actions.OnPlayerChanged -= UpdatePlayer;
+                Actions.OnPlayerInput -= UpdatePlayerInputState;
                 Actions.OnWaypointUpdate -= UpdateCurrentWaypoint;
             }
         
-            public void UpdatePlayer(Player.OnScreenPlayerUpdate pOnScreenPlayerUpdate)
+            /*public void UpdatePlayer(Player.OnScreenPlayerUpdate pOnScreenPlayerUpdate)
             {
                 _onScreenPlayerUpdate = pOnScreenPlayerUpdate;
                 Debug.Log("Player : " + _onScreenPlayerUpdate);
-            }
+            }*/
 
             /// <summary>
             /// Updates the waypoint to the new waypoint when previous waypoint is reached

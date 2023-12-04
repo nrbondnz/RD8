@@ -1,6 +1,8 @@
 using System;
+using Player;
 using TrajectoryObject;
 using UnityEngine;
+using Utilities;
 
 namespace TrajectoryObject
 {
@@ -10,6 +12,22 @@ namespace TrajectoryObject
         [SerializeField] private LineRenderer lineRenderer;
         [SerializeField] public bool isTrajectoryLine = true;
         private Rigidbody _pRb;
+        private PlayerInputState _playerInputState;
+
+        private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
+        {
+            _playerInputState = pPlayerInputState;
+        }
+        
+        public void OnEnable()
+        {
+            Actions.OnPlayerInput += UpdatePlayerInputState;
+        }
+
+        public void OnDisable()
+        {
+            Actions.OnPlayerInput -= UpdatePlayerInputState;
+        }
 
         public void Start()
         {
@@ -31,7 +49,7 @@ namespace TrajectoryObject
 
        
 
-        public void DrawRayFromRigidBody(Player.OnScreenPlayerUpdate pOnScreenPlayerUpdate)
+        public void DrawRayFromRigidBody(PlayerInputState pPlayerInputState)
         {
             
             //create a new pRay, it's center is the player position, it's direction is Vector3.Down
@@ -41,7 +59,9 @@ namespace TrajectoryObject
             //plus a small value to make sure our pRay is barley longer than the player's radius
             if (Physics.Raycast(ray, _pRb.transform.localScale.x / 2f + 0.01f))
             {
-                pOnScreenPlayerUpdate.IsGrounded = true;
+                //pOnScreenPlayerUpdate.IsGrounded = true;
+                _playerInputState.Grounded = true;
+                Actions.OnPlayerInput(_playerInputState);
                 if (isTrajectoryLine)
                 {
                     projection?.RemoveTrajectoryLine();
@@ -53,7 +73,8 @@ namespace TrajectoryObject
             }
             else
             {
-                pOnScreenPlayerUpdate.IsGrounded = false;
+                _playerInputState.Grounded = false;
+                Actions.OnPlayerInput(_playerInputState);
                 lineRenderer.enabled = true;
                 lineRenderer.SetPosition(0, _pRb.position);
                 if (isTrajectoryLine)

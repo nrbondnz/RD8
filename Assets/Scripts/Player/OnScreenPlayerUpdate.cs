@@ -28,15 +28,10 @@ namespace Player
             return _instance;
         }
 
-        public float GetMagnitude()
-        {
-            return (float)Math.Sqrt(_hozInput * _hozInput + _vertInput * _vertInput);
-        }
-
         public void Awake()
         {
             GetInstance();
-            Actions.OnPlayerChanged += UpdatePlayer;
+            //Actions.OnPlayerChanged += UpdatePlayer;
         }
 
 

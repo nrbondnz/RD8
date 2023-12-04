@@ -1,6 +1,9 @@
+using System;
 using Managers;
+using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utilities;
 
 namespace Managers
 {
@@ -10,9 +13,23 @@ namespace Managers
     public class GameResetManager : MonoBehaviour
     {
         private static GameResetManager _instance;
+        private PlayerInputState _playerInputState;
 
+        private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
+        {
+            _playerInputState = pPlayerInputState;
+        }
         
-        
+        public void OnEnable()
+        {
+            Actions.OnPlayerInput += UpdatePlayerInputState;
+        }
+
+        public void OnDisable()
+        {
+            Actions.OnPlayerInput -= UpdatePlayerInputState;
+        }
+
 
         /// <summary>
         /// Initializes a Singleton of the GameResetManager class
@@ -85,9 +102,11 @@ namespace Managers
         {
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
-            Player.OnScreenPlayerUpdate onScreenPlayerUpdate = Player.OnScreenPlayerUpdate.GetInstance();
-            onScreenPlayerUpdate.HozInput = 0.0f;
-            onScreenPlayerUpdate.VertInput = 0.0f;
+            //Player.OnScreenPlayerUpdate onScreenPlayerUpdate = Player.OnScreenPlayerUpdate.GetInstance();
+            //onScreenPlayerUpdate.HozInput = 0.0f;
+            //onScreenPlayerUpdate.VertInput = 0.0f;
+            PlayerInputState playerInputState = new PlayerInputState(0.0f, 0.0f, false);
+            Actions.OnPlayerInput(playerInputState);
             GamePlayManager.GetInstance().RemoveLife();
             
         }
