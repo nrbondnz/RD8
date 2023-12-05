@@ -12,7 +12,7 @@ namespace TrajectoryObject
         [SerializeField] private LineRenderer lineRenderer;
         [SerializeField] public bool isTrajectoryLine = true;
         private Rigidbody _pRb;
-        private PlayerInputState _playerInputState;
+        private PlayerInputState _playerInputState = new();
 
         private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
         {

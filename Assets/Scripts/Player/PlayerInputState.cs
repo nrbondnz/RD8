@@ -15,6 +15,10 @@ namespace Player
             this.grounded = pGrounded;
         }
 
+        public PlayerInputState()
+        {
+        }
+
         public float Horizontal => _Horizontal;
 
         public float Vertical => _Vertical;

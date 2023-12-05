@@ -26,7 +26,7 @@ namespace Player
         private GameObject _mainCamera;
         //private bool _isGhost;
         //private OnScreenPlayerUpdate _onScreenPlayerUpdate;
-        private PlayerInputState _playerInputState;
+        private PlayerInputState _playerInputState = new();
         
         private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
         {
