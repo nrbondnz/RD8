@@ -21,34 +21,27 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
 
-
-
-        private static GameManager _instance;
-
         /// <summary>
         /// Sets up the game manager as a new singleton instance
         /// </summary>
         private void Awake()
         {
-            if (_instance != null)
+            if (Singleton != null)
             {
                 Debug.Log("GameManager Trying second Awake");
                 Destroy(gameObject);
                 return;
             }
             Debug.Log("GameManager Awake");
-            _instance = this as GameManager;
+            Singleton = this as GameManager;
 
             DontDestroyOnLoad(gameObject);
         }
-
-        /// <summary>
-        /// Gets the singleton instance
-        /// </summary>
-        /// <returns></returns>
-        public static GameManager GetInstance()
+        
+        public static GameManager Singleton
         {
-            return _instance;
+            get;
+            set;
         }
  
         /// <summary>
@@ -56,7 +49,7 @@ namespace Managers
         /// </summary>
         private void Start()
         {
-            GameStateManager.GetInstance().ResetGameState();
+            GameStateManager.Singleton.ResetGameState();
             SceneManager.LoadSceneAsync("WinLoseMenu");
         }
         
@@ -68,19 +61,19 @@ namespace Managers
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void UpdateGameScene(GamePhase newPhase, int newLevel)
         {
-            GameStateManager.GetInstance().GamePhase = newPhase; 
-            GameStateManager.GetInstance().SceneNum = newLevel;
+            GameStateManager.Singleton.GamePhase = newPhase; 
+            GameStateManager.Singleton.SceneNum = newLevel;
             Debug.Log(
-                "GameManager: new state : " + GameStateManager.GetInstance());
+                "GameManager: new state : " + GameStateManager.Singleton);
             
-            switch (GameStateManager.GetInstance().GamePhase)
+            switch (GameStateManager.Singleton.GamePhase)
             {
                 case GamePhase.ReadyToGo:
                     //SceneManager.LoadSceneAsync("Menu");
                     break;
                 case GamePhase.GamePlaying:
                     //State.SceneNum++;
-                    SceneManager.LoadSceneAsync("Level " + GameStateManager.GetInstance().SceneNum);
+                    SceneManager.LoadSceneAsync("Level " + GameStateManager.Singleton.SceneNum);
                     break;
                 case GamePhase.Winner:
                     SceneManager.LoadSceneAsync("WinLoseMenu");
@@ -100,7 +93,7 @@ namespace Managers
         /// <returns>bool</returns>
         public static bool hasBootSceneRun()
         {
-            return _instance != null;
+            return Singleton != null;
         }
     }
 }

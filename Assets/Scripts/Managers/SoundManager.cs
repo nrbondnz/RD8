@@ -7,20 +7,25 @@ namespace Managers
 {
     public class SoundManager : MonoBehaviour
     {
-        private static SoundManager _instance;
+        //private static SoundManager _instance;
         [Header("Sounds")] [SerializeField] private AudioSource audioSource;
 
         private static Dictionary<CollisionActionEnum,
             Dictionary<CollisionEffectStrengthEnum, AudioClip>> _collisionSounds =
             new Dictionary<CollisionActionEnum, Dictionary<CollisionEffectStrengthEnum, AudioClip>>();
 
+        public static SoundManager Singleton
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// Initializes the singleton SoundManager
         /// This includes a call to SetupResources to load all the sounds
         /// </summary>
         private void Awake()
         {
-            if (_instance != null)
+            if (Singleton != null)
             {
                 Debug.Log("SoundManager Trying second Awake");
                 Destroy(gameObject);
@@ -28,7 +33,7 @@ namespace Managers
             }
 
             Debug.Log("SoundManager Awake");
-            _instance = this as SoundManager;
+            Singleton = this as SoundManager;
             DontDestroyOnLoad(gameObject);
             SetupResources();
         }
@@ -117,10 +122,7 @@ namespace Managers
         /// Gets the singleton instance of the SoundManager
         /// </summary>
         /// <returns>SoundManager</returns>
-        public static SoundManager GetInstance()
-        {
-            return _instance;
-        }
+       
 
         /// <summary>
         /// When calls from the collision action controller it plays the sound for the specified

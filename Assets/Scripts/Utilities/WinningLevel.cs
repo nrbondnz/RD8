@@ -45,17 +45,17 @@ namespace Utilities
 
             // TODO work out index max and rotate around scenes
             //SceneManager.LoadSceneAsync(currentSceneID == 0 ? 1 : currentSceneID == 1 ? 2 : 0);  
-            GameStateManager gameStateManager = GameStateManager.GetInstance();
-            if (gameStateManager.GamePhase == GamePhase.GamePlaying)
+            //GameStateManager gameStateManager = GameStateManager.GetInstance();
+            if (GameStateManager.Singleton.GamePhase == GamePhase.GamePlaying)
             {
-                if (gameStateManager.SceneNum < gameStateManager.LastLevel)
+                if (GameStateManager.Singleton.SceneNum < GameStateManager.Singleton.LastLevel)
                 {
-                    gameStateManager.SceneNum++;
-                    GameManager.GetInstance().UpdateGameScene(GamePhase.GamePlaying, gameStateManager.SceneNum);
+                    GameStateManager.Singleton.SceneNum++;
+                    GameManager.Singleton.UpdateGameScene(GamePhase.GamePlaying, GameStateManager.Singleton.SceneNum);
                 }
                 else
                 {
-                    GameManager.GetInstance().UpdateGameScene(GamePhase.Winner, gameStateManager.SceneNum);
+                    GameManager.Singleton.UpdateGameScene(GamePhase.Winner, GameStateManager.Singleton.SceneNum);
                 }
             }
            

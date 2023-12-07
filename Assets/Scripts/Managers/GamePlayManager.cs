@@ -12,34 +12,19 @@ namespace Managers
     /// </summary>
     public class GamePlayManager : MonoBehaviour
     {
-        public GameStatus GameStatus;
-
-        private static GamePlayManager _instance;
-
-    
-        
-        /// <summary>
-        /// Returns the GameStatus
-        /// </summary>
-        /// <returns>GameStatus</returns>
-        public GameStatus GetGameStatus()
-        {
-            return GameStatus;
-        }
-        
         /// <summary>
         /// Sets up the Singleton instance for GamePlayManager
         /// </summary>
         private void Awake()
         {
-            if (_instance != null)
+            if (Singleton != null)
             {
                 Debug.Log("GamePlayManager Trying second Awake");
                 Destroy(gameObject);
                 return;
             }
             Debug.Log("GamePlayManager Awake");
-            _instance = this;
+            Singleton = this;
             GameStatus.Lives = 0;
             GameStatus.Started = false;
             GameStatus.GameDifficulty = GameDifficulty.Easy;
@@ -52,11 +37,22 @@ namespace Managers
         /// Returns the Singleton instance of GamePlayManager
         /// </summary>
         /// <returns>GamePlayManager</returns>
-        public static GamePlayManager GetInstance()
+        public static GamePlayManager Singleton
         {
-            return _instance;
+            get;
+            set;
         }
 
+        public GameStatus GameStatus;   
+        /// <summary>
+        /// Returns the GameStatus
+        /// </summary>
+        /// <returns>GameStatus</returns>
+        public GameStatus GetGameStatus()
+        {
+            return GameStatus;
+        }
+        
         //public static Action<GamePlay> OnGamePlayChanged;
 
         /// <summary>
@@ -141,14 +137,14 @@ namespace Managers
                 if (GameStatus.WaypointTimeRemaining <= 0.0f)
                 {
                     // last life?
-                    if (GamePlayManager.GetInstance().GetLives() == 1)
+                    if (GamePlayManager.Singleton.GetLives() == 1)
                     {
                         SceneManager.LoadSceneAsync("WinLoseMenu");
                     }
                     else
                     {
                         // removes life, resets waypoints and times
-                        GameResetManager.GetInstance().ResetScene();
+                        GameResetManager.Singleton.ResetScene();
                     }
                 }
             }

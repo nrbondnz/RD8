@@ -8,14 +8,14 @@ namespace Managers
     {
         [SerializeField] private TextMeshProUGUI scoreText;
         //private GamePlay _gamePlay;
-        //private GamePlayManager _gameplayManager = GamePlayManager.GetInstance();
+        //private GamePlayManager _gameplayManager = GamePlayManager.Singleton;
 
         /// <summary>
         /// The subscription to OnGameStatusChanged will cause this screen to update the text on screen during the game
         /// </summary>
         void Start()
         {
-            UpdateGameScore(GamePlayManager.GetInstance().GameStatus);
+            UpdateGameScore(GamePlayManager.Singleton.GameStatus);
         }
 
         private void OnEnable()

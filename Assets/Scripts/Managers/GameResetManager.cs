@@ -12,7 +12,7 @@ namespace Managers
     /// </summary>
     public class GameResetManager : MonoBehaviour
     {
-        private static GameResetManager _instance;
+        
         private PlayerInputState _playerInputState;
 
         private void UpdatePlayerInputState(PlayerInputState pPlayerInputState)
@@ -30,20 +30,25 @@ namespace Managers
             Actions.OnPlayerInput -= UpdatePlayerInputState;
         }
 
-
+        public static GameResetManager Singleton
+        {
+            get;
+            set;
+        }
+        
         /// <summary>
         /// Initializes a Singleton of the GameResetManager class
         /// </summary>
         private void Awake()
         {
-            if (_instance != null)
+            if (Singleton != null)
             {
                 Debug.Log("GameResetManager Trying second Awake");
                 Destroy(gameObject);
                 return;
             }
             Debug.Log("GameResetManager Awake");
-            _instance = this as GameResetManager;
+            Singleton = this as GameResetManager;
             DontDestroyOnLoad(gameObject);
             if (!GameManager.hasBootSceneRun())
             {
@@ -55,10 +60,7 @@ namespace Managers
         /// Gets the singleton of GameResetManager
         /// </summary>
         /// <returns></returns>
-        public static GameResetManager GetInstance()
-        {
-            return _instance;
-        }
+      
 
         /// <summary>
         /// Listens for collisions with a collider object setup in GameReset
@@ -82,10 +84,10 @@ namespace Managers
         /// </summary>
         public void RemoveLifeAndResetScene()
         {
-            if (GamePlayManager.GetInstance().GetLives() == 1 )
+            if (GamePlayManager.Singleton.GetLives() == 1 )
             {
                 // just about to go to zero
-                GamePlayManager.GetInstance().RemoveLife();
+                GamePlayManager.Singleton.RemoveLife();
                 SceneManager.LoadScene("WinLoseMenu");
             }
             else
@@ -107,7 +109,7 @@ namespace Managers
             //onScreenPlayerUpdate.VertInput = 0.0f;
             PlayerInputState playerInputState = new PlayerInputState(0.0f, 0.0f, false);
             Actions.OnPlayerInput(playerInputState);
-            GamePlayManager.GetInstance().RemoveLife();
+            GamePlayManager.Singleton.RemoveLife();
             
         }
     }

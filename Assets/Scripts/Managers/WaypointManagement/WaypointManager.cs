@@ -89,28 +89,28 @@ namespace Managers.WaypointManagement
                 if (( ! currentWaypoint.IsUnityNull() ) &&
                     currentWaypoint.TimeAllowedToWaypoint() > 0.0)
                 {
-                    float timeRemainingToWaypoint = GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining;
+                    float timeRemainingToWaypoint = GamePlayManager.Singleton.GameStatus.WaypointTimeRemaining;
                     float timeToNextWaypoint = currentWaypoint.TimeAllowedToWaypoint();
-                    GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining = timeToNextWaypoint +
+                    GamePlayManager.Singleton.GameStatus.WaypointTimeRemaining = timeToNextWaypoint +
                         (waypointTimeAdds ? timeRemainingToWaypoint : 0.0f);
 
-                    //Actions.OnGameStatusChanged(GamePlayManager.GetInstance().GameStatus);
+                    //Actions.OnGameStatusChanged(GamePlayManager.Singleton.GameStatus);
                 }
                 else
                 {
-                    GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining = 0.0f;
+                    GamePlayManager.Singleton.GameStatus.WaypointTimeRemaining = 0.0f;
                 }
             /*}
             else
             {
-                GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining = 0.0f;
+                GamePlayManager.Singleton.GameStatus.WaypointTimeRemaining = 0.0f;
             } */
         }
 
         public void ResetWaypoints()
         {
             _currentWaypoint = 0;
-            GamePlayManager.GetInstance().GameStatus.WaypointTimeRemaining = 0.0f;
+            GamePlayManager.Singleton.GameStatus.WaypointTimeRemaining = 0.0f;
             setTimeAllowedToNextWaypoint();
             Actions.OnWaypointUpdate?.Invoke(this);
         }
