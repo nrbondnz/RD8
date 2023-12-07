@@ -1497,6 +1497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 1998894540}
+  waypointTimeAdds: 0
 --- !u!4 &2019249612
 Transform:
   m_ObjectHideFlags: 0
@@ -1530,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9180605719620798538, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: 9180605719620798538, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1538,7 +1539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9180605719620798538, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.977594
+      value: 12.29
       objectReference: {fileID: 0}
     - target: {fileID: 9180605719620798538, guid: 47003c699e89c4ba28540179204b963b, type: 3}
       propertyPath: m_LocalRotation.w
