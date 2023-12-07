@@ -26,14 +26,18 @@ namespace Managers
         private GamePhase _gamePhase = GamePhase.ReadyToGo;
         private int _sceneNum = 1;
         private int _finalLevel = 0;
-        private static GameStateManager _instance;
-      
+        //private static GameStateManager _instance;
+        public static GameStateManager Singleton
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// Initializes a new instance of the GameStateManager and ensures that there is only one instance
         /// </summary>
         private void Awake()
         {
-            if (_instance != null)
+            if (Singleton != null)
             {
                 Debug.Log("GameStateManager Trying second Awake");
                 Destroy(gameObject);
@@ -41,7 +45,7 @@ namespace Managers
             }
 
             Debug.Log("GameStateManager Awake");
-            _instance = this;
+            Singleton = this;
             DontDestroyOnLoad(gameObject);
             SetupLastLevel();
         }
@@ -51,10 +55,7 @@ namespace Managers
         /// which will be created during Awake
         /// </summary>
         /// <returns>GameStateManager</returns>
-        public static GameStateManager GetInstance()
-        {
-            return _instance;
-        }
+       
         
         /// <summary>
         /// At initialization the Assets are inspected to determine the available game levels within the

@@ -59,7 +59,7 @@ namespace Player
         
         private void FixedUpdate()
         {
-            GamePlayManager.GetInstance().UpdateTimers();
+            GamePlayManager.Singleton.UpdateTimers();
  
             Vector3 forward = _mainCamera.transform.forward;
             Vector3 right = _mainCamera.transform.right;

@@ -64,18 +64,18 @@ namespace Utilities
         private String DecideOnTitleToDisplay()
         {
             String titleString = null;
-            if ((GamePlayManager.GetInstance().GetGameStatus().Lives > 0) &&
-                (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining > 0.0))
+            if ((GamePlayManager.Singleton.GetGameStatus().Lives > 0) &&
+                (GamePlayManager.Singleton.GetGameStatus().TimeRemaining > 0.0))
             {
                 titleString = "Winner - Play again?";
             }
-            else if ((GamePlayManager.GetInstance().GetGameStatus().Lives == 0) &&
-                     (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining > 0.0))
+            else if ((GamePlayManager.Singleton.GetGameStatus().Lives == 0) &&
+                     (GamePlayManager.Singleton.GetGameStatus().TimeRemaining > 0.0))
             {
                 titleString = "Out of lives - Play again?";
             }
-            else if ((GamePlayManager.GetInstance().GetGameStatus().Lives > 0) &&
-                     (GamePlayManager.GetInstance().GetGameStatus().TimeRemaining <= 0.0))
+            else if ((GamePlayManager.Singleton.GetGameStatus().Lives > 0) &&
+                     (GamePlayManager.Singleton.GetGameStatus().TimeRemaining <= 0.0))
             {
                 titleString = "Out of Time - Play again?";
             }
@@ -95,7 +95,7 @@ namespace Utilities
     
         public void HardPressed()
         {
-            //startLevel = GameStateManager.GetInstance().LastLevel;
+            //startLevel = GameStateManager.Singleton.LastLevel;
             StartGame(GameDifficulty.Hard);
             //startLevel = 1;
         }
@@ -116,9 +116,9 @@ namespace Utilities
             //start game scene
             //GameManager gameManager = GameManager.getInstance();
             Debug.Log("Menu: StartingTextScreen.StartGame.difficulty : " + pGameDifficulty + " startLevel : " + this.startLevel);
-            GameManager.GetInstance().UpdateGameScene(GamePhase.GamePlaying,this.startLevel);
-            GamePlayManager.GetInstance().InitGame(pGameDifficulty);
-            Debug.Log("Menu: New Game state : " + GamePhase.GamePlaying + " " + GameStateManager.GetInstance().SceneNum);
+            GameManager.Singleton.UpdateGameScene(GamePhase.GamePlaying,this.startLevel);
+            GamePlayManager.Singleton.InitGame(pGameDifficulty);
+            Debug.Log("Menu: New Game state : " + GamePhase.GamePlaying + " " + GameStateManager.Singleton.SceneNum);
         }
     }
 }
