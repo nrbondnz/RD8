@@ -95,7 +95,7 @@ namespace Collision
             if (other.CompareTag("Player"))
             {
                 this.gameObject.GetComponent<ICollisionAction>().DoCollisionAction(this, effectStrengh);
-                SoundManager.GetInstance().PlayCollisionSound(this);
+                SoundManager.Singleton.PlayCollisionSound(this);
             }
         }
 
