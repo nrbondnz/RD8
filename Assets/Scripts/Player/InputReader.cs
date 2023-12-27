@@ -91,5 +91,11 @@ namespace Player
                 Actions.OnPlayerInput(_playerInputState);
             }
         }
+
+        public void OnQuit(InputAction.CallbackContext context)
+        {
+            Debug.Log("Escape pressed mid game");
+            Application.Quit(0);
+        }
     }
 }

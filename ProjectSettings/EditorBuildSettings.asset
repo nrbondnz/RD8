@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Levels/Lavel 7.unity
     guid: 5e57710efaacbe34294b4676295ce288
   - enabled: 1
-    path: Assets/Scenes/Game Levels/Level 7.unity
+    path: Assets/Scenes/Game Levels/Level 6.unity
     guid: e091e48f68051314a866782650955073
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 53d1261a295cb7141b136d36e4e8e7b6, type: 2}

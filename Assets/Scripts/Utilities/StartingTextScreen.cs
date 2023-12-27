@@ -27,6 +27,7 @@ namespace Utilities
         [SerializeField] private Button easyButton;
         [SerializeField] private Button hardButton;
         [SerializeField] private Button impossibleButton;
+        [SerializeField] private Button escButton;
         [SerializeField] private int startLevel = 1;
 
         void Awake()
@@ -54,6 +55,7 @@ namespace Utilities
             easyButton.onClick.AddListener(EasyPressed);
             hardButton.onClick.AddListener(HardPressed);
             impossibleButton.onClick.AddListener(ImpossiblePressed);
+            escButton.onClick.AddListener(escPressed);
             headingForGameStart.text = DecideOnTitleToDisplay();
         }
 
@@ -87,6 +89,13 @@ namespace Utilities
             return titleString;
         }
 
+        public void escPressed()
+        {
+            Debug.Log("Esc Button Pressed");
+            Application.Quit(0);
+            // should not get here in an application - press stop on the unity screen
+            this.Start();
+        }
 
         public void EasyPressed()
         {

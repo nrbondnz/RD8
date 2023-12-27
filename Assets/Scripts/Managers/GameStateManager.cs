@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -55,15 +57,34 @@ namespace Managers
         /// which will be created during Awake
         /// </summary>
         /// <returns>GameStateManager</returns>
-       
-        
+
+
         /// <summary>
         /// At initialization the Assets are inspected to determine the available game levels within the
         /// Assets/Scenes/Game Levels repository
         /// </summary>
         private void SetupLastLevel()
         {
-            string [] files = System.IO.Directory.GetFiles("Assets/Scenes/Game Levels/");
+            Debug.Log("~~~~~~ Scene List ~~~~~~");
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            Debug.Log("~~~~ Count :" + sceneCount + " ~~~~");
+            for (int i = 0; i < sceneCount; i++)
+            {
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+                string[] splitScenePath = scenePath.Split('/');
+                string sceneFile = splitScenePath[splitScenePath.Length - 1];
+                string sceneName = sceneFile.Split('.')[0];
+                Debug.Log("~~ " + sceneName + " ~~");
+                if (sceneName.Contains("Level "))
+                {
+                    _finalLevel++;
+                }
+            }
+            Debug.Log("Final level is : " + _finalLevel);
+        }
+        /*private void SetupLastLevel()
+        {
+            string [] files = System.IO.Directory.GetFiles("/Assets/Scenes/Game Levels/");
             foreach (var aFile in files)
             {
                 Debug.Log(aFile);
@@ -77,7 +98,7 @@ namespace Managers
             }
             Debug.Log("Final level : " + _finalLevel);
             //lastLevel = files.Length;
-        }
+        }*/
 
         /// <summary>
         /// At start of play the game state is reset for the single instance of GameStateManager

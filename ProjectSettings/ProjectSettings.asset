@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: com.myanimalsgetout
-  productName: RollingDanger
+  companyName: com.bondconcultancy
+  productName: RollingDanger007
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -138,7 +138,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
   preloadedAssets:
-  - {fileID: 1728153820279930635, guid: 5211d60d1ae6c3c46bc4a7141d65722a, type: 2}
+  - {fileID: -1845176656774512352, guid: 5211d60d1ae6c3c46bc4a7141d65722a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -637,7 +637,6 @@ PlayerSettings:
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
   switchEnableFileSystemTrace: 0
-  switchUseGOLDLinker: 0
   switchLTOSetting: 0
   switchApplicationID: 0x01004b9000490000
   switchNSODependencies: 
@@ -980,10 +979,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 8476019c-7b19-4c7e-9be6-dc8fb7a8c64c
+  cloudProjectId: e0596845-a0b9-4483-a5a7-9a64e4812168
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: RD8-Unity
+  projectName: RD8
   organizationId: nigel_bond_orcon_net_nz
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
