@@ -13,7 +13,7 @@ namespace Player
     /// Moves the player by adding force in the required direction
     /// TODO: Remove the projection system in favour of a subscription model so if available it will react correctly
     /// The _mainCamera is needed to help direct the movement so its not confusing to the player,
-    /// as it swings around to focus on the next waypoint
+    /// as it swings around to focus on the next waypoint.
     /// TODO: When we get to more than IOS, mobileMultiplier will need extending for other devices during test probably
     /// </summary>
     public class UpdatePlayerForces : MonoBehaviour
